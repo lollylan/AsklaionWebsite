@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Asklaion – Datenschutzkonforme Open-Source-Software von Florian Rasche für die tägliche Arbeit in der Allgemeinmedizin. Lokal, kostenlos, quelloffen." />
+    <title>Asklaion | Florian Rasche</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ── HEADER / HERO ─────────────────────────────────────────── -->
+    <header class="site-header">
+        <nav class="nav container">
+            <div class="nav-brand">
+                <span class="nav-icon">⚕</span>
+                <span class="nav-title">Ask<span class="accent">laion</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#programme">Programme</a></li>
+                <li><a href="#lizenz">Lizenz</a></li>
+                <li><a href="#impressum">Impressum</a></li>
+                <li>
+                    <a href="https://github.com/lollylan" target="_blank" rel="noopener" class="btn btn-outline">
+                        <svg class="icon-github" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                        GitHub
+                    </a>
+                </li>
+            </ul>
+            <button class="nav-burger" id="navBurger" aria-label="Menü öffnen">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+
+        <div class="hero container">
+            <div class="hero-badge">Open Source · MIT Lizenz · 100 % lokal</div>
+            <h1 class="hero-title"><span class="gradient-text">Asklaion</span><br />Software für die Hauspraxis</h1>
+            <p class="hero-subtitle">
+                Entwickelt von einem
+                <a href="https://www.hausaerzte-bayern.de/aktuelles/haeppi" target="_blank" rel="noopener"
+                    class="hero-link">HÄPPI-Hausarzt</a>
+                für alle Hausärztinnen und -ärzte – um die Arbeit in der
+                Hausarztpraxis zu erleichtern und die Versorgungsqualität zu steigern.
+                Alle Programme laufen vollständig lokal, ohne Cloud-Abhängigkeit,
+                und sind kostenlos verfügbar.
+            </p>
+            <div class="hero-cta">
+                <a href="#programme" class="btn btn-primary">Programme ansehen</a>
+                <a href="https://github.com/lollylan" target="_blank" rel="noopener" class="btn btn-ghost">GitHub
+                    öffnen</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-value" id="statPrograms">–</span>
+                    <span class="stat-label">Programme</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-value">MIT</span>
+                    <span class="stat-label">Lizenz</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-value">100%</span>
+                    <span class="stat-label">Open Source</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ── PROGRAMME SECTION ──────────────────────────────────────── -->
+    <main>
+        <section id="programme" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">⚗ Projekte</span>
+                    <h2 class="section-title">Alle Programme</h2>
+                    <p class="section-subtitle">Klicken Sie auf ein Projekt, um mehr zu erfahren.</p>
+                </div>
+
+                <!-- Programme werden hier dynamisch geladen -->
+                <div class="programs-grid" id="programsGrid"></div>
+            </div>
+        </section>
+
+        <!-- ── VIDEO MODAL ────────────────────────────────────────────── -->
+        <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <div class="modal">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="modalTitle"></h3>
+                    <button class="modal-close" id="modalClose" aria-label="Schließen">✕</button>
+                </div>
+                <div class="modal-video-wrap">
+                    <iframe id="modalIframe" class="modal-iframe" src="" title="Programm-Demo" allowfullscreen></iframe>
+                </div>
+                <div class="modal-body">
+                    <p class="modal-description" id="modalDescription"></p>
+                    <div class="modal-actions">
+                        <a href="#" id="modalGithub" target="_blank" rel="noopener" class="btn btn-primary">
+                            <svg class="icon-github" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path
+                                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                            </svg>
+                            Auf GitHub ansehen
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── LIZENZ SECTION ──────────────────────────────────────────── -->
+        <section id="lizenz" class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">📄 Rechtliches</span>
+                    <h2 class="section-title">Lizenz & Haftung</h2>
+                </div>
+                <div class="license-card">
+                    <div class="license-icon">⚖</div>
+                    <h3 class="license-title">MIT Lizenz</h3>
+                    <p class="license-text">
+                        Alle auf dieser Website vorgestellten Programme werden unter der
+                        <strong>MIT Lizenz</strong> veröffentlicht. Das bedeutet, dass Sie die Software
+                        frei nutzen, kopieren, verändern und weitergeben dürfen – auch für kommerzielle Zwecke –
+                        solange der Lizenztext und der Copyright-Hinweis erhalten bleiben.
+                    </p>
+                    <div class="license-disclaimer">
+                        <strong>⚠ Haftungsausschluss:</strong>
+                        Die Software wird „wie sie ist" (<em>as is</em>) ohne jegliche ausdrückliche oder
+                        stillschweigende Garantie zur Verfügung gestellt. Der Autor übernimmt keinerlei Haftung
+                        in irgendwelcher Form – weder für direkte noch für indirekte Schäden, die aus der Nutzung
+                        oder Nichtnutzbarkeit der Software entstehen. Die Nutzung der Programme erfolgt auf eigene
+                        Verantwortung. Dies gilt insbesondere für den Einsatz im medizinischen Umfeld.
+                    </div>
+                    <div class="license-disclaimer license-disclaimer--info">
+                        <strong>ℹ Kein Medizinprodukt:</strong>
+                        Bei allen auf dieser Website vorgestellten Programmen handelt es sich ausdrücklich
+                        <strong>nicht</strong> um Medizinprodukte im Sinne der EU-Medizinprodukteverordnung
+                        (MDR 2017/745) oder des Medizinprodukterecht-Durchführungsgesetzes (MPDG).
+                        Die Programme sind ausschließlich als Hilfsmittel zur Erleichterung des Praxisalltags
+                        konzipiert und ersetzen weder medizinische Entscheidungen noch ärztliches Urteilsvermögen.
+                    </div>
+                    <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener"
+                        class="btn btn-outline btn-sm">
+                        MIT Lizenztext lesen →
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ── FOOTER / IMPRESSUM ─────────────────────────────────────── -->
+    <footer class="site-footer">
+        <div class="container">
+            <!-- Impressum -->
+            <section id="impressum" class="impressum-section">
+                <h2 class="impressum-title">Impressum</h2>
+                <div class="impressum-grid">
+                    <div class="impressum-block">
+                        <h3>Angaben gemäß § 5 TMG</h3>
+                        <address>
+                            <strong>Florian Rasche</strong><br />
+                            Huttenstr. 6<br />
+                            97072 Würzburg<br />
+                            Deutschland
+                        </address>
+                    </div>
+                    <div class="impressum-block">
+                        <h3>Verantwortlich für den Inhalt</h3>
+                        <p>Florian Rasche<br />(Anschrift wie oben)</p>
+                        <p class="impressum-note">
+                            Diese Website stellt ausschließlich Open-Source-Software vor und verfolgt keine
+                            kommerziellen Zwecke. Es werden keine personenbezogenen Daten erhoben oder gespeichert.
+                        </p>
+                    </div>
+                    <div class="impressum-block">
+                        <h3>Haftung für Inhalte</h3>
+                        <p>
+                            Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt.
+                            Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte sowie für
+                            externe Links wird keine Gewähr übernommen. Für die Inhalte verlinkter Seiten
+                            sind ausschließlich deren Betreiber verantwortlich.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="footer-bottom">
+                <span>© 2025 Florian Rasche · Asklaion · Alle Programme unter MIT Lizenz</span>
+                <span class="footer-links">
+                    <a href="#impressum">Impressum</a>
+                    <a href="#lizenz">Lizenz</a>
+                    <a href="https://github.com/lollylan" target="_blank" rel="noopener">GitHub</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="programs.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
