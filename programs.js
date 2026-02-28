@@ -13,7 +13,7 @@ const PROGRAMS = [
     langColor: "#38bdf8",
     desc: "Transkriptionsassistent und Zusammenfasser für Arzt-Patienten-Gespräche sowie Diktate. Funktioniert vollständig lokal ohne Cloud-Anbindung – für maximalen Datenschutz nach DSGVO.",
     github: "https://github.com/lollylan/asklaion",
-    youtubeId: ""
+    youtubeId: "0bLsjLKP3us"
   },
   {
     id: "visicycle",
