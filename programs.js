@@ -54,5 +54,15 @@ const PROGRAMS = [
     desc: "Internes Kommunikationssystem für die Praxis, das wichtige Informationen sofort und zuverlässig an den korrekten Empfänger übermittelt.",
     github: "https://github.com/lollylan/ZentralesNachrichtenSystem",
     youtubeId: "GjMwRZKpHdc"
+  },
+  {
+    id: "praxis-zeittracker",
+    title: "Praxis Zeittracker",
+    tag: "Organisation",
+    lang: "Web App",
+    langColor: "#facc15",
+    desc: "Ein Online-Programm (keine Installation notwendig), mit dem man überwachen kann, für was man am Tag Zeit verbraucht, um seine Abläufe ggf. optimieren zu können.",
+    github: "https://lollylan.github.io/praxiszeittracker/",
+    youtubeId: "7vdkT1RtDgw"
   }
 ];
