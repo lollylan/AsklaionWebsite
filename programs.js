@@ -64,5 +64,15 @@ const PROGRAMS = [
     desc: "Ein Online-Programm (keine Installation notwendig), mit dem man überwachen kann, für was man am Tag Zeit verbraucht, um seine Abläufe ggf. optimieren zu können.",
     github: "https://lollylan.github.io/praxiszeittracker/",
     youtubeId: "7vdkT1RtDgw"
+  },
+  {
+    id: "pieksplan",
+    title: "PieksPlan",
+    tag: "Impfplanung",
+    lang: "Python",
+    langColor: "#38bdf8",
+    desc: "Planungstool für Impfungen für Pflegeheimbewohner incl. Tracking von Einverständniserklärungen.",
+    github: "https://github.com/lollylan/PieksPlan",
+    youtubeId: "lMmB1WmGEC8"
   }
 ];
