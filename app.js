@@ -46,6 +46,16 @@ function renderPrograms() {
            <span style="font-size:3rem;opacity:.4;">🖥</span>
          </div>`;
 
+    let reqHtml = '';
+    const reqLevel = prog.req || 'low';
+    if (reqLevel === 'high') {
+      reqHtml = `<span class="req-badge req-high" title="Sollte eine gute Grafikkarte mit mindestens 16 GB oder mehr haben.">Anforderung: Hoch</span>`;
+    } else if (reqLevel === 'medium') {
+      reqHtml = `<span class="req-badge req-medium" title="Sollte wenn möglich eine Grafikkarte und mind. 32 GB RAM haben.">Anforderung: Mittel</span>`;
+    } else {
+      reqHtml = `<span class="req-badge req-low" title="Sollte auf quasi jedem PC laufen.">Anforderung: Gering</span>`;
+    }
+
     return `
       <article
         class="program-card"
@@ -69,7 +79,8 @@ function renderPrograms() {
         <div class="card-body">
           <h3 class="card-title">${escHtml(prog.title)}</h3>
           <p class="card-desc">${escHtml(prog.desc)}</p>
-          <div class="card-footer">
+          <div class="card-footer" style="justify-content: space-between;">
+            ${reqHtml}
             <span style="font-size:.78rem;color:var(--c-primary);">▶ Mehr erfahren</span>
           </div>
         </div>

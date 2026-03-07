@@ -736,6 +736,82 @@ address {
 }
 
 /* ═══════════════════════════════════════════════
+   REQUIREMENTS BADGES & CATEGORIES
+═══════════════════════════════════════════════ */
+.req-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+  white-space: nowrap;
+}
+
+.req-low {
+  color: #34d399;
+  background: rgba(52, 211, 153, .1);
+}
+
+.req-medium {
+  color: #facc15;
+  background: rgba(250, 204, 21, .1);
+}
+
+.req-high {
+  color: #f87171;
+  background: rgba(248, 113, 113, .1);
+}
+
+.req-categories {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 24px;
+  text-align: left;
+  background: rgba(255, 255, 255, .03);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+
+.req-categories-title {
+  font-size: 1.1rem;
+  color: var(--c-text);
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.req-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.req-list li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.req-desc {
+  font-size: .9rem;
+  color: var(--c-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .req-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+/* ═══════════════════════════════════════════════
    FOOTER / IMPRESSUM
 ═══════════════════════════════════════════════ */
 .site-footer {

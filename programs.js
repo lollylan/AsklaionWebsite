@@ -11,6 +11,7 @@ const PROGRAMS = [
     tag: "KI · Transkription",
     lang: "Python",
     langColor: "#38bdf8",
+    req: "high",
     desc: "Transkriptionsassistent und Zusammenfasser für Arzt-Patienten-Gespräche sowie Diktate. Funktioniert vollständig lokal ohne Cloud-Anbindung – für maximalen Datenschutz nach DSGVO.",
     github: "https://github.com/lollylan/asklaion",
     youtubeId: "0bLsjLKP3us"
@@ -21,6 +22,7 @@ const PROGRAMS = [
     tag: "Hausbesuche · Planung",
     lang: "Python",
     langColor: "#34d399",
+    req: "low",
     desc: "Intelligenter Hausbesuchsintervallplaner mit optimierter Mehrbehandler-Wegfindung. Funktioniert vollständig offline – lediglich bei der Patientenanlage erfolgt ein einmaliger anonymisierter Geodatenabruf.",
     github: "https://github.com/lollylan/VisiCycle",
     youtubeId: "Tkyc-IRuxGo"
@@ -31,6 +33,7 @@ const PROGRAMS = [
     tag: "Personalplanung",
     lang: "Python",
     langColor: "#fb923c",
+    req: "low",
     desc: "Mitarbeiter-Planer zur vereinfachten Schichtverteilung für MFAs, VERAHs, PCMs und Ärzte. Inkl. intelligentem Urlaubsplaner und AU-Manager – speziell für die Bedürfnisse von HÄPPI-Praxen entwickelt.",
     github: "https://github.com/lollylan/HAPPI-Flow",
     youtubeId: "h5QnQXdXWQY"
@@ -41,6 +44,7 @@ const PROGRAMS = [
     tag: "KI · Fax",
     lang: "Python",
     langColor: "#f472b6",
+    req: "medium",
     desc: "Intelligente, automatisierte Umbenennung eingehender PDF-Faxe in aussagekräftige Dateinamen. Nutzt ausschließlich lokale Vision-Modelle – keine Cloud, keine Datenweitergabe.",
     github: "https://github.com/lollylan/FaxFinity",
     youtubeId: "wzT2LQfQG3s"
@@ -51,6 +55,7 @@ const PROGRAMS = [
     tag: "Kommunikation",
     lang: "In Entwicklung",
     langColor: "#a78bfa",
+    req: "low",
     desc: "Internes Kommunikationssystem für die Praxis, das wichtige Informationen sofort und zuverlässig an den korrekten Empfänger übermittelt.",
     github: "https://github.com/lollylan/ZentralesNachrichtenSystem",
     youtubeId: "GjMwRZKpHdc"
@@ -61,6 +66,7 @@ const PROGRAMS = [
     tag: "Organisation",
     lang: "Web App",
     langColor: "#facc15",
+    req: "low",
     desc: "Ein Online-Programm (keine Installation notwendig), mit dem man überwachen kann, für was man am Tag Zeit verbraucht, um seine Abläufe ggf. optimieren zu können.",
     github: "https://lollylan.github.io/praxiszeittracker/",
     youtubeId: "7vdkT1RtDgw"
@@ -71,6 +77,7 @@ const PROGRAMS = [
     tag: "Impfplanung",
     lang: "Python",
     langColor: "#38bdf8",
+    req: "low",
     desc: "Planungstool für Impfungen für Pflegeheimbewohner incl. Tracking von Einverständniserklärungen.",
     github: "https://github.com/lollylan/PieksPlan",
     youtubeId: "lMmB1WmGEC8"
