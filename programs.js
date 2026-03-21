@@ -81,5 +81,18 @@ const PROGRAMS = [
     desc: "Planungstool für Impfungen für Pflegeheimbewohner incl. Tracking von Einverständniserklärungen.",
     github: "https://github.com/lollylan/PieksPlan",
     youtubeId: "lMmB1WmGEC8"
+  },
+  {
+    id: "praxis-defender",
+    title: "PraxisDefender",
+    tag: "Spiel · Tower Defense",
+    lang: "Web App",
+    langColor: "#ef4444",
+    req: "low",
+    desc: "Tower-Defense-Spiel im Praxis-Setting: Verteidige deine Gemeinschaftspraxis mit Ärzten und MFAs gegen Viren-Wellen und sammle EBM-Punkte. Empfohlen für Tablet oder PC – auf dem Handy kann es zu Skalierungsproblemen kommen.",
+    github: "",
+    youtubeId: "",
+    url: "https://lollylan.github.io/PraxisDefender/",
+    thumbnail: "assets/Gemini_Generated_Image_kjaplukjaplukjap.png"
   }
 ];

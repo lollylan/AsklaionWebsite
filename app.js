@@ -40,8 +40,9 @@ function renderPrograms() {
     const thumb = getYoutubeThumbnail(prog.youtubeId);
     const delay = i * 0.08;
 
-    const thumbHtml = thumb
-      ? `<img src="${thumb}" alt="Vorschau: ${escHtml(prog.title)}" loading="lazy" decoding="async" />`
+    const thumbSrc = thumb || prog.thumbnail;
+    const thumbHtml = thumbSrc
+      ? `<img src="${thumbSrc}" alt="Vorschau: ${escHtml(prog.title)}" loading="lazy" decoding="async" />`
       : `<div style="width:100%;height:100%;background:linear-gradient(135deg,#1e3a5f,#0f172a);display:flex;align-items:center;justify-content:center;">
            <span style="font-size:3rem;opacity:.4;">🖥</span>
          </div>`;
@@ -67,13 +68,13 @@ function renderPrograms() {
       >
         <div class="card-thumb">
           ${thumbHtml}
-          <div class="card-play-btn">
+          ${prog.youtubeId ? `<div class="card-play-btn">
             <div class="play-circle">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M8 5v14l11-7z"/>
               </svg>
             </div>
-          </div>
+          </div>` : ''}
           <span class="card-tag">${escHtml(prog.tag)}</span>
         </div>
         <div class="card-body">
@@ -119,7 +120,20 @@ function openModal(progId) {
   }
 
   const githubBtn = $('modalGithub');
-  githubBtn.href = prog.github;
+  const githubSvg = githubBtn.querySelector('.icon-github');
+  if (prog.url) {
+    githubBtn.href = prog.url;
+    githubSvg.style.display = 'none';
+    githubBtn.lastChild.textContent = ' Direkt öffnen';
+    githubBtn.style.display = '';
+  } else if (prog.github) {
+    githubBtn.href = prog.github;
+    githubSvg.style.display = '';
+    githubBtn.lastChild.textContent = ' Auf GitHub ansehen';
+    githubBtn.style.display = '';
+  } else {
+    githubBtn.style.display = 'none';
+  }
 
   backdrop.classList.add('open');
   document.body.style.overflow = 'hidden';
