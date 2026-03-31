@@ -766,6 +766,28 @@ address {
   background: rgba(248, 113, 113, .1);
 }
 
+.req-webapp {
+  color: #22d3ee;
+  background: rgba(34, 211, 238, .1);
+}
+
+/* ── Kategorie-Überschriften (Programme / Web-Apps) ── */
+.category-heading {
+  width: 100%;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--c-text);
+  margin-top: 48px;
+  margin-bottom: 8px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--c-border);
+  letter-spacing: .3px;
+}
+
+.category-heading:first-of-type {
+  margin-top: 0;
+}
+
 .req-categories {
   width: 100%;
   max-width: 600px;

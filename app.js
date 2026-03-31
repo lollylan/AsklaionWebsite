@@ -18,77 +18,63 @@ function getYoutubeEmbedUrl(videoId) {
   return `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
 }
 
-/* ── Karten rendern ── */
-function renderPrograms() {
-  const grid = $('programsGrid');
-  if (!grid) return;
+/* ── Karte HTML erzeugen ── */
+function buildCardHtml(prog, i) {
+  const thumb = getYoutubeThumbnail(prog.youtubeId);
+  const delay = i * 0.08;
 
-  // Programm-Zähler im Hero aktualisieren
-  const statEl = $('statPrograms');
-  if (statEl) statEl.textContent = PROGRAMS.length;
+  const thumbSrc = thumb || prog.thumbnail;
+  const thumbHtml = thumbSrc
+    ? `<img src="${thumbSrc}" alt="Vorschau: ${escHtml(prog.title)}" loading="lazy" decoding="async" />`
+    : `<div style="width:100%;height:100%;background:linear-gradient(135deg,#1e3a5f,#0f172a);display:flex;align-items:center;justify-content:center;">
+         <span style="font-size:3rem;opacity:.4;">🖥</span>
+       </div>`;
 
-  if (PROGRAMS.length === 0) {
-    grid.innerHTML = `
-      <div class="empty-state">
-        <h3>Noch keine Programme eingetragen</h3>
-        <p>Tragen Sie Ihre Programme in der Datei <code>programs.js</code> ein.</p>
-      </div>`;
-    return;
+  let reqHtml = '';
+  const reqLevel = prog.req || 'low';
+  if (reqLevel === 'webapp') {
+    reqHtml = `<span class="req-badge req-webapp" title="Läuft direkt im Browser – keine Installation nötig.">Webapp</span>`;
+  } else if (reqLevel === 'high') {
+    reqHtml = `<span class="req-badge req-high" title="Sollte eine gute Grafikkarte mit mindestens 16 GB oder mehr haben.">Anforderung: Hoch</span>`;
+  } else if (reqLevel === 'medium') {
+    reqHtml = `<span class="req-badge req-medium" title="Sollte wenn möglich eine Grafikkarte und mind. 32 GB RAM haben.">Anforderung: Mittel</span>`;
+  } else {
+    reqHtml = `<span class="req-badge req-low" title="Sollte auf quasi jedem PC laufen.">Anforderung: Gering</span>`;
   }
 
-  grid.innerHTML = PROGRAMS.map((prog, i) => {
-    const thumb = getYoutubeThumbnail(prog.youtubeId);
-    const delay = i * 0.08;
-
-    const thumbSrc = thumb || prog.thumbnail;
-    const thumbHtml = thumbSrc
-      ? `<img src="${thumbSrc}" alt="Vorschau: ${escHtml(prog.title)}" loading="lazy" decoding="async" />`
-      : `<div style="width:100%;height:100%;background:linear-gradient(135deg,#1e3a5f,#0f172a);display:flex;align-items:center;justify-content:center;">
-           <span style="font-size:3rem;opacity:.4;">🖥</span>
-         </div>`;
-
-    let reqHtml = '';
-    const reqLevel = prog.req || 'low';
-    if (reqLevel === 'high') {
-      reqHtml = `<span class="req-badge req-high" title="Sollte eine gute Grafikkarte mit mindestens 16 GB oder mehr haben.">Anforderung: Hoch</span>`;
-    } else if (reqLevel === 'medium') {
-      reqHtml = `<span class="req-badge req-medium" title="Sollte wenn möglich eine Grafikkarte und mind. 32 GB RAM haben.">Anforderung: Mittel</span>`;
-    } else {
-      reqHtml = `<span class="req-badge req-low" title="Sollte auf quasi jedem PC laufen.">Anforderung: Gering</span>`;
-    }
-
-    return `
-      <article
-        class="program-card"
-        style="animation-delay:${delay}s"
-        data-id="${escHtml(prog.id)}"
-        role="button"
-        tabindex="0"
-        aria-label="${escHtml(prog.title)} – Details öffnen"
-      >
-        <div class="card-thumb">
-          ${thumbHtml}
-          ${prog.youtubeId ? `<div class="card-play-btn">
-            <div class="play-circle">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-            </div>
-          </div>` : ''}
-          <span class="card-tag">${escHtml(prog.tag)}</span>
-        </div>
-        <div class="card-body">
-          <h3 class="card-title">${escHtml(prog.title)}</h3>
-          <p class="card-desc">${escHtml(prog.desc)}</p>
-          <div class="card-footer" style="justify-content: space-between;">
-            ${reqHtml}
-            <span style="font-size:.78rem;color:var(--c-primary);">▶ Mehr erfahren</span>
+  return `
+    <article
+      class="program-card"
+      style="animation-delay:${delay}s"
+      data-id="${escHtml(prog.id)}"
+      role="button"
+      tabindex="0"
+      aria-label="${escHtml(prog.title)} – Details öffnen"
+    >
+      <div class="card-thumb">
+        ${thumbHtml}
+        ${prog.youtubeId ? `<div class="card-play-btn">
+          <div class="play-circle">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
           </div>
+        </div>` : ''}
+        <span class="card-tag">${escHtml(prog.tag)}</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">${escHtml(prog.title)}</h3>
+        <p class="card-desc">${escHtml(prog.desc)}</p>
+        <div class="card-footer" style="justify-content: space-between;">
+          ${reqHtml}
+          <span style="font-size:.78rem;color:var(--c-primary);">▶ Mehr erfahren</span>
         </div>
-      </article>`;
-  }).join('');
+      </div>
+    </article>`;
+}
 
-  // Event-Listener auf Karten
+/* ── Event-Listener auf Karten ── */
+function attachCardListeners(grid) {
   grid.querySelectorAll('.program-card').forEach(card => {
     card.addEventListener('click', () => openModal(card.dataset.id));
     card.addEventListener('keydown', e => {
@@ -98,6 +84,41 @@ function renderPrograms() {
       }
     });
   });
+}
+
+/* ── Karten rendern ── */
+function renderPrograms() {
+  const installGrid = $('installGrid');
+  const webappGrid = $('webappGrid');
+  if (!installGrid || !webappGrid) return;
+
+  // Programm-Zähler im Hero aktualisieren
+  const statEl = $('statPrograms');
+  if (statEl) statEl.textContent = PROGRAMS.length;
+
+  if (PROGRAMS.length === 0) {
+    installGrid.innerHTML = `
+      <div class="empty-state">
+        <h3>Noch keine Programme eingetragen</h3>
+        <p>Tragen Sie Ihre Programme in der Datei <code>programs.js</code> ein.</p>
+      </div>`;
+    return;
+  }
+
+  const installProgs = PROGRAMS.filter(p => p.type !== 'webapp');
+  const webappProgs = PROGRAMS.filter(p => p.type === 'webapp');
+
+  installGrid.innerHTML = installProgs.map((prog, i) => buildCardHtml(prog, i)).join('');
+  webappGrid.innerHTML = webappProgs.map((prog, i) => buildCardHtml(prog, i)).join('');
+
+  // Kategorie-Überschriften ausblenden, wenn leer
+  const catInstall = $('categoryInstall');
+  const catWebapp = $('categoryWebapp');
+  if (catInstall) catInstall.style.display = installProgs.length ? '' : 'none';
+  if (catWebapp) catWebapp.style.display = webappProgs.length ? '' : 'none';
+
+  attachCardListeners(installGrid);
+  attachCardListeners(webappGrid);
 }
 
 /* ── Modal ── */
