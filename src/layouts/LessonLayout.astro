@@ -131,7 +131,7 @@ const readingTime = Math.max(1, Math.ceil(wordCount / 200));
       ) : (
         <a
           id="next-lesson-link"
-          href={`/academy/${courseSlug}`}
+          href={`${base}academy/${courseSlug}`}
           data-course={courseSlug}
           data-lesson={lessonNumber}
           data-total={totalLessons}

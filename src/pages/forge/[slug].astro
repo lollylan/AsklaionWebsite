@@ -38,7 +38,7 @@ const BADGE_COLORS: Record<string, string> = {
         </div>
       ) : program.screenshot ? (
         <div class="aspect-video rounded-xl overflow-hidden bg-dark-card border border-dark-border mb-6">
-          <img src={program.screenshot} alt={program.name} class="w-full h-full object-cover" />
+          <img src={`${base}${program.screenshot.replace(/^\//, '')}`} alt={program.name} class="w-full h-full object-cover" />
         </div>
       ) : (
         <div class="aspect-video rounded-xl overflow-hidden bg-forge-bg/50 border border-dark-border mb-6 flex items-center justify-center">

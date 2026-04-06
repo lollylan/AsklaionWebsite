@@ -105,7 +105,7 @@ function ProgramCard({ program }: { program: Program }) {
       {/* Thumbnail */}
       <div className="aspect-video bg-forge-bg/50 flex items-center justify-center border-b border-dark-border overflow-hidden">
         {program.screenshot ? (
-          <img src={program.screenshot} alt={program.name} className="w-full h-full object-cover" />
+          <img src={`${base}${program.screenshot.replace(/^\//, '')}`} alt={program.name} className="w-full h-full object-cover" />
         ) : (
           <span className="text-sm font-medium text-text-muted opacity-40 uppercase tracking-wider">
             {program.category === 'webapp' ? 'Web-App' : 'Desktop'}
