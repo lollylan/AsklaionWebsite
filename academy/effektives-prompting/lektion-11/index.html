@@ -1,0 +1,173 @@
+<!DOCTYPE html><html lang="de" class="dark"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Gute Prompts systematisch sammeln, benennen und wiederverwenden – wie ein Formular-Ordner für KI-Anweisungen."><title>Deine eigene Prompt-Bibliothek – Effektives Prompting | Asklaion</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><!-- Prevent flash: apply theme before render --><script>
+    (function() {
+      const t = localStorage.getItem('theme');
+      if (t === 'light') document.documentElement.classList.replace('dark', 'light');
+    })();
+  </script><link rel="stylesheet" href="/_astro/global.6fxD9mRf.css"></head> <body class="min-h-screen flex flex-col relative bg-light-base dark:bg-dark-base text-light-text-primary dark:text-text-primary transition-colors duration-300">   <div class="fixed inset-0 -z-10 pointer-events-none dark:block hidden" aria-hidden="true"> <div class="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#0a0a0a] to-[#0a0a0a]"></div> <div class="absolute top-0 right-0 w-[80%] h-[70%] bg-[radial-gradient(ellipse_at_top_right,rgba(245,158,11,0.25)_0%,transparent_60%)]"></div> <div class="absolute bottom-0 left-0 w-[60%] h-[50%] bg-[radial-gradient(ellipse_at_bottom_left,rgba(245,158,11,0.15)_0%,transparent_60%)]"></div> </div>   <div class="fixed inset-0 -z-10 pointer-events-none dark:hidden block" aria-hidden="true"> <div class="absolute inset-0 bg-gradient-to-br from-[#fffbeb] via-[#f8fafc] to-[#f8fafc]"></div> <div class="absolute top-0 right-0 w-[80%] h-[70%] bg-[radial-gradient(ellipse_at_top_right,rgba(245,158,11,0.12)_0%,transparent_60%)]"></div> <div class="absolute bottom-0 left-0 w-[60%] h-[50%] bg-[radial-gradient(ellipse_at_bottom_left,rgba(245,158,11,0.08)_0%,transparent_60%)]"></div> </div> <nav class="fixed top-0 left-0 right-0 z-50 bg-light-base/90 dark:bg-dark-base/90 backdrop-blur-md border-b border-light-border dark:border-dark-border transition-colors duration-300"> <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> <div class="flex items-center justify-between h-16"> <a href="/" class="flex items-center gap-2 text-light-text-primary dark:text-text-primary hover:text-academy-accent transition-colors"> <span class="font-bold text-lg">Asklaion</span> </a> <div class="hidden md:flex items-center gap-8"> <a href="/academy" class="text-light-text-secondary dark:text-text-secondary hover:text-academy-accent transition-colors text-sm font-medium">Akademie</a> <a href="/forge" class="text-light-text-secondary dark:text-text-secondary hover:text-forge-accent transition-colors text-sm font-medium">Projekte</a> <a href="https://github.com/lollylan" target="_blank" rel="noopener noreferrer" class="text-light-text-secondary dark:text-text-secondary hover:text-light-text-primary dark:hover:text-text-primary transition-colors text-sm font-medium">GitHub</a> <!-- Theme toggle --> <button id="theme-toggle" class="p-2 rounded-lg text-light-text-secondary dark:text-text-secondary hover:text-light-text-primary dark:hover:text-text-primary hover:bg-light-card dark:hover:bg-dark-card transition-colors" aria-label="Darstellung wechseln"> <!-- Sun icon (visible in dark mode) --> <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path> </svg> <!-- Moon icon (visible in light mode) --> <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path> </svg> </button> </div> <div class="flex items-center gap-2 md:hidden"> <!-- Mobile theme toggle --> <button id="theme-toggle-mobile" class="p-2 text-light-text-secondary dark:text-text-secondary hover:text-light-text-primary dark:hover:text-text-primary" aria-label="Darstellung wechseln"> <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path> </svg> <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path> </svg> </button> <button id="mobile-menu-btn" class="text-light-text-secondary dark:text-text-secondary hover:text-light-text-primary dark:hover:text-text-primary p-2" aria-label="Menü öffnen"> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg> </button> </div> </div> </div> <div id="mobile-menu" class="hidden md:hidden border-t border-light-border dark:border-dark-border bg-light-base/95 dark:bg-dark-base/95 backdrop-blur-md"> <div class="px-4 py-4 space-y-3"> <a href="/academy" class="block text-light-text-secondary dark:text-text-secondary hover:text-academy-accent transition-colors text-sm font-medium">Akademie</a> <a href="/forge" class="block text-light-text-secondary dark:text-text-secondary hover:text-forge-accent transition-colors text-sm font-medium">Projekte</a> <a href="https://github.com/lollylan" target="_blank" rel="noopener noreferrer" class="block text-light-text-secondary dark:text-text-secondary hover:text-light-text-primary dark:hover:text-text-primary transition-colors text-sm font-medium">GitHub</a> </div> </div> </nav> <main class="pt-16 flex-1">  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8"> <!-- Breadcrumb --> <nav class="mb-6 text-sm text-text-muted"> <a href="/academy" class="hover:text-academy-accent transition-colors">Akademie</a> <span class="mx-2">/</span> <a href="/academy/effektives-prompting" class="hover:text-academy-accent transition-colors">Effektives Prompting</a> <span class="mx-2">/</span> <span class="text-text-secondary">Lektion 11</span> </nav> <!-- Header --> <header class="mb-8"> <div class="flex items-center gap-3 mb-2"> <span class="px-2 py-0.5 text-xs font-medium rounded bg-academy-accent/20 text-academy-accent">
+Lektion 11 von 11 </span> <span class="text-xs text-text-muted">4 Min. Lesezeit</span> </div> <h1 class="text-3xl font-bold text-text-primary">Deine eigene Prompt-Bibliothek</h1> </header> <!-- Progress bar --> <div class="mb-8"> <div class="h-1 bg-dark-card rounded-full overflow-hidden"> <div class="h-full bg-academy-accent rounded-full transition-all duration-500" style="width: 100%"></div> </div> </div> <!-- Video embed -->  <!-- Content --> <article class="prose prose-amber max-w-none
+      [&_h1]:text-text-primary [&_h1]:font-bold
+      [&_h2]:text-text-primary [&_h2]:font-semibold [&_h2]:mt-8 [&_h2]:mb-4
+      [&_h3]:text-text-primary [&_h3]:font-medium [&_h3]:mt-5 [&_h3]:mb-2
+      [&_p]:text-text-secondary [&_p]:leading-relaxed
+      [&_a]:text-academy-accent [&_a]:no-underline hover:[&_a]:underline
+      [&_strong]:text-text-primary
+      [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded [&_code]:text-sm [&_code]:bg-[#1e293b] [&_code]:text-amber-300
+      [&_pre]:bg-[#1e293b] [&_pre]:border [&_pre]:border-dark-border [&_pre]:rounded-lg [&_pre]:relative [&_pre]:text-slate-200
+      [&_blockquote]:border-l-academy-accent [&_blockquote]:bg-dark-card/50 [&_blockquote]:rounded-r-lg [&_blockquote]:px-4 [&_blockquote]:py-3 [&_blockquote]:my-5
+      [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6 [&_li]:text-text-secondary [&_li]:mb-1
+      [&_details]:my-5
+      [&_table]:border-collapse [&_table]:w-full [&_table]:my-6 [&_th]:bg-dark-card [&_th]:px-4 [&_th]:py-2 [&_th]:text-left [&_th]:text-text-primary [&_td]:px-4 [&_td]:py-2 [&_td]:border-t [&_td]:border-dark-border [&_td]:text-text-secondary
+    ">  <h1 id="deine-eigene-prompt-bibliothek">Deine eigene Prompt-Bibliothek</h1>
+<blockquote>
+<p><strong>Wichtiger Hinweis:</strong> Alle in diesem Kurs vorgestellten Programme dienen ausschließlich dem Erlernen von Prompting-Techniken. Sie sind nicht für die Anwendung am Patienten gedacht. Insbesondere medizinische Tools könnten einem Medizinprodukt gleichkommen und dürfen ohne regulatorische Zulassung nicht im klinischen Alltag eingesetzt werden.</p>
+</blockquote>
+<p>In einer Praxis gibt es Formulare für alles: Überweisungen, Laboranforderungen, Anamnesebögen. Niemand schreibt jedes Mal ein neues Formular von Grund auf. Mit Prompts sollte es genauso sein. Jeder Prompt, der einmal ein gutes Ergebnis geliefert hat, ist es wert, gespeichert zu werden.</p>
+<h2 id="warum-eine-prompt-bibliothek">Warum eine Prompt-Bibliothek?</h2>
+<ul>
+<li>Ein guter Prompt hat dich vielleicht 10 Minuten und mehrere Verfeinerungsrunden gekostet</li>
+<li>Ohne ihn zu speichern, verbringst du nächsten Monat wieder 10 Minuten damit</li>
+<li>Dein Team kann deine besten Prompts mitnutzen</li>
+<li>Über die Zeit entsteht ein <strong>Praxis-Wissensschatz</strong> für den Umgang mit KI</li>
+</ul>
+<h2 id="schritt-1-die-einfachste-lösung-die-funktioniert">Schritt 1: Die einfachste Lösung, die funktioniert</h2>
+<p>Du brauchst kein kompliziertes System. Ein einzelnes Dokument reicht – ob als Textdatei, in Notion, als Google Doc oder in OneNote. Wichtig ist nur: Du weißt, wo es liegt, und du findest Prompts schnell wieder.</p>
+<p><strong>Erstelle diese fünf Abschnitte:</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Abschnitt</th><th>Inhalt</th></tr></thead><tbody><tr><td><strong>Klinisch</strong></td><td>Arztbriefe, Überweisungen, Befundzusammenfassungen, Medikamenten-Infos</td></tr><tr><td><strong>Patientenkommunikation</strong></td><td>Informationsblätter, Aufklärungsbögen, Terminbestätigungen</td></tr><tr><td><strong>Organisation</strong></td><td>Dienstpläne, Protokolle, Checklisten, Schulungsmaterial</td></tr><tr><td><strong>VibeCoding</strong></td><td>Prompts für Praxis-Tools, Formulare, Rechner, Dashboards</td></tr><tr><td><strong>Vorlagen</strong></td><td>Wiederverwendbare RICE-Grundgerüste für häufige Aufgaben</td></tr></tbody></table>
+<h2 id="schritt-2-prompts-richtig-benennen">Schritt 2: Prompts richtig benennen</h2>
+<p>Ein Prompt ohne Namen ist ein Prompt, den du nie wiederfindest. Verwende dieses Schema:</p>
+<p><strong>[Abschnitt] – [Aufgabe] – [Zielgruppe]</strong></p>
+<p>Beispiele:</p>
+<ul>
+<li>Klinisch – Überweisungsbrief – Kardiologie</li>
+<li>Patientenkommunikation – Infoblatt – Koloskopie-Vorbereitung</li>
+<li>Organisation – Schulungsmaterial – Neue MFA Blutentnahme</li>
+<li>VibeCoding – Laborwert-Rechner – GFR nach CKD-EPI</li>
+<li>Klinisch – Arztbrief – Diabetologische Verlaufskontrolle</li>
+</ul>
+<p>So findest du jeden Prompt in unter 10 Sekunden.</p>
+<h2 id="schritt-3-was-du-speichern-solltest">Schritt 3: Was du speichern solltest</h2>
+<p>Für jeden Prompt in deiner Bibliothek empfehle ich drei Dinge:</p>
+<p><strong>1. Der Prompt selbst</strong> – der vollständige Text, den du an die KI schickst.</p>
+<p><strong>2. Platzhalter markieren</strong> – Stellen, die du jedes Mal anpassen musst, in eckige Klammern setzen.</p>
+<p><strong>3. Ein kurzer Hinweis</strong> – wann der Prompt gut funktioniert und wann nicht.</p>
+<h3 id="beispiel-eintrag">Beispiel-Eintrag</h3>
+<p><strong>Name:</strong> Klinisch – Überweisungsbrief – Allgemein</p>
+<p><strong>Prompt:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>Du bist ein Allgemeinmediziner in einer Einzelpraxis.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Schreibe einen Überweisungsbrief an einen [Facharzt].</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Patient: [Alter] Jahre, [Geschlecht], [relevante Anamnese].</span></span>
+<span class="line"><span>Aktuelle Beschwerden: [Beschwerden mit Dauer].</span></span>
+<span class="line"><span>Bisherige Diagnostik: [durchgeführte Untersuchungen und Ergebnisse].</span></span>
+<span class="line"><span>Bisherige Therapie: [was bereits versucht wurde].</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Fragestellung: [konkrete Frage an den Facharzt].</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Format: Klassischer deutscher Arztbrief mit Anrede,</span></span>
+<span class="line"><span>Einleitung, Befundbericht und Fragestellung.</span></span></code></pre>
+<p><strong>Hinweis:</strong> Funktioniert für alle Fachrichtungen. Bei Überweisungen an Radiologen zusätzlich die gewünschte Untersuchungsart angeben.</p>
+<h2 id="starter-bibliothek-6-prompts-zum-sofort-loslegen">Starter-Bibliothek: 6 Prompts zum Sofort-Loslegen</h2>
+<p>Hier sind sechs Prompts, die du direkt in deine Bibliothek übernehmen kannst:</p>
+<h3 id="1-patienteninformation-zu-einem-medikament">1. Patienteninformation zu einem Medikament</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>Du bist ein erfahrener Apotheker, der Patienten Medikamente erklärt.</span></span>
+<span class="line"><span>Schreibe eine verständliche Information für einen Patienten,</span></span>
+<span class="line"><span>der neu [Medikament] einnimmt.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Gliedere in: Was das Medikament macht, Wie Sie es einnehmen,</span></span>
+<span class="line"><span>Was Sie beachten müssen, Wann Sie die Praxis anrufen sollten.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Verständlich für Laien, kurze Sätze, Aufzählungspunkte.</span></span>
+<span class="line"><span>Maximal eine DIN-A4-Seite.</span></span></code></pre>
+<h3 id="2-arztbrief-zusammenfassung">2. Arztbrief-Zusammenfassung</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>Du bist ein erfahrener Allgemeinmediziner.</span></span>
+<span class="line"><span>Fasse folgenden Fall in maximal 5 Stichpunkten zusammen:</span></span>
+<span class="line"><span>1. Diagnose(n)</span></span>
+<span class="line"><span>2. Relevante Befunde</span></span>
+<span class="line"><span>3. Aktuelle Therapie</span></span>
+<span class="line"><span>4. Offene Fragen</span></span>
+<span class="line"><span>5. Nächster Schritt</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Fall: [anonymisierte Fallbeschreibung]</span></span></code></pre>
+<h3 id="3-qm-checkliste">3. QM-Checkliste</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>Du bist eine QM-Beauftragte einer Arztpraxis.</span></span>
+<span class="line"><span>Erstelle eine Checkliste für [Prozess/Tätigkeit].</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Format: Nummerierte Liste, ein Schritt pro Zeile,</span></span>
+<span class="line"><span>mit Abhak-Kästchen. Am Ende: Unterschriftsfeld</span></span>
+<span class="line"><span>und Datumsfeld.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Die Checkliste soll ausgedruckt und täglich verwendet</span></span>
+<span class="line"><span>werden können.</span></span></code></pre>
+<h3 id="4-praxis-tool-erstellen">4. Praxis-Tool erstellen</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>Du bist ein Softwareentwickler für Arztpraxis-Software.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Erstelle [Art des Tools] als Webseite.</span></span>
+<span class="line"><span>Eingabefelder: [Liste der Felder].</span></span>
+<span class="line"><span>Ausgabe: [was berechnet/angezeigt werden soll].</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Design: Schlicht, professionell, gut lesbar.</span></span>
+<span class="line"><span>Soll auf [Gerät: PC/Tablet/Smartphone] funktionieren.</span></span></code></pre>
+<h3 id="5-mfa-schulungsunterlage">5. MFA-Schulungsunterlage</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>Du bist eine erfahrene Praxismanagerin.</span></span>
+<span class="line"><span>Erstelle eine Kurzanleitung für [Aufgabe/Prozess]</span></span>
+<span class="line"><span>für medizinische Fachangestellte.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Format: Nummerierte Schritte, maximal eine DIN-A4-Seite.</span></span>
+<span class="line"><span>Sprache: Klar und direkt, keine Fachbegriffe, die nicht</span></span>
+<span class="line"><span>erklärt werden.</span></span>
+<span class="line"><span>Am Ende: Die 3 häufigsten Fehler und wie man sie vermeidet.</span></span></code></pre>
+<h3 id="6-patientenaufklärung">6. Patientenaufklärung</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>Du bist ein Patientenberater, der medizinische Inhalte</span></span>
+<span class="line"><span>verständlich erklären kann.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Erstelle ein Informationsblatt über [Untersuchung/Eingriff]</span></span>
+<span class="line"><span>für Patienten, die [relevanter Kontext, z.B. &quot;zum ersten Mal</span></span>
+<span class="line"><span>eine Koloskopie durchführen lassen&quot;].</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Gliederung:</span></span>
+<span class="line"><span>- Was ist das? (3 Sätze)</span></span>
+<span class="line"><span>- Wie läuft es ab?</span></span>
+<span class="line"><span>- Was muss ich vorher beachten?</span></span>
+<span class="line"><span>- Häufige Sorgen und Antworten</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Verständlich für alle Altersgruppen, druckbar auf einer Seite.</span></span></code></pre>
+<h2 id="schritt-4-die-bibliothek-lebendig-halten">Schritt 4: Die Bibliothek lebendig halten</h2>
+<p>Setze dir einmal im Monat 10 Minuten:</p>
+<ul>
+<li><strong>Neue Prompts hinzufügen</strong>, die diesen Monat gut funktioniert haben</li>
+<li><strong>Bestehende Prompts aktualisieren</strong>, die du nachbessern musstest</li>
+<li><strong>Veraltete Prompts entfernen</strong>, die du nicht mehr brauchst</li>
+</ul>
+<p>Eine Prompt-Bibliothek, die nie aktualisiert wird, ist eine Prompt-Bibliothek, die niemand benutzt.</p>
+<h2 id="zusammenfassung">Zusammenfassung</h2>
+<p>Eine Prompt-Bibliothek spart dir Zeit und sorgt für gleichbleibend gute Ergebnisse. Du brauchst kein aufwändiges System – ein Dokument mit klarer Struktur und sinnvoller Benennung reicht. Starte mit den sechs Vorlagen aus dieser Lektion und baue von dort aus weiter. Und teile deine besten Prompts mit deinem Team – davon profitieren alle.</p>  </article> <!-- Navigation --> <nav class="mt-10 pt-8 border-t border-dark-border flex justify-between items-center gap-4"> <a href="/academy/effektives-prompting/lektion-10" class="group flex items-center gap-2 text-text-secondary hover:text-academy-accent transition-colors"> <svg class="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path> </svg> <div class="text-right"> <span class="text-xs text-text-muted block">Vorherige Lektion</span> <span class="text-sm font-medium">Häufige Fehler und wie du sie vermeidest</span> </div> </a> <a id="next-lesson-link" href="/academy/effektives-prompting" data-course="effektives-prompting" data-lesson="11" data-total="11" class="group flex items-center gap-3 px-5 py-3 bg-green-600/20 border border-green-600/40 hover:bg-green-600/30 rounded-lg transition-colors text-right"> <div> <span class="text-xs text-green-400 block">Kurs abschließen</span> <span class="text-sm font-medium text-text-primary">Zurück zur Kursübersicht</span> </div> <svg class="w-5 h-5 text-green-400 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path> </svg> </a> </nav> </div> <script type="module">document.querySelectorAll("article pre").forEach(e=>{const o=document.createElement("div");o.className="relative group",e.parentNode.insertBefore(o,e),o.appendChild(e);const t=document.createElement("button");t.className="absolute top-2 right-2 px-2 py-1 text-xs rounded bg-dark-border/80 text-text-muted hover:text-text-primary hover:bg-dark-border opacity-0 group-hover:opacity-100 transition-all duration-200 font-sans",t.textContent="Kopieren",t.addEventListener("click",()=>{const n=(e.querySelector("code")||e).textContent||"";navigator.clipboard.writeText(n).then(()=>{t.textContent="Kopiert!",t.classList.add("text-academy-accent"),setTimeout(()=>{t.textContent="Kopieren",t.classList.remove("text-academy-accent")},2e3)})}),o.appendChild(t)});</script> <script type="module">const e=document.getElementById("next-lesson-link");if(e){const t=e.dataset.course,s=parseInt(e.dataset.lesson,10),l=parseInt(e.dataset.total,10);e.addEventListener("click",()=>{localStorage.setItem(`academy_${t}_lesson_${s}`,"completed");let o=!0;for(let a=1;a<=l;a++)if(localStorage.getItem(`academy_${t}_lesson_${a}`)!=="completed"){o=!1;break}o&&localStorage.setItem(`academy_course_${t}`,"completed")})}</script>  </main> <footer class="border-t border-light-border dark:border-dark-border bg-light-base/80 dark:bg-dark-base/80 backdrop-blur-md transition-colors duration-300"> <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"> <div class="flex flex-col md:flex-row justify-between items-center gap-4"> <div class="flex items-center gap-6 text-sm text-light-text-muted dark:text-text-muted"> <a href="/impressum" class="hover:text-light-text-secondary dark:hover:text-text-secondary transition-colors">Impressum</a> <a href="/anforderungen" class="hover:text-light-text-secondary dark:hover:text-text-secondary transition-colors">Anforderungen</a> <a href="/lizenz" class="hover:text-light-text-secondary dark:hover:text-text-secondary transition-colors">Lizenz</a> <a href="https://github.com/lollylan" target="_blank" rel="noopener noreferrer" class="hover:text-light-text-secondary dark:hover:text-text-secondary transition-colors">GitHub</a> </div> <p class="text-sm text-light-text-muted dark:text-text-muted">&copy; 2026 Dr. Florian Rasche &middot; Asklaion &middot; MIT Lizenz</p> </div> <p class="text-center text-xs text-light-text-muted dark:text-text-muted mt-4">Open Source &middot; MIT Lizenz &middot; 100 % lokal</p> </div> </footer> <script type="module">function n(){const t=document.documentElement,e=t.classList.contains("dark");t.classList.replace(e?"dark":"light",e?"light":"dark"),localStorage.setItem("theme",e?"light":"dark")}document.getElementById("theme-toggle")?.addEventListener("click",n);document.getElementById("theme-toggle-mobile")?.addEventListener("click",n);document.getElementById("mobile-menu-btn")?.addEventListener("click",()=>{document.getElementById("mobile-menu")?.classList.toggle("hidden")});</script> </body> </html>

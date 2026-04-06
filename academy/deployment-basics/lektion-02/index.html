@@ -1,0 +1,183 @@
+<!DOCTYPE html><html lang="de" class="dark"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Wie du dein Programm im lokalen Netzwerk erreichbar machst – und warum Netzwerk-Sicherheit dabei entscheidend ist."><title>Localhost und dein Praxisnetz – Deployment | Asklaion</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><!-- Prevent flash: apply theme before render --><script>
+    (function() {
+      const t = localStorage.getItem('theme');
+      if (t === 'light') document.documentElement.classList.replace('dark', 'light');
+    })();
+  </script><link rel="stylesheet" href="/_astro/global.6fxD9mRf.css"></head> <body class="min-h-screen flex flex-col relative bg-light-base dark:bg-dark-base text-light-text-primary dark:text-text-primary transition-colors duration-300">   <div class="fixed inset-0 -z-10 pointer-events-none dark:block hidden" aria-hidden="true"> <div class="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#0a0a0a] to-[#0a0a0a]"></div> <div class="absolute top-0 right-0 w-[80%] h-[70%] bg-[radial-gradient(ellipse_at_top_right,rgba(245,158,11,0.25)_0%,transparent_60%)]"></div> <div class="absolute bottom-0 left-0 w-[60%] h-[50%] bg-[radial-gradient(ellipse_at_bottom_left,rgba(245,158,11,0.15)_0%,transparent_60%)]"></div> </div>   <div class="fixed inset-0 -z-10 pointer-events-none dark:hidden block" aria-hidden="true"> <div class="absolute inset-0 bg-gradient-to-br from-[#fffbeb] via-[#f8fafc] to-[#f8fafc]"></div> <div class="absolute top-0 right-0 w-[80%] h-[70%] bg-[radial-gradient(ellipse_at_top_right,rgba(245,158,11,0.12)_0%,transparent_60%)]"></div> <div class="absolute bottom-0 left-0 w-[60%] h-[50%] bg-[radial-gradient(ellipse_at_bottom_left,rgba(245,158,11,0.08)_0%,transparent_60%)]"></div> </div> <nav class="fixed top-0 left-0 right-0 z-50 bg-light-base/90 dark:bg-dark-base/90 backdrop-blur-md border-b border-light-border dark:border-dark-border transition-colors duration-300"> <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> <div class="flex items-center justify-between h-16"> <a href="/" class="flex items-center gap-2 text-light-text-primary dark:text-text-primary hover:text-academy-accent transition-colors"> <span class="font-bold text-lg">Asklaion</span> </a> <div class="hidden md:flex items-center gap-8"> <a href="/academy" class="text-light-text-secondary dark:text-text-secondary hover:text-academy-accent transition-colors text-sm font-medium">Akademie</a> <a href="/forge" class="text-light-text-secondary dark:text-text-secondary hover:text-forge-accent transition-colors text-sm font-medium">Projekte</a> <a href="https://github.com/lollylan" target="_blank" rel="noopener noreferrer" class="text-light-text-secondary dark:text-text-secondary hover:text-light-text-primary dark:hover:text-text-primary transition-colors text-sm font-medium">GitHub</a> <!-- Theme toggle --> <button id="theme-toggle" class="p-2 rounded-lg text-light-text-secondary dark:text-text-secondary hover:text-light-text-primary dark:hover:text-text-primary hover:bg-light-card dark:hover:bg-dark-card transition-colors" aria-label="Darstellung wechseln"> <!-- Sun icon (visible in dark mode) --> <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path> </svg> <!-- Moon icon (visible in light mode) --> <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path> </svg> </button> </div> <div class="flex items-center gap-2 md:hidden"> <!-- Mobile theme toggle --> <button id="theme-toggle-mobile" class="p-2 text-light-text-secondary dark:text-text-secondary hover:text-light-text-primary dark:hover:text-text-primary" aria-label="Darstellung wechseln"> <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path> </svg> <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path> </svg> </button> <button id="mobile-menu-btn" class="text-light-text-secondary dark:text-text-secondary hover:text-light-text-primary dark:hover:text-text-primary p-2" aria-label="Menü öffnen"> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg> </button> </div> </div> </div> <div id="mobile-menu" class="hidden md:hidden border-t border-light-border dark:border-dark-border bg-light-base/95 dark:bg-dark-base/95 backdrop-blur-md"> <div class="px-4 py-4 space-y-3"> <a href="/academy" class="block text-light-text-secondary dark:text-text-secondary hover:text-academy-accent transition-colors text-sm font-medium">Akademie</a> <a href="/forge" class="block text-light-text-secondary dark:text-text-secondary hover:text-forge-accent transition-colors text-sm font-medium">Projekte</a> <a href="https://github.com/lollylan" target="_blank" rel="noopener noreferrer" class="block text-light-text-secondary dark:text-text-secondary hover:text-light-text-primary dark:hover:text-text-primary transition-colors text-sm font-medium">GitHub</a> </div> </div> </nav> <main class="pt-16 flex-1">  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8"> <!-- Breadcrumb --> <nav class="mb-6 text-sm text-text-muted"> <a href="/academy" class="hover:text-academy-accent transition-colors">Akademie</a> <span class="mx-2">/</span> <a href="/academy/deployment-basics" class="hover:text-academy-accent transition-colors">Deployment</a> <span class="mx-2">/</span> <span class="text-text-secondary">Lektion 2</span> </nav> <!-- Header --> <header class="mb-8"> <div class="flex items-center gap-3 mb-2"> <span class="px-2 py-0.5 text-xs font-medium rounded bg-academy-accent/20 text-academy-accent">
+Lektion 2 von 5 </span> <span class="text-xs text-text-muted">6 Min. Lesezeit</span> </div> <h1 class="text-3xl font-bold text-text-primary">Localhost und dein Praxisnetz</h1> </header> <!-- Progress bar --> <div class="mb-8"> <div class="h-1 bg-dark-card rounded-full overflow-hidden"> <div class="h-full bg-academy-accent rounded-full transition-all duration-500" style="width: 40%"></div> </div> </div> <!-- Video embed -->  <!-- Content --> <article class="prose prose-amber max-w-none
+      [&_h1]:text-text-primary [&_h1]:font-bold
+      [&_h2]:text-text-primary [&_h2]:font-semibold [&_h2]:mt-8 [&_h2]:mb-4
+      [&_h3]:text-text-primary [&_h3]:font-medium [&_h3]:mt-5 [&_h3]:mb-2
+      [&_p]:text-text-secondary [&_p]:leading-relaxed
+      [&_a]:text-academy-accent [&_a]:no-underline hover:[&_a]:underline
+      [&_strong]:text-text-primary
+      [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded [&_code]:text-sm [&_code]:bg-[#1e293b] [&_code]:text-amber-300
+      [&_pre]:bg-[#1e293b] [&_pre]:border [&_pre]:border-dark-border [&_pre]:rounded-lg [&_pre]:relative [&_pre]:text-slate-200
+      [&_blockquote]:border-l-academy-accent [&_blockquote]:bg-dark-card/50 [&_blockquote]:rounded-r-lg [&_blockquote]:px-4 [&_blockquote]:py-3 [&_blockquote]:my-5
+      [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6 [&_li]:text-text-secondary [&_li]:mb-1
+      [&_details]:my-5
+      [&_table]:border-collapse [&_table]:w-full [&_table]:my-6 [&_th]:bg-dark-card [&_th]:px-4 [&_th]:py-2 [&_th]:text-left [&_th]:text-text-primary [&_td]:px-4 [&_td]:py-2 [&_td]:border-t [&_td]:border-dark-border [&_td]:text-text-secondary
+    ">  <h1 id="localhost-und-dein-praxisnetz">Localhost und dein Praxisnetz</h1>
+<blockquote>
+<p><strong>Wichtiger Hinweis:</strong> Alle in diesem Kurs vorgestellten Anleitungen dienen dem Erlernen grundlegender Deployment-Konzepte. Sobald Patientendaten verarbeitet werden, gelten strenge Datenschutz- und Sicherheitsanforderungen (DSGVO, Medizinprodukteverordnung). Veröffentliche Programme mit Patientenbezug niemals ohne professionelle Beratung.</p>
+</blockquote>
+<p>Du hast ein Praxis-Tool gebaut und willst es auf einem zweiten Gerät nutzen – zum Beispiel eine Wartezeit-Anzeige auf dem Fernseher im Wartezimmer. Dafür muss dein Programm <strong>im lokalen Netzwerk</strong> erreichbar sein, nicht nur auf deinem eigenen Rechner.</p>
+<h2 id="was-ist-localhost">Was ist localhost?</h2>
+<p>Wenn du ein Programm startest, zeigt dir der Browser eine Adresse wie:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>http://localhost:4321</span></span></code></pre>
+<p><strong>localhost</strong> bedeutet: “dieser Rechner hier”. Die Zahl nach dem Doppelpunkt (<strong>4321</strong>) ist der <strong>Port</strong> – eine Art Türnummer. Dein Rechner hat tausende Ports, und jedes Programm benutzt einen davon.</p>
+<p>Stell dir deinen Rechner als Mehrfamilienhaus vor: Die IP-Adresse ist die Straßenadresse, der Port ist die Wohnungsnummer. <code>localhost:4321</code> heißt also: “Mein eigener Rechner, Wohnung 4321.”</p>
+<h2 id="vom-localhost-ins-netzwerk">Vom localhost ins Netzwerk</h2>
+<p>Damit andere Geräte im Praxisnetz dein Programm sehen, musst du zwei Dinge tun:</p>
+<h3 id="1-die-ip-adresse-deines-rechners-herausfinden">1. Die IP-Adresse deines Rechners herausfinden</h3>
+<p>Dein Rechner hat im Netzwerk eine eigene Adresse (z.B. <code>192.168.1.42</code>). So findest du sie:</p>
+<p><strong>Windows:</strong> Eingabeaufforderung öffnen (Windows-Taste, “cmd” tippen), dann:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>ipconfig</span></span></code></pre>
+<p>Suche nach “IPv4-Adresse” – das ist deine Netzwerk-Adresse.</p>
+<p><strong>Mac:</strong> Terminal öffnen, dann:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>ifconfig | grep &quot;inet &quot;</span></span></code></pre>
+<h3 id="2-das-programm-ans-netzwerk-binden">2. Das Programm ans Netzwerk binden</h3>
+<p>Standardmäßig hört dein Programm nur auf <code>localhost</code> – also nur auf Anfragen vom eigenen Rechner. Du musst es anweisen, auch auf Anfragen aus dem Netzwerk zu reagieren.</p>
+<p>Sag der KI:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>Ändere den Startbefehl so, dass das Programm nicht nur auf</span></span>
+<span class="line"><span>localhost hört, sondern auf allen Netzwerk-Interfaces.</span></span>
+<span class="line"><span>Ich möchte es von anderen Geräten im lokalen Netzwerk erreichen.</span></span></code></pre>
+<p>Technisch bedeutet das meistens, <code>--host 0.0.0.0</code> zum Startbefehl hinzuzufügen. Aber das muss dich nicht kümmern – die KI weiß das.</p>
+<h3 id="3-von-einem-anderen-gerät-zugreifen">3. Von einem anderen Gerät zugreifen</h3>
+<p>Auf dem Fernseher im Wartezimmer (oder einem Tablet, Smartphone, einem anderen PC) öffnest du den Browser und tippst:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>http://192.168.1.42:4321</span></span></code></pre>
+<p>(Deine IP-Adresse + der Port deines Programms)</p>
+<p><strong>Fertig.</strong> Dein Programm läuft auf dem Praxis-PC und wird auf dem Wartezimmer-Bildschirm angezeigt.</p>
+<h2 id="praktisches-beispiel-wartezimmer-anzeige">Praktisches Beispiel: Wartezimmer-Anzeige</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>Erstelle eine Wartezeit-Anzeige für mein Wartezimmer.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Ansicht 1 (für meine MFA am Empfangs-PC):</span></span>
+<span class="line"><span>- Eingabefeld für die geschätzte Wartezeit in Minuten</span></span>
+<span class="line"><span>- Button &quot;Aktualisieren&quot;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Ansicht 2 (für den Fernseher im Wartezimmer):</span></span>
+<span class="line"><span>- Große Anzeige: &quot;Aktuelle Wartezeit: ca. XX Minuten&quot;</span></span>
+<span class="line"><span>- Die Anzeige aktualisiert sich automatisch,</span></span>
+<span class="line"><span>  wenn die MFA die Zeit ändert</span></span>
+<span class="line"><span>- Schrift groß genug, um aus 3 Metern lesbar zu sein</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Beide Ansichten sollen über den Browser im lokalen</span></span>
+<span class="line"><span>Netzwerk erreichbar sein.</span></span></code></pre>
+<h2 id="netzwerk-sicherheit-das-musst-du-wissen">Netzwerk-Sicherheit: Das musst du wissen</h2>
+<p>Sobald dein Programm im Netzwerk erreichbar ist, können <strong>alle Geräte im selben Netzwerk</strong> darauf zugreifen. Das ist ein Sicherheitsthema, besonders in einer Arztpraxis.</p>
+<h3 id="getrennte-netzwerkbereiche-sind-pflicht">Getrennte Netzwerkbereiche sind Pflicht</h3>
+<p>Eine gut eingerichtete Praxis hat <strong>mindestens drei getrennte Netzwerkbereiche:</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Bereich</th><th>Geräte</th><th>Zugriff</th></tr></thead><tbody><tr><td><strong>Praxis-LAN</strong> (Kabel)</td><td>Praxis-PCs, Drucker, PVS-Server</td><td>Nur für Praxispersonal, per Kabel verbunden</td></tr><tr><td><strong>Geräte-WLAN</strong></td><td>Wartezimmer-TV, Tablet für Anamnese</td><td>Eigenes WLAN, nur für Praxis-Geräte</td></tr><tr><td><strong>Patienten-WLAN</strong></td><td>Smartphones der Patienten</td><td>Komplett getrennt, kein Zugriff auf Praxis-Geräte</td></tr></tbody></table>
+<p><strong>Warum ist das wichtig?</strong> Wenn dein Patienten-WLAN und dein Praxis-LAN im selben Netzwerk laufen, könnte theoretisch jedes Patienten-Smartphone auf dein Praxis-Tool zugreifen. Das ist ein schwerer Datenschutzverstoß.</p>
+<h3 id="dedizierte-firewall">Dedizierte Firewall</h3>
+<p>Eine Praxis-Firewall ist keine Option, sondern Pflicht. Sie:</p>
+<ul>
+<li>Trennt die Netzwerkbereiche voneinander</li>
+<li>Verhindert, dass das Patienten-WLAN auf Praxis-Geräte zugreift</li>
+<li>Blockiert unerwünschte Verbindungen von außen</li>
+<li>Protokolliert Zugriffe (wichtig für die DSGVO-Dokumentation)</li>
+</ul>
+<blockquote>
+<p><strong>Empfehlung:</strong> Wenn deine Praxis keine dedizierte Firewall und keine Netztrennung hat, lass das von einem IT-Dienstleister einrichten, <strong>bevor</strong> du Praxis-Tools im Netzwerk bereitstellst. Die Kosten dafür sind überschaubar und die Investition schützt nicht nur deine Tools, sondern dein gesamtes Praxisnetz.</p>
+</blockquote>
+<h3 id="nicht-auf-dem-pvs-rechner-der-richtige-computer-für-deine-tools">Nicht auf dem PVS-Rechner: Der richtige Computer für deine Tools</h3>
+<p>Eine wichtige Empfehlung: <strong>Lasse deine selbst programmierten Tools nicht auf dem gleichen Rechner laufen, auf dem dein Praxisverwaltungssystem (PVS) läuft.</strong> Der Grund: Ein fehlerhaftes Programm könnte im schlimmsten Fall Systemressourcen blockieren, Ports belegen oder instabil laufen – und damit den PVS-Betrieb stören. Die Datenbank deines PVS ist das Herzstück deiner Praxis, und das Risiko, dass ein Vibecoding-Experiment sie beeinträchtigt, solltest du minimieren.</p>
+<p><strong>Drei Optionen für den richtigen Rechner:</strong></p>
+<p><strong>Option 1: Ein vorhandener Client-PC</strong>
+Der einfachste Weg. Nutze einen Praxis-PC, der ohnehin dauerhaft eingeschaltet ist – zum Beispiel den Rechner an der Anmeldung. Dort laufen deine Tools im Hintergrund und sind im Netzwerk erreichbar. Der PC muss kein Leistungswunder sein – die meisten Praxis-Tools sind anspruchslos.</p>
+<p><strong>Option 2: Ein dedizierter Praxis-Tool-Server</strong>
+Wenn du regelmäßig eigene Tools betreibst, lohnt sich ein eigener kleiner Rechner nur für diesen Zweck. Das kann ein günstiger Mini-PC sein (ab ca. 200 EUR), der leise unter dem Schreibtisch steht und rund um die Uhr läuft.</p>
+<p><strong>Option 3: Server mit Grafikkarte für lokale KI</strong>
+Wenn du in Zukunft KI-Berechnungen lokal durchführen möchtest – also ohne Cloud-Anbindung – brauchst du einen Rechner mit einer leistungsfähigen Grafikkarte (GPU). Damit könntest du z.B. lokale Sprachmodelle betreiben, die keine Daten ins Internet senden. Das ist die aufwändigste, aber auch die datenschutzfreundlichste Option.</p>
+<h3 id="statische-ip-adresse-einrichten">Statische IP-Adresse einrichten</h3>
+<p>Wenn dein Tool-Rechner im Netzwerk immer unter derselben Adresse erreichbar sein soll (z.B. <code>http://192.168.1.100:4321</code>), braucht er eine <strong>statische IP-Adresse</strong>. Standardmäßig vergibt dein Router die IP-Adressen automatisch (DHCP) – das heißt, die Adresse kann sich nach einem Neustart ändern. Für einen Server, den andere Geräte zuverlässig finden müssen, ist das unpraktisch.</p>
+<p><strong>So richtest du eine statische IP ein (Windows):</strong></p>
+<ol>
+<li>Öffne <strong>Einstellungen</strong> → <strong>Netzwerk und Internet</strong> → <strong>Ethernet</strong> (oder WLAN)</li>
+<li>Klicke auf deine aktive Verbindung → <strong>IP-Einstellungen bearbeiten</strong></li>
+<li>Wähle <strong>Manuell</strong> statt <strong>Automatisch (DHCP)</strong></li>
+<li>Trage folgende Werte ein:</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Feld</th><th>Beispielwert</th><th>Erklärung</th></tr></thead><tbody><tr><td>IP-Adresse</td><td><code>192.168.1.100</code></td><td>Eine freie Adresse in deinem Netzwerk</td></tr><tr><td>Subnetzmaske</td><td><code>255.255.255.0</code></td><td>Meistens dieser Standardwert</td></tr><tr><td>Gateway</td><td><code>192.168.1.1</code></td><td>Die IP-Adresse deines Routers</td></tr><tr><td>Bevorzugter DNS</td><td><code>192.168.1.1</code></td><td>Meistens identisch mit dem Gateway</td></tr></tbody></table>
+<ol start="5">
+<li>Speichern.</li>
+</ol>
+<p><strong>Wichtig:</strong></p>
+<ul>
+<li>Wähle eine IP-Adresse <strong>außerhalb</strong> des DHCP-Bereichs deines Routers (im Router-Menü einsehbar), damit es keine Konflikte gibt</li>
+<li>Notiere dir die IP-Adresse – du brauchst sie, um die Tools von anderen Geräten aufzurufen</li>
+<li>Falls du unsicher bist: Dein IT-Dienstleister kann die statische IP in wenigen Minuten einrichten</li>
+</ul>
+<p>Alternativ kannst du auch im <strong>Router</strong> eine feste IP für den Rechner reservieren (DHCP-Reservierung). Das hat den Vorteil, dass du am Rechner selbst nichts umstellen musst – der Router vergibt ihm dann immer dieselbe Adresse.</p>
+<h3 id="einfache-checkliste-für-sichere-nutzung-im-praxisnetz">Einfache Checkliste für sichere Nutzung im Praxisnetz</h3>
+<ol>
+<li>Praxis-PCs und Patienten-WLAN sind <strong>getrennte</strong> Netzwerke</li>
+<li>Eine Firewall regelt, wer auf was zugreifen darf</li>
+<li>Dein Praxis-Tool läuft nur im <strong>Praxis-LAN oder Geräte-WLAN</strong>, nie im Patienten-Netz</li>
+<li>Der Port deines Programms ist nicht von außen (Internet) erreichbar</li>
+<li>Wenn das Tool Patientendaten anzeigt: Zugriff nur von autorisierten Geräten</li>
+</ol>
+<h2 id="zusammenfassung">Zusammenfassung</h2>
+<ul>
+<li><strong>localhost</strong> = nur dein Rechner. <strong>Netzwerk</strong> = andere Geräte im selben Netz.</li>
+<li>Die KI kann dir helfen, dein Programm im Netzwerk erreichbar zu machen.</li>
+<li><strong>Nicht auf dem PVS-Rechner:</strong> Eigene Tools gehören auf einen separaten Client-PC oder dedizierten Server, um die PVS-Datenbank nicht zu gefährden.</li>
+<li>Für zuverlässige Erreichbarkeit: <strong>Statische IP-Adresse</strong> einrichten.</li>
+<li><strong>Netzwerk-Sicherheit ist kein optionales Extra:</strong> Getrennte Netzbereiche und eine Firewall sind Grundvoraussetzung für den Betrieb von Praxis-Tools im Netzwerk.</li>
+<li>Praxis-Tools gehören ins Praxis-LAN, <strong>niemals</strong> ins Patienten-WLAN.</li>
+</ul>  </article> <!-- Navigation --> <nav class="mt-10 pt-8 border-t border-dark-border flex justify-between items-center gap-4"> <a href="/academy/deployment-basics/lektion-01" class="group flex items-center gap-2 text-text-secondary hover:text-academy-accent transition-colors"> <svg class="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path> </svg> <div class="text-right"> <span class="text-xs text-text-muted block">Vorherige Lektion</span> <span class="text-sm font-medium">Was bedeutet Deployment?</span> </div> </a> <a id="next-lesson-link" href="/academy/deployment-basics/lektion-03" data-course="deployment-basics" data-lesson="2" data-total="5" class="group flex items-center gap-3 px-5 py-3 bg-green-600/20 border border-green-600/40 hover:bg-green-600/30 rounded-lg transition-colors text-right"> <div> <span class="text-xs text-green-400 block">Lektion abschließen & weiter</span> <span class="text-sm font-medium text-text-primary">Statische Webseiten mit GitHub Pages</span> </div> <svg class="w-5 h-5 text-green-400 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path> </svg> </a> </nav> </div> <script type="module">document.querySelectorAll("article pre").forEach(e=>{const o=document.createElement("div");o.className="relative group",e.parentNode.insertBefore(o,e),o.appendChild(e);const t=document.createElement("button");t.className="absolute top-2 right-2 px-2 py-1 text-xs rounded bg-dark-border/80 text-text-muted hover:text-text-primary hover:bg-dark-border opacity-0 group-hover:opacity-100 transition-all duration-200 font-sans",t.textContent="Kopieren",t.addEventListener("click",()=>{const n=(e.querySelector("code")||e).textContent||"";navigator.clipboard.writeText(n).then(()=>{t.textContent="Kopiert!",t.classList.add("text-academy-accent"),setTimeout(()=>{t.textContent="Kopieren",t.classList.remove("text-academy-accent")},2e3)})}),o.appendChild(t)});</script> <script type="module">const e=document.getElementById("next-lesson-link");if(e){const t=e.dataset.course,s=parseInt(e.dataset.lesson,10),l=parseInt(e.dataset.total,10);e.addEventListener("click",()=>{localStorage.setItem(`academy_${t}_lesson_${s}`,"completed");let o=!0;for(let a=1;a<=l;a++)if(localStorage.getItem(`academy_${t}_lesson_${a}`)!=="completed"){o=!1;break}o&&localStorage.setItem(`academy_course_${t}`,"completed")})}</script>  </main> <footer class="border-t border-light-border dark:border-dark-border bg-light-base/80 dark:bg-dark-base/80 backdrop-blur-md transition-colors duration-300"> <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"> <div class="flex flex-col md:flex-row justify-between items-center gap-4"> <div class="flex items-center gap-6 text-sm text-light-text-muted dark:text-text-muted"> <a href="/impressum" class="hover:text-light-text-secondary dark:hover:text-text-secondary transition-colors">Impressum</a> <a href="/anforderungen" class="hover:text-light-text-secondary dark:hover:text-text-secondary transition-colors">Anforderungen</a> <a href="/lizenz" class="hover:text-light-text-secondary dark:hover:text-text-secondary transition-colors">Lizenz</a> <a href="https://github.com/lollylan" target="_blank" rel="noopener noreferrer" class="hover:text-light-text-secondary dark:hover:text-text-secondary transition-colors">GitHub</a> </div> <p class="text-sm text-light-text-muted dark:text-text-muted">&copy; 2026 Dr. Florian Rasche &middot; Asklaion &middot; MIT Lizenz</p> </div> <p class="text-center text-xs text-light-text-muted dark:text-text-muted mt-4">Open Source &middot; MIT Lizenz &middot; 100 % lokal</p> </div> </footer> <script type="module">function n(){const t=document.documentElement,e=t.classList.contains("dark");t.classList.replace(e?"dark":"light",e?"light":"dark"),localStorage.setItem("theme",e?"light":"dark")}document.getElementById("theme-toggle")?.addEventListener("click",n);document.getElementById("theme-toggle-mobile")?.addEventListener("click",n);document.getElementById("mobile-menu-btn")?.addEventListener("click",()=>{document.getElementById("mobile-menu")?.classList.toggle("hidden")});</script> </body> </html>

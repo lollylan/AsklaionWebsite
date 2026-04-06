@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="de" class="dark"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Baue Schritt für Schritt dein erstes Praxis-Tool – nur durch Gespräche mit der KI, ganz ohne Programmierkenntnisse."><title>Dein erstes Programm in 5 Minuten – Vibecoding für absolute Anfänger | Asklaion</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><!-- Prevent flash: apply theme before render --><script>
+    (function() {
+      const t = localStorage.getItem('theme');
+      if (t === 'light') document.documentElement.classList.replace('dark', 'light');
+    })();
+  </script><link rel="stylesheet" href="/_astro/global.6fxD9mRf.css"></head> <body class="min-h-screen flex flex-col relative bg-light-base dark:bg-dark-base text-light-text-primary dark:text-text-primary transition-colors duration-300">   <div class="fixed inset-0 -z-10 pointer-events-none dark:block hidden" aria-hidden="true"> <div class="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#0a0a0a] to-[#0a0a0a]"></div> <div class="absolute top-0 right-0 w-[80%] h-[70%] bg-[radial-gradient(ellipse_at_top_right,rgba(245,158,11,0.25)_0%,transparent_60%)]"></div> <div class="absolute bottom-0 left-0 w-[60%] h-[50%] bg-[radial-gradient(ellipse_at_bottom_left,rgba(245,158,11,0.15)_0%,transparent_60%)]"></div> </div>   <div class="fixed inset-0 -z-10 pointer-events-none dark:hidden block" aria-hidden="true"> <div class="absolute inset-0 bg-gradient-to-br from-[#fffbeb] via-[#f8fafc] to-[#f8fafc]"></div> <div class="absolute top-0 right-0 w-[80%] h-[70%] bg-[radial-gradient(ellipse_at_top_right,rgba(245,158,11,0.12)_0%,transparent_60%)]"></div> <div class="absolute bottom-0 left-0 w-[60%] h-[50%] bg-[radial-gradient(ellipse_at_bottom_left,rgba(245,158,11,0.08)_0%,transparent_60%)]"></div> </div> <nav class="fixed top-0 left-0 right-0 z-50 bg-light-base/90 dark:bg-dark-base/90 backdrop-blur-md border-b border-light-border dark:border-dark-border transition-colors duration-300"> <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> <div class="flex items-center justify-between h-16"> <a href="/" class="flex items-center gap-2 text-light-text-primary dark:text-text-primary hover:text-academy-accent transition-colors"> <span class="font-bold text-lg">Asklaion</span> </a> <div class="hidden md:flex items-center gap-8"> <a href="/academy" class="text-light-text-secondary dark:text-text-secondary hover:text-academy-accent transition-colors text-sm font-medium">Akademie</a> <a href="/forge" class="text-light-text-secondary dark:text-text-secondary hover:text-forge-accent transition-colors text-sm font-medium">Projekte</a> <a href="https://github.com/lollylan" target="_blank" rel="noopener noreferrer" class="text-light-text-secondary dark:text-text-secondary hover:text-light-text-primary dark:hover:text-text-primary transition-colors text-sm font-medium">GitHub</a> <!-- Theme toggle --> <button id="theme-toggle" class="p-2 rounded-lg text-light-text-secondary dark:text-text-secondary hover:text-light-text-primary dark:hover:text-text-primary hover:bg-light-card dark:hover:bg-dark-card transition-colors" aria-label="Darstellung wechseln"> <!-- Sun icon (visible in dark mode) --> <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path> </svg> <!-- Moon icon (visible in light mode) --> <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path> </svg> </button> </div> <div class="flex items-center gap-2 md:hidden"> <!-- Mobile theme toggle --> <button id="theme-toggle-mobile" class="p-2 text-light-text-secondary dark:text-text-secondary hover:text-light-text-primary dark:hover:text-text-primary" aria-label="Darstellung wechseln"> <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path> </svg> <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path> </svg> </button> <button id="mobile-menu-btn" class="text-light-text-secondary dark:text-text-secondary hover:text-light-text-primary dark:hover:text-text-primary p-2" aria-label="Menü öffnen"> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg> </button> </div> </div> </div> <div id="mobile-menu" class="hidden md:hidden border-t border-light-border dark:border-dark-border bg-light-base/95 dark:bg-dark-base/95 backdrop-blur-md"> <div class="px-4 py-4 space-y-3"> <a href="/academy" class="block text-light-text-secondary dark:text-text-secondary hover:text-academy-accent transition-colors text-sm font-medium">Akademie</a> <a href="/forge" class="block text-light-text-secondary dark:text-text-secondary hover:text-forge-accent transition-colors text-sm font-medium">Projekte</a> <a href="https://github.com/lollylan" target="_blank" rel="noopener noreferrer" class="block text-light-text-secondary dark:text-text-secondary hover:text-light-text-primary dark:hover:text-text-primary transition-colors text-sm font-medium">GitHub</a> </div> </div> </nav> <main class="pt-16 flex-1">  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8"> <!-- Breadcrumb --> <nav class="mb-6 text-sm text-text-muted"> <a href="/academy" class="hover:text-academy-accent transition-colors">Akademie</a> <span class="mx-2">/</span> <a href="/academy/vibecoding-anfaenger" class="hover:text-academy-accent transition-colors">Vibecoding für absolute Anfänger</a> <span class="mx-2">/</span> <span class="text-text-secondary">Lektion 3</span> </nav> <!-- Header --> <header class="mb-8"> <div class="flex items-center gap-3 mb-2"> <span class="px-2 py-0.5 text-xs font-medium rounded bg-academy-accent/20 text-academy-accent">
+Lektion 3 von 3 </span> <span class="text-xs text-text-muted">5 Min. Lesezeit</span> </div> <h1 class="text-3xl font-bold text-text-primary">Dein erstes Programm in 5 Minuten</h1> </header> <!-- Progress bar --> <div class="mb-8"> <div class="h-1 bg-dark-card rounded-full overflow-hidden"> <div class="h-full bg-academy-accent rounded-full transition-all duration-500" style="width: 100%"></div> </div> </div> <!-- Video embed -->  <!-- Content --> <article class="prose prose-amber max-w-none
+      [&_h1]:text-text-primary [&_h1]:font-bold
+      [&_h2]:text-text-primary [&_h2]:font-semibold [&_h2]:mt-8 [&_h2]:mb-4
+      [&_h3]:text-text-primary [&_h3]:font-medium [&_h3]:mt-5 [&_h3]:mb-2
+      [&_p]:text-text-secondary [&_p]:leading-relaxed
+      [&_a]:text-academy-accent [&_a]:no-underline hover:[&_a]:underline
+      [&_strong]:text-text-primary
+      [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded [&_code]:text-sm [&_code]:bg-[#1e293b] [&_code]:text-amber-300
+      [&_pre]:bg-[#1e293b] [&_pre]:border [&_pre]:border-dark-border [&_pre]:rounded-lg [&_pre]:relative [&_pre]:text-slate-200
+      [&_blockquote]:border-l-academy-accent [&_blockquote]:bg-dark-card/50 [&_blockquote]:rounded-r-lg [&_blockquote]:px-4 [&_blockquote]:py-3 [&_blockquote]:my-5
+      [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6 [&_li]:text-text-secondary [&_li]:mb-1
+      [&_details]:my-5
+      [&_table]:border-collapse [&_table]:w-full [&_table]:my-6 [&_th]:bg-dark-card [&_th]:px-4 [&_th]:py-2 [&_th]:text-left [&_th]:text-text-primary [&_td]:px-4 [&_td]:py-2 [&_td]:border-t [&_td]:border-dark-border [&_td]:text-text-secondary
+    ">  <h1 id="dein-erstes-programm-in-5-minuten">Dein erstes Programm in 5 Minuten</h1>
+<p>Du bist Ärztin oder Arzt und hast noch nie in deinem Leben ein Programm geschrieben? Perfekt. Genau dafür ist diese Lektion da. Du wirst heute dein erstes funktionierendes Praxis-Tool bauen – nur durch ein Gespräch mit einer KI.</p>
+<h2 id="was-du-brauchst">Was du brauchst</h2>
+<ul>
+<li>Einen Computer mit Internetzugang</li>
+<li>Zugang zu einem KI-Coding-Assistenten (z.B. Claude Code, Cursor, Windsurf oder ein ähnliches Tool)</li>
+<li>10–15 Minuten Zeit</li>
+</ul>
+<blockquote>
+<p><strong>Hinweis:</strong> Es spielt keine Rolle, welches Tool du benutzt. Das Prinzip ist immer dasselbe: Du beschreibst, was du willst, und die KI schreibt den Code. In dieser Lektion zeigen wir dir, <strong>wie du mit der KI sprichst</strong> – das funktioniert überall gleich.</p>
+</blockquote>
+<h2 id="das-prinzip-programmieren-durch-gespräche">Das Prinzip: Programmieren durch Gespräche</h2>
+<p>Stell dir vor, du hättest einen Assistenten, der perfekt programmieren kann, aber nicht weiß, was du brauchst. Dein Job ist es, ihm klar zu sagen, was er bauen soll. Du brauchst dazu kein einziges technisches Wort zu kennen.</p>
+<p>So sieht das in der Praxis aus:</p>
+<ol>
+<li>Du beschreibst dein Programm in normalen Sätzen</li>
+<li>Die KI erstellt den Code und startet das Programm</li>
+<li>Du schaust es dir an und sagst, was anders sein soll</li>
+<li>Die KI passt es an</li>
+</ol>
+<p>Das ist alles. Kein Tippen von Code, kein Lernen von Programmiersprachen.</p>
+<hr/>
+<h2 id="schritt-1-dein-erster-prototyp">Schritt 1: Dein erster Prototyp</h2>
+<p>Lass uns mit etwas Einfachem anfangen. Sag der KI:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>Erstelle mir einen BMI-Rechner als Webseite.</span></span>
+<span class="line"><span>Der Patient gibt Gewicht in kg und Größe in cm ein.</span></span>
+<span class="line"><span>Das Programm zeigt den BMI-Wert und die Kategorie an</span></span>
+<span class="line"><span>(Untergewicht, Normalgewicht, Übergewicht, Adipositas).</span></span>
+<span class="line"><span>Das Design soll schlicht und professionell sein.</span></span></code></pre>
+<p><strong>Was passiert jetzt?</strong> Die KI erstellt eine HTML-Datei mit dem kompletten Programm. Je nach Tool öffnet sich automatisch eine Vorschau, oder die KI erklärt dir, wie du die Datei im Browser öffnest.</p>
+<p><strong>Probier es aus:</strong> Gib ein paar Testwerte ein. 80 kg bei 175 cm sollte einen BMI von etwa 26,1 ergeben.</p>
+<hr/>
+<h2 id="schritt-2-erste-verbesserung--medizinisch-sinnvoller-machen">Schritt 2: Erste Verbesserung – Medizinisch sinnvoller machen</h2>
+<p>Dein BMI-Rechner funktioniert, aber er ist noch sehr einfach. Jetzt kommt der Vorteil von Vibecoding: Du verbesserst das Programm einfach durch ein weiteres Gespräch.</p>
+<p>Sag der KI:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>Verbessere den BMI-Rechner:</span></span>
+<span class="line"><span>- Füge eine farbliche Markierung der Kategorie hinzu</span></span>
+<span class="line"><span>  (grün für Normalgewicht, gelb für Übergewicht, rot für Adipositas)</span></span>
+<span class="line"><span>- Zeige den gesunden BMI-Bereich für die eingegebene Größe an</span></span>
+<span class="line"><span>- Füge ein Feld für das Alter hinzu und weise darauf hin,</span></span>
+<span class="line"><span>  dass BMI-Grenzen bei älteren Patienten anders bewertet werden</span></span></code></pre>
+<p>Innerhalb von Sekunden hast du ein deutlich besseres Tool. Und du hast dafür keinen einzigen Buchstaben Code geschrieben.</p>
+<hr/>
+<h2 id="schritt-3-zweite-verbesserung--praxistauglich-machen">Schritt 3: Zweite Verbesserung – Praxistauglich machen</h2>
+<p>Noch eine Runde. Diesmal machst du es wirklich nützlich für deinen Praxisalltag:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>Erweitere den BMI-Rechner um:</span></span>
+<span class="line"><span>- Einen Drucken-Button, der eine übersichtliche Zusammenfassung</span></span>
+<span class="line"><span>  für die Patientenakte erstellt</span></span>
+<span class="line"><span>- Ein Eingabefeld für den Patientennamen</span></span>
+<span class="line"><span>- Eine kurze Empfehlung passend zur BMI-Kategorie</span></span>
+<span class="line"><span>  (z.B. &quot;Ernährungsberatung empfohlen&quot;)</span></span></code></pre>
+<p><strong>In drei Schritten</strong> hast du aus einer einfachen Idee ein praxistaugliches Tool gemacht. Genau so funktioniert Vibecoding: klein anfangen, schrittweise verbessern.</p>
+<hr/>
+<h2 id="weitere-ideen-zum-ausprobieren">Weitere Ideen zum Ausprobieren</h2>
+<p>Du hast jetzt das Prinzip verstanden. Hier sind weitere Ideen, die du genauso einfach bauen kannst:</p>
+<blockquote>
+<p><strong>Wichtiger Hinweis:</strong> Diese Beispiele dienen ausschließlich dem Ausprobieren des prinzipiellen Ablaufs. Gerade bei medizinischen Anwendungen wie Wechselwirkungsprüfungen oder Laborwert-Rechnern braucht es in der Praxis eine verlässliche, geprüfte Datenquelle – und solche Programme fallen unter die Medizinprodukte-Verordnung. Sie dürfen auf keinen Fall ohne Weiteres in der echten klinischen Anwendung eingesetzt werden. Hier geht es erst einmal nur darum, zu lernen, wie VibeCoding grundsätzlich funktioniert.</p>
+</blockquote>
+<h3 id="medikamenten-wechselwirkungs-checker">Medikamenten-Wechselwirkungs-Checker</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>Erstelle eine Webseite, auf der ich zwei Medikamentennamen eingeben kann.</span></span>
+<span class="line"><span>Das Programm soll bekannte Wechselwirkungen zwischen den beiden</span></span>
+<span class="line"><span>Medikamenten anzeigen. Verwende als Datenquelle eine fest eingebaute</span></span>
+<span class="line"><span>Liste der häufigsten Wechselwirkungen.</span></span></code></pre>
+<h3 id="wartezeit-anzeige-für-das-wartezimmer">Wartezeit-Anzeige für das Wartezimmer</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>Erstelle eine Wartezeit-Anzeige für mein Praxis-Wartezimmer.</span></span>
+<span class="line"><span>Ich kann die geschätzte Wartezeit in Minuten eingeben.</span></span>
+<span class="line"><span>Auf einem zweiten Bildschirm im Wartezimmer soll die Wartezeit</span></span>
+<span class="line"><span>groß und gut lesbar angezeigt werden.</span></span>
+<span class="line"><span>Die Anzeige soll sich automatisch aktualisieren.</span></span></code></pre>
+<h3 id="arztbrief-textbausteine">Arztbrief-Textbausteine</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>Erstelle ein Tool für Arztbrief-Textbausteine.</span></span>
+<span class="line"><span>Ich kann Textbausteine anlegen mit einem Kürzel und dem vollen Text.</span></span>
+<span class="line"><span>Wenn ich ein Kürzel eingebe, wird der volle Text angezeigt</span></span>
+<span class="line"><span>und ich kann ihn mit einem Klick kopieren.</span></span>
+<span class="line"><span>Zum Beispiel: Kürzel &quot;diab2&quot; zeigt den Standardtext für</span></span>
+<span class="line"><span>Diabetes mellitus Typ 2 Verlaufsbeschreibung.</span></span></code></pre>
+<h3 id="praxis-rechner-für-laborwerte">Praxis-Rechner für Laborwerte</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>Erstelle einen Rechner für die glomeruläre Filtrationsrate (GFR)</span></span>
+<span class="line"><span>nach der CKD-EPI-Formel.</span></span>
+<span class="line"><span>Eingabefelder: Kreatinin (mg/dl), Alter, Geschlecht.</span></span>
+<span class="line"><span>Zeige die GFR an und die CKD-Stufe (G1 bis G5).</span></span></code></pre>
+<h3 id="impfkalender-check">Impfkalender-Check</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>Erstelle ein Tool, in dem ich das Geburtsdatum eines Kindes eingebe.</span></span>
+<span class="line"><span>Das Tool zeigt alle empfohlenen Impfungen nach STIKO-Kalender an</span></span>
+<span class="line"><span>und markiert, welche Impfungen aktuell fällig sind.</span></span></code></pre>
+<hr/>
+<h2 id="tipps-für-gute-ergebnisse">Tipps für gute Ergebnisse</h2>
+<p><strong>Sei konkret.</strong> “Erstelle ein Praxis-Tool” ist zu vage. “Erstelle einen BMI-Rechner mit Eingabefeldern für Gewicht und Größe” ist besser.</p>
+<p><strong>Beschreibe das Ergebnis, nicht den Weg.</strong> Du musst nicht wissen, welche Programmiersprache verwendet werden soll. Beschreibe einfach, was du auf dem Bildschirm sehen willst.</p>
+<p><strong>Verbessere in kleinen Schritten.</strong> Bau erst die Grundversion, dann füge Funktionen hinzu. Versuch nicht, alles auf einmal zu beschreiben.</p>
+<p><strong>Wenn etwas nicht stimmt – sag es einfach.</strong> “Die Farben sind zu dunkel”, “Der Button ist zu klein”, “Die Berechnung ist falsch” – die KI versteht das und korrigiert es.</p>
+<p><strong>Nutze dein Fachwissen.</strong> Du weißt besser als jede KI, was in deinem Praxisalltag funktioniert. Die KI kann programmieren, aber du kennst die Medizin.</p>
+<hr/>
+<h2 id="was-du-gelernt-hast">Was du gelernt hast</h2>
+<ul>
+<li>Du kannst ein funktionierendes Programm erstellen, ohne eine Zeile Code zu schreiben</li>
+<li>Durch iteratives Verbessern wird aus einem einfachen Prototyp ein nützliches Tool</li>
+<li>Dein medizinisches Fachwissen ist der entscheidende Vorteil – die KI liefert nur die technische Umsetzung</li>
+<li>Alle Beispiele in dieser Lektion kannst du in unter 10 Minuten nachbauen</li>
+</ul>
+<h2 id="nächste-schritte">Nächste Schritte</h2>
+<p>Nimm dir jetzt 10 Minuten und baue eines der Beispiele oben nach. Oder noch besser: Überlege dir, welche Aufgabe in <strong>deinem</strong> Praxisalltag Zeit kostet, und beschreibe sie der KI. Du wirst überrascht sein, wie schnell du ein erstes Ergebnis bekommst.</p>  </article> <!-- Navigation --> <nav class="mt-10 pt-8 border-t border-dark-border flex justify-between items-center gap-4"> <a href="/academy/vibecoding-anfaenger/lektion-02" class="group flex items-center gap-2 text-text-secondary hover:text-academy-accent transition-colors"> <svg class="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path> </svg> <div class="text-right"> <span class="text-xs text-text-muted block">Vorherige Lektion</span> <span class="text-sm font-medium">Dein erster Prompt</span> </div> </a> <a id="next-lesson-link" href="/academy/vibecoding-anfaenger" data-course="vibecoding-anfaenger" data-lesson="3" data-total="3" class="group flex items-center gap-3 px-5 py-3 bg-green-600/20 border border-green-600/40 hover:bg-green-600/30 rounded-lg transition-colors text-right"> <div> <span class="text-xs text-green-400 block">Kurs abschließen</span> <span class="text-sm font-medium text-text-primary">Zurück zur Kursübersicht</span> </div> <svg class="w-5 h-5 text-green-400 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path> </svg> </a> </nav> </div> <script type="module">document.querySelectorAll("article pre").forEach(e=>{const o=document.createElement("div");o.className="relative group",e.parentNode.insertBefore(o,e),o.appendChild(e);const t=document.createElement("button");t.className="absolute top-2 right-2 px-2 py-1 text-xs rounded bg-dark-border/80 text-text-muted hover:text-text-primary hover:bg-dark-border opacity-0 group-hover:opacity-100 transition-all duration-200 font-sans",t.textContent="Kopieren",t.addEventListener("click",()=>{const n=(e.querySelector("code")||e).textContent||"";navigator.clipboard.writeText(n).then(()=>{t.textContent="Kopiert!",t.classList.add("text-academy-accent"),setTimeout(()=>{t.textContent="Kopieren",t.classList.remove("text-academy-accent")},2e3)})}),o.appendChild(t)});</script> <script type="module">const e=document.getElementById("next-lesson-link");if(e){const t=e.dataset.course,s=parseInt(e.dataset.lesson,10),l=parseInt(e.dataset.total,10);e.addEventListener("click",()=>{localStorage.setItem(`academy_${t}_lesson_${s}`,"completed");let o=!0;for(let a=1;a<=l;a++)if(localStorage.getItem(`academy_${t}_lesson_${a}`)!=="completed"){o=!1;break}o&&localStorage.setItem(`academy_course_${t}`,"completed")})}</script>  </main> <footer class="border-t border-light-border dark:border-dark-border bg-light-base/80 dark:bg-dark-base/80 backdrop-blur-md transition-colors duration-300"> <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"> <div class="flex flex-col md:flex-row justify-between items-center gap-4"> <div class="flex items-center gap-6 text-sm text-light-text-muted dark:text-text-muted"> <a href="/impressum" class="hover:text-light-text-secondary dark:hover:text-text-secondary transition-colors">Impressum</a> <a href="/anforderungen" class="hover:text-light-text-secondary dark:hover:text-text-secondary transition-colors">Anforderungen</a> <a href="/lizenz" class="hover:text-light-text-secondary dark:hover:text-text-secondary transition-colors">Lizenz</a> <a href="https://github.com/lollylan" target="_blank" rel="noopener noreferrer" class="hover:text-light-text-secondary dark:hover:text-text-secondary transition-colors">GitHub</a> </div> <p class="text-sm text-light-text-muted dark:text-text-muted">&copy; 2026 Dr. Florian Rasche &middot; Asklaion &middot; MIT Lizenz</p> </div> <p class="text-center text-xs text-light-text-muted dark:text-text-muted mt-4">Open Source &middot; MIT Lizenz &middot; 100 % lokal</p> </div> </footer> <script type="module">function n(){const t=document.documentElement,e=t.classList.contains("dark");t.classList.replace(e?"dark":"light",e?"light":"dark"),localStorage.setItem("theme",e?"light":"dark")}document.getElementById("theme-toggle")?.addEventListener("click",n);document.getElementById("theme-toggle-mobile")?.addEventListener("click",n);document.getElementById("mobile-menu-btn")?.addEventListener("click",()=>{document.getElementById("mobile-menu")?.classList.toggle("hidden")});</script> </body> </html>
