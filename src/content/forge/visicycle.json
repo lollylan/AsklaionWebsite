@@ -1,0 +1,17 @@
+{
+  "name": "VisiCycle",
+  "slug": "visicycle",
+  "category": "install",
+  "tags": ["Hausbesuche", "Planung"],
+  "anforderung": "GERING",
+  "description": "VisiCycle hilft dabei, bei regelmäßig wiederkehrenden Hausbesuchen den Überblick zu behalten – z. B. Heimvisiten oder Visiten bei chronisch Kranken, die in bestimmten Intervallen durchzuführen sind. Auch bei mehreren Behandlern behält man den Überblick, wer wann wo war. Die optimale Tagesroute wird automatisch berechnet, um einen möglichst kurzen Weg zurückzulegen. Über einen einstellbaren Umkreis lässt sich festlegen, welche Patienten angefahren werden – praktisch z. B. wenn man statt mit dem Auto lieber mit dem Fahrrad unterwegs sein möchte. Funktioniert vollständig offline – lediglich bei der Patientenanlage erfolgt ein einmaliger anonymisierter Geodatenabruf.",
+  "github_url": "https://github.com/lollylan/VisiCycle",
+  "release_url": "https://github.com/lollylan/VisiCycle/releases/latest",
+  "demo_url": "",
+  "video_url": "https://www.youtube.com/embed/Tkyc-IRuxGo",
+  "academy_course_slug": null,
+  "screenshot": "/images/visicycle.png",
+  "notice": "VisiCycle wird nicht weiterentwickelt. Die Funktionen sind vollständig in VisiCore integriert.",
+  "notice_link": "/forge/visicore",
+  "notice_link_label": "Zu VisiCore wechseln"
+}

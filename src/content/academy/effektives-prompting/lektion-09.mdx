@@ -1,0 +1,144 @@
+---
+title: "Iteratives Verfeinern"
+course: "effektives-prompting"
+lesson_number: 9
+description: "Dein erster Prompt ist nie dein bester – wie du durch gezieltes Nachbessern deutlich bessere Ergebnisse bekommst."
+video_url: ""
+---
+
+# Iteratives Verfeinern
+
+> **Wichtiger Hinweis:** Alle in diesem Kurs vorgestellten Programme dienen ausschließlich dem Erlernen von Prompting-Techniken. Sie sind nicht für die Anwendung am Patienten gedacht. Insbesondere medizinische Tools könnten einem Medizinprodukt gleichkommen und dürfen ohne regulatorische Zulassung nicht im klinischen Alltag eingesetzt werden.
+
+Du kennst das aus der Medizin: Ein Assistenzarzt gibt dir seinen ersten Arztbrief-Entwurf, und du gehst ihn mit ihm durch. "Hier fehlt der Befund. Das ist zu lang. Die Empfehlung muss konkreter sein." So funktioniert auch die Arbeit mit KI: **Dein erster Prompt ist ein Entwurf, nicht das Endergebnis.**
+
+## Das Prinzip
+
+Statt den perfekten Prompt zu formulieren (was selten gelingt), arbeitest du in Runden:
+
+1. **Erster Prompt:** Grobe Richtung vorgeben
+2. **Ergebnis prüfen:** Was stimmt, was nicht?
+3. **Gezielt nachsteuern:** Nur das korrigieren, was fehlt
+4. **Wiederholen**, bis das Ergebnis passt
+
+Das Wichtige: Du musst nicht jedes Mal den ganzen Kontext wiederholen. Die KI erinnert sich an das Gespräch.
+
+## Die sechs wichtigsten Nachsteuer-Anweisungen
+
+Diese sechs Sätze lösen 90% aller Nachbesserungen:
+
+| Anweisung | Wann verwenden |
+|---|---|
+| "Mach es einfacher – Lesbarkeit für Laien." | Text zu fachsprachlich |
+| "Mehr Details zu [Abschnitt]." | Ein Teil ist zu oberflächlich |
+| "Formatiere das als Tabelle." | Vergleiche oder Auflistungen |
+| "Kürze auf maximal [X] Wörter." | Text zu lang |
+| "Der Einstieg ist zu generisch – konkreter." | Schwacher Anfang |
+| "Ändere den Ton: [freundlicher/formeller/direkter]." | Falscher Tonfall |
+
+## Beispiel 1: Patienteninformation Schritt für Schritt verfeinern
+
+**Runde 1 – Erster Prompt:**
+```
+Erstelle eine Patienteninformation über Metformin für
+neu diagnostizierte Typ-2-Diabetiker.
+```
+
+**Ergebnis:** Fachlich korrekt, aber zu lang, zu viel Fachsprache, unstrukturiert.
+
+**Runde 2 – Vereinfachen:**
+```
+Schreibe den Text so um, dass ein Patient ohne medizinische
+Vorkenntnisse ihn versteht. Keine Fachbegriffe. Kurze Sätze.
+```
+
+**Ergebnis:** Verständlicher, aber noch ein langer Fließtext.
+
+**Runde 3 – Struktur geben:**
+```
+Gliedere den Text in drei Abschnitte mit Überschriften:
+"Was das Medikament macht", "Wie Sie es einnehmen",
+"Wann Sie uns anrufen sollten". Verwende Aufzählungspunkte.
+```
+
+**Ergebnis:** Klar, übersichtlich, druckbar.
+
+**Runde 4 – Feinschliff:**
+```
+Der Abschnitt "Wann Sie uns anrufen sollten" ist zu vage.
+Nenne 4 konkrete Symptome, bei denen der Patient
+die Praxis anrufen soll.
+```
+
+**Ergebnis:** Fertig. Vier gezielte Nachbesserungen haben aus einem generischen Text ein praxistaugliches Informationsblatt gemacht.
+
+## Beispiel 2: Praxis-Tool iterativ verbessern
+
+Iteratives Verfeinern funktioniert beim VibeCoding genauso:
+
+**Runde 1:**
+```
+Erstelle einen Blutdruck-Tracker als Webseite.
+Eingabe: Datum, systolisch, diastolisch, Puls.
+Zeige alle Werte als Tabelle.
+```
+
+**Runde 2:**
+```
+Zeige die Werte zusätzlich als Diagramm über die Zeit.
+Die x-Achse soll das Datum sein, die y-Achse den Blutdruck.
+```
+
+**Runde 3:**
+```
+Markiere Werte über 140/90 rot in der Tabelle.
+Zeige im Diagramm eine gestrichelte Linie bei 140 (systolisch)
+und 90 (diastolisch) als Grenzwert.
+```
+
+**Runde 4:**
+```
+Füge einen Export-Button hinzu, der die Tabelle als
+druckbare Seite öffnet – mit Patientenname und Zeitraum
+als Überschrift.
+```
+
+In vier Runden ist aus einem einfachen Eingabeformular ein vollständiger Blutdruck-Tracker mit Visualisierung und Druckfunktion geworden.
+
+## Beispiel 3: Arztbrief verfeinern
+
+**Runde 1:**
+```
+Schreibe einen Überweisungsbrief an einen Orthopäden.
+Patient: 62 Jahre, weiblich, seit 8 Wochen Knieschmerzen rechts,
+Arthrose bekannt, konservative Therapie ausgeschöpft.
+```
+
+**Runde 2:**
+```
+Der Brief ist zu kurz. Ergänze die bisherige konservative
+Therapie im Detail: Ibuprofen 600mg 1-1-1 über 4 Wochen,
+6x Physiotherapie, Kniebandage – alles ohne ausreichende Besserung.
+```
+
+**Runde 3:**
+```
+Formuliere die Fragestellung am Ende konkreter:
+Bitte um Einschätzung, ob eine arthroskopische Intervention
+oder ein Gelenkersatz in Betracht kommt.
+```
+
+## Die richtige Denkweise
+
+Behandle jedes KI-Ergebnis wie einen **ersten Entwurf**. Lies es so, wie du den Arztbrief eines Assistenzarztes lesen würdest:
+
+- Ist der Einstieg gut? Wenn nicht: umformulieren lassen.
+- Stimmt das Format für die Zielgruppe? Wenn nicht: anpassen.
+- Ist ein Abschnitt zu vage? Wenn ja: Details nachfordern.
+- Ist etwas überflüssig? Wenn ja: streichen lassen.
+
+**Du bist der Prüfer. Die KI ist der Entwurfsschreiber.**
+
+## Zusammenfassung
+
+Iteratives Verfeinern ist keine Schwäche des ersten Prompts – es ist die **normale Arbeitsweise** mit KI. Die besten Ergebnisse entstehen nicht durch einen perfekten Einzelprompt, sondern durch 3–4 gezielte Nachbesserungen. Das spart Zeit, weil du nicht versuchst, alles auf einmal perfekt zu formulieren.

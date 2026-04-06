@@ -1,0 +1,175 @@
+---
+title: "Localhost und dein Praxisnetz"
+course: "deployment-basics"
+lesson_number: 2
+description: "Wie du dein Programm im lokalen Netzwerk erreichbar machst – und warum Netzwerk-Sicherheit dabei entscheidend ist."
+video_url: ""
+---
+
+# Localhost und dein Praxisnetz
+
+> **Wichtiger Hinweis:** Alle in diesem Kurs vorgestellten Anleitungen dienen dem Erlernen grundlegender Deployment-Konzepte. Sobald Patientendaten verarbeitet werden, gelten strenge Datenschutz- und Sicherheitsanforderungen (DSGVO, Medizinprodukteverordnung). Veröffentliche Programme mit Patientenbezug niemals ohne professionelle Beratung.
+
+Du hast ein Praxis-Tool gebaut und willst es auf einem zweiten Gerät nutzen – zum Beispiel eine Wartezeit-Anzeige auf dem Fernseher im Wartezimmer. Dafür muss dein Programm **im lokalen Netzwerk** erreichbar sein, nicht nur auf deinem eigenen Rechner.
+
+## Was ist localhost?
+
+Wenn du ein Programm startest, zeigt dir der Browser eine Adresse wie:
+
+```
+http://localhost:4321
+```
+
+**localhost** bedeutet: "dieser Rechner hier". Die Zahl nach dem Doppelpunkt (**4321**) ist der **Port** – eine Art Türnummer. Dein Rechner hat tausende Ports, und jedes Programm benutzt einen davon.
+
+Stell dir deinen Rechner als Mehrfamilienhaus vor: Die IP-Adresse ist die Straßenadresse, der Port ist die Wohnungsnummer. `localhost:4321` heißt also: "Mein eigener Rechner, Wohnung 4321."
+
+## Vom localhost ins Netzwerk
+
+Damit andere Geräte im Praxisnetz dein Programm sehen, musst du zwei Dinge tun:
+
+### 1. Die IP-Adresse deines Rechners herausfinden
+
+Dein Rechner hat im Netzwerk eine eigene Adresse (z.B. `192.168.1.42`). So findest du sie:
+
+**Windows:** Eingabeaufforderung öffnen (Windows-Taste, "cmd" tippen), dann:
+```
+ipconfig
+```
+Suche nach "IPv4-Adresse" – das ist deine Netzwerk-Adresse.
+
+**Mac:** Terminal öffnen, dann:
+```
+ifconfig | grep "inet "
+```
+
+### 2. Das Programm ans Netzwerk binden
+
+Standardmäßig hört dein Programm nur auf `localhost` – also nur auf Anfragen vom eigenen Rechner. Du musst es anweisen, auch auf Anfragen aus dem Netzwerk zu reagieren.
+
+Sag der KI:
+
+```
+Ändere den Startbefehl so, dass das Programm nicht nur auf
+localhost hört, sondern auf allen Netzwerk-Interfaces.
+Ich möchte es von anderen Geräten im lokalen Netzwerk erreichen.
+```
+
+Technisch bedeutet das meistens, `--host 0.0.0.0` zum Startbefehl hinzuzufügen. Aber das muss dich nicht kümmern – die KI weiß das.
+
+### 3. Von einem anderen Gerät zugreifen
+
+Auf dem Fernseher im Wartezimmer (oder einem Tablet, Smartphone, einem anderen PC) öffnest du den Browser und tippst:
+
+```
+http://192.168.1.42:4321
+```
+
+(Deine IP-Adresse + der Port deines Programms)
+
+**Fertig.** Dein Programm läuft auf dem Praxis-PC und wird auf dem Wartezimmer-Bildschirm angezeigt.
+
+## Praktisches Beispiel: Wartezimmer-Anzeige
+
+```
+Erstelle eine Wartezeit-Anzeige für mein Wartezimmer.
+
+Ansicht 1 (für meine MFA am Empfangs-PC):
+- Eingabefeld für die geschätzte Wartezeit in Minuten
+- Button "Aktualisieren"
+
+Ansicht 2 (für den Fernseher im Wartezimmer):
+- Große Anzeige: "Aktuelle Wartezeit: ca. XX Minuten"
+- Die Anzeige aktualisiert sich automatisch,
+  wenn die MFA die Zeit ändert
+- Schrift groß genug, um aus 3 Metern lesbar zu sein
+
+Beide Ansichten sollen über den Browser im lokalen
+Netzwerk erreichbar sein.
+```
+
+## Netzwerk-Sicherheit: Das musst du wissen
+
+Sobald dein Programm im Netzwerk erreichbar ist, können **alle Geräte im selben Netzwerk** darauf zugreifen. Das ist ein Sicherheitsthema, besonders in einer Arztpraxis.
+
+### Getrennte Netzwerkbereiche sind Pflicht
+
+Eine gut eingerichtete Praxis hat **mindestens drei getrennte Netzwerkbereiche:**
+
+| Bereich | Geräte | Zugriff |
+|---|---|---|
+| **Praxis-LAN** (Kabel) | Praxis-PCs, Drucker, PVS-Server | Nur für Praxispersonal, per Kabel verbunden |
+| **Geräte-WLAN** | Wartezimmer-TV, Tablet für Anamnese | Eigenes WLAN, nur für Praxis-Geräte |
+| **Patienten-WLAN** | Smartphones der Patienten | Komplett getrennt, kein Zugriff auf Praxis-Geräte |
+
+**Warum ist das wichtig?** Wenn dein Patienten-WLAN und dein Praxis-LAN im selben Netzwerk laufen, könnte theoretisch jedes Patienten-Smartphone auf dein Praxis-Tool zugreifen. Das ist ein schwerer Datenschutzverstoß.
+
+### Dedizierte Firewall
+
+Eine Praxis-Firewall ist keine Option, sondern Pflicht. Sie:
+
+- Trennt die Netzwerkbereiche voneinander
+- Verhindert, dass das Patienten-WLAN auf Praxis-Geräte zugreift
+- Blockiert unerwünschte Verbindungen von außen
+- Protokolliert Zugriffe (wichtig für die DSGVO-Dokumentation)
+
+> **Empfehlung:** Wenn deine Praxis keine dedizierte Firewall und keine Netztrennung hat, lass das von einem IT-Dienstleister einrichten, **bevor** du Praxis-Tools im Netzwerk bereitstellst. Die Kosten dafür sind überschaubar und die Investition schützt nicht nur deine Tools, sondern dein gesamtes Praxisnetz.
+
+### Nicht auf dem PVS-Rechner: Der richtige Computer für deine Tools
+
+Eine wichtige Empfehlung: **Lasse deine selbst programmierten Tools nicht auf dem gleichen Rechner laufen, auf dem dein Praxisverwaltungssystem (PVS) läuft.** Der Grund: Ein fehlerhaftes Programm könnte im schlimmsten Fall Systemressourcen blockieren, Ports belegen oder instabil laufen – und damit den PVS-Betrieb stören. Die Datenbank deines PVS ist das Herzstück deiner Praxis, und das Risiko, dass ein Vibecoding-Experiment sie beeinträchtigt, solltest du minimieren.
+
+**Drei Optionen für den richtigen Rechner:**
+
+**Option 1: Ein vorhandener Client-PC**
+Der einfachste Weg. Nutze einen Praxis-PC, der ohnehin dauerhaft eingeschaltet ist – zum Beispiel den Rechner an der Anmeldung. Dort laufen deine Tools im Hintergrund und sind im Netzwerk erreichbar. Der PC muss kein Leistungswunder sein – die meisten Praxis-Tools sind anspruchslos.
+
+**Option 2: Ein dedizierter Praxis-Tool-Server**
+Wenn du regelmäßig eigene Tools betreibst, lohnt sich ein eigener kleiner Rechner nur für diesen Zweck. Das kann ein günstiger Mini-PC sein (ab ca. 200 EUR), der leise unter dem Schreibtisch steht und rund um die Uhr läuft.
+
+**Option 3: Server mit Grafikkarte für lokale KI**
+Wenn du in Zukunft KI-Berechnungen lokal durchführen möchtest – also ohne Cloud-Anbindung – brauchst du einen Rechner mit einer leistungsfähigen Grafikkarte (GPU). Damit könntest du z.B. lokale Sprachmodelle betreiben, die keine Daten ins Internet senden. Das ist die aufwändigste, aber auch die datenschutzfreundlichste Option.
+
+### Statische IP-Adresse einrichten
+
+Wenn dein Tool-Rechner im Netzwerk immer unter derselben Adresse erreichbar sein soll (z.B. `http://192.168.1.100:4321`), braucht er eine **statische IP-Adresse**. Standardmäßig vergibt dein Router die IP-Adressen automatisch (DHCP) – das heißt, die Adresse kann sich nach einem Neustart ändern. Für einen Server, den andere Geräte zuverlässig finden müssen, ist das unpraktisch.
+
+**So richtest du eine statische IP ein (Windows):**
+
+1. Öffne **Einstellungen** → **Netzwerk und Internet** → **Ethernet** (oder WLAN)
+2. Klicke auf deine aktive Verbindung → **IP-Einstellungen bearbeiten**
+3. Wähle **Manuell** statt **Automatisch (DHCP)**
+4. Trage folgende Werte ein:
+
+| Feld | Beispielwert | Erklärung |
+|---|---|---|
+| IP-Adresse | `192.168.1.100` | Eine freie Adresse in deinem Netzwerk |
+| Subnetzmaske | `255.255.255.0` | Meistens dieser Standardwert |
+| Gateway | `192.168.1.1` | Die IP-Adresse deines Routers |
+| Bevorzugter DNS | `192.168.1.1` | Meistens identisch mit dem Gateway |
+
+5. Speichern.
+
+**Wichtig:**
+- Wähle eine IP-Adresse **außerhalb** des DHCP-Bereichs deines Routers (im Router-Menü einsehbar), damit es keine Konflikte gibt
+- Notiere dir die IP-Adresse – du brauchst sie, um die Tools von anderen Geräten aufzurufen
+- Falls du unsicher bist: Dein IT-Dienstleister kann die statische IP in wenigen Minuten einrichten
+
+Alternativ kannst du auch im **Router** eine feste IP für den Rechner reservieren (DHCP-Reservierung). Das hat den Vorteil, dass du am Rechner selbst nichts umstellen musst – der Router vergibt ihm dann immer dieselbe Adresse.
+
+### Einfache Checkliste für sichere Nutzung im Praxisnetz
+
+1. Praxis-PCs und Patienten-WLAN sind **getrennte** Netzwerke
+2. Eine Firewall regelt, wer auf was zugreifen darf
+3. Dein Praxis-Tool läuft nur im **Praxis-LAN oder Geräte-WLAN**, nie im Patienten-Netz
+4. Der Port deines Programms ist nicht von außen (Internet) erreichbar
+5. Wenn das Tool Patientendaten anzeigt: Zugriff nur von autorisierten Geräten
+
+## Zusammenfassung
+
+- **localhost** = nur dein Rechner. **Netzwerk** = andere Geräte im selben Netz.
+- Die KI kann dir helfen, dein Programm im Netzwerk erreichbar zu machen.
+- **Nicht auf dem PVS-Rechner:** Eigene Tools gehören auf einen separaten Client-PC oder dedizierten Server, um die PVS-Datenbank nicht zu gefährden.
+- Für zuverlässige Erreichbarkeit: **Statische IP-Adresse** einrichten.
+- **Netzwerk-Sicherheit ist kein optionales Extra:** Getrennte Netzbereiche und eine Firewall sind Grundvoraussetzung für den Betrieb von Praxis-Tools im Netzwerk.
+- Praxis-Tools gehören ins Praxis-LAN, **niemals** ins Patienten-WLAN.

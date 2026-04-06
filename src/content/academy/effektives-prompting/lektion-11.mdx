@@ -1,0 +1,181 @@
+---
+title: "Deine eigene Prompt-Bibliothek"
+course: "effektives-prompting"
+lesson_number: 11
+description: "Gute Prompts systematisch sammeln, benennen und wiederverwenden – wie ein Formular-Ordner für KI-Anweisungen."
+video_url: ""
+---
+
+# Deine eigene Prompt-Bibliothek
+
+> **Wichtiger Hinweis:** Alle in diesem Kurs vorgestellten Programme dienen ausschließlich dem Erlernen von Prompting-Techniken. Sie sind nicht für die Anwendung am Patienten gedacht. Insbesondere medizinische Tools könnten einem Medizinprodukt gleichkommen und dürfen ohne regulatorische Zulassung nicht im klinischen Alltag eingesetzt werden.
+
+In einer Praxis gibt es Formulare für alles: Überweisungen, Laboranforderungen, Anamnesebögen. Niemand schreibt jedes Mal ein neues Formular von Grund auf. Mit Prompts sollte es genauso sein. Jeder Prompt, der einmal ein gutes Ergebnis geliefert hat, ist es wert, gespeichert zu werden.
+
+## Warum eine Prompt-Bibliothek?
+
+- Ein guter Prompt hat dich vielleicht 10 Minuten und mehrere Verfeinerungsrunden gekostet
+- Ohne ihn zu speichern, verbringst du nächsten Monat wieder 10 Minuten damit
+- Dein Team kann deine besten Prompts mitnutzen
+- Über die Zeit entsteht ein **Praxis-Wissensschatz** für den Umgang mit KI
+
+## Schritt 1: Die einfachste Lösung, die funktioniert
+
+Du brauchst kein kompliziertes System. Ein einzelnes Dokument reicht – ob als Textdatei, in Notion, als Google Doc oder in OneNote. Wichtig ist nur: Du weißt, wo es liegt, und du findest Prompts schnell wieder.
+
+**Erstelle diese fünf Abschnitte:**
+
+| Abschnitt | Inhalt |
+|---|---|
+| **Klinisch** | Arztbriefe, Überweisungen, Befundzusammenfassungen, Medikamenten-Infos |
+| **Patientenkommunikation** | Informationsblätter, Aufklärungsbögen, Terminbestätigungen |
+| **Organisation** | Dienstpläne, Protokolle, Checklisten, Schulungsmaterial |
+| **VibeCoding** | Prompts für Praxis-Tools, Formulare, Rechner, Dashboards |
+| **Vorlagen** | Wiederverwendbare RICE-Grundgerüste für häufige Aufgaben |
+
+## Schritt 2: Prompts richtig benennen
+
+Ein Prompt ohne Namen ist ein Prompt, den du nie wiederfindest. Verwende dieses Schema:
+
+**[Abschnitt] – [Aufgabe] – [Zielgruppe]**
+
+Beispiele:
+- Klinisch – Überweisungsbrief – Kardiologie
+- Patientenkommunikation – Infoblatt – Koloskopie-Vorbereitung
+- Organisation – Schulungsmaterial – Neue MFA Blutentnahme
+- VibeCoding – Laborwert-Rechner – GFR nach CKD-EPI
+- Klinisch – Arztbrief – Diabetologische Verlaufskontrolle
+
+So findest du jeden Prompt in unter 10 Sekunden.
+
+## Schritt 3: Was du speichern solltest
+
+Für jeden Prompt in deiner Bibliothek empfehle ich drei Dinge:
+
+**1. Der Prompt selbst** – der vollständige Text, den du an die KI schickst.
+
+**2. Platzhalter markieren** – Stellen, die du jedes Mal anpassen musst, in eckige Klammern setzen.
+
+**3. Ein kurzer Hinweis** – wann der Prompt gut funktioniert und wann nicht.
+
+### Beispiel-Eintrag
+
+**Name:** Klinisch – Überweisungsbrief – Allgemein
+
+**Prompt:**
+```
+Du bist ein Allgemeinmediziner in einer Einzelpraxis.
+
+Schreibe einen Überweisungsbrief an einen [Facharzt].
+
+Patient: [Alter] Jahre, [Geschlecht], [relevante Anamnese].
+Aktuelle Beschwerden: [Beschwerden mit Dauer].
+Bisherige Diagnostik: [durchgeführte Untersuchungen und Ergebnisse].
+Bisherige Therapie: [was bereits versucht wurde].
+
+Fragestellung: [konkrete Frage an den Facharzt].
+
+Format: Klassischer deutscher Arztbrief mit Anrede,
+Einleitung, Befundbericht und Fragestellung.
+```
+
+**Hinweis:** Funktioniert für alle Fachrichtungen. Bei Überweisungen an Radiologen zusätzlich die gewünschte Untersuchungsart angeben.
+
+## Starter-Bibliothek: 6 Prompts zum Sofort-Loslegen
+
+Hier sind sechs Prompts, die du direkt in deine Bibliothek übernehmen kannst:
+
+### 1. Patienteninformation zu einem Medikament
+```
+Du bist ein erfahrener Apotheker, der Patienten Medikamente erklärt.
+Schreibe eine verständliche Information für einen Patienten,
+der neu [Medikament] einnimmt.
+
+Gliedere in: Was das Medikament macht, Wie Sie es einnehmen,
+Was Sie beachten müssen, Wann Sie die Praxis anrufen sollten.
+
+Verständlich für Laien, kurze Sätze, Aufzählungspunkte.
+Maximal eine DIN-A4-Seite.
+```
+
+### 2. Arztbrief-Zusammenfassung
+```
+Du bist ein erfahrener Allgemeinmediziner.
+Fasse folgenden Fall in maximal 5 Stichpunkten zusammen:
+1. Diagnose(n)
+2. Relevante Befunde
+3. Aktuelle Therapie
+4. Offene Fragen
+5. Nächster Schritt
+
+Fall: [anonymisierte Fallbeschreibung]
+```
+
+### 3. QM-Checkliste
+```
+Du bist eine QM-Beauftragte einer Arztpraxis.
+Erstelle eine Checkliste für [Prozess/Tätigkeit].
+
+Format: Nummerierte Liste, ein Schritt pro Zeile,
+mit Abhak-Kästchen. Am Ende: Unterschriftsfeld
+und Datumsfeld.
+
+Die Checkliste soll ausgedruckt und täglich verwendet
+werden können.
+```
+
+### 4. Praxis-Tool erstellen
+```
+Du bist ein Softwareentwickler für Arztpraxis-Software.
+
+Erstelle [Art des Tools] als Webseite.
+Eingabefelder: [Liste der Felder].
+Ausgabe: [was berechnet/angezeigt werden soll].
+
+Design: Schlicht, professionell, gut lesbar.
+Soll auf [Gerät: PC/Tablet/Smartphone] funktionieren.
+```
+
+### 5. MFA-Schulungsunterlage
+```
+Du bist eine erfahrene Praxismanagerin.
+Erstelle eine Kurzanleitung für [Aufgabe/Prozess]
+für medizinische Fachangestellte.
+
+Format: Nummerierte Schritte, maximal eine DIN-A4-Seite.
+Sprache: Klar und direkt, keine Fachbegriffe, die nicht
+erklärt werden.
+Am Ende: Die 3 häufigsten Fehler und wie man sie vermeidet.
+```
+
+### 6. Patientenaufklärung
+```
+Du bist ein Patientenberater, der medizinische Inhalte
+verständlich erklären kann.
+
+Erstelle ein Informationsblatt über [Untersuchung/Eingriff]
+für Patienten, die [relevanter Kontext, z.B. "zum ersten Mal
+eine Koloskopie durchführen lassen"].
+
+Gliederung:
+- Was ist das? (3 Sätze)
+- Wie läuft es ab?
+- Was muss ich vorher beachten?
+- Häufige Sorgen und Antworten
+
+Verständlich für alle Altersgruppen, druckbar auf einer Seite.
+```
+
+## Schritt 4: Die Bibliothek lebendig halten
+
+Setze dir einmal im Monat 10 Minuten:
+
+- **Neue Prompts hinzufügen**, die diesen Monat gut funktioniert haben
+- **Bestehende Prompts aktualisieren**, die du nachbessern musstest
+- **Veraltete Prompts entfernen**, die du nicht mehr brauchst
+
+Eine Prompt-Bibliothek, die nie aktualisiert wird, ist eine Prompt-Bibliothek, die niemand benutzt.
+
+## Zusammenfassung
+
+Eine Prompt-Bibliothek spart dir Zeit und sorgt für gleichbleibend gute Ergebnisse. Du brauchst kein aufwändiges System – ein Dokument mit klarer Struktur und sinnvoller Benennung reicht. Starte mit den sechs Vorlagen aus dieser Lektion und baue von dort aus weiter. Und teile deine besten Prompts mit deinem Team – davon profitieren alle.

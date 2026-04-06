@@ -1,0 +1,104 @@
+---
+title: "Eigene Domain und HTTPS"
+course: "deployment-basics"
+lesson_number: 4
+description: "Warum eine eigene Domain professioneller ist, warum HTTPS Pflicht ist – und warum beides allein noch keinen Datenschutz garantiert."
+video_url: ""
+---
+
+# Eigene Domain und HTTPS
+
+> **Wichtiger Hinweis:** Alle in diesem Kurs vorgestellten Anleitungen dienen dem Erlernen grundlegender Deployment-Konzepte. Sobald Patientendaten verarbeitet werden, gelten strenge Datenschutz- und Sicherheitsanforderungen (DSGVO, Medizinprodukteverordnung). Veröffentliche Programme mit Patientenbezug niemals ohne professionelle Beratung.
+
+Dein BMI-Rechner ist auf GitHub Pages erreichbar – aber die Adresse sieht so aus: `dein-username.github.io/bmi-rechner`. Das funktioniert, wirkt aber nicht besonders professionell. In dieser Lektion lernst du, wie du eine eigene Domain einrichtest und warum HTTPS keine Option, sondern Pflicht ist.
+
+## Was ist eine Domain?
+
+Eine Domain ist die Adresse deiner Webseite – das, was Leute in den Browser tippen. Statt `dein-username.github.io/bmi-rechner` könntest du haben:
+
+- `tools.praxis-rasche.de`
+- `rechner.meine-hausarztpraxis.de`
+- `info.kardiologie-wuerzburg.de`
+
+Das ist professioneller, leichter zu merken und vertrauenswürdiger für Patienten.
+
+## Domain registrieren
+
+Eine Domain kostet typischerweise 5–15 EUR pro Jahr. Du bekommst sie bei einem Domain-Registrar, z.B.:
+
+- **IONOS** (1&1) – deutscher Anbieter, einfache Verwaltung
+- **Strato** – deutscher Anbieter
+- **Netcup** – günstiger deutscher Anbieter
+- **Namecheap** – internationaler Anbieter
+
+### Tipps zur Domain-Wahl
+
+- Verwende `.de` für eine deutsche Arztpraxis
+- Halte den Namen kurz und merkbar
+- Keine Umlaute in der Domain (technisch möglich, aber fehleranfällig)
+- Wenn du schon eine Praxis-Webseite hast, nutze eine **Subdomain** (z.B. `tools.deine-praxis.de`)
+
+## Domain mit GitHub Pages verbinden
+
+Nachdem du eine Domain gekauft hast:
+
+1. **Beim Domain-Anbieter:** Erstelle einen CNAME-Eintrag, der auf `dein-username.github.io` zeigt
+2. **Bei GitHub:** Gehe zu Settings → Pages → Custom domain, trage deine Domain ein
+3. **Warten:** DNS-Änderungen brauchen manchmal bis zu 24 Stunden
+
+Sag der KI:
+
+```
+Ich habe die Domain tools.meine-praxis.de bei IONOS registriert
+und möchte sie mit meinem GitHub Pages Repository verbinden.
+Erkläre mir Schritt für Schritt, welche DNS-Einträge ich
+bei IONOS setzen muss und was ich bei GitHub einstellen muss.
+```
+
+Die KI kennt die konkreten Schritte für deinen Anbieter.
+
+## HTTPS: Pflicht, keine Option
+
+### Was ist HTTPS?
+
+HTTPS verschlüsselt die Verbindung zwischen dem Browser des Nutzers und deiner Webseite. Du erkennst es am Schloss-Symbol in der Adressleiste und daran, dass die Adresse mit `https://` statt `http://` beginnt.
+
+### Warum ist HTTPS Pflicht?
+
+- **DSGVO:** Jede Webseite, die personenbezogene Daten verarbeitet (und sei es nur eine IP-Adresse), muss verschlüsselt übertragen werden.
+- **Browser-Warnungen:** Moderne Browser markieren Seiten ohne HTTPS als "Nicht sicher". Das schreckt Patienten ab.
+- **Vertrauen:** Ein Schloss-Symbol signalisiert: Diese Seite nimmt Sicherheit ernst.
+- **Google-Ranking:** Webseiten mit HTTPS werden in Suchergebnissen bevorzugt.
+
+### HTTPS bei GitHub Pages
+
+GitHub Pages bietet HTTPS **kostenlos und automatisch** an:
+
+1. Gehe zu Settings → Pages
+2. Aktiviere **"Enforce HTTPS"**
+3. Fertig – deine Seite ist ab sofort nur noch über HTTPS erreichbar
+
+Bei einer eigenen Domain dauert es manchmal ein paar Minuten, bis das Zertifikat erstellt ist.
+
+## Wichtig: HTTPS allein ist kein Datenschutz
+
+Viele Ärzte denken: "Meine Seite hat HTTPS, also ist sie sicher." Das ist ein gefährlicher Irrtum.
+
+**HTTPS schützt den Transport der Daten** – also den Weg vom Browser zum Server. Es schützt **nicht:**
+
+- Die Daten auf dem Server selbst
+- Vor unbefugtem Zugriff auf die Webseite
+- Vor fehlender Einwilligung der Patienten
+- Vor unsicherer Programmierung
+
+**Vergleich:** HTTPS ist wie ein versiegelter Briefumschlag. Er schützt den Brief auf dem Transportweg. Aber wenn der Briefkasten für jeden offen steht, hilft auch der beste Umschlag nichts.
+
+**Deshalb gilt weiterhin:** Programme mit Patientendaten gehören nicht auf öffentliche Webseiten – egal ob mit oder ohne HTTPS.
+
+## Zusammenfassung
+
+- Eine eigene Domain ist professioneller und kostet nur wenige Euro im Jahr
+- HTTPS ist **Pflicht** für jede öffentliche Webseite – GitHub Pages bietet es kostenlos an
+- HTTPS verschlüsselt den Transport, ersetzt aber keine umfassende Datenschutzstrategie
+- Die KI kann dir bei DNS-Einstellungen und Domain-Konfiguration helfen
+- **Auch mit eigener Domain und HTTPS gilt:** Keine Patientendaten auf öffentlichen Webseiten

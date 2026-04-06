@@ -1,0 +1,100 @@
+---
+title: "Rollenbasiertes Prompting"
+course: "effektives-prompting"
+lesson_number: 5
+description: "Der KI eine Rolle zuweisen – für fachlich passendere und konsistentere Ergebnisse."
+video_url: ""
+---
+
+# Rollenbasiertes Prompting
+
+> **Wichtiger Hinweis:** Alle in diesem Kurs vorgestellten Programme dienen ausschließlich dem Erlernen von Prompting-Techniken. Sie sind nicht für die Anwendung am Patienten gedacht. Insbesondere medizinische Tools könnten einem Medizinprodukt gleichkommen und dürfen ohne regulatorische Zulassung nicht im klinischen Alltag eingesetzt werden.
+
+Wenn du der KI eine **Rolle** zuweist, verändert das die Art, wie sie antwortet. Eine KI, die "als erfahrener Softwareentwickler für medizinische Anwendungen" agiert, liefert andere Ergebnisse als eine KI ohne Rollenkontext. Die Antworten werden fachlicher, konsistenter und besser auf deine Bedürfnisse zugeschnitten.
+
+## Das Prinzip
+
+Du startest deinen Prompt mit einer Rollenbeschreibung:
+
+```
+Du bist ein erfahrener Entwickler für medizinische Praxissoftware.
+Du kennst die Abläufe in einer Arztpraxis und weißt, worauf
+es bei Software für medizinisches Personal ankommt.
+```
+
+Die KI orientiert sich dann an dieser Rolle und trifft Entscheidungen, die zu diesem Kontext passen.
+
+## Beispiel 1: Praxis-Dokumentation
+
+```
+Du bist ein Softwareentwickler, der seit 10 Jahren Programme
+für Arztpraxen entwickelt. Du kennst die typischen Abläufe
+einer Hausarztpraxis und weißt, wie MFA arbeiten.
+
+Erstelle ein digitales Formular für die tägliche
+Qualitätsdokumentation in einer Hausarztpraxis:
+- Kühlschranktemperatur (Impfstoffe)
+- Sterilisator-Kontrolle (Chargennummer, Indikator-Ergebnis)
+- Notfallkoffer-Check (Ablaufdaten)
+- Unterschriftsfeld für die verantwortliche MFA
+
+Das Formular soll auf einem Tablet in der Praxis bedienbar sein.
+```
+
+Durch die Rolle "kennt" die KI den Praxiskontext und wird z.B. automatisch an große Buttons für Touchscreens denken, an die richtige Reihenfolge der Checks und an sinnvolle Standardwerte.
+
+## Beispiel 2: Patientenkommunikation
+
+```
+Du bist ein Kommunikationsexperte im Gesundheitswesen.
+Du weißt, wie man medizinische Inhalte so erklärt, dass
+Patienten ohne Vorkenntnisse sie verstehen. Du verwendest
+einfache Sprache, kurze Sätze und anschauliche Vergleiche.
+
+Erstelle eine Webseite, die Patienten über die Vorbereitung
+auf eine Blutabnahme informiert:
+- Was muss beachtet werden (nüchtern, Medikamente)?
+- Was passiert bei der Blutabnahme?
+- Wann bekommt man die Ergebnisse?
+- Was tun bei blauen Flecken?
+
+Zielgruppe: Patienten aller Altersgruppen, auch ältere
+Menschen, die nicht technikaffin sind.
+```
+
+Die Rolle "Kommunikationsexperte" sorgt dafür, dass die KI auf Fachsprache verzichtet und verständliche Formulierungen wählt.
+
+## Beispiel 3: Mehrere Rollen kombinieren
+
+Du kannst der KI auch sagen, dass sie die Perspektive wechseln soll:
+
+```
+Erstelle ein Terminbuchungssystem für meine Praxis.
+
+Denke dabei aus zwei Perspektiven:
+
+Als MFA: Was brauche ich, um schnell und effizient Termine
+zu vergeben? Welche Informationen brauche ich auf einen Blick?
+Wie gehe ich mit Notfallterminen um?
+
+Als Patient: Wie buche ich intuitiv einen Termin?
+Welche Informationen muss ich angeben?
+Wie bekomme ich eine Bestätigung?
+
+Baue das System so, dass beide Perspektiven berücksichtigt
+werden – mit einer Ansicht für die MFA und einer für Patienten.
+```
+
+## Welche Rollen funktionieren gut?
+
+| Rolle | Effekt |
+|---|---|
+| "Erfahrener Praxis-Softwareentwickler" | Kennt Praxisabläufe, denkt an MFA-Bedürfnisse |
+| "UX-Designer für Senioren" | Große Schrift, einfache Navigation, wenig Ablenkung |
+| "Medizinischer Fachjournalist" | Verständliche Erklärungen medizinischer Themen |
+| "QM-Beauftragter einer Arztpraxis" | Denkt an Dokumentation, Checklisten, Nachvollziehbarkeit |
+| "Datenschutzbeauftragter" | Achtet auf DSGVO, Datensparsamkeit, Verschlüsselung |
+
+## Zusammenfassung
+
+Rollenbasiertes Prompting ist besonders dann mächtig, wenn du eine bestimmte **Perspektive** oder einen bestimmten **Erfahrungshintergrund** brauchst. In der Medizin hilft es, weil Praxis-Software ganz andere Anforderungen hat als z.B. ein Onlineshop. Durch die Rollenzuweisung "versteht" die KI diesen Kontext und trifft bessere Entscheidungen.

@@ -1,0 +1,14 @@
+{
+  "name": "ZNS – Zentrales Nachrichtensystem",
+  "slug": "zns",
+  "category": "install",
+  "tags": ["Kommunikation"],
+  "anforderung": "GERING",
+  "description": "Das Zentrale Nachrichtensystem ermöglicht schnelle Kommunikation zwischen Computern im Praxisnetzwerk. Die meisten PVS-Systeme haben zwar ein integriertes Nachrichtensystem, das ist aber oft so unscheinbar, dass es leicht übersehen wird. Beim ZNS wählt man einfach den Empfänger aus und sendet die Nachricht – der Bildschirm des Empfängers wird sofort komplett übernommen und zeigt die Nachricht an. Erst wenn die Nachricht bestätigt wird, kann weitergearbeitet werden. So ist sichergestellt, dass wichtige Informationen zuverlässig ankommen und nicht untergehen.",
+  "github_url": "https://github.com/lollylan/ZentralesNachrichtenSystem",
+  "release_url": "https://github.com/lollylan/ZentralesNachrichtenSystem/releases/latest",
+  "demo_url": "",
+  "video_url": "https://www.youtube.com/embed/GjMwRZKpHdc",
+  "academy_course_slug": null,
+  "screenshot": "/images/zns.png"
+}

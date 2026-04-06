@@ -1,0 +1,14 @@
+{
+  "name": "PraxisDefender",
+  "slug": "praxisdefender",
+  "category": "webapp",
+  "tags": ["Spiel", "Tower Defense"],
+  "anforderung": "WEBAPP",
+  "description": "PraxisDefender ist ein Tower-Defense-Spiel, in dem du deine Arztpraxis in verschiedenen Wellen gegen die Widrigkeiten des ärztlichen Alltags verteidigen musst. Setze deine MFAs, Reinigungskräfte, VERAHs, NÄPAs, PCMs, Assistenzärzte und weitere Verbündete strategisch ein, um Angreifer wie den TI-Konnektor, die KV 52, den Regress, anspruchsvolle Privatpatienten und andere Herausforderungen abzuwehren. Empfohlen für Tablet oder Desktop – auf dem Handy kann es zu Skalierungsproblemen kommen.",
+  "github_url": "https://github.com/lollylan/PraxisDefender",
+  "demo_url": "https://lollylan.github.io/PraxisDefender/",
+  "demo_label": "Im Browser spielen (Tablet oder Desktop empfohlen)",
+  "video_url": "",
+  "academy_course_slug": null,
+  "screenshot": "/images/praxisdefender.png"
+}

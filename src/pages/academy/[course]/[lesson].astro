@@ -1,0 +1,61 @@
+---
+import LessonLayout from '../../../layouts/LessonLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const courseEntries = await getCollection('academyCourses');
+  const lessonEntries = await getCollection('academy');
+
+  const paths: any[] = [];
+
+  for (const course of courseEntries) {
+    const courseLessons = lessonEntries
+      .filter(l => l.data.course === course.data.slug)
+      .sort((a, b) => a.data.lesson_number - b.data.lesson_number);
+
+    courseLessons.forEach((lesson, index) => {
+      const prev = index > 0 ? courseLessons[index - 1] : null;
+      const next = index < courseLessons.length - 1 ? courseLessons[index + 1] : null;
+
+      paths.push({
+        params: {
+          course: course.data.slug,
+          lesson: `lektion-${String(lesson.data.lesson_number).padStart(2, '0')}`,
+        },
+        props: {
+          entry: lesson,
+          courseData: course.data,
+          totalLessons: courseLessons.length,
+          prevLesson: prev ? {
+            slug: `lektion-${String(prev.data.lesson_number).padStart(2, '0')}`,
+            title: prev.data.title,
+          } : null,
+          nextLesson: next ? {
+            slug: `lektion-${String(next.data.lesson_number).padStart(2, '0')}`,
+            title: next.data.title,
+          } : null,
+        },
+      });
+    });
+  }
+
+  return paths;
+}
+
+const { entry, courseData, totalLessons, prevLesson, nextLesson } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<LessonLayout
+  title={entry.data.title}
+  courseTitle={courseData.title}
+  courseSlug={courseData.slug}
+  lessonNumber={entry.data.lesson_number}
+  totalLessons={totalLessons}
+  prevLesson={prevLesson}
+  nextLesson={nextLesson}
+  description={entry.data.description}
+  videoUrl={entry.data.video_url}
+>
+  <Content />
+</LessonLayout>

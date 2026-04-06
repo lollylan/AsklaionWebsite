@@ -1,0 +1,68 @@
+---
+title: "Large Language Models & Parameter"
+course: "grundwissen-ki"
+lesson_number: 2
+description: "Wie LLMs funktionieren, was Milliarden Parameter bedeuten und warum nicht immer alle gleichzeitig arbeiten müssen."
+video_url: ""
+---
+
+# Large Language Models & Parameter
+
+Large Language Models (LLMs) sind die Technologie hinter ChatGPT, Claude und Co. In dieser Lektion verstehst du, wie sie funktionieren – und was es mit den Milliarden Parametern auf sich hat.
+
+## Was ist ein LLM?
+
+Ein LLM ist ein riesiges neuronales Netzwerk, das auf gewaltigen Textmengen trainiert wurde. Das Kernprinzip ist überraschend einfach: **Das Modell sagt das nächste Wort vorher.**
+
+Wenn du eingibst: *"Der Patient klagt über Schmerzen im..."* – berechnet das Modell, welches Wort als nächstes am wahrscheinlichsten kommt. Es reiht Wort an Wort und erzeugt so ganze Texte, die flüssig und sachlich klingen.
+
+Das Bemerkenswerte: Durch dieses einfache Prinzip, angewandt auf Milliarden von Texten, entstehen Fähigkeiten, die weit über simple Wortvervollständigung hinausgehen – von Zusammenfassungen über Übersetzungen bis hin zu komplexen Analysen.
+
+## Wie wird ein LLM trainiert?
+
+Der Trainingsprozess besteht aus mehreren Phasen:
+
+1. **Vortraining:** Das Modell liest Milliarden von Texten aus dem Internet, aus Büchern und wissenschaftlichen Artikeln. Es lernt dabei Sprachmuster, Faktenwissen und Zusammenhänge.
+2. **Feinabstimmung:** Das Modell wird gezielt auf bestimmte Aufgaben trainiert – z.B. Fragen beantworten oder Anweisungen befolgen.
+3. **Feedback von Menschen (RLHF):** Menschliche Bewerter beurteilen die Antworten des Modells. Das Modell lernt, welche Antworten hilfreicher, sicherer und genauer sind.
+
+Eine passende Analogie: Stell dir einen Assistenzarzt vor. Im Studium (Vortraining) hat er das gesamte Lehrbuch gelesen. Auf der Assistenzarztstelle (Feinabstimmung) lernt er, das Wissen praktisch anzuwenden. Und durch Feedback der Oberärzte (RLHF) verbessert er seine Entscheidungen.
+
+## Parameter – Was bedeuten die Milliarden?
+
+Wenn du liest, ein Modell habe "70 Milliarden Parameter" oder "über eine Billion Parameter" – was heißt das?
+
+**Parameter sind die gespeicherten Verbindungsstärken** im neuronalen Netzwerk. Man kann sie sich vorstellen wie die Synapsen im Gehirn: Jeder Parameter speichert ein kleines Stück des gelernten Wissens. Je mehr Parameter, desto mehr Nuancen und Zusammenhänge kann das Modell erfassen.
+
+### Mehr Parameter = schlauer?
+
+Tendenziell ja – aber es ist nicht die ganze Geschichte:
+
+| Modellgröße | Typische Fähigkeiten | Vergleich |
+|---|---|---|
+| 1–7 Milliarden | Einfache Texte, Zusammenfassungen | Wie ein Medizinstudent |
+| 30–70 Milliarden | Komplexe Analysen, guter Code | Wie ein Assistenzarzt |
+| 200+ Milliarden | Nuanciertes Reasoning, Expertenwissen | Wie ein erfahrener Facharzt |
+
+**Aber:** Ein kleineres Modell mit besseren Trainingsdaten kann ein größeres Modell mit schlechteren Daten übertreffen. Quantität der Parameter ist wichtig, Qualität des Trainings ist es ebenso.
+
+### Randnotiz: Mixture of Experts (MoE)
+
+Ein Problem großer Modelle: Je mehr Parameter, desto langsamer und teurer die Berechnung. Die Lösung nennt sich **Mixture of Experts**. Dabei wird das Modell in spezialisierte "Expertengruppen" aufgeteilt. Pro Anfrage werden nur die relevanten Experten aktiviert – nicht alle gleichzeitig.
+
+Die Analogie liegt nahe: Wie in einer Gemeinschaftspraxis wird nicht jeder Arzt für jede Frage hinzugezogen, sondern nur der passende Spezialist. So kann ein Modell mit einer Billion Parametern pro Anfrage vielleicht nur 200 Milliarden davon nutzen – und trotzdem schnell und präzise antworten.
+
+## Bekannte Modelle im Überblick
+
+| Modell | Anbieter | Besonderheit |
+|---|---|---|
+| GPT-4o | OpenAI | Vielseitig, weit verbreitet, multimodal |
+| Claude | Anthropic | Stark bei langen Texten, Code und Analysen |
+| Gemini | Google | Multimodal, integriert in Google-Dienste |
+| Llama | Meta | Open Source, lokal betreibbar |
+| Gemma | Google | Kompakt, Open Source, lokal betreibbar |
+| Mistral | Mistral AI | Europäisch, effizient durch MoE-Architektur |
+
+## Zusammenfassung
+
+LLMs sagen im Kern das nächste Wort vorher – und sind darin so gut, dass sie komplexe Aufgaben lösen können. Die Anzahl der Parameter bestimmt maßgeblich die Leistungsfähigkeit, wobei Trainingsqualität ebenso entscheidend ist. Mixture-of-Experts-Modelle lösen das Problem, dass größere Modelle langsamer werden, indem sie nur einen Teil ihrer Parameter pro Anfrage nutzen. In der nächsten Lektion schauen wir uns an, wie Text überhaupt ins Modell gelangt: als Tokens.

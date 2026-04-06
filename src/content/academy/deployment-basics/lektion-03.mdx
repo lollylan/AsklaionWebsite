@@ -1,0 +1,121 @@
+---
+title: "Statische Webseiten mit GitHub Pages"
+course: "deployment-basics"
+lesson_number: 3
+description: "Wie du eine einfache Webseite kostenlos im Internet veröffentlichst – aber nur wenn sie keine Patientendaten enthält."
+video_url: ""
+---
+
+# Statische Webseiten mit GitHub Pages
+
+> **Wichtiger Hinweis:** Alle in diesem Kurs vorgestellten Anleitungen dienen dem Erlernen grundlegender Deployment-Konzepte. Sobald Patientendaten verarbeitet werden, gelten strenge Datenschutz- und Sicherheitsanforderungen (DSGVO, Medizinprodukteverordnung). Veröffentliche Programme mit Patientenbezug niemals ohne professionelle Beratung.
+
+Du hast einen BMI-Rechner gebaut, eine Laborwert-Referenztabelle oder eine Informationsseite für deine Patienten. Solche Tools ohne Patientendaten kannst du kostenlos ins Internet stellen – mit GitHub Pages.
+
+## Bevor wir anfangen: Was darf ins Internet?
+
+Dieser Punkt ist so wichtig, dass er vor jeder Anleitung stehen muss:
+
+**Ins Internet darf nur, was keine Patientendaten verarbeitet.**
+
+| Darf ins Internet | Darf NICHT ins Internet |
+|---|---|
+| BMI-Rechner | Anamnesebogen mit Patientenname |
+| GFR-Rechner | Terminbuchung mit Patientendaten |
+| Laborwert-Referenztabelle | Befundübersicht |
+| Allgemeine Patienteninformationen | Wartezeit-Anzeige mit Patientennamen |
+| Praxis-Vorstellung / Anfahrt | Alles mit Eingabefeldern für Patienteninfos |
+
+**Wenn du unsicher bist:** Stell dir vor, ein zufälliger Internetnutzer öffnet die Seite. Könnte er irgendwelche Patientendaten sehen oder eingeben? Dann gehört es nicht ins Internet.
+
+## Was ist eine statische Webseite?
+
+Es gibt zwei Arten von Webseiten:
+
+- **Statische Webseiten:** Fertige HTML-Dateien, die der Browser direkt anzeigt. Kein Server nötig, der im Hintergrund rechnet. Wie ein ausgedrucktes Informationsblatt – es verändert sich nicht.
+- **Dynamische Webseiten:** Brauchen einen Server, der auf Anfragen reagiert, Daten speichert und verarbeitet. Wie ein Praxisverwaltungssystem.
+
+Die meisten Tools, die du bisher gebaut hast (Rechner, Formulare, Infoseiten), sind **statische Webseiten**. Sie funktionieren komplett im Browser des Nutzers – perfekt für GitHub Pages.
+
+## Was ist GitHub?
+
+GitHub ist eine Plattform, auf der Entwickler ihren Code speichern und verwalten. Stell es dir wie eine Cloud für Programmcode vor. **GitHub Pages** ist ein kostenloser Dienst von GitHub, der aus deinem Code eine öffentlich erreichbare Webseite macht.
+
+Du brauchst dafür:
+- Einen GitHub-Account (kostenlos)
+- Deine fertigen Webseiten-Dateien (HTML, CSS, JavaScript)
+
+## Schritt für Schritt: Deine erste Veröffentlichung
+
+### Schritt 1: GitHub-Account erstellen
+
+1. Öffne [github.com](https://github.com)
+2. Klicke auf "Sign up"
+3. Erstelle einen Account mit deiner E-Mail-Adresse
+4. Bestätige deine E-Mail
+
+### Schritt 2: Die KI dein Projekt vorbereiten lassen
+
+Sag der KI:
+
+```
+Bereite mein Projekt für die Veröffentlichung auf GitHub Pages vor.
+Erstelle die nötigen Dateien und erkläre mir Schritt für Schritt,
+wie ich es auf GitHub hochlade und als Webseite veröffentliche.
+```
+
+Die KI wird dir die konkreten Schritte für dein spezifisches Projekt erklären – das kann je nach verwendeter Technologie leicht unterschiedlich sein.
+
+### Schritt 3: Repository erstellen
+
+1. Auf GitHub: Klicke auf das **"+"** oben rechts → **"New repository"**
+2. Name: z.B. `bmi-rechner` (keine Leerzeichen, keine Umlaute)
+3. Wähle **"Public"** (für GitHub Pages nötig im kostenlosen Plan)
+4. Klicke auf **"Create repository"**
+
+### Schritt 4: Dateien hochladen
+
+1. In deinem neuen Repository: Klicke auf **"uploading an existing file"**
+2. Ziehe deine Webseiten-Dateien per Drag & Drop ins Fenster
+3. Klicke auf **"Commit changes"**
+
+### Schritt 5: GitHub Pages aktivieren
+
+1. Gehe zu **Settings** → **Pages** (im linken Menü)
+2. Unter "Source": Wähle **"Deploy from a branch"**
+3. Branch: **"main"**, Ordner: **"/ (root)"**
+4. Klicke auf **"Save"**
+5. Warte 1–2 Minuten
+
+Deine Webseite ist jetzt erreichbar unter:
+```
+https://dein-username.github.io/bmi-rechner
+```
+
+## Was GitHub Pages nicht kann
+
+GitHub Pages ist für **statische Webseiten**. Das bedeutet:
+
+- Keine Datenbanken
+- Keine Benutzerkonten oder Login-Systeme
+- Keine serverseitige Verarbeitung
+- Keine E-Mail-Funktionen
+
+Für die meisten Praxis-Rechner und Informationsseiten ist das kein Problem – sie brauchen nichts davon.
+
+## Sicherheitshinweise für öffentliche Webseiten
+
+Auch wenn dein Tool keine Patientendaten verarbeitet, beachte:
+
+- **Impressumspflicht:** Jede öffentliche Webseite in Deutschland braucht ein Impressum mit deinem Namen und deiner Adresse (Telemediengesetz).
+- **Keine versteckten Eingabefelder:** Stelle sicher, dass niemand versehentlich Patientendaten in dein Tool eingeben kann.
+- **Medizinische Haftung:** Wenn dein Tool medizinische Berechnungen durchführt (z.B. Dosisrechner), weise klar darauf hin, dass es sich um ein Übungsprojekt handelt und nicht für die klinische Anwendung gedacht ist.
+- **Regelmäßig prüfen:** Schau ab und zu nach, ob deine Seite noch funktioniert und aktuell ist.
+
+## Zusammenfassung
+
+- GitHub Pages ist kostenlos und ideal für einfache Webseiten ohne Patientendaten
+- Statische Seiten (Rechner, Infoseiten, Referenztabellen) funktionieren perfekt
+- **Keine Patientendaten auf öffentlichen Webseiten** – ohne Ausnahme
+- Impressumspflicht und Haftungshinweise beachten
+- Die KI kann dir bei der Vorbereitung und Veröffentlichung helfen

@@ -1,0 +1,14 @@
+{
+  "name": "Praxis Zeittracker",
+  "slug": "praxis-zeittracker",
+  "category": "webapp",
+  "tags": ["Organisation"],
+  "anforderung": "WEBAPP",
+  "description": "Zeiterfassung für den Praxisalltag, optimiert für die Nutzung am Handy. Einfach das Smartphone neben der Arbeit liegen lassen und bei jedem Tätigkeitswechsel das passende Feld antippen. Mit eigenen Kategorien für Arzt und MFA sowie für Praxis- und Hausbesuche sieht man am Ende des Tages auf einen Blick, wofür die Zeit draufgegangen ist – und kann gezielt Abläufe optimieren. Alle Daten werden ausschließlich lokal im Browser gespeichert, es werden keine Daten übertragen. Wer Ergebnisse teilen möchte, kann einen Screenshot machen oder die Daten exportieren. Eine direkte Überwachung ist nicht möglich – der Zeittracker dient der Eigenkontrolle, um Lücken und Optimierungsmöglichkeiten im eigenen Tagesablauf zu finden.",
+  "github_url": "https://github.com/lollylan/praxiszeittracker",
+  "demo_url": "https://lollylan.github.io/praxiszeittracker/",
+  "demo_label": "Im Browser öffnen",
+  "video_url": "https://www.youtube.com/embed/7vdkT1RtDgw",
+  "academy_course_slug": null,
+  "screenshot": "/images/praxiszeittracker.png"
+}

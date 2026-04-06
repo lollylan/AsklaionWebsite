@@ -1,0 +1,137 @@
+---
+title: "Häufige Fehler und wie du sie vermeidest"
+course: "effektives-prompting"
+lesson_number: 10
+description: "Die fünf typischsten Prompting-Fehler bei Ärzten – mit Vorher/Nachher-Vergleichen und konkreten Lösungen."
+video_url: ""
+---
+
+# Häufige Fehler und wie du sie vermeidest
+
+> **Wichtiger Hinweis:** Alle in diesem Kurs vorgestellten Programme dienen ausschließlich dem Erlernen von Prompting-Techniken. Sie sind nicht für die Anwendung am Patienten gedacht. Insbesondere medizinische Tools könnten einem Medizinprodukt gleichkommen und dürfen ohne regulatorische Zulassung nicht im klinischen Alltag eingesetzt werden.
+
+Beim Beobachten von Ärzten, die mit KI arbeiten, tauchen immer wieder dieselben Fehler auf. Keiner davon ist schwer zu beheben – aber man muss sie erst einmal erkennen. Diese Lektion ist deine Checkliste: Geh sie durch, bevor du einen wichtigen Prompt abschickst.
+
+## Fehler 1: Zu vage formulieren
+
+**Vorher:**
+```
+Schreib einen Patientenbrief.
+```
+Die KI weiß nicht: Welcher Patient? Welches Thema? Welcher Ton? Welches Format? Das Ergebnis ist generisch und unbrauchbar.
+
+**Nachher:**
+```
+Schreibe einen kurzen Brief an eine 58-jährige Patientin,
+die ihre Mammographie-Ergebnisse erwartet. Das Ergebnis ist
+unauffällig. Erkläre in 2-3 Sätzen, dass alles in Ordnung ist,
+und nenne den Zeitpunkt der nächsten empfohlenen Untersuchung.
+Ton: freundlich und beruhigend.
+```
+
+**Die Regel:** Je spezifischer dein Prompt, desto brauchbarer das Ergebnis.
+
+---
+
+## Fehler 2: Zu wenig Kontext geben
+
+**Vorher:**
+```
+Was ist die richtige Therapie für diesen Patienten?
+```
+Die KI hat keine Informationen über den Patienten. Sie kann nur raten.
+
+**Nachher:**
+```
+Patient: 67 Jahre, männlich, Typ-2-Diabetes seit 12 Jahren,
+aktuelle Medikation: Metformin 1000mg 1-0-1, HbA1c 8,2%
+(Vorwert 7,9%), GFR 52 ml/min, BMI 31.
+Patientenwunsch: kein Insulin.
+Welche Therapieeskalation ist leitliniengerecht?
+```
+
+**Die Regel:** Kontext ist das, worin die meisten Ärzte am wenigsten investieren – aber es hat den größten Effekt auf die Qualität.
+
+---
+
+## Fehler 3: Zu viel auf einmal verlangen
+
+**Vorher:**
+```
+Erstelle ein komplettes Diabetes-Schulungsprogramm mit
+Informationsblättern, Quizfragen, einem 12-Wochen-Plan,
+einem Ernährungsratgeber und Übungsvideos-Beschreibungen.
+```
+Das Ergebnis: Alles wird oberflächlich behandelt, nichts ist wirklich brauchbar.
+
+**Nachher:**
+```
+Prompt 1: Liste die 8 wichtigsten Themen auf, die ein
+neu diagnostizierter Typ-2-Diabetiker verstehen muss.
+
+Prompt 2: Erstelle ein Informationsblatt zum ersten Thema:
+"Was ist Typ-2-Diabetes?" Maximal eine DIN-A4-Seite,
+Laiensprache.
+
+Prompt 3: Erstelle 5 Verständnisfragen zu diesem
+Informationsblatt.
+```
+
+**Die Regel:** Ein Ergebnis pro Prompt. Bei komplexen Projekten: aufteilen und nacheinander abarbeiten.
+
+---
+
+## Fehler 4: Kein Ausgabeformat angeben
+
+**Vorher:**
+```
+Fasse diesen Fall zusammen.
+```
+Die KI produziert einen langen Fließtext – wahrscheinlich nicht das, was du wolltest.
+
+**Nachher:**
+```
+Fasse diesen Fall in drei Stichpunkten zusammen:
+1. Hauptbeschwerde (maximal 1 Satz)
+2. Wichtigste Befunde (maximal 2 Sätze)
+3. Empfohlener nächster Schritt (maximal 1 Satz)
+Insgesamt maximal 50 Wörter.
+```
+
+**Die Regel:** Gib immer an: Länge, Format (Stichpunkte, Tabelle, Fließtext, nummerierte Liste) und Struktur.
+
+---
+
+## Fehler 5: Echte Patientendaten eingeben
+
+**Vorher:**
+```
+Herr Müller, geb. 15.03.1958, wohnhaft Hauptstr. 12,
+97070 Würzburg, war heute in meiner Sprechstunde...
+```
+Der Name, das Geburtsdatum, die Adresse – all das wird von der KI in der Cloud verarbeitet. Das ist ein Datenschutzverstoß.
+
+**Nachher:**
+```
+Patient, 67 Jahre, männlich, war heute in meiner Sprechstunde
+wegen zunehmender Belastungsdyspnoe...
+```
+Die klinische Fragestellung funktioniert identisch – ohne personenbezogene Daten.
+
+**Die Regel:** Vor jedem Prompt mit Patientenbezug: Namen, Geburtsdaten, Adressen und alle anderen identifizierenden Merkmale entfernen. Die medizinische Analyse funktioniert genauso gut mit anonymisierten Daten.
+
+---
+
+## Checkliste vor jedem wichtigen Prompt
+
+Bevor du einen Prompt abschickst, prüfe:
+
+1. **Datenschutz:** Enthält der Prompt echte Patientendaten? Falls ja: anonymisieren.
+2. **Klarheit:** Weiß die KI genau, was sie tun soll? Verwende Aktionsverben (erstelle, schreibe, vergleiche, liste auf).
+3. **Kontext:** Hat die KI alle relevanten Informationen?
+4. **Format:** Hast du angegeben, wie das Ergebnis aussehen soll?
+5. **Umfang:** Verlangst du nur ein Ergebnis pro Prompt?
+
+## Zusammenfassung
+
+Die fünf häufigsten Fehler lassen sich auf eine einfache Formel bringen: **Sei konkret, gib Kontext, fordere ein Format, arbeite in Schritten und schütze Patientendaten.** Wenn ein KI-Ergebnis nicht brauchbar ist, liegt das fast immer an einem dieser fünf Punkte – nicht an der KI selbst.

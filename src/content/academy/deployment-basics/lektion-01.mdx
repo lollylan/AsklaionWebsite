@@ -1,0 +1,73 @@
+---
+title: "Was bedeutet Deployment?"
+course: "deployment-basics"
+lesson_number: 1
+description: "Dein Programm läuft auf deinem Rechner – aber wie kommt es auf andere Geräte, ins Praxisnetz oder ins Internet?"
+video_url: ""
+---
+
+# Was bedeutet Deployment?
+
+> **Wichtiger Hinweis:** Alle in diesem Kurs vorgestellten Anleitungen dienen dem Erlernen grundlegender Deployment-Konzepte. Sobald Patientendaten verarbeitet werden, gelten strenge Datenschutz- und Sicherheitsanforderungen (DSGVO, Medizinprodukteverordnung). Veröffentliche Programme mit Patientenbezug niemals ohne professionelle Beratung.
+
+Du hast mit VibeCoding ein Praxis-Tool gebaut – einen BMI-Rechner, eine Wartezeit-Anzeige oder ein Formular. Es läuft auf deinem Computer. Aber wie kommt es auf den Bildschirm im Wartezimmer? Wie können deine MFA es nutzen? Und wann macht es Sinn, es ins Internet zu stellen?
+
+## Die drei Stufen der Erreichbarkeit
+
+### Stufe 1: Nur auf deinem Rechner (localhost)
+
+Wenn du ein Programm mit der KI erstellst und es startest, läuft es auf **deinem Rechner**. Im Browser siehst du eine Adresse wie `http://localhost:4321`. Das bedeutet: Nur du kannst es sehen und benutzen – kein anderes Gerät im Netzwerk hat Zugriff.
+
+**Geeignet für:** Ausprobieren, Testen, eigene Werkzeuge, die nur du brauchst.
+
+### Stufe 2: Im Praxisnetz (lokales Netzwerk)
+
+Dein Praxis-PC ist mit einem Netzwerk verbunden – genauso wie die PCs deiner MFA und möglicherweise ein Bildschirm im Wartezimmer. Du kannst dein Programm so einrichten, dass andere Geräte **im selben Netzwerk** darauf zugreifen können.
+
+**Geeignet für:** Wartezimmer-Anzeigen, Praxis-interne Tools, die mehrere Arbeitsplätze nutzen.
+
+### Stufe 3: Im Internet (öffentlich)
+
+Du stellst dein Programm auf einen Server im Internet. Jeder mit der Adresse kann darauf zugreifen – deine Patienten, Kollegen oder die ganze Welt.
+
+**Geeignet für:** Informationsseiten, Rechner ohne Patientendaten, Praxis-Webseite.
+
+## Wann brauche ich welche Stufe?
+
+| Anwendungsfall | Stufe | Beispiel |
+|---|---|---|
+| Eigenes Arbeitstool | Localhost | GFR-Rechner für dich allein |
+| Mehrere Arbeitsplätze | Praxisnetz | Wartezimmer-Aufrufsystem |
+| Informationen für Patienten | Internet | Anfahrtsbeschreibung, Infoblätter |
+| Tool mit Patientendaten | **Nur lokal oder Praxisnetz** | Anamnesebogen, Befundübersicht |
+
+## Die wichtigste Regel: Patientendaten und Internet
+
+> **Sobald ein Programm Patientendaten verarbeitet, darf es nicht einfach ins Internet gestellt werden.** Das ist keine optionale Empfehlung, sondern eine rechtliche Pflicht nach DSGVO. Verstöße können Bußgelder von bis zu 20 Millionen Euro oder 4% des Jahresumsatzes nach sich ziehen.
+
+Was "Patientendaten" bedeutet:
+- Name, Geburtsdatum, Adresse
+- Diagnosen, Befunde, Medikamente
+- Termine, Versicherungsdaten
+- Alles, was einen Patienten identifizierbar macht
+
+**Faustregel:** Wenn dein Tool irgendein Eingabefeld hat, in das jemand einen Patientennamen tippen könnte, gehört es **nicht** ins öffentliche Internet. Punkt.
+
+Programme ohne Patientenbezug (BMI-Rechner, allgemeine Infoseiten, Laborwert-Referenztabellen) kannst du relativ bedenkenlos veröffentlichen. Beachte aber: Für die inhaltliche Richtigkeit haftest du trotzdem – wenn dein Rechner falsche Ergebnisse liefert oder deine Infoseite medizinisch fehlerhafte Angaben enthält, bist du als Urheber dafür verantwortlich.
+
+## Lokal heißt nicht automatisch sicher
+
+Auch wenn dein Programm nur auf deinem Rechner läuft, ist das kein Freibrief:
+
+- **Dein Browser kommuniziert mit der KI in der Cloud.** Die Prompts, die du schreibst, verlassen deinen Rechner. Keine echten Patientendaten in Prompts eingeben.
+- **Localhost bedeutet nur: nicht über das Netzwerk erreichbar.** Die Dateien auf deinem Rechner sind trotzdem so sicher (oder unsicher) wie dein Rechner selbst.
+- **Backups und Verschlüsselung** gelten auch für selbstgebaute Tools – genau wie für dein Praxisverwaltungssystem.
+
+## Zusammenfassung
+
+- **Localhost:** Nur für dich. Zum Testen und für persönliche Werkzeuge.
+- **Praxisnetz:** Für dein Team. Braucht Netzwerk-Sicherheit (mehr dazu in der nächsten Lektion).
+- **Internet:** Für die Welt. Nur für Inhalte ohne Patientendaten.
+- **Patientendaten + Internet = Nein.** Außer du hast professionelle IT-Sicherheit, DSGVO-Konformität und ggf. eine Medizinprodukte-Zulassung.
+
+In der nächsten Lektion zeigen wir dir, wie du dein Programm sicher im Praxisnetz bereitstellst.

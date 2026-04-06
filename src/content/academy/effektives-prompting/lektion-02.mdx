@@ -1,0 +1,101 @@
+---
+title: "Few-Shot Prompting"
+course: "effektives-prompting"
+lesson_number: 2
+description: "Mit Beispielen arbeiten – der KI zeigen, was du meinst."
+video_url: ""
+---
+
+# Few-Shot Prompting
+
+> **Wichtiger Hinweis:** Alle in diesem Kurs vorgestellten Programme dienen ausschließlich dem Erlernen von Prompting-Techniken. Sie sind nicht für die Anwendung am Patienten gedacht. Insbesondere medizinische Tools könnten einem Medizinprodukt gleichkommen und dürfen ohne regulatorische Zulassung nicht im klinischen Alltag eingesetzt werden.
+
+Manchmal versteht die KI nicht genau, was du willst – vor allem wenn es um ein bestimmtes Format, einen bestimmten Stil oder fachspezifische Konventionen geht. **Few-Shot Prompting** löst dieses Problem: Du gibst der KI ein oder mehrere Beispiele, an denen sie sich orientieren kann.
+
+## Das Prinzip
+
+Statt nur zu beschreiben, was du willst, **zeigst** du es der KI anhand konkreter Beispiele. Die KI erkennt das Muster und wendet es auf neue Fälle an.
+
+- **One-Shot:** Ein Beispiel
+- **Few-Shot:** Zwei bis fünf Beispiele
+- **Faustregel:** 2–3 Beispiele reichen fast immer
+
+## Beispiel 1: Arztbrief-Textbausteine generieren
+
+Ohne Beispiel bekommst du möglicherweise Arztbriefe in einem Stil, der nicht zu deiner Praxis passt. Mit Few-Shot zeigst du der KI genau dein Format:
+
+```
+Erstelle ein Tool, das Arztbrief-Textbausteine generiert.
+Das Tool soll aus Diagnose und Befund einen Fließtext erzeugen.
+
+Hier sind Beispiele für den gewünschten Stil:
+
+Eingabe: Diagnose: Diabetes mellitus Typ 2, Befund: HbA1c 7,8%
+Ausgabe: "Bei dem Patienten besteht ein bekannter Diabetes mellitus
+Typ 2. Im aktuellen Laborbefund zeigt sich ein HbA1c von 7,8%,
+was einer unbefriedigenden Stoffwechseleinstellung entspricht.
+Eine Therapieintensivierung wird empfohlen."
+
+Eingabe: Diagnose: Arterielle Hypertonie, Befund: RR 160/95 mmHg
+Ausgabe: "Es liegt eine arterielle Hypertonie vor. Bei der heutigen
+Messung fand sich ein Blutdruck von 160/95 mmHg. Die aktuelle
+antihypertensive Therapie erscheint nicht ausreichend.
+Eine Medikamentenanpassung wird angeraten."
+
+Erstelle das Tool mit Eingabefeldern für Diagnose und Befund
+und einem Button, der den Textbaustein generiert.
+```
+
+Die KI versteht durch die Beispiele: formeller Stil, Fachsprache, bestimmte Satzstrukturen, therapeutische Empfehlung am Ende.
+
+## Beispiel 2: ICD-10-Codes zuordnen
+
+```
+Erstelle ein Tool, das aus einer Freitext-Diagnose den passenden
+ICD-10-Code vorschlägt.
+
+Beispiele:
+"Bluthochdruck" → I10 – Essentielle (primäre) Hypertonie
+"Zucker" → E11.9 – Diabetes mellitus Typ 2 ohne Komplikationen
+"Rückenschmerzen unten" → M54.5 – Kreuzschmerz
+"Erkältung" → J06.9 – Akute Infektion der oberen Atemwege
+
+Das Tool soll ein Textfeld haben und nach der Eingabe die
+3 wahrscheinlichsten ICD-10-Codes mit Bezeichnung anzeigen.
+```
+
+Hier lernt die KI durch die Beispiele, dass auch umgangssprachliche Begriffe korrekt zugeordnet werden sollen.
+
+## Beispiel 3: Befundtexte strukturieren
+
+```
+Erstelle ein Tool, das unstrukturierte Befundtexte in ein
+einheitliches Format bringt.
+
+Eingabe: "Sono Abdomen: Leber homogen, keine Raumforderung,
+Galle ok, Nieren bds unauffällig, kein Stau"
+Ausgabe:
+- Leber: Homogenes Parenchym, keine Raumforderung
+- Gallenblase: Unauffällig
+- Nieren beidseits: Unauffällig, kein Harnstau
+
+Eingabe: "Rö Thorax: Herz nicht verbreitert, Lunge frei,
+kein Erguss, kein Pneu"
+Ausgabe:
+- Herz: Nicht verbreitert
+- Lunge: Frei, kein Infiltrat
+- Pleura: Kein Erguss, kein Pneumothorax
+```
+
+## Wann Few-Shot statt Zero-Shot?
+
+| Situation | Zero-Shot | Few-Shot |
+|---|---|---|
+| Einfaches Formular erstellen | Reicht aus | Nicht nötig |
+| Bestimmter Textstil gefragt | Oft ungenau | Viel besser |
+| Fachspezifisches Format | Trifft selten | Genau richtig |
+| Umgangssprache → Fachsprache | Unzuverlässig | Zuverlässig |
+
+## Zusammenfassung
+
+Few-Shot Prompting ist immer dann das Mittel der Wahl, wenn du ein bestimmtes Format oder einen bestimmten Stil brauchst. Statt lange zu erklären, was du willst, zeigst du es einfach anhand von Beispielen. In der Medizin ist das besonders nützlich, weil viele Dokumentationsformate stark konventionalisiert sind.

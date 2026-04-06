@@ -1,0 +1,75 @@
+---
+title: "Zero-Shot Prompting"
+course: "effektives-prompting"
+lesson_number: 1
+description: "Direkte Anweisungen ohne Beispiele – die einfachste Form des Promptings."
+video_url: ""
+---
+
+# Zero-Shot Prompting
+
+> **Wichtiger Hinweis:** Alle in diesem Kurs vorgestellten Programme dienen ausschließlich dem Erlernen von Prompting-Techniken. Sie sind nicht für die Anwendung am Patienten gedacht. Insbesondere medizinische Tools (z.B. Dosisrechner, Diagnostik-Hilfen) könnten einem Medizinprodukt gleichkommen und unterliegen dann der Medizinprodukte-Verordnung. Ohne geprüfte Datenquellen und regulatorische Zulassung dürfen solche Programme nicht im klinischen Alltag eingesetzt werden.
+
+Zero-Shot Prompting ist die einfachste und intuitivste Art, mit einer KI zu kommunizieren: Du gibst eine direkte Anweisung, ohne Beispiele oder zusätzlichen Kontext. Die KI soll allein aus deiner Beschreibung verstehen, was du willst.
+
+## Das Prinzip
+
+Du beschreibst dein Ziel in klaren, einfachen Sätzen. Keine Beispiele, keine Vorlagen – nur die Aufgabe selbst.
+
+**Wann eignet sich Zero-Shot?**
+- Für einfache, klar umrissene Aufgaben
+- Wenn das gewünschte Ergebnis offensichtlich ist
+- Für schnelle Prototypen und erste Versuche
+
+**Wann reicht es nicht aus?**
+- Wenn du ein sehr spezifisches Format brauchst
+- Bei komplexen Aufgaben mit vielen Regeln
+- Wenn die KI wiederholt nicht das liefert, was du meinst
+
+## Beispiel 1: Einfacher Anamnesebogen
+
+```
+Erstelle einen digitalen Anamnesebogen als Webseite.
+Felder: Name, Geburtsdatum, Vorerkrankungen (Mehrfachauswahl),
+aktuelle Medikamente (Freitextfeld), Allergien.
+Am Ende ein Button zum Ausdrucken.
+```
+
+Das ist ein typischer Zero-Shot-Prompt: eine klare Aufgabe, keine Beispiele nötig. Die KI weiß, was ein Anamnesebogen ist und kann ihn direkt umsetzen.
+
+## Beispiel 2: Laborwert-Tabelle
+
+```
+Erstelle eine Webseite mit einer Tabelle der wichtigsten Laborwerte
+in der Allgemeinmedizin. Spalten: Parameter, Einheit, Referenzbereich,
+mögliche Ursachen bei Abweichung. Mindestens 15 Parameter.
+```
+
+Auch hier reicht eine direkte Anweisung. Die KI kennt Laborwerte und kann eine sinnvolle Tabelle erstellen.
+
+## Beispiel 3: Rezept-Vorlage
+
+```
+Erstelle eine druckbare Rezept-Vorlage als Webseite.
+Felder: Arztname und Anschrift, Patientenname und Geburtsdatum,
+Datum, Medikament, Dosierung, Einnahmehinweis.
+Format: DIN A5 quer, schlichtes Design.
+```
+
+## Tipps für bessere Zero-Shot-Prompts
+
+**Sei spezifisch statt vage:**
+- Schlecht: "Erstelle eine medizinische App"
+- Besser: "Erstelle einen Rechner für die Kreatinin-Clearance nach Cockcroft-Gault"
+
+**Beschreibe das Ergebnis, nicht den Weg:**
+- Schlecht: "Verwende JavaScript und eine for-Schleife"
+- Besser: "Zeige eine Liste aller eingegebenen Patienten"
+
+**Nenne konkrete Anforderungen:**
+- Schlecht: "Mach es schön"
+- Besser: "Heller Hintergrund, große Schrift, gut lesbar auf einem Tablet"
+
+## Zusammenfassung
+
+Zero-Shot Prompting ist dein Startpunkt. Für viele einfache Praxis-Tools reicht es völlig aus. Wenn du merkst, dass die KI nicht das liefert, was du dir vorstellst, ist es Zeit für fortgeschrittenere Techniken – die lernst du in den nächsten Lektionen.

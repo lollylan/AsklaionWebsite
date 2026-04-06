@@ -1,0 +1,133 @@
+---
+title: "Das RICE-Framework"
+course: "effektives-prompting"
+lesson_number: 8
+description: "Rolle, Instruktionen, Kontext, Beispiele – ein universelles Gerüst für konsistent gute Prompts."
+video_url: ""
+---
+
+# Das RICE-Framework
+
+> **Wichtiger Hinweis:** Alle in diesem Kurs vorgestellten Programme dienen ausschließlich dem Erlernen von Prompting-Techniken. Sie sind nicht für die Anwendung am Patienten gedacht. Insbesondere medizinische Tools könnten einem Medizinprodukt gleichkommen und dürfen ohne regulatorische Zulassung nicht im klinischen Alltag eingesetzt werden.
+
+In den bisherigen Lektionen hast du verschiedene Prompting-Techniken einzeln kennengelernt. Das **RICE-Framework** fasst die wichtigsten Elemente in einem einzigen, leicht merkbaren Schema zusammen. Stell es dir vor wie eine Checkliste: Bevor du einen Prompt abschickst, gehst du die vier Punkte durch.
+
+## Die vier Buchstaben
+
+| Buchstabe | Bedeutung | Frage |
+|---|---|---|
+| **R** | Rolle | Wer soll die KI sein? |
+| **I** | Instruktionen | Was genau soll sie tun? |
+| **C** | Context (Kontext) | Was muss sie wissen? |
+| **E** | Examples (Beispiele) | Gibt es ein Vorbild für das Ergebnis? |
+
+Das kennst du teilweise schon: **R** aus der Lektion zu rollenbasiertem Prompting, **E** aus Few-Shot Prompting. RICE bringt alles zusammen und ergänzt es um klare Instruktionen und ausreichend Kontext.
+
+## Warum RICE funktioniert
+
+Stell dir vor, du übergibst einen Patienten an einen Kollegen. Ein guter Übergabebericht hat eine Struktur: Wer bist du, was ist die Fragestellung, was sind die relevanten Befunde, was erwartest du. Genau so funktioniert ein guter Prompt.
+
+**Ohne Struktur:**
+```
+Schreib einen Arztbrief.
+```
+
+**Mit RICE:**
+```
+R: Du bist ein Allgemeinmediziner in einer Einzelpraxis.
+I: Schreibe einen Überweisungsbrief an einen Kardiologen.
+C: Patient, 58 Jahre, männlich, seit 3 Monaten belastungsabhängige
+   Dyspnoe bei leichter Anstrengung. Bekannte arterielle Hypertonie
+   unter Ramipril 5mg. Ruhe-EKG: unauffällig. BNP: 280 pg/ml (erhöht).
+   Bisherige Therapie: Ramipril-Dosiserhöhung auf 10mg ohne Besserung.
+E: Der Brief soll im klassischen deutschen Arztbrief-Format sein:
+   Anrede, Einleitung mit Überweisungsgrund, Anamnese, Befunde,
+   bisherige Therapie, Fragestellung.
+```
+
+Der Unterschied im Ergebnis ist enorm.
+
+## Beispiel 1: Patienteninformation erstellen
+
+```
+ROLLE: Du bist ein erfahrener Patientenberater, der medizinische
+Inhalte verständlich erklären kann.
+
+INSTRUKTIONEN: Erstelle ein einseitiges Informationsblatt über die
+Vorbereitung auf eine Darmspiegelung (Koloskopie). Das Blatt soll
+ausgedruckt und dem Patienten mitgegeben werden können.
+
+KONTEXT: Zielgruppe sind Patienten ab 55 Jahren, die erstmals eine
+Vorsorge-Koloskopie durchführen lassen. Viele haben Angst vor dem
+Eingriff. Die Praxis verwendet Moviprep als Abführlösung.
+
+BEISPIEL: Struktur bitte so:
+- Kurze Erklärung, was eine Koloskopie ist (3 Sätze)
+- Was ist in den Tagen vorher zu beachten (Liste)
+- Abführen am Vortag: Schritt-für-Schritt-Anleitung
+- Am Tag der Untersuchung
+- Häufige Fragen und Sorgen
+```
+
+## Beispiel 2: MFA-Schulungsmaterial
+
+```
+ROLLE: Du bist eine erfahrene Praxismanagerin, die
+Schulungsmaterialien für medizinische Fachangestellte erstellt.
+
+INSTRUKTIONEN: Erstelle eine Kurzanleitung für die korrekte
+Blutentnahme-Vorbereitung. Maximal eine DIN-A4-Seite.
+
+KONTEXT: Die Anleitung ist für eine neue MFA, die gerade ihre
+Ausbildung abgeschlossen hat. Sie kennt die Theorie, braucht
+aber eine praktische Checkliste für den Alltag. In unserer
+Praxis verwenden wir Monovetten (Sarstedt) und nehmen
+standardmäßig aus der Kubitalvene ab.
+
+BEISPIEL: Format als nummerierte Checkliste, die man ausdrucken
+und an den Arbeitsplatz hängen kann. Jeden Schritt in einem
+kurzen Satz. Am Ende: die 3 häufigsten Fehler und wie man
+sie vermeidet.
+```
+
+## Beispiel 3: Tool für die Praxis programmieren
+
+RICE funktioniert nicht nur für Texte, sondern auch beim VibeCoding:
+
+```
+ROLLE: Du bist ein erfahrener Softwareentwickler für
+Arztpraxis-Software.
+
+INSTRUKTIONEN: Erstelle ein Wartezimmer-Aufrufsystem als Webseite.
+Die MFA ruft den nächsten Patienten auf, und auf einem Bildschirm
+im Wartezimmer erscheint der Name.
+
+KONTEXT: Einzelpraxis, ca. 40 Patienten pro Tag. Der Bildschirm
+im Wartezimmer ist ein 32-Zoll-TV. Die MFA arbeitet am PC
+hinter dem Empfang. Es gibt kein WLAN für Patienten, der
+Bildschirm hängt im lokalen Netzwerk.
+
+BEISPIEL: Die Anzeige im Wartezimmer soll so aussehen:
+Großer Text in der Mitte: "Herr/Frau [Name]"
+Darunter: "Bitte in Behandlungsraum [Nummer]"
+Hintergrund: ruhig, nicht zu hell, gut lesbar aus 3 Metern
+```
+
+## Nicht jeder Prompt braucht alle vier Teile
+
+| Aufgabe | R | I | C | E |
+|---|---|---|---|---|
+| Einfaches Formular | Optional | Ja | Wenig nötig | Nein |
+| Arztbrief schreiben | Ja | Ja | Ja | Sehr hilfreich |
+| Komplexes Praxis-Tool | Ja | Ja | Ja | Hilfreich |
+| Text in bestimmtem Stil | Optional | Ja | Wenig nötig | Unverzichtbar |
+
+**Faustregel:** Je spezifischer dein gewünschtes Ergebnis, desto mehr RICE-Komponenten brauchst du.
+
+## Zusammenfassung
+
+RICE ist deine Checkliste für jeden Prompt. Du musst nicht jedes Mal alle vier Teile ausfüllen, aber wenn du mit einem Ergebnis unzufrieden bist, schau dir an, welcher RICE-Buchstabe fehlt:
+
+- **Ergebnis zu generisch?** Wahrscheinlich fehlt die **Rolle** oder der **Kontext**.
+- **Falsches Format?** Du brauchst ein **Beispiel**.
+- **KI macht etwas anderes als gewünscht?** Deine **Instruktionen** waren zu vage.

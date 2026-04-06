@@ -1,0 +1,14 @@
+{
+  "name": "DocMotion",
+  "slug": "docmotion",
+  "category": "webapp",
+  "tags": ["Fitness", "Mikrobewegung"],
+  "anforderung": "WEBAPP",
+  "description": "DocMotion ermöglicht den Mitarbeitern einer Arztpraxis, zwischen den Patientenkontakten kurze Bewegungseinheiten einzubauen – ob Kraftübungen, Dehnung, Ausdauer oder einfach etwas, um Körper und Kopf wach zu halten. Die Übungen sind bewusst so kurz gehalten, dass sie den Praxisalltag nicht stören. Ein Punktesystem sorgt für etwas Gamification: Punkte sammeln, sich gegenseitig in der Praxis motivieren und schauen, wer am Ende des Tages die meisten Punkte hat. Bevorzugt vom Handy zu nutzen.",
+  "github_url": "https://github.com/lollylan/DocMotion",
+  "demo_url": "https://lollylan.github.io/DocMotion/",
+  "demo_label": "Im Browser öffnen (bevorzugt vom Handy)",
+  "video_url": "",
+  "academy_course_slug": null,
+  "screenshot": "/images/docmotion.png"
+}

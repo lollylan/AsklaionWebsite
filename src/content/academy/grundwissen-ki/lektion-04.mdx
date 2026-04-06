@@ -1,0 +1,165 @@
+---
+title: "Prompting: Die Kunst der richtigen Frage"
+course: "grundwissen-ki"
+lesson_number: 4
+description: "Wie du durch gute Prompts bessere Ergebnisse bekommst – mit Praxisbeispielen, Beispiel-Outputs und dem Einfluss der Temperatur."
+video_url: ""
+---
+
+# Prompting: Die Kunst der richtigen Frage
+
+Ein **Prompt** ist die Anweisung, die du einem KI-Modell gibst. Die Qualität deiner Eingabe bestimmt maßgeblich die Qualität der Antwort. In dieser Lektion lernst du die wichtigsten Techniken – mit konkreten Beispielen aus dem Praxisalltag.
+
+## Grundregeln für gute Prompts
+
+### 1. Sei spezifisch
+
+Je genauer du formulierst, desto besser das Ergebnis.
+
+> **Vage:** "Was hilft bei Rückenschmerzen?"
+>
+> **Spezifisch:** "Welche evidenzbasierten nicht-medikamentösen Maßnahmen empfiehlt die aktuelle Nationale VersorgungsLeitlinie bei nicht-spezifischem Kreuzschmerz? Liste die 5 wichtigsten."
+
+### 2. Gib Kontext
+
+Sage dem Modell, wer du bist und wofür du das Ergebnis brauchst.
+
+> "Ich bin Hausarzt und brauche eine patientenverständliche Erklärung von Diabetes Typ 2 für einen 65-jährigen Patienten ohne medizinische Vorkenntnisse."
+
+Das liefert ein ganz anderes Ergebnis als einfach nur "Erkläre Diabetes."
+
+### 3. Definiere das Format
+
+Wenn du eine bestimmte Struktur brauchst, sage es explizit:
+
+> "Antworte als Tabelle mit den Spalten: Wirkstoff, Dosierung, häufigste Nebenwirkungen."
+
+### 4. Gib Beispiele (Few-Shot Prompting)
+
+Zeige dem Modell, wie das Ergebnis aussehen soll. Das nennt man **Few-Shot Prompting** – du gibst ein oder zwei Beispiele, und das Modell folgt dem Muster.
+
+## System-Prompts
+
+Viele KI-Tools erlauben sogenannte **System-Anweisungen** – Instruktionen, die im Hintergrund dauerhaft gelten. Damit kannst du das Verhalten des Modells grundsätzlich steuern:
+
+> *"Stell dir vor, du bist ein Hausarzt mit 20 Jahren Berufserfahrung in einer Gemeinschaftspraxis. Antworte immer praxisnah und evidenzbasiert."*
+
+Diese Anweisung wirkt auf alle folgenden Antworten im selben Chat. Du musst sie nicht bei jeder Frage wiederholen.
+
+## Praxisbeispiele mit Outputs
+
+### Beispiel 1: Arztbrief formulieren
+
+**Prompt:**
+> Formuliere einen kurzen Überweisungsbrief an den Diabetologen für einen 67-jährigen Patienten. Neu diagnostizierter Diabetes mellitus Typ 2, HbA1c 7,8%, BMI 31, Metformin 500mg 1-0-1 seit 4 Wochen begonnen. Vorerkrankungen: arterielle Hypertonie, Hyperurikämie. Struktur: Anamnese, Befunde, Diagnose, Procedere.
+
+<details>
+<summary>Beispiel-Output anzeigen</summary>
+
+**Überweisungsbrief**
+
+*Sehr geehrte Kollegin, sehr geehrter Kollege,*
+
+*ich überweise Ihnen den o.g. Patienten zur diabetologischen Mitbehandlung.*
+
+**Anamnese:**
+*Der 67-jährige Patient stellte sich mit Polydipsie und Abgeschlagenheit vor. Im Routinelabor zeigte sich ein erhöhter Nüchtern-BZ. Vorbekannt sind eine arterielle Hypertonie (gut eingestellt unter Ramipril 5mg) sowie eine Hyperurikämie.*
+
+**Befunde:**
+*HbA1c 7,8%, Nüchtern-BZ 156 mg/dl, BMI 31 kg/m², RR 135/82 mmHg, Kreatinin 0,9 mg/dl, eGFR >90 ml/min.*
+
+**Diagnose:**
+*Diabetes mellitus Typ 2 (Erstdiagnose), Adipositas Grad I*
+
+**Procedere:**
+*Seit 4 Wochen Metformin 500mg 1-0-1, Ernährungsberatung empfohlen. Ich bitte um Mitbeurteilung bezüglich der weiteren Therapieeskalation und Schulung.*
+
+*Mit freundlichen kollegialen Grüßen*
+
+</details>
+
+### Beispiel 2: Patienteninformation erstellen
+
+**Prompt:**
+> Erstelle eine patientenverständliche Erklärung zu Bluthochdruck für einen 55-jährigen Patienten ohne medizinische Vorkenntnisse. Maximal 200 Wörter, einfache Sprache, keine Fachbegriffe. Duzen.
+
+<details>
+<summary>Beispiel-Output anzeigen</summary>
+
+**Was ist Bluthochdruck?**
+
+*Dein Herz pumpt Blut durch deinen Körper. Dabei entsteht Druck auf die Wände deiner Blutgefäße – ähnlich wie der Wasserdruck in einem Gartenschlauch. Wenn dieser Druck dauerhaft zu hoch ist, spricht man von Bluthochdruck.*
+
+*Das Tückische: Du merkst davon meist nichts. Es tut nicht weh und du fühlst dich oft völlig normal. Aber über Jahre hinweg schädigt der hohe Druck deine Gefäße, dein Herz und deine Nieren. Das Risiko für Herzinfarkt und Schlaganfall steigt deutlich.*
+
+*Die gute Nachricht: Du kannst viel selbst tun. Regelmäßige Bewegung, weniger Salz, ein gesundes Gewicht und Stressabbau senken den Blutdruck oft schon spürbar. Wenn das allein nicht reicht, helfen Medikamente – die meisten sind gut verträglich und seit Jahrzehnten erprobt.*
+
+*Wichtig: Nimm die Medikamente regelmäßig ein, auch wenn du dich gut fühlst. Und miss deinen Blutdruck ab und zu zu Hause – das hilft uns, die Behandlung optimal anzupassen.*
+
+</details>
+
+### Beispiel 3: Schlechter vs. guter Prompt
+
+**Schlechter Prompt:**
+> Was ist Hypertonie?
+
+<details>
+<summary>Typischer Output bei vagem Prompt anzeigen</summary>
+
+*Hypertonie, auch Bluthochdruck genannt, ist eine chronische Erkrankung des Herz-Kreislauf-Systems, bei der der arterielle Blutdruck dauerhaft erhöht ist. Die WHO definiert Hypertonie als systolische Werte ab 140 mmHg und/oder diastolische Werte ab 90 mmHg. Man unterscheidet primäre (essentielle) und sekundäre Hypertonie ...*
+
+*(Das Modell weiß nicht, für wen der Text ist, und produziert einen generischen Wikipedia-artigen Artikel.)*
+
+</details>
+
+**Guter Prompt:**
+> Erkläre einem 75-jährigen Patienten mit leichter kognitiver Einschränkung in 3–4 einfachen Sätzen, warum er seinen Blutdruck regelmäßig messen soll. Verwende die Sie-Form, keine Fachbegriffe.
+
+<details>
+<summary>Typischer Output bei gutem Prompt anzeigen</summary>
+
+*Ihr Blutdruck zeigt an, wie stark Ihr Herz arbeiten muss. Wenn der Druck zu hoch ist, schadet das auf Dauer Ihrem Herzen und Ihren Gefäßen. Das Messen dauert nur eine Minute und hilft mir, Ihre Medikamente richtig einzustellen. Messen Sie bitte morgens und abends und schreiben Sie die Werte auf – so können wir in der nächsten Sprechstunde gemeinsam darauf schauen.*
+
+</details>
+
+## Temperatur: Wie "kreativ" soll das Modell antworten?
+
+Die **Temperatur** ist eine Einstellung, die steuert, wie vorhersagbar oder kreativ das Modell antwortet. Die Skala reicht von 0 (sehr deterministisch) bis 1 (sehr kreativ).
+
+| Temperatur | Verhalten | Geeignet für |
+|---|---|---|
+| 0.0 – 0.3 | Sehr vorhersagbar, immer ähnliche Antworten | Medizinische Fakten, Arztbriefe, Leitlinien-Zusammenfassungen |
+| 0.4 – 0.6 | Ausgewogen | Allgemeine Texte, Patienteninformationen |
+| 0.7 – 1.0 | Kreativ, variabel, überraschender | Brainstorming, kreative Formulierungen |
+
+### Vergleich: Gleicher Prompt, verschiedene Temperaturen
+
+**Prompt:** "Nenne drei Differentialdiagnosen bei akutem Thoraxschmerz in der Hausarztpraxis."
+
+<details>
+<summary>Temperatur 0.1 – Antwort anzeigen</summary>
+
+*1. Akutes Koronarsyndrom (ACS)*
+*2. Muskuloskelettale Ursache (z.B. BWS-Blockierung, Interkostalneuralgie)*
+*3. Gastroösophageale Refluxkrankheit (GERD)*
+
+*(Bei niedriger Temperatur: Immer dieselben drei häufigsten Diagnosen, strukturiert und vorhersagbar. Ideal, wenn du faktenbasierte Antworten brauchst.)*
+
+</details>
+
+<details>
+<summary>Temperatur 0.8 – Antwort anzeigen</summary>
+
+*1. Interkostalneuralgie – oft durch Fehlhaltung oder Husten ausgelöst, stechender, atemabhängiger Schmerz*
+*2. Akutes Koronarsyndrom – retrosternaler Druck mit möglicher Ausstrahlung, Warnsignale: Dyspnoe, Übelkeit, Kaltschweißigkeit*
+*3. Herpes Zoster (Prodromalstadium) – einseitiger brennender Schmerz, der dem typischen Exanthem Tage vorausgehen kann*
+
+*(Bei hoher Temperatur: Andere Reihenfolge, ausführlichere Beschreibungen, auch weniger naheliegende Diagnosen wie Herpes Zoster. Interessant zum Brainstormen, aber weniger konsistent.)*
+
+</details>
+
+**Empfehlung für den Praxisalltag:** Bei medizinischen Inhalten, Arztbriefen und Fakten lieber niedrige Temperatur verwenden. Kreativere Einstellungen sind sinnvoll, wenn du z.B. verschiedene Formulierungen für eine Patienteninformation ausprobieren möchtest.
+
+## Zusammenfassung
+
+Gutes Prompting ist eine Kernkompetenz im Umgang mit KI. Mit spezifischen, kontextreichen Eingaben und klaren Formatvorgaben bekommst du deutlich bessere Ergebnisse. System-Prompts helfen, das Modell dauerhaft auf deinen Arbeitskontext auszurichten. Und die Temperatur bestimmt, ob das Modell faktenorientiert oder kreativ antwortet – für medizinische Inhalte gilt: lieber niedrig.

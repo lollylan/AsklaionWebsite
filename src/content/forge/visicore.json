@@ -1,0 +1,15 @@
+{
+  "name": "VisiCore",
+  "slug": "visicore",
+  "category": "install",
+  "tags": ["Hausbesuche", "Impfplanung", "Planung"],
+  "anforderung": "GERING",
+  "description": "VisiCore vereint die Funktionen von VisiCycle und PieksPlan in einer App. Es dient der Planung regelmäßig wiederkehrender Hausbesuche – insbesondere bei Heimpatienten und chronisch Kranken, die in bestimmten Intervallen zu besuchen sind – sowie der Organisation von Impfungen, auch bei komplexen Konstellationen wie dem Einholen von Einverständniserklärungen durch Betreuer. Für jeden Hausbesuch lassen sich PDF-Exporte zum Drucken und Mitnehmen erstellen. Die optimale Route wird automatisch berechnet. Es können mehrere Behandler angelegt und Vertretungen bestimmt werden, falls ein Behandler ausfällt oder ein Patient an einem Tag nicht visitiert werden kann.",
+  "github_url": "https://github.com/lollylan/VisiCore",
+  "release_url": "https://github.com/lollylan/VisiCore/releases/latest",
+  "demo_url": "https://visicore-preview.onrender.com/login?next=%2F",
+  "demo_label": "Live-Version ausprobieren",
+  "video_url": "",
+  "academy_course_slug": null,
+  "screenshot": "/images/visicore.png"
+}

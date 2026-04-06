@@ -1,0 +1,77 @@
+---
+title: "Tokens & Kontextfenster"
+course: "grundwissen-ki"
+lesson_number: 3
+description: "Wie KI-Modelle Text verarbeiten, was Tokens kosten und warum das Kontextfenster die wichtigste Grenze ist."
+video_url: ""
+---
+
+# Tokens & Kontextfenster
+
+Bevor ein LLM deinen Text verarbeiten kann, muss es ihn in kleinere Einheiten zerlegen. Diese Einheiten heißen **Tokens** – und sie bestimmen, was ein Modell leisten kann und was es kostet.
+
+## Was sind Tokens?
+
+Ein Token ist **nicht immer ein ganzes Wort**. Je nach Sprache und Wortlänge kann ein Token ein Wort, ein Wortteil oder ein einzelnes Zeichen sein.
+
+Beispiele mit medizinischen Begriffen:
+
+| Text | Tokens | Anzahl |
+|---|---|---|
+| Husten | `Husten` | 1 Token |
+| Blutdruck | `Blut` + `druck` | 2 Tokens |
+| Aortenklappeninsuffizienz | `A` + `orten` + `klappen` + `insuff` + `izienz` | 5 Tokens |
+| Ibuprofen 400mg | `Ib` + `uprofen` + ` 400` + `mg` | 4 Tokens |
+
+**Faustregel für deutsche Texte:** 1 Token entspricht etwa 3/4 eines Wortes. Ein typischer Arztbrief mit 500 Wörtern verbraucht also ca. 650–700 Tokens.
+
+## Warum sind Tokens wichtig?
+
+### Kosten
+
+Die meisten KI-Anbieter rechnen pro Token ab – sowohl für deine Eingabe (Input) als auch für die Antwort (Output). Ein kurzer Prompt kostet weniger als ein langer. Eine ausführliche Antwort kostet mehr als eine knappe.
+
+### Geschwindigkeit
+
+Je mehr Tokens verarbeitet werden, desto länger dauert die Antwort. Kurze, präzise Eingaben führen zu schnelleren Ergebnissen.
+
+## Das Kontextfenster
+
+Das **Kontextfenster** (englisch: Context Window) ist die maximale Menge an Tokens, die ein Modell **gleichzeitig verarbeiten** kann. Es ist wie der Schreibtisch des Modells – alles, was darauf liegt, kann es sehen. Was nicht drauf passt, existiert für das Modell nicht.
+
+### Wie groß ist ein Kontextfenster?
+
+| Modell | Kontextfenster | Entspricht ungefähr |
+|---|---|---|
+| GPT-3 (2020) | 4.096 Tokens | 5 Seiten Text |
+| GPT-4o (2024) | 128.000 Tokens | Ein kurzes Fachbuch |
+| Claude (2025) | bis zu 1.000.000 Tokens | Mehrere Lehrbücher |
+
+### Was zählt alles zum Kontext?
+
+Alles, was das Modell gleichzeitig "sieht", belegt Platz im Kontextfenster:
+
+- **Dein Prompt** – die aktuelle Frage oder Anweisung
+- **Der bisherige Gesprächsverlauf** – alle vorherigen Nachrichten
+- **System-Anweisungen** – versteckte Instruktionen im Hintergrund
+- **Die Antwort des Modells** – auch die wird Token für Token generiert und belegt Platz
+
+Das bedeutet: In einem langen Gespräch wird der verfügbare Platz für neue Inhalte immer kleiner.
+
+### Was passiert, wenn der Kontext voll ist?
+
+Wenn das Kontextfenster ausgeschöpft ist, gehen ältere Teile des Gesprächs verloren. Das kann dazu führen, dass:
+
+- Frühere Anweisungen plötzlich ignoriert werden
+- Das Modell sich widerspricht
+- Wichtige Details aus dem Anfang des Gesprächs vergessen werden
+
+### Praxisbeispiel
+
+Du möchtest eine aktuelle DEGAM-Leitlinie (30 Seiten, ca. 40.000 Tokens) in ein LLM laden und Fragen dazu stellen. Das passt bei den meisten modernen Modellen problemlos ins Kontextfenster. Aber: Wenn du danach in demselben Chat noch drei weitere Leitlinien nachlädst und ein einstündiges Gespräch darüber führst, wird es irgendwann eng.
+
+**Tipp:** Bei Themenwechseln lieber einen neuen Chat starten, als ein endlos langes Gespräch zu führen. So nutzt du das Kontextfenster optimal.
+
+## Zusammenfassung
+
+Tokens sind die Grundeinheit, in der KI-Modelle Text verarbeiten. Sie bestimmen Kosten und Geschwindigkeit. Das Kontextfenster begrenzt, wie viel Text ein Modell gleichzeitig verarbeiten kann – inklusive Eingabe, Gesprächsverlauf und Antwort. Wer beides versteht, kann KI-Werkzeuge effizienter und kostenbewusster einsetzen.

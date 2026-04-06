@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AcademyRoadmap from '../../components/AcademyRoadmap.tsx';
+import { getCollection } from 'astro:content';
+
+const courseEntries = await getCollection('academyCourses');
+const lessonEntries = await getCollection('academy');
+
+const COURSE_ORDER = [
+  'grundwissen-ki',
+  'programmempfehlung',
+  'vibecoding-anfaenger',
+  'effektives-prompting',
+  'deployment-basics',
+];
+
+const courses = courseEntries
+  .map(e => {
+    const lessonCount = lessonEntries.filter(l => l.data.course === e.data.slug).length;
+    return { ...e.data, lessonCount };
+  })
+  .sort((a, b) => {
+    const ia = COURSE_ORDER.indexOf(a.slug);
+    const ib = COURSE_ORDER.indexOf(b.slug);
+    return (ia === -1 ? 999 : ia) - (ib === -1 ? 999 : ib);
+  });
+---
+
+<BaseLayout title="Akademie" description="Asklaion Akademie – Lerne Vibecoding und KI-Grundlagen" variant="academy">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-text-primary mb-3">
+Asklaion Akademie
+      </h1>
+      <p class="text-text-secondary max-w-2xl mx-auto">
+        Lerne Vibecoding und KI-Grundlagen – Schritt für Schritt zum eigenen Programm.
+      </p>
+      <p class="text-xs text-text-muted mt-2">Dein Fortschritt wird lokal in deinem Browser gespeichert</p>
+    </div>
+
+    <!-- Roadmap -->
+    <AcademyRoadmap client:load courses={courses} />
+  </div>
+</BaseLayout>

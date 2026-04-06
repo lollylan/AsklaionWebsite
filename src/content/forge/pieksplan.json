@@ -1,0 +1,17 @@
+{
+  "name": "PieksPlan",
+  "slug": "pieksplan",
+  "category": "install",
+  "tags": ["Impfplanung"],
+  "anforderung": "GERING",
+  "description": "PieksPlan hilft dabei, den Überblick bei Impfungen in Pflegeheimen zu behalten – insbesondere bei komplexen Impfschemata und Konstellationen, in denen zunächst Einverständniserklärungen von Betreuern eingeholt werden müssen. Manche Erklärungen sind jährlich erneut einzufordern (z. B. bei der Grippeimpfung), bei anderen ist pauschal alles gewünscht. Das Programm trackt den Status der Einverständniserklärungen und der Impfungen, damit nichts übersehen wird.",
+  "github_url": "https://github.com/lollylan/PieksPlan",
+  "release_url": "https://github.com/lollylan/PieksPlan/releases/latest",
+  "demo_url": "",
+  "video_url": "https://www.youtube.com/embed/lMmB1WmGEC8",
+  "academy_course_slug": null,
+  "screenshot": "/images/pieksplan.png",
+  "notice": "PieksPlan wird nicht weiterentwickelt. Die Funktionen sind vollständig in VisiCore integriert.",
+  "notice_link": "/forge/visicore",
+  "notice_link_label": "Zu VisiCore wechseln"
+}

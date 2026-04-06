@@ -1,0 +1,122 @@
+---
+title: "Deployment mit der KI"
+course: "deployment-basics"
+lesson_number: 5
+description: "Wie du die KI bittest, dein Projekt fürs Deployment vorzubereiten – und die Checkliste, die du vorher durchgehen solltest."
+video_url: ""
+---
+
+# Deployment mit der KI
+
+> **Wichtiger Hinweis:** Alle in diesem Kurs vorgestellten Anleitungen dienen dem Erlernen grundlegender Deployment-Konzepte. Sobald Patientendaten verarbeitet werden, gelten strenge Datenschutz- und Sicherheitsanforderungen (DSGVO, Medizinprodukteverordnung). Veröffentliche Programme mit Patientenbezug niemals ohne professionelle Beratung.
+
+Du hast in den bisherigen Lektionen gelernt, was Deployment ist, wie lokale Netzwerke funktionieren und wie du eine statische Webseite veröffentlichst. In dieser letzten Lektion geht es darum, wie du die KI gezielt für den Deployment-Prozess einsetzt – und welche Checkliste du **vor** jeder Veröffentlichung durchgehen solltest.
+
+## Was passiert beim "Build"?
+
+Wenn du ein Programm mit der KI erstellst, entstehen Quelldateien – der Rohcode. Bevor du diesen Code veröffentlichst, muss er in eine **optimierte Version** umgewandelt werden. Das nennt man **Build**.
+
+Stell dir vor, du schreibst einen Arztbrief in einem Textverarbeitungsprogramm. Der Brief hat Formatvorlagen, Kommentare und Bearbeitungsspuren. Bevor du ihn abschickst, exportierst du ihn als PDF – das ist der "Build". Das PDF ist kleiner, sieht überall gleich aus und kann nicht versehentlich bearbeitet werden.
+
+Beim Code ist es ähnlich: Der Build-Prozess optimiert die Dateien, entfernt Entwickler-Werkzeuge und erstellt eine Version, die schnell lädt.
+
+Du musst den Build-Prozess nicht verstehen – nur wissen, dass es ihn gibt. Sag der KI:
+
+```
+Erstelle einen Build meines Projekts für die Veröffentlichung.
+Erkläre mir, welche Dateien ich danach hochladen muss.
+```
+
+## Die KI fürs Deployment nutzen
+
+### Projekt für GitHub Pages vorbereiten
+
+```
+Ich möchte mein Projekt auf GitHub Pages veröffentlichen.
+Bitte:
+1. Erstelle einen produktionsreifen Build
+2. Erkläre mir, welche Dateien ich auf GitHub hochladen muss
+3. Prüfe, ob alle Pfade relativ sind (damit es auf GitHub
+   Pages funktioniert)
+4. Gibt es noch Entwickler-Werkzeuge oder Testdaten,
+   die ich vor der Veröffentlichung entfernen sollte?
+```
+
+### Projekt fürs Praxisnetz vorbereiten
+
+```
+Ich möchte mein Projekt im lokalen Praxisnetz bereitstellen.
+Bitte:
+1. Konfiguriere den Server so, dass er auf alle
+   Netzwerk-Interfaces hört (nicht nur localhost)
+2. Zeige mir, welche URL die anderen Geräte im
+   Netzwerk aufrufen müssen
+3. Erstelle ein einfaches Startskript, das ich
+   morgens mit einem Doppelklick starten kann
+```
+
+### Fehler beim Deployment finden
+
+```
+Mein Projekt funktioniert lokal, aber nach der Veröffentlichung
+auf GitHub Pages fehlen Bilder / funktionieren Links nicht /
+sieht das Layout anders aus.
+
+Prüfe die häufigsten Ursachen:
+- Sind alle Dateipfade relativ (nicht absolut)?
+- Stimmt die Base-URL-Konfiguration?
+- Werden alle Dateien korrekt eingebunden?
+```
+
+## Typische Deployment-Fehler
+
+| Problem | Ursache | Lösung |
+|---|---|---|
+| Seite zeigt "404 Not Found" | Datei nicht hochgeladen oder falscher Pfad | Prüfe, ob `index.html` im richtigen Ordner liegt |
+| Bilder fehlen | Absolute Pfade (z.B. `/images/`) statt relative | Ändere zu relativen Pfaden (z.B. `./images/`) |
+| CSS/Styling fehlt | Build-Dateien nicht hochgeladen | Lade den gesamten Build-Ordner hoch |
+| "Nicht sicher"-Warnung | HTTPS nicht aktiviert | GitHub Pages → Settings → "Enforce HTTPS" |
+| Seite lädt, aber funktioniert nicht | JavaScript-Fehler wegen falschem Basispfad | KI bitten, den Basispfad zu prüfen |
+
+## Die Checkliste vor jeder Veröffentlichung
+
+Geh diese Liste durch, **bevor** du dein Programm veröffentlichst. Egal ob im Praxisnetz oder im Internet.
+
+### Datenschutz und Recht
+
+- [ ] **Enthält das Tool Patientendaten?** Falls ja: Nicht ins Internet. Nur im gesicherten Praxisnetz.
+- [ ] **Könnte jemand Patientendaten eingeben?** Falls Eingabefelder für Namen, Geburtsdaten etc. vorhanden: Nicht ins Internet.
+- [ ] **Könnte es als Medizinprodukt gelten?** Falls das Tool Diagnosen stellt, Therapien empfiehlt oder Dosierungen berechnet: Nur als Übungsprojekt kennzeichnen, nicht für die klinische Anwendung freigeben.
+- [ ] **Impressum vorhanden?** Jede öffentliche Webseite in Deutschland braucht eins.
+- [ ] **Datenschutzerklärung nötig?** Wenn die Seite Cookies setzt, Analytics nutzt oder Formulare hat: Ja.
+
+### Technik
+
+- [ ] **Build erstellt?** Optimierte Version für die Veröffentlichung generiert.
+- [ ] **Alle Dateien hochgeladen?** Bilder, CSS, JavaScript – nichts vergessen.
+- [ ] **HTTPS aktiv?** Bei GitHub Pages: "Enforce HTTPS" einschalten.
+- [ ] **Seite auf verschiedenen Geräten getestet?** PC, Tablet, Smartphone.
+- [ ] **Links und Pfade geprüft?** Funktioniert alles auch auf der veröffentlichten Version?
+
+### Bei Praxisnetz-Deployment zusätzlich
+
+- [ ] **Firewall eingerichtet?** Praxis-LAN und Patienten-WLAN getrennt.
+- [ ] **Port nicht von außen erreichbar?** Dein Tool soll nur im internen Netz laufen.
+- [ ] **Startskript vorhanden?** Damit das Tool nach einem PC-Neustart einfach wieder gestartet werden kann.
+- [ ] **Backup?** Dein Projektordner sollte gesichert sein.
+
+## Wenn du unsicher bist
+
+**Regel Nummer eins: Im Zweifel nicht veröffentlichen.**
+
+Es ist völlig in Ordnung, ein Tool nur auf deinem eigenen Rechner zu nutzen. Nicht alles muss im Netzwerk oder im Internet sein. Viele der besten Praxis-Tools laufen einfach auf einem einzelnen PC – und das reicht.
+
+Wenn du ein Tool im Praxisnetz oder Internet bereitstellen willst und dir bei Datenschutz oder Sicherheit unsicher bist: **Frag deinen IT-Dienstleister.** Die Kosten für eine kurze Beratung sind deutlich geringer als die Konsequenzen eines Datenschutzverstoßes.
+
+## Zusammenfassung
+
+- Die KI kann dir beim gesamten Deployment-Prozess helfen – vom Build bis zur Fehlersuche
+- **Vor jeder Veröffentlichung:** Checkliste durchgehen, insbesondere Datenschutz und Recht
+- Typische Fehler (fehlende Dateien, falsche Pfade) sind einfach zu beheben
+- Im Zweifel: Lokal nutzen und professionelle IT-Beratung holen
+- Du hast jetzt das Wissen, um einfache, datenschutzkonforme Tools sicher bereitzustellen

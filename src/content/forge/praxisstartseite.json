@@ -1,0 +1,14 @@
+{
+  "name": "Praxisstartseite",
+  "slug": "praxisstartseite",
+  "category": "install",
+  "tags": ["Organisation", "Dashboard"],
+  "anforderung": "GERING",
+  "description": "Eine Startseite für jeden PC in der Praxis, die automatisch beim Öffnen des Browsers angezeigt wird. Hier sind die Links zu den wichtigsten Programmen und Webseiten hinterlegt – auch zu selbstgeschriebenen Tools. Zusätzlich gibt es einen Stimmungsparameter, über den MFAs und Ärzte ihre aktuelle Stimmung eingeben können, um einen Überblick über die Gesamtstimmung im Team zu erhalten. Außerdem werden die Zeit bis zum nächsten Urlaub, die nächsten Geburtstage und die nächste Vertretung angezeigt. Ein integriertes Kanban-Board ermöglicht es, schnelle Ideen und Projekte festzuhalten und umzusetzen.",
+  "github_url": "https://github.com/lollylan/PraxisStartseite",
+  "release_url": "",
+  "demo_url": "",
+  "video_url": "",
+  "academy_course_slug": null,
+  "screenshot": "/images/praxisstartseite.png"
+}

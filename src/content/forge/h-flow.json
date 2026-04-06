@@ -1,0 +1,13 @@
+{
+  "name": "H Flow",
+  "slug": "h-flow",
+  "category": "install",
+  "tags": ["Personalplanung"],
+  "anforderung": "GERING",
+  "description": "Organisationstool für Mehrbehandlerpraxen oder Praxen mit komplexen Rollenverteilungen (z. B. MFAs, VERAHs, NÄPAs, PCMs, Ärzte). Mitarbeiter können anhand persönlicher Präferenzen und Dringlichkeiten bestimmten Bereichen zugeordnet werden. Bei Krankmeldung wird der Dienstplan automatisch umgebaut. Zusätzlich enthält H Flow einen intelligenten Urlaubsplaner: Mitarbeiter geben ihre Urlaubswünsche ein, und der Urlaub wird anhand von Praxisschließzeiten automatisch vergeben.",
+  "github_url": "https://github.com/lollylan/HAPPI-Flow",
+  "demo_url": "",
+  "video_url": "https://www.youtube.com/embed/h5QnQXdXWQY",
+  "academy_course_slug": null,
+  "screenshot": "/images/hflow.png"
+}

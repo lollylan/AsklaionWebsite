@@ -1,0 +1,99 @@
+---
+title: "Tree-of-Thought Prompting"
+course: "effektives-prompting"
+lesson_number: 4
+description: "Mehrere Lösungswege gleichzeitig abwägen lassen – für bessere Entscheidungen."
+video_url: ""
+---
+
+# Tree-of-Thought Prompting
+
+> **Wichtiger Hinweis:** Alle in diesem Kurs vorgestellten Programme dienen ausschließlich dem Erlernen von Prompting-Techniken. Sie sind nicht für die Anwendung am Patienten gedacht. Insbesondere medizinische Tools könnten einem Medizinprodukt gleichkommen und dürfen ohne regulatorische Zulassung nicht im klinischen Alltag eingesetzt werden.
+
+Chain-of-Thought denkt in einer geraden Linie. **Tree-of-Thought (ToT)** geht einen Schritt weiter: Die KI soll mehrere mögliche Wege gleichzeitig durchdenken, vergleichen und dann den besten wählen. Wie ein Arzt, der verschiedene Therapieoptionen gegeneinander abwägt.
+
+## Das Prinzip
+
+Du bittest die KI, nicht sofort eine Lösung zu liefern, sondern:
+
+1. **Mehrere Ansätze** aufzulisten
+2. **Jeden Ansatz** kurz durchzudenken (Vor- und Nachteile)
+3. **Den besten** begründet auszuwählen
+
+Das ist besonders nützlich bei Aufgaben, bei denen es mehrere sinnvolle Lösungen gibt und du die optimale finden willst.
+
+## Beispiel 1: Praxis-Software planen
+
+```
+Ich möchte ein digitales Wartezimmer-Management für meine
+Allgemeinpraxis erstellen. Bevor du anfängst zu programmieren:
+
+Denke über 3 verschiedene Ansätze nach:
+- Ansatz A: Einfache Nummern-Warteschlange
+- Ansatz B: Zeitbasiertes System mit geschätzter Wartezeit
+- Ansatz C: Kategorisiertes System (akut, Termin, Rezept)
+
+Für jeden Ansatz:
+1. Wie würde die Oberfläche aussehen?
+2. Was sind die Vorteile für den Praxisalltag?
+3. Was sind die Nachteile oder Risiken?
+4. Wie aufwändig ist die Umsetzung?
+
+Wähle dann den besten Ansatz für eine Einzelpraxis mit
+ca. 40 Patienten am Tag und setze ihn um.
+```
+
+Die KI wägt systematisch ab, statt einfach irgendeinen Ansatz zu bauen. Du kannst die Begründung lesen und gegebenenfalls eine andere Variante wählen.
+
+## Beispiel 2: Patientenaufklärung gestalten
+
+```
+Ich möchte ein digitales Aufklärungsformular für eine Koloskopie
+erstellen. Bevor du es erstellst, überlege 3 verschiedene Ansätze:
+
+Ansatz 1: Klassisches Formular (Text + Unterschrift)
+Ansatz 2: Interaktives Schritt-für-Schritt-Format mit Bildern
+Ansatz 3: Quiz-basiert (Patient muss Verständnisfragen beantworten)
+
+Bewerte jeden Ansatz nach:
+- Verständlichkeit für den Patienten
+- Rechtliche Absicherung
+- Zeitaufwand in der Sprechstunde
+- Umsetzbarkeit als Webseite
+
+Empfiehl den besten Ansatz und begründe deine Wahl.
+Setze diesen dann um.
+```
+
+## Beispiel 3: Datenerfassung optimieren
+
+```
+Ich brauche ein Tool zur Erfassung von Vitalzeichen
+(Blutdruck, Puls, Temperatur, SpO2, Gewicht) für meine MFA.
+
+Denke über folgende Eingabemethoden nach:
+A) Einzelne Felder mit manueller Eingabe
+B) Schnelleingabe in einer Zeile (z.B. "130/80 72 36.5 98 82")
+C) Kachelbasiert – ein großer Button pro Vitalzeichen
+
+Bewerte jeden Ansatz:
+- Geschwindigkeit der Eingabe
+- Fehleranfälligkeit
+- Erlernbarkeit für MFA
+- Eignung für Touchscreen
+
+Baue den besten Ansatz.
+```
+
+## Chain-of-Thought vs. Tree-of-Thought
+
+| | Chain-of-Thought | Tree-of-Thought |
+|---|---|---|
+| **Denkrichtung** | Linear (Schritt für Schritt) | Verzweigt (mehrere Wege) |
+| **Gut für** | Berechnungen, Ableitungen | Entwurfsentscheidungen, Planung |
+| **Ergebnis** | Ein durchgerechneter Weg | Begründete Auswahl aus Alternativen |
+| **Beispiel** | Dosisberechnung | "Welche Architektur passt am besten?" |
+
+## Zusammenfassung
+
+Tree-of-Thought Prompting eignet sich besonders gut für die Planungsphase eines Projekts. Statt die KI sofort losbauen zu lassen, zwingst du sie, erst verschiedene Wege durchzudenken und den besten auszuwählen. Das spart dir Zeit, weil du nicht drei verschiedene Versionen bauen lassen musst, um die beste zu finden.

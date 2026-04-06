@@ -1,0 +1,14 @@
+{
+  "name": "Praxisbingo",
+  "slug": "praxisbingo",
+  "category": "webapp",
+  "tags": ["Spiel", "Bingo"],
+  "anforderung": "WEBAPP",
+  "description": "Praxisbingo ist eine Bingo-Variante speziell für den Praxisalltag mit eigenen Spielfeldern für Ärzte und MFAs. Läuft auf Handy und Desktop, ohne Login – der Spielstand wird lokal im Browser gespeichert. Einfach neben der Sprechstunde immer anklicken, wenn eine typische Situation eintritt, und wer zuerst eine Reihe voll hat, ruft Bingo und gewinnt zum Beispiel eine Flasche Sekt. Gedacht, um die Moral in der Praxis gerade an anstrengenden Tagen wie Praxisvertretungen zu heben.",
+  "github_url": "https://github.com/lollylan/Praxisbingo",
+  "demo_url": "https://lollylan.github.io/Praxisbingo/",
+  "demo_label": "Im Browser spielen",
+  "video_url": "",
+  "academy_course_slug": null,
+  "screenshot": "/images/praxisbingo.png"
+}

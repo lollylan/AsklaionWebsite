@@ -1,0 +1,113 @@
+---
+title: "Halluzinationen, Grenzen & RAG"
+course: "grundwissen-ki"
+lesson_number: 5
+description: "Warum KI-Modelle manchmal Dinge erfinden, warum das in der Medizin gefährlich ist – und wie RAG-Systeme das Problem reduzieren."
+video_url: ""
+---
+
+# Halluzinationen, Grenzen & RAG
+
+KI-Modelle sind beeindruckend leistungsfähig – aber sie sind nicht fehlerfrei. Gerade im medizinischen Kontext können Fehler schwerwiegende Konsequenzen haben. In dieser Lektion lernst du die wichtigsten Einschränkungen kennen und wie moderne Ansätze dagegen wirken.
+
+## Was sind Halluzinationen?
+
+Eine **Halluzination** liegt vor, wenn ein KI-Modell etwas behauptet, das falsch ist – aber so überzeugend klingt, als wäre es wahr. Das Modell "erfindet" Informationen, ohne zu wissen, dass es das tut.
+
+Typische Beispiele:
+
+- Das Modell erfindet eine wissenschaftliche Studie, die nicht existiert – inklusive plausibler Autoren und Zeitschrift
+- Es nennt eine falsche Medikamentendosierung, die aber im richtigen Bereich klingt
+- Es zitiert eine Leitlinie, die es in dieser Form nie gegeben hat
+
+## Warum halluzinieren LLMs?
+
+Wie du in Lektion 2 gelernt hast: LLMs sagen das **statistisch wahrscheinlichste nächste Wort** vorher. Sie haben kein echtes Faktenwissen und kein Bewusstsein dafür, ob eine Aussage wahr oder falsch ist.
+
+Wenn du fragst "Wie hoch ist die Maximaldosis von Amlodipin?" und das Modell im Training verschiedene Zahlen gesehen hat, gibt es die statistisch wahrscheinlichste aus – nicht unbedingt die richtige. Es kann nicht in der Fachinformation nachschlagen, es rät auf hohem Niveau.
+
+## Warum ist das in der Medizin besonders kritisch?
+
+In vielen Bereichen sind Halluzinationen ärgerlich, in der Medizin können sie gefährlich sein:
+
+- **Falsche Dosierungen** können zu Über- oder Unterdosierungen führen
+- **Erfundene Kontraindikationen** können dazu führen, dass eine nötige Therapie unterlassen wird
+- **Nicht existierende Studien** können falsche Therapieentscheidungen stützen
+- **Falsche Interaktionsangaben** können echte Risiken verdecken oder unnötige Therapieänderungen auslösen
+
+<details>
+<summary>Beispiel: Halluzination bei einer Dosierungsfrage</summary>
+
+**Prompt:** "Wie hoch ist die maximale Tagesdosis von Metoprolol bei Herzinsuffizienz?"
+
+**Halluzinierter Output:**
+*Die maximale Tagesdosis von Metoprolol bei Herzinsuffizienz beträgt 200mg. Die Eindosierung erfolgt langsam, beginnend mit 2x 23,75mg, mit Steigerung alle 2 Wochen.*
+
+**Das Problem:** Die Zieldosis von Metoprololsuccinat bei Herzinsuffizienz ist je nach Quelle und Zulassung tatsächlich bis 200mg – aber die Angabe klingt sicher, ohne dass das Modell zwischen Metoprololtartrat und Metoprololsuccinat unterscheidet, die Fachinformation geprüft hat oder individuelle Kontraindikationen berücksichtigt. In einem anderen Durchlauf könnte das Modell auch "150mg" oder "100mg" ausgeben.
+
+**Fazit:** Nie Dosierungsangaben von KI-Modellen ungeprüft übernehmen.
+
+</details>
+
+## Weitere Grenzen von KI-Modellen
+
+### Kein aktuelles Wissen
+
+Modelle haben einen **Trainingsdaten-Cutoff** – sie kennen nur Informationen bis zu einem bestimmten Datum. Eine neue Leitlinie oder Zulassung, die nach diesem Datum erschienen ist, kennt das Modell nicht.
+
+### Kein echtes Verständnis
+
+LLMs verarbeiten Sprache auf statistische Weise. Sie können keine eigenen Untersuchungen durchführen, keine Laborwerte interpretieren (im klinischen Sinne) und keine Patienten sehen.
+
+### Bias
+
+Modelle spiegeln die Verzerrungen ihrer Trainingsdaten wider. Wenn bestimmte Erkrankungen in der Literatur häufiger bei einer Bevölkerungsgruppe beschrieben werden, kann das Modell diese Verzerrung reproduzieren.
+
+## RAG – Retrieval Augmented Generation
+
+Wenn Halluzinationen ein so großes Problem sind – gibt es eine Lösung? Ja, und sie heißt **RAG** (Retrieval Augmented Generation).
+
+### Das Prinzip
+
+Statt das Modell aus dem "Gedächtnis" antworten zu lassen, werden ihm **vor der Antwort relevante, validierte Dokumente bereitgestellt**. Das Modell antwortet dann auf Basis dieser Quellen statt auf Basis seiner Trainingsdaten.
+
+Die Analogie: Stell dir vor, du fragst einen Kollegen etwas Fachliches. Der Unterschied zwischen:
+- **Ohne RAG:** Der Kollege antwortet aus der Erinnerung – meistens richtig, manchmal ungenau
+- **Mit RAG:** Der Kollege schlägt erst in der Fachinformation nach und antwortet dann mit Quellenangabe
+
+### Wie funktioniert RAG konkret?
+
+1. Du stellst eine Frage an das System
+2. Das System durchsucht automatisch eine Datenbank mit validierten Dokumenten (z.B. Leitlinien, Fachinformationen)
+3. Die relevanten Textpassagen werden zusammen mit deiner Frage an das LLM übergeben
+4. Das LLM formuliert eine Antwort basierend auf diesen Quellen
+
+### Was könnten Quellen für ein medizinisches RAG-System sein?
+
+- **DEGAM-Leitlinien** und NVL (Nationale VersorgungsLeitlinien)
+- **Fachinformationen** aus der Roten Liste oder dem Fachinfo-Service
+- **Patienteninformationen** von gesundheitsinformation.de (IQWiG)
+- **Praxisinterne Dokumente** wie SOPs oder Behandlungspfade
+
+### Was RAG kann – und was nicht
+
+| | Ohne RAG | Mit RAG |
+|---|---|---|
+| Quelle der Antwort | Trainingsdaten (veraltet, ungenau) | Aktuelle, validierte Dokumente |
+| Halluzinationsrisiko | Hoch | Deutlich reduziert |
+| Nachprüfbarkeit | Schwierig | Quellen werden mitgeliefert |
+| Aktualität | Bis zum Trainingsdaten-Cutoff | So aktuell wie die hinterlegten Dokumente |
+
+**Wichtig:** RAG reduziert Halluzinationen erheblich, eliminiert sie aber nicht vollständig. Das Modell kann Quellen immer noch falsch interpretieren oder zusammenfassen. Die ärztliche Prüfung bleibt unverzichtbar.
+
+## Praktische Empfehlungen
+
+1. **Überprüfe Fakten** – besonders bei Dosierungen, Diagnosen und Leitlinienaussagen. Nie blind vertrauen.
+2. **Frage nach Quellen** – bitte das Modell, seine Aussagen zu belegen. Prüfe dann, ob die genannten Quellen tatsächlich existieren.
+3. **Nutze RAG-fähige Systeme** – wenn du KI für medizinische Inhalte nutzt, bevorzuge Systeme, die auf validierte Quellen zugreifen.
+4. **Niedrige Temperatur** – wie in der vorherigen Lektion gelernt: für medizinische Fakten eine niedrige Temperatur verwenden.
+5. **KI als Werkzeug, nicht als Kollege** – nutze KI als Ausgangspunkt und erste Orientierung, aber verifiziere Ergebnisse immer mit Fachliteratur oder eigener Expertise.
+
+## Zusammenfassung
+
+Halluzinationen sind keine Fehler im klassischen Sinne – sie sind eine Eigenschaft der Funktionsweise von LLMs. In der Medizin sind sie besonders problematisch, weil falsche Informationen direkte Auswirkungen auf die Patientenversorgung haben können. RAG-Systeme reduzieren dieses Problem erheblich, indem sie das Modell auf validierte Quellen stützen. Die wichtigste Regel bleibt: KI ist ein mächtiges Werkzeug – aber die ärztliche Verantwortung und Prüfung ersetzt sie nicht.

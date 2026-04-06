@@ -1,0 +1,14 @@
+{
+  "name": "FaxFinity",
+  "slug": "faxfinity",
+  "category": "install",
+  "tags": ["KI", "Fax"],
+  "anforderung": "MITTEL",
+  "description": "FaxFinity überwacht einen Ordner mit eingehenden Faxen und benennt die PDF-Dateien automatisch anhand ihres Inhalts um – mithilfe lokaler Visionmodelle wie llama3.2-vision über Ollama. So sehen MFAs und Ärzte auf einen Blick, was sich in einem Fax befindet, ohne es erst öffnen zu müssen. Die umbenannten Faxe werden in einen Unterordner verschoben, aus dem das PVS sie importieren kann. Das Programm benennt die Faxe ausschließlich um – das eigentliche Lesen und Verarbeiten muss weiterhin ein Mensch übernehmen. Läuft komplett lokal, keine Daten verlassen die Praxis. Mit einer dedizierten Grafikkarte geht die Verarbeitung sehr schnell, aber auch mit einer normalen CPU und ausreichend RAM funktioniert es – die Verarbeitung dauert dann etwas länger, was bei Faxen aber nicht zeitkritisch ist. Ollama muss installiert sein.",
+  "github_url": "https://github.com/lollylan/FaxFinity",
+  "release_url": "https://github.com/lollylan/FaxFinity/releases/latest",
+  "demo_url": "",
+  "video_url": "https://www.youtube.com/embed/wzT2LQfQG3s",
+  "academy_course_slug": null,
+  "screenshot": "/images/faxfinity.png"
+}

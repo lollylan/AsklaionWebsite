@@ -1,0 +1,97 @@
+---
+title: "Future Prompting"
+course: "effektives-prompting"
+lesson_number: 6
+description: "Vom Endergebnis rückwärts denken – so planst du komplexere Projekte mit der KI."
+video_url: ""
+---
+
+# Future Prompting
+
+> **Wichtiger Hinweis:** Alle in diesem Kurs vorgestellten Programme dienen ausschließlich dem Erlernen von Prompting-Techniken. Sie sind nicht für die Anwendung am Patienten gedacht. Insbesondere medizinische Tools könnten einem Medizinprodukt gleichkommen und dürfen ohne regulatorische Zulassung nicht im klinischen Alltag eingesetzt werden.
+
+Bei **Future Prompting** beschreibst du nicht, was die KI jetzt tun soll, sondern wie das fertige Ergebnis aussehen soll. Du versetzt die KI in die Zukunft: "Stell dir vor, das Programm ist fertig. So sieht es aus, so funktioniert es." Die KI arbeitet dann rückwärts und baut genau das, was du beschrieben hast.
+
+## Das Prinzip
+
+Statt: "Erstelle ein Programm, das X tut"
+Sagst du: "Stell dir vor, ich öffne das fertige Programm. Ich sehe..."
+
+Du beschreibst das Erlebnis des Nutzers, nicht die technische Aufgabe. Das hilft der KI, das große Ganze zu verstehen, statt sich in Details zu verlieren.
+
+## Beispiel 1: Praxis-Dashboard
+
+```
+Stell dir vor, ich komme morgens in meine Praxis und öffne
+auf meinem Monitor das Praxis-Dashboard.
+
+Ich sehe auf einen Blick:
+- Wie viele Patienten heute Termine haben (z.B. "32 Patienten")
+- Die nächsten 3 Termine mit Name und Uhrzeit
+- Ob Laborergebnisse zur Befundung vorliegen (z.B. "5 neue Befunde")
+- Die aktuelle Wartezeit im Wartezimmer
+- Einen Hinweis, wenn heute ein Geburtstag eines Stammpatienten ist
+
+Das Dashboard ist übersichtlich, hat große Kacheln und
+aktualisiert sich automatisch.
+
+Baue dieses Dashboard als Webseite.
+```
+
+Durch die Beschreibung aus der Zukunft weiß die KI genau, was auf dem Bildschirm erscheinen soll – ohne dass du jedes technische Detail erklären musst.
+
+## Beispiel 2: Patientenfragebogen
+
+```
+Stell dir vor, ein Patient betritt mein Wartezimmer. Auf einem
+Tablet liegt ein Fragebogen bereit.
+
+Der Patient tippt auf "Fragebogen starten" und sieht:
+- Erst eine freundliche Begrüßung
+- Dann eine Frage pro Bildschirm (nie mehr als eine)
+- Große Buttons zum Antippen der Antwort
+- Einen Fortschrittsbalken oben
+- Am Ende: "Vielen Dank! Ihre Ärztin hat die Antworten erhalten."
+
+Die Fragen betreffen:
+1. "Was führt Sie heute zu uns?" (Freitext)
+2. "Haben Sie Schmerzen?" (Ja/Nein)
+3. Wenn ja: "Wo?" (Körperbild zum Antippen)
+4. "Wie stark?" (Skala 1-10)
+5. "Nehmen Sie regelmäßig Medikamente?" (Ja/Nein)
+6. Wenn ja: "Welche?" (Freitext)
+
+Baue diesen Fragebogen als Webseite.
+```
+
+## Beispiel 3: Quartalsabrechnung-Helfer
+
+```
+Stell dir vor, es ist Quartalsende. Ich öffne mein Abrechnungs-Tool
+und sehe eine Übersicht:
+
+- Links eine Liste aller Patienten dieses Quartals
+- Neben jedem Namen die abgerechneten Ziffern (EBM)
+- Oben eine Statistik: Fallzahl, Durchschnitt pro Fall,
+  häufigste Ziffern
+- Ein Warnsymbol bei Patienten, bei denen eine häufig
+  vergessene Ziffer fehlen könnte (z.B. Chronikerpauschale)
+- Ein Export-Button für eine CSV-Datei
+
+Die Daten gebe ich über eine Import-Funktion ein
+(CSV-Datei aus meinem PVS).
+
+Baue dieses Tool als Webseite.
+```
+
+## Warum funktioniert Future Prompting so gut?
+
+**Es zwingt dich, an den Nutzer zu denken.** Wenn du beschreibst, was jemand auf dem Bildschirm sieht und tut, denkst du automatisch an Benutzerfreundlichkeit, Reihenfolge und Vollständigkeit.
+
+**Es reduziert Missverständnisse.** "Erstelle ein Dashboard" kann vieles bedeuten. "Ich öffne die Seite und sehe 4 Kacheln mit..." ist eindeutig.
+
+**Es eignet sich für komplexere Projekte.** Je größer das Projekt, desto wichtiger ist es, dass die KI das Gesamtbild versteht – nicht nur einzelne Funktionen.
+
+## Zusammenfassung
+
+Future Prompting ist besonders stark, wenn du ein klares Bild vom fertigen Ergebnis hast, aber nicht weißt, wie man es technisch umsetzt. Du beschreibst die Zukunft, und die KI findet den Weg dorthin. In der Praxis bedeutet das: Stell dir vor, du sitzt vor dem fertigen Programm – und beschreibe einfach, was du siehst.

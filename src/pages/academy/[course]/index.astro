@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const courseEntries = await getCollection('academyCourses');
+  const lessonEntries = await getCollection('academy');
+
+  return courseEntries.map(course => {
+    const courseLessons = lessonEntries
+      .filter(l => l.data.course === course.data.slug)
+      .sort((a, b) => a.data.lesson_number - b.data.lesson_number);
+
+    return {
+      params: { course: course.data.slug },
+      props: { course: course.data, lessons: courseLessons.map(l => l.data) },
+    };
+  });
+}
+
+const { course, lessons } = Astro.props;
+
+const LEVEL_COLORS: Record<string, string> = {
+  'Anfänger': 'bg-badge-gering/20 text-badge-gering',
+  'Fortgeschritten': 'bg-badge-mittel/20 text-badge-mittel',
+};
+---
+
+<BaseLayout title={course.title} description={course.description} variant="academy">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Breadcrumb -->
+    <nav class="mb-6 text-sm text-text-muted">
+      <a href="/academy" class="hover:text-academy-accent transition-colors">Akademie</a>
+      <span class="mx-2">/</span>
+      <span class="text-text-secondary">{course.title}</span>
+    </nav>
+
+    <!-- Course Header -->
+    <div class="mb-8">
+      <div class="flex items-center gap-3 mb-3">
+        <span class={`px-2 py-0.5 text-xs font-medium rounded ${LEVEL_COLORS[course.level]}`}>
+          {course.level}
+        </span>
+        <span class="text-xs text-text-muted">{lessons.length} {lessons.length === 1 ? 'Lektion' : 'Lektionen'}</span>
+      </div>
+      <h1 class="text-3xl font-bold text-text-primary mb-3">{course.title}</h1>
+      <p class="text-text-secondary">{course.description}</p>
+    </div>
+
+    <!-- Lesson List -->
+    <div class="space-y-3">
+      <h2 class="text-lg font-bold text-text-primary mb-4">Lektionen</h2>
+      {lessons.map((lesson: any, i: number) => (
+        <a
+          href={`/academy/${course.slug}/lektion-${String(lesson.lesson_number).padStart(2, '0')}`}
+          class="group flex items-center gap-4 p-4 bg-dark-card border border-dark-border rounded-xl hover:border-academy-accent/50 transition-all"
+          data-lesson-item={lesson.lesson_number}
+        >
+          <div
+            class="lesson-number flex-shrink-0 w-10 h-10 rounded-full bg-dark-border flex items-center justify-center text-sm font-bold text-text-secondary group-hover:bg-academy-accent group-hover:text-dark-base transition-colors"
+            data-lesson-num={lesson.lesson_number}
+          >
+            {lesson.lesson_number}
+          </div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-medium text-text-primary group-hover:text-academy-accent transition-colors">
+              {lesson.title}
+            </h3>
+            {lesson.description && (
+              <p class="text-xs text-text-muted mt-0.5 truncate">{lesson.description}</p>
+            )}
+          </div>
+          <svg class="w-5 h-5 text-text-muted group-hover:text-academy-accent group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <script define:vars={{ courseSlug: course.slug }}>
+    document.querySelectorAll('.lesson-number').forEach(el => {
+      const num = el.getAttribute('data-lesson-num');
+      if (num && localStorage.getItem(`academy_${courseSlug}_lesson_${num}`) === 'completed') {
+        el.innerHTML = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>';
+        el.classList.remove('bg-dark-border', 'text-text-secondary');
+        el.classList.add('bg-green-500', 'text-white');
+      }
+    });
+  </script>
+</BaseLayout>

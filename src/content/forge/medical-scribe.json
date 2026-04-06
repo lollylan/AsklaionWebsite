@@ -1,0 +1,14 @@
+{
+  "name": "Asklaion Medical Scribe",
+  "slug": "medical-scribe",
+  "category": "install",
+  "tags": ["KI", "Transkription"],
+  "anforderung": "HOCH",
+  "description": "Der Asklaion Medical Scribe transkribiert Arzt-Patienten-Gespräche komplett lokal mit Whisper – wahlweise über CPU (langsamer) oder GPU (deutlich schneller, empfohlen). Aus dem Transkript wird per konfigurierbarem Prompt automatisch eine Zusammenfassung erstellt, die sich mit einem Klick ins PVS übernehmen lässt. Nach der Generierung kann man den Text noch anpassen – entweder händisch oder per Freitext-Anweisung an das LLM (z. B. kürzer, länger, umformulieren). Alles läuft vollständig lokal, keine Daten verlassen die Praxis – für maximalen Datenschutz und maximales Patientenvertrauen. Für den Realbetrieb wird ein leistungsfähiger Rechner mit dedizierter Grafikkarte und möglichst viel VRAM empfohlen, damit die Transkription zeitnah erfolgt.",
+  "github_url": "https://github.com/lollylan/asklaion",
+  "release_url": "https://github.com/lollylan/asklaion/releases/latest",
+  "demo_url": "",
+  "video_url": "https://www.youtube.com/embed/0bLsjLKP3us",
+  "academy_course_slug": null,
+  "screenshot": "/images/medicalscribe.png"
+}
