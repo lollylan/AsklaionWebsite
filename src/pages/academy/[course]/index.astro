@@ -19,6 +19,7 @@ export async function getStaticPaths() {
 }
 
 const { course, lessons } = Astro.props;
+const base = import.meta.env.BASE_URL;
 
 const LEVEL_COLORS: Record<string, string> = {
   'Anfänger': 'bg-badge-gering/20 text-badge-gering',
@@ -30,7 +31,7 @@ const LEVEL_COLORS: Record<string, string> = {
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <!-- Breadcrumb -->
     <nav class="mb-6 text-sm text-text-muted">
-      <a href="/academy" class="hover:text-academy-accent transition-colors">Akademie</a>
+      <a href={`${base}academy`} class="hover:text-academy-accent transition-colors">Akademie</a>
       <span class="mx-2">/</span>
       <span class="text-text-secondary">{course.title}</span>
     </nav>
@@ -52,7 +53,7 @@ const LEVEL_COLORS: Record<string, string> = {
       <h2 class="text-lg font-bold text-text-primary mb-4">Lektionen</h2>
       {lessons.map((lesson: any, i: number) => (
         <a
-          href={`/academy/${course.slug}/lektion-${String(lesson.lesson_number).padStart(2, '0')}`}
+          href={`${base}academy/${course.slug}/lektion-${String(lesson.lesson_number).padStart(2, '0')}`}
           class="group flex items-center gap-4 p-4 bg-dark-card border border-dark-border rounded-xl hover:border-academy-accent/50 transition-all"
           data-lesson-item={lesson.lesson_number}
         >

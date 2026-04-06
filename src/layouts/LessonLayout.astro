@@ -26,6 +26,7 @@ const {
 } = Astro.props;
 
 // Estimate reading time (~200 words per minute for German text)
+const base = import.meta.env.BASE_URL;
 const content = await Astro.slots.render('default');
 const wordCount = content.replace(/<[^>]*>/g, '').split(/\s+/).length;
 const readingTime = Math.max(1, Math.ceil(wordCount / 200));
@@ -35,9 +36,9 @@ const readingTime = Math.max(1, Math.ceil(wordCount / 200));
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <!-- Breadcrumb -->
     <nav class="mb-6 text-sm text-text-muted">
-      <a href="/academy" class="hover:text-academy-accent transition-colors">Akademie</a>
+      <a href={`${base}academy`} class="hover:text-academy-accent transition-colors">Akademie</a>
       <span class="mx-2">/</span>
-      <a href={`/academy/${courseSlug}`} class="hover:text-academy-accent transition-colors">{courseTitle}</a>
+      <a href={`${base}academy/${courseSlug}`} class="hover:text-academy-accent transition-colors">{courseTitle}</a>
       <span class="mx-2">/</span>
       <span class="text-text-secondary">Lektion {lessonNumber}</span>
     </nav>
@@ -97,7 +98,7 @@ const readingTime = Math.max(1, Math.ceil(wordCount / 200));
     <nav class="mt-10 pt-8 border-t border-dark-border flex justify-between items-center gap-4">
       {prevLesson ? (
         <a
-          href={`/academy/${courseSlug}/${prevLesson.slug}`}
+          href={`${base}academy/${courseSlug}/${prevLesson.slug}`}
           class="group flex items-center gap-2 text-text-secondary hover:text-academy-accent transition-colors"
         >
           <svg class="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -113,7 +114,7 @@ const readingTime = Math.max(1, Math.ceil(wordCount / 200));
       {nextLesson ? (
         <a
           id="next-lesson-link"
-          href={`/academy/${courseSlug}/${nextLesson.slug}`}
+          href={`${base}academy/${courseSlug}/${nextLesson.slug}`}
           data-course={courseSlug}
           data-lesson={lessonNumber}
           data-total={totalLessons}

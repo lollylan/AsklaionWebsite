@@ -6,7 +6,8 @@ import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://asklaion.de',
+  site: 'https://lollylan.github.io',
+  base: '/AsklaionWebsite',
   output: 'static',
   integrations: [react(), mdx()],
   vite: {

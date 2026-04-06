@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+const base = import.meta.env.BASE_URL;
+
 interface Program {
   name: string;
   slug: string;
@@ -97,7 +99,7 @@ export default function ForgeGrid({ programs }: Props) {
 function ProgramCard({ program }: { program: Program }) {
   return (
     <a
-      href={`/forge/${program.slug}`}
+      href={`${base}forge/${program.slug}`}
       className="group block bg-dark-card border border-dark-border rounded-xl overflow-hidden hover:border-forge-accent/50 transition-all hover:shadow-lg hover:shadow-forge-glow/10"
     >
       {/* Thumbnail */}

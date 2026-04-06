@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 
+const base = import.meta.env.BASE_URL;
+
 interface Course {
   title: string;
   slug: string;
@@ -185,7 +187,7 @@ function CourseNode({
   ].join(' ');
 
   return (
-    <a href={`/academy/${course.slug}`} className={cardClasses}>
+    <a href={`${base}academy/${course.slug}`} className={cardClasses}>
       {/* Green fill background based on progress */}
       <div
         className="absolute inset-0 transition-all duration-700 ease-out"

@@ -9,6 +9,7 @@ interface Props {
 }
 
 const { title, description = 'Asklaion – Open-Source-Software für die Arztpraxis & Coding Akademie', showNav = true, variant = 'default' } = Astro.props;
+const base = import.meta.env.BASE_URL;
 ---
 
 <!DOCTYPE html>
@@ -21,7 +22,7 @@ const { title, description = 'Asklaion – Open-Source-Software für die Arztpra
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
   <!-- Prevent flash: apply theme before render -->
   <script is:inline>
     (function() {
@@ -66,13 +67,13 @@ const { title, description = 'Asklaion – Open-Source-Software für die Arztpra
     <nav class="fixed top-0 left-0 right-0 z-50 bg-light-base/90 dark:bg-dark-base/90 backdrop-blur-md border-b border-light-border dark:border-dark-border transition-colors duration-300">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
-          <a href="/" class="flex items-center gap-2 text-light-text-primary dark:text-text-primary hover:text-academy-accent transition-colors">
+          <a href={base} class="flex items-center gap-2 text-light-text-primary dark:text-text-primary hover:text-academy-accent transition-colors">
             <span class="font-bold text-lg">Asklaion</span>
           </a>
 
           <div class="hidden md:flex items-center gap-8">
-            <a href="/academy" class="text-light-text-secondary dark:text-text-secondary hover:text-academy-accent transition-colors text-sm font-medium">Akademie</a>
-            <a href="/forge" class="text-light-text-secondary dark:text-text-secondary hover:text-forge-accent transition-colors text-sm font-medium">Projekte</a>
+            <a href={`${base}academy`} class="text-light-text-secondary dark:text-text-secondary hover:text-academy-accent transition-colors text-sm font-medium">Akademie</a>
+            <a href={`${base}forge`} class="text-light-text-secondary dark:text-text-secondary hover:text-forge-accent transition-colors text-sm font-medium">Projekte</a>
             <a href="https://github.com/lollylan" target="_blank" rel="noopener noreferrer" class="text-light-text-secondary dark:text-text-secondary hover:text-light-text-primary dark:hover:text-text-primary transition-colors text-sm font-medium">GitHub</a>
 
             <!-- Theme toggle -->
@@ -122,8 +123,8 @@ const { title, description = 'Asklaion – Open-Source-Software für die Arztpra
 
       <div id="mobile-menu" class="hidden md:hidden border-t border-light-border dark:border-dark-border bg-light-base/95 dark:bg-dark-base/95 backdrop-blur-md">
         <div class="px-4 py-4 space-y-3">
-          <a href="/academy" class="block text-light-text-secondary dark:text-text-secondary hover:text-academy-accent transition-colors text-sm font-medium">Akademie</a>
-          <a href="/forge" class="block text-light-text-secondary dark:text-text-secondary hover:text-forge-accent transition-colors text-sm font-medium">Projekte</a>
+          <a href={`${base}academy`} class="block text-light-text-secondary dark:text-text-secondary hover:text-academy-accent transition-colors text-sm font-medium">Akademie</a>
+          <a href={`${base}forge`} class="block text-light-text-secondary dark:text-text-secondary hover:text-forge-accent transition-colors text-sm font-medium">Projekte</a>
           <a href="https://github.com/lollylan" target="_blank" rel="noopener noreferrer" class="block text-light-text-secondary dark:text-text-secondary hover:text-light-text-primary dark:hover:text-text-primary transition-colors text-sm font-medium">GitHub</a>
         </div>
       </div>
@@ -139,9 +140,9 @@ const { title, description = 'Asklaion – Open-Source-Software für die Arztpra
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div class="flex flex-col md:flex-row justify-between items-center gap-4">
           <div class="flex items-center gap-6 text-sm text-light-text-muted dark:text-text-muted">
-            <a href="/impressum" class="hover:text-light-text-secondary dark:hover:text-text-secondary transition-colors">Impressum</a>
-            <a href="/anforderungen" class="hover:text-light-text-secondary dark:hover:text-text-secondary transition-colors">Anforderungen</a>
-            <a href="/lizenz" class="hover:text-light-text-secondary dark:hover:text-text-secondary transition-colors">Lizenz</a>
+            <a href={`${base}impressum`} class="hover:text-light-text-secondary dark:hover:text-text-secondary transition-colors">Impressum</a>
+            <a href={`${base}anforderungen`} class="hover:text-light-text-secondary dark:hover:text-text-secondary transition-colors">Anforderungen</a>
+            <a href={`${base}lizenz`} class="hover:text-light-text-secondary dark:hover:text-text-secondary transition-colors">Lizenz</a>
             <a href="https://github.com/lollylan" target="_blank" rel="noopener noreferrer" class="hover:text-light-text-secondary dark:hover:text-text-secondary transition-colors">GitHub</a>
           </div>
           <p class="text-sm text-light-text-muted dark:text-text-muted">&copy; 2026 Dr. Florian Rasche &middot; Asklaion &middot; MIT Lizenz</p>

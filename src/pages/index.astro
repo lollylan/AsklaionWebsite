@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+const base = import.meta.env.BASE_URL;
 ---
 
 <!DOCTYPE html>
@@ -12,7 +13,7 @@ import '../styles/global.css';
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
   <style>
     body {
       margin: 0;
@@ -71,12 +72,12 @@ import '../styles/global.css';
     }
 
     .gateway-academy::before {
-      background-image: url('/images/academy-bg.webp');
+      background-image: url('/AsklaionWebsite/images/academy-bg.webp');
       background-color: #1a1a1a;
     }
 
     .gateway-forge::before {
-      background-image: url('/images/forge-bg.webp');
+      background-image: url('/AsklaionWebsite/images/forge-bg.webp');
       background-color: #0f172a;
     }
 
@@ -162,7 +163,7 @@ import '../styles/global.css';
 </head>
 <body>
   <div class="gateway">
-    <a href="/forge" class="gateway-half gateway-forge">
+    <a href={`${base}forge`} class="gateway-half gateway-forge">
       <div class="gateway-content">
         <div class="gateway-logo">Asklaion Projekte</div>
         <p class="gateway-tagline">Open-Source-Programme für die Arztpraxis – kostenlos, lokal, datenschutzkonform</p>
@@ -170,7 +171,7 @@ import '../styles/global.css';
       </div>
     </a>
 
-    <a href="/academy" class="gateway-half gateway-academy">
+    <a href={`${base}academy`} class="gateway-half gateway-academy">
       <div class="gateway-content">
         <div class="gateway-logo">Asklaion Akademie</div>
         <p class="gateway-tagline">Lerne Vibecoding und KI-Grundlagen – Schritt für Schritt zum eigenen Programm</p>

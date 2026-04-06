@@ -11,6 +11,7 @@ export async function getStaticPaths() {
 }
 
 const { program } = Astro.props;
+const base = import.meta.env.BASE_URL;
 
 const BADGE_COLORS: Record<string, string> = {
   GERING: 'bg-badge-gering/20 text-badge-gering',
@@ -24,7 +25,7 @@ const BADGE_COLORS: Record<string, string> = {
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <!-- Breadcrumb -->
     <nav class="mb-6 text-sm text-text-muted">
-      <a href="/forge" class="hover:text-forge-accent transition-colors">Projekte</a>
+      <a href={`${base}forge`} class="hover:text-forge-accent transition-colors">Projekte</a>
       <span class="mx-2">/</span>
       <span class="text-text-secondary">{program.name}</span>
     </nav>
@@ -134,7 +135,7 @@ const BADGE_COLORS: Record<string, string> = {
           In der Asklaion Akademie lernst du, wie du dieses Programm an deine Bedürfnisse anpassen kannst.
         </p>
         <a
-          href={`/academy/${program.academy_course_slug}`}
+          href={`${base}academy/${program.academy_course_slug}`}
           class="inline-block px-4 py-2 bg-academy-accent hover:bg-academy-accent-light text-dark-base font-semibold rounded-lg transition-colors text-sm"
         >
           Zum Kurs &rarr;
@@ -154,7 +155,7 @@ const BADGE_COLORS: Record<string, string> = {
       ) : (
         <p class="text-sm text-text-secondary">Hohe Anforderungen – ein leistungsstarker Rechner mit mindestens einer guten dedizierten Grafikkarte (GPU) wird benötigt. Empfohlen wird eine NVIDIA-GPU mit mindestens 8 GB VRAM und CUDA-Support, um die KI-Modelle lokal performant auszuführen.</p>
       )}
-      <a href="/anforderungen" class="inline-block mt-3 text-xs text-forge-accent hover:text-forge-accent-light transition-colors">Alle Anforderungsstufen im Detail &rarr;</a>
+      <a href={`${base}anforderungen`} class="inline-block mt-3 text-xs text-forge-accent hover:text-forge-accent-light transition-colors">Alle Anforderungsstufen im Detail &rarr;</a>
     </div>
 
     <!-- Lizenz -->
@@ -169,7 +170,7 @@ const BADGE_COLORS: Record<string, string> = {
       <p class="text-xs text-text-muted leading-relaxed">
         Es wird keinerlei Haftung übernommen. Jeder Nutzer ist für die eigene Anwendung selbst verantwortlich. Dies ergibt sich auch aus den Bedingungen der MIT-Lizenz, unter der die Software bereitgestellt wird.
       </p>
-      <a href="/lizenz" class="inline-block mt-3 text-xs text-forge-accent hover:text-forge-accent-light transition-colors">Vollständige Lizenz & Haftungsausschluss &rarr;</a>
+      <a href={`${base}lizenz`} class="inline-block mt-3 text-xs text-forge-accent hover:text-forge-accent-light transition-colors">Vollständige Lizenz & Haftungsausschluss &rarr;</a>
     </div>
   </div>
 </BaseLayout>
