@@ -1,0 +1,14 @@
+{
+  "name": "Speedreader",
+  "slug": "speedreader",
+  "category": "webapp",
+  "tags": ["Schnelllesen", "RSVP"],
+  "anforderung": "WEBAPP",
+  "description": "Speedreader blendet lange Texte wortweise an einer festen Position ein (RSVP) und hebt mit der ORP-/Spritz-Technik den optimalen Fokuspunkt jedes Wortes hervor. Das Auge muss nicht mehr springen, und Inhalte wie Leitlinien, Fortbildungstexte oder Arztbriefe lassen sich in einem Bruchteil der üblichen Zeit erfassen. Geschwindigkeit, Schriftgröße und Pausen lassen sich frei einstellen. Die komplette Verarbeitung passiert lokal im Browser – es werden keine Texte an einen Server übertragen, sodass auch sensible medizinische Inhalte datenschutzkonform gelesen werden können.",
+  "github_url": "https://github.com/lollylan/speeeeeeed",
+  "demo_url": "https://lollylan.github.io/speeeeeeed/",
+  "demo_label": "Im Browser öffnen",
+  "video_url": "",
+  "academy_course_slug": null,
+  "screenshot": "/images/speedreader.png"
+}
