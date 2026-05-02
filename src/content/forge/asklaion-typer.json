@@ -1,0 +1,14 @@
+{
+  "name": "Asklaion Typer",
+  "slug": "asklaion-typer",
+  "category": "install",
+  "tags": ["KI", "Diktat", "Whisper"],
+  "anforderung": "MITTEL",
+  "description": "Asklaion Typer ist ein systemweites Diktier-Tool, das per frei wählbarer Tastenkombination aktiviert wird und das Gesprochene direkt in das aktuell fokussierte Textfeld schreibt – egal ob im PVS, im Browser, in Word oder in jeder anderen Anwendung. Die Spracherkennung läuft komplett lokal mit Whisper, es werden keinerlei Audio- oder Textdaten an einen Server übertragen. Damit lassen sich Anamnesen, Befunde, Arztbriefe oder E-Mails diktieren, ohne dass sensible Patientendaten die Praxis verlassen – maximal datenschutzkonform und ohne laufende Cloud-Kosten. Modellgröße und Tastenkombination sind frei konfigurierbar, sodass sich das Tool an verschiedenste Hardware und Workflows anpassen lässt.",
+  "github_url": "https://github.com/lollylan/AsklaionTyper",
+  "release_url": "https://github.com/lollylan/AsklaionTyper/releases/latest",
+  "demo_url": "",
+  "video_url": "https://www.youtube.com/embed/yXhhmr9GMK0",
+  "academy_course_slug": null,
+  "screenshot": "/images/asklaiontyper.png"
+}
