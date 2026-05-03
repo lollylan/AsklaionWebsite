@@ -1,0 +1,14 @@
+{
+  "name": "Stundenplan",
+  "slug": "stundenplan",
+  "category": "webapp",
+  "tags": ["Organisation", "Sprechstunde"],
+  "anforderung": "WEBAPP",
+  "description": "Stundenplan ist eine Webapp zur Planung der Sprechstundenzeiten nach Inhalt – also wann Infektsprechstunde, wann Akutsprechstunde, wann reguläre Sprechstunde, Hausbesuche, Verwaltung etc. stattfinden. Die einzelnen Slots lassen sich farblich pro Kategorie anlegen und über die ganze Woche verteilen, sodass sich der Praxisalltag auf einen Blick erfassen und kommunizieren lässt – egal ob für das eigene Team, neue Mitarbeiterinnen oder Patientinnen und Patienten im Wartezimmer. Der erstellte Wochenplan kann direkt ausgedruckt oder als Aushang verwendet werden. Die Verarbeitung läuft komplett lokal im Browser, es werden keine Daten an einen Server übertragen.",
+  "github_url": "https://github.com/lollylan/Stundenplaner",
+  "demo_url": "https://dr-rasche.de/stundenplan/wochenplan-praxis.html",
+  "demo_label": "Im Browser öffnen",
+  "video_url": "",
+  "academy_course_slug": null,
+  "screenshot": "/images/stundenplaner.png"
+}
