@@ -1,0 +1,14 @@
+{
+  "name": "Triagetrainer",
+  "slug": "triagetrainer",
+  "category": "webapp",
+  "tags": ["Telefon-Triage", "MFA-Training", "Praxisalltag"],
+  "anforderung": "WEBAPP",
+  "description": "Der Triagetrainer simuliert realistische Anrufer-Szenarien aus dem hausärztlichen Praxisalltag und schult MFAs in der telefonischen Ersteinschätzung. Über 170 Szenarien aus allen Fachbereichen der Hausarztpraxis werden in fünf Dringlichkeitsstufen eingeordnet: von Notfall (Notarzt) über sehr dringend (heute Hausbesuch) bis aufschiebbar (Termin in 1-3 Wochen). Verschiedene Modi wie Schnellrunde, Standard, Marathon, Notfall-Drill, Stress-Test oder Tricky 12 sorgen für abwechslungsreiches Training. Mit Bestenliste und Statistik lassen sich Fortschritt und Trainingsergebnisse einzelner Mitarbeiterinnen nachvollziehen. Ideal für die strukturierte Einarbeitung neuer MFAs sowie regelmäßige Schulungen im bestehenden Team.",
+  "github_url": "https://github.com/lollylan/MFATrainer",
+  "demo_url": "https://cheery-sunburst-f381d9.netlify.app/",
+  "demo_label": "Im Browser öffnen",
+  "video_url": "",
+  "academy_course_slug": null,
+  "screenshot": "/images/Triagetrainer.png"
+}
