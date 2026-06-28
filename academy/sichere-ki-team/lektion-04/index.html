@@ -1,0 +1,112 @@
+<!DOCTYPE html><html lang="de" class="dark"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Das Kernstück der Schulung: Welche Daten besonders geschützt sind, warum sie nicht in Cloud-KI gehören und wie man Aufgaben trotzdem sicher löst – mit Anonymisierung und klaren Beispielen."><title>Patientendaten – was niemals in die KI gehört – Sichere KI im Praxisteam | Asklaion</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><!-- Prevent flash: apply theme before render --><script>
+    (function() {
+      const t = localStorage.getItem('theme');
+      if (t === 'light') document.documentElement.classList.replace('dark', 'light');
+    })();
+  </script><link rel="stylesheet" href="/_astro/global.6fxD9mRf.css"></head> <body class="min-h-screen flex flex-col relative bg-light-base dark:bg-dark-base text-light-text-primary dark:text-text-primary transition-colors duration-300">   <div class="fixed inset-0 -z-10 pointer-events-none dark:block hidden" aria-hidden="true"> <div class="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#0a0a0a] to-[#0a0a0a]"></div> <div class="absolute top-0 right-0 w-[80%] h-[70%] bg-[radial-gradient(ellipse_at_top_right,rgba(245,158,11,0.25)_0%,transparent_60%)]"></div> <div class="absolute bottom-0 left-0 w-[60%] h-[50%] bg-[radial-gradient(ellipse_at_bottom_left,rgba(245,158,11,0.15)_0%,transparent_60%)]"></div> </div>   <div class="fixed inset-0 -z-10 pointer-events-none dark:hidden block" aria-hidden="true"> <div class="absolute inset-0 bg-gradient-to-br from-[#fffbeb] via-[#f8fafc] to-[#f8fafc]"></div> <div class="absolute top-0 right-0 w-[80%] h-[70%] bg-[radial-gradient(ellipse_at_top_right,rgba(245,158,11,0.12)_0%,transparent_60%)]"></div> <div class="absolute bottom-0 left-0 w-[60%] h-[50%] bg-[radial-gradient(ellipse_at_bottom_left,rgba(245,158,11,0.08)_0%,transparent_60%)]"></div> </div> <nav class="fixed top-0 left-0 right-0 z-50 bg-light-base/90 dark:bg-dark-base/90 backdrop-blur-md border-b border-light-border dark:border-dark-border transition-colors duration-300"> <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> <div class="flex items-center justify-between h-16"> <a href="/" class="flex items-center gap-2 text-light-text-primary dark:text-text-primary hover:text-academy-accent transition-colors"> <span class="font-bold text-lg">Asklaion</span> </a> <div class="hidden md:flex items-center gap-8"> <a href="/academy" class="text-light-text-secondary dark:text-text-secondary hover:text-academy-accent transition-colors text-sm font-medium">Akademie</a> <a href="/forge" class="text-light-text-secondary dark:text-text-secondary hover:text-forge-accent transition-colors text-sm font-medium">Projekte</a> <a href="https://github.com/lollylan" target="_blank" rel="noopener noreferrer" class="text-light-text-secondary dark:text-text-secondary hover:text-light-text-primary dark:hover:text-text-primary transition-colors text-sm font-medium">GitHub</a> <!-- Theme toggle --> <button id="theme-toggle" class="p-2 rounded-lg text-light-text-secondary dark:text-text-secondary hover:text-light-text-primary dark:hover:text-text-primary hover:bg-light-card dark:hover:bg-dark-card transition-colors" aria-label="Darstellung wechseln"> <!-- Sun icon (visible in dark mode) --> <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path> </svg> <!-- Moon icon (visible in light mode) --> <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path> </svg> </button> </div> <div class="flex items-center gap-2 md:hidden"> <!-- Mobile theme toggle --> <button id="theme-toggle-mobile" class="p-2 text-light-text-secondary dark:text-text-secondary hover:text-light-text-primary dark:hover:text-text-primary" aria-label="Darstellung wechseln"> <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path> </svg> <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path> </svg> </button> <button id="mobile-menu-btn" class="text-light-text-secondary dark:text-text-secondary hover:text-light-text-primary dark:hover:text-text-primary p-2" aria-label="Menü öffnen"> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg> </button> </div> </div> </div> <div id="mobile-menu" class="hidden md:hidden border-t border-light-border dark:border-dark-border bg-light-base/95 dark:bg-dark-base/95 backdrop-blur-md"> <div class="px-4 py-4 space-y-3"> <a href="/academy" class="block text-light-text-secondary dark:text-text-secondary hover:text-academy-accent transition-colors text-sm font-medium">Akademie</a> <a href="/forge" class="block text-light-text-secondary dark:text-text-secondary hover:text-forge-accent transition-colors text-sm font-medium">Projekte</a> <a href="https://github.com/lollylan" target="_blank" rel="noopener noreferrer" class="block text-light-text-secondary dark:text-text-secondary hover:text-light-text-primary dark:hover:text-text-primary transition-colors text-sm font-medium">GitHub</a> </div> </div> </nav> <main class="pt-16 flex-1">  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8"> <!-- Breadcrumb --> <nav class="mb-6 text-sm text-text-muted"> <a href="/academy" class="hover:text-academy-accent transition-colors">Akademie</a> <span class="mx-2">/</span> <a href="/academy/sichere-ki-team" class="hover:text-academy-accent transition-colors">Sichere KI im Praxisteam</a> <span class="mx-2">/</span> <span class="text-text-secondary">Lektion 4</span> </nav> <!-- Header --> <header class="mb-8"> <div class="flex items-center gap-3 mb-2"> <span class="px-2 py-0.5 text-xs font-medium rounded bg-academy-accent/20 text-academy-accent">
+Lektion 4 von 8 </span> <span class="text-xs text-text-muted">3 Min. Lesezeit</span> </div> <h1 class="text-3xl font-bold text-text-primary">Patientendaten – was niemals in die KI gehört</h1> </header> <!-- Progress bar --> <div class="mb-8"> <div class="h-1 bg-dark-card rounded-full overflow-hidden"> <div class="h-full bg-academy-accent rounded-full transition-all duration-500" style="width: 50%"></div> </div> </div> <!-- Video embed -->  <!-- Content --> <article class="prose prose-amber max-w-none
+      [&_h1]:text-text-primary [&_h1]:font-bold
+      [&_h2]:text-text-primary [&_h2]:font-semibold [&_h2]:mt-8 [&_h2]:mb-4
+      [&_h3]:text-text-primary [&_h3]:font-medium [&_h3]:mt-5 [&_h3]:mb-2
+      [&_p]:text-text-secondary [&_p]:leading-relaxed
+      [&_a]:text-academy-accent [&_a]:no-underline hover:[&_a]:underline
+      [&_strong]:text-text-primary
+      [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded [&_code]:text-sm [&_code]:bg-[#1e293b] [&_code]:text-amber-300
+      [&_pre]:bg-[#1e293b] [&_pre]:border [&_pre]:border-dark-border [&_pre]:rounded-lg [&_pre]:relative [&_pre]:text-slate-200
+      [&_blockquote]:border-l-academy-accent [&_blockquote]:bg-dark-card/50 [&_blockquote]:rounded-r-lg [&_blockquote]:px-4 [&_blockquote]:py-3 [&_blockquote]:my-5
+      [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6 [&_li]:text-text-secondary [&_li]:mb-1
+      [&_details]:my-5
+      [&_table]:border-collapse [&_table]:w-full [&_table]:my-6 [&_th]:bg-dark-card [&_th]:px-4 [&_th]:py-2 [&_th]:text-left [&_th]:text-text-primary [&_td]:px-4 [&_td]:py-2 [&_td]:border-t [&_td]:border-dark-border [&_td]:text-text-secondary
+    ">  <h1 id="patientendaten--was-niemals-in-die-ki-gehört">Patientendaten – was niemals in die KI gehört</h1>
+<p>Das ist die wichtigste praktische Lektion dieses Kurses. Wenn du nur eine Sache mitnimmst, dann diese:</p>
+<blockquote>
+<p>In eine Cloud-KI wie ChatGPT gehören <strong>niemals</strong> Daten, mit denen man einen Patienten identifizieren kann.</p>
+</blockquote>
+<h2 id="was-sind-überhaupt-personenbezogene-daten">Was sind überhaupt “personenbezogene Daten”?</h2>
+<p>Personenbezogene Daten sind alle Informationen, die sich auf eine <strong>identifizierbare Person</strong> beziehen. In unserer Praxis sind das vor allem:</p>
+<ul>
+<li>Name, Adresse, Geburtsdatum</li>
+<li>Versichertennummer, Telefonnummer, E-Mail</li>
+<li>jede Diagnose, jeder Befund, jedes Medikament in Verbindung mit einer Person</li>
+</ul>
+<p>Gesundheitsdaten sind dabei eine <strong>besondere Kategorie</strong> und genießen den höchsten Schutz der DSGVO. Sie zu verarbeiten ist nur unter strengen Voraussetzungen erlaubt.</p>
+<h2 id="auch-indirekte-hinweise-zählen">Auch indirekte Hinweise zählen</h2>
+<p>Ein Patient ist nicht nur über den Namen identifizierbar. Manchmal reicht eine Kombination scheinbar harmloser Angaben:</p>
+<blockquote>
+<p>“Der 84-jährige ehemalige Bürgermeister aus unserem Dorf mit der seltenen Stoffwechselerkrankung …”</p>
+</blockquote>
+<p>Hier steht kein Name – und trotzdem ist die Person eindeutig erkennbar. <strong>Auch solche Beschreibungen gehören nicht in eine Cloud-KI.</strong></p>
+<h2 id="warum-gehören-diese-daten-nicht-in-chatgpt--co">Warum gehören diese Daten nicht in ChatGPT &amp; Co.?</h2>
+<p>Erinnere dich an Lektion 2: Alles, was du eintippst, wird an den Anbieter übertragen. Daraus ergeben sich konkrete Probleme:</p>
+<ul>
+<li><strong>Keine Kontrolle mehr.</strong> Du weißt nicht, wo die Daten gespeichert werden und wer sie sieht.</li>
+<li><strong>Übermittlung ins Ausland.</strong> Viele Anbieter sitzen in den USA – die Daten verlassen den europäischen Schutzraum.</li>
+<li><strong>Mögliche Nutzung zum Training.</strong> Manche Dienste verwenden Eingaben, um ihre Modelle weiter zu trainieren.</li>
+<li><strong>Kein Vertrag (AVV).</strong> Für eine zulässige Auftragsverarbeitung bräuchte es einen Vertrag mit dem Anbieter, den wir bei der normalen kostenlosen Nutzung nicht haben.</li>
+<li><strong>Bruch der Schweigepflicht.</strong> Die Weitergabe an einen Dritten ohne Erlaubnis verletzt § 203 StGB.</li>
+</ul>
+<h2 id="die-einfache-faustregel">Die einfache Faustregel</h2>
+<p>Stell dir vor jeder Eingabe diese eine Frage:</p>
+<blockquote>
+<p>“Würde ich diese Information auch einem Fremden auf der Straße erzählen?”</p>
+</blockquote>
+<p>Wenn nein, gehört sie nicht in eine Cloud-KI.</p>
+<h2 id="was-ist-erlaubt-beispiele-aus-dem-alltag">Was ist erlaubt? Beispiele aus dem Alltag</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Situation</th><th>Erlaubt?</th><th>Warum</th></tr></thead><tbody><tr><td>”Schreib mir einen freundlichen Aushang, dass die Praxis vom 1.–5. August geschlossen ist.”</td><td>Ja</td><td>Keine Patientendaten enthalten</td></tr><tr><td>”Formuliere eine allgemeine Patienteninfo zum Thema Zeckenschutz.”</td><td>Ja</td><td>Allgemeines Wissen, keine Person betroffen</td></tr><tr><td>”Fasse diesen Arztbrief von Herrn Müller, geb. 1951, zusammen.”</td><td>Nein</td><td>Identifizierbarer Patient + Gesundheitsdaten</td></tr><tr><td>”Welche Diagnose passt zu diesen Symptomen meiner Patientin Frau Schmidt?”</td><td>Nein</td><td>Person + Gesundheitsdaten, zudem medizinische Entscheidung</td></tr><tr><td>”Erkläre mir den Unterschied zwischen Typ-1- und Typ-2-Diabetes.”</td><td>Ja</td><td>Reines Fachwissen, kein Personenbezug</td></tr></tbody></table>
+<h2 id="der-sichere-weg-anonymisieren">Der sichere Weg: Anonymisieren</h2>
+<p>Oft lässt sich eine Aufgabe lösen, indem man <strong>alle personenbeziehbaren Angaben vorher entfernt</strong>. Das nennt man Anonymisierung.</p>
+<p><strong>Statt:</strong></p>
+<blockquote>
+<p>“Herr Karl Müller, geboren am 03.05.1951, wohnhaft Hauptstraße 4, hat seit drei Wochen …”</p>
+</blockquote>
+<p><strong>Besser (anonymisiert):</strong></p>
+<blockquote>
+<p>“Ein Patient hat seit drei Wochen …”</p>
+</blockquote>
+<p>Wichtig dabei:</p>
+<ul>
+<li><strong>Wirklich alles entfernen:</strong> Name, Geburtsdatum, Adresse, Beruf, Wohnort, seltene Besonderheiten.</li>
+<li><strong>Im Zweifel weglassen.</strong> Lieber eine Angabe zu viel streichen als eine zu wenig.</li>
+<li><strong>Anonymisieren heißt nicht “Müller” durch “M.” ersetzen.</strong> Initialen oder ein verkürztes Geburtsdatum reichen nicht – die Person muss wirklich nicht mehr erkennbar sein.</li>
+</ul>
+<p>Und denk daran: Selbst der anonymisierte Inhalt unterliegt weiterhin dem Halluzinations-Risiko aus Lektion 3.</p>
+<h2 id="eine-wichtige-ausnahme">Eine wichtige Ausnahme</h2>
+<p>Es gibt KI-Systeme, die <strong>speziell für den medizinischen Einsatz</strong> entwickelt und zertifiziert sind, einen Auftragsverarbeitungsvertrag bieten und die Daten DSGVO-konform verarbeiten. Solche Systeme dürfen unter bestimmten Bedingungen auch mit Patientendaten arbeiten. Ebenso eine <strong>lokale KI</strong>, die ausschließlich auf einem Praxisrechner läuft (Lektion 5).</p>
+<p>Entscheidend ist: <strong>Nicht du allein entscheidest, ob ein Tool dafür freigegeben ist.</strong> Das legt die Praxisleitung gemeinsam mit dem Datenschutzbeauftragten fest. Im Zweifel gilt immer die strenge Regel.</p>
+<h2 id="zusammenfassung">Zusammenfassung</h2>
+<p>In Cloud-KI gehören niemals Daten, die einen Patienten identifizierbar machen – weder direkt (Name) noch indirekt (eindeutige Beschreibung). Die Faustregel “Würde ich das einem Fremden erzählen?” hilft im Alltag. Für viele Aufgaben reicht konsequentes Anonymisieren. Ausnahmen gibt es nur bei eigens freigegebenen, datenschutzkonformen Systemen. In der nächsten Lektion klären wir, welche Werkzeuge das sein können.</p>  </article> <!-- Navigation --> <nav class="mt-10 pt-8 border-t border-dark-border flex justify-between items-center gap-4"> <a href="/academy/sichere-ki-team/lektion-03" class="group flex items-center gap-2 text-text-secondary hover:text-academy-accent transition-colors"> <svg class="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path> </svg> <div class="text-right"> <span class="text-xs text-text-muted block">Vorherige Lektion</span> <span class="text-sm font-medium">Halluzinationen – wenn die KI überzeugend irrt</span> </div> </a> <a id="next-lesson-link" href="/academy/sichere-ki-team/lektion-05" data-course="sichere-ki-team" data-lesson="4" data-total="8" class="group flex items-center gap-3 px-5 py-3 bg-green-600/20 border border-green-600/40 hover:bg-green-600/30 rounded-lg transition-colors text-right"> <div> <span class="text-xs text-green-400 block">Lektion abschließen & weiter</span> <span class="text-sm font-medium text-text-primary">Sichere Werkzeuge – Cloud, lokal und was erlaubt ist</span> </div> <svg class="w-5 h-5 text-green-400 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path> </svg> </a> </nav> </div> <script type="module">document.querySelectorAll("article pre").forEach(e=>{const o=document.createElement("div");o.className="relative group",e.parentNode.insertBefore(o,e),o.appendChild(e);const t=document.createElement("button");t.className="absolute top-2 right-2 px-2 py-1 text-xs rounded bg-dark-border/80 text-text-muted hover:text-text-primary hover:bg-dark-border opacity-0 group-hover:opacity-100 transition-all duration-200 font-sans",t.textContent="Kopieren",t.addEventListener("click",()=>{const n=(e.querySelector("code")||e).textContent||"";navigator.clipboard.writeText(n).then(()=>{t.textContent="Kopiert!",t.classList.add("text-academy-accent"),setTimeout(()=>{t.textContent="Kopieren",t.classList.remove("text-academy-accent")},2e3)})}),o.appendChild(t)});</script> <script type="module">const e=document.getElementById("next-lesson-link");if(e){const t=e.dataset.course,s=parseInt(e.dataset.lesson,10),l=parseInt(e.dataset.total,10);e.addEventListener("click",()=>{localStorage.setItem(`academy_${t}_lesson_${s}`,"completed");let o=!0;for(let a=1;a<=l;a++)if(localStorage.getItem(`academy_${t}_lesson_${a}`)!=="completed"){o=!1;break}o&&localStorage.setItem(`academy_course_${t}`,"completed")})}</script>  </main> <footer class="border-t border-light-border dark:border-dark-border bg-light-base/80 dark:bg-dark-base/80 backdrop-blur-md transition-colors duration-300"> <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"> <div class="flex flex-col md:flex-row justify-between items-center gap-4"> <div class="flex items-center gap-6 text-sm text-light-text-muted dark:text-text-muted"> <a href="/impressum" class="hover:text-light-text-secondary dark:hover:text-text-secondary transition-colors">Impressum</a> <a href="/anforderungen" class="hover:text-light-text-secondary dark:hover:text-text-secondary transition-colors">Anforderungen</a> <a href="/lizenz" class="hover:text-light-text-secondary dark:hover:text-text-secondary transition-colors">Lizenz</a> <a href="https://github.com/lollylan" target="_blank" rel="noopener noreferrer" class="hover:text-light-text-secondary dark:hover:text-text-secondary transition-colors">GitHub</a> </div> <p class="text-sm text-light-text-muted dark:text-text-muted">&copy; 2026 Dr. Florian Rasche &middot; Asklaion &middot; MIT Lizenz</p> </div> <p class="text-center text-xs text-light-text-muted dark:text-text-muted mt-4">Open Source &middot; MIT Lizenz &middot; 100 % lokal</p> </div> </footer> <script type="module">function n(){const t=document.documentElement,e=t.classList.contains("dark");t.classList.replace(e?"dark":"light",e?"light":"dark"),localStorage.setItem("theme",e?"light":"dark")}document.getElementById("theme-toggle")?.addEventListener("click",n);document.getElementById("theme-toggle-mobile")?.addEventListener("click",n);document.getElementById("mobile-menu-btn")?.addEventListener("click",()=>{document.getElementById("mobile-menu")?.classList.toggle("hidden")});</script> </body> </html>
