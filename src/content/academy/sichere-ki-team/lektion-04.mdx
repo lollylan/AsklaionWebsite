@@ -1,0 +1,87 @@
+---
+title: "Patientendaten – was niemals in die KI gehört"
+course: "sichere-ki-team"
+lesson_number: 4
+description: "Das Kernstück der Schulung: Welche Daten besonders geschützt sind, warum sie nicht in Cloud-KI gehören und wie man Aufgaben trotzdem sicher löst – mit Anonymisierung und klaren Beispielen."
+video_url: ""
+---
+
+# Patientendaten – was niemals in die KI gehört
+
+Das ist die wichtigste praktische Lektion dieses Kurses. Wenn du nur eine Sache mitnimmst, dann diese:
+
+> In eine Cloud-KI wie ChatGPT gehören **niemals** Daten, mit denen man einen Patienten identifizieren kann.
+
+## Was sind überhaupt "personenbezogene Daten"?
+
+Personenbezogene Daten sind alle Informationen, die sich auf eine **identifizierbare Person** beziehen. In unserer Praxis sind das vor allem:
+
+- Name, Adresse, Geburtsdatum
+- Versichertennummer, Telefonnummer, E-Mail
+- jede Diagnose, jeder Befund, jedes Medikament in Verbindung mit einer Person
+
+Gesundheitsdaten sind dabei eine **besondere Kategorie** und genießen den höchsten Schutz der DSGVO. Sie zu verarbeiten ist nur unter strengen Voraussetzungen erlaubt.
+
+## Auch indirekte Hinweise zählen
+
+Ein Patient ist nicht nur über den Namen identifizierbar. Manchmal reicht eine Kombination scheinbar harmloser Angaben:
+
+> "Der 84-jährige ehemalige Bürgermeister aus unserem Dorf mit der seltenen Stoffwechselerkrankung ..."
+
+Hier steht kein Name – und trotzdem ist die Person eindeutig erkennbar. **Auch solche Beschreibungen gehören nicht in eine Cloud-KI.**
+
+## Warum gehören diese Daten nicht in ChatGPT & Co.?
+
+Erinnere dich an Lektion 2: Alles, was du eintippst, wird an den Anbieter übertragen. Daraus ergeben sich konkrete Probleme:
+
+- **Keine Kontrolle mehr.** Du weißt nicht, wo die Daten gespeichert werden und wer sie sieht.
+- **Übermittlung ins Ausland.** Viele Anbieter sitzen in den USA – die Daten verlassen den europäischen Schutzraum.
+- **Mögliche Nutzung zum Training.** Manche Dienste verwenden Eingaben, um ihre Modelle weiter zu trainieren.
+- **Kein Vertrag (AVV).** Für eine zulässige Auftragsverarbeitung bräuchte es einen Vertrag mit dem Anbieter, den wir bei der normalen kostenlosen Nutzung nicht haben.
+- **Bruch der Schweigepflicht.** Die Weitergabe an einen Dritten ohne Erlaubnis verletzt § 203 StGB.
+
+## Die einfache Faustregel
+
+Stell dir vor jeder Eingabe diese eine Frage:
+
+> "Würde ich diese Information auch einem Fremden auf der Straße erzählen?"
+
+Wenn nein, gehört sie nicht in eine Cloud-KI.
+
+## Was ist erlaubt? Beispiele aus dem Alltag
+
+| Situation | Erlaubt? | Warum |
+|---|---|---|
+| "Schreib mir einen freundlichen Aushang, dass die Praxis vom 1.–5. August geschlossen ist." | Ja | Keine Patientendaten enthalten |
+| "Formuliere eine allgemeine Patienteninfo zum Thema Zeckenschutz." | Ja | Allgemeines Wissen, keine Person betroffen |
+| "Fasse diesen Arztbrief von Herrn Müller, geb. 1951, zusammen." | Nein | Identifizierbarer Patient + Gesundheitsdaten |
+| "Welche Diagnose passt zu diesen Symptomen meiner Patientin Frau Schmidt?" | Nein | Person + Gesundheitsdaten, zudem medizinische Entscheidung |
+| "Erkläre mir den Unterschied zwischen Typ-1- und Typ-2-Diabetes." | Ja | Reines Fachwissen, kein Personenbezug |
+
+## Der sichere Weg: Anonymisieren
+
+Oft lässt sich eine Aufgabe lösen, indem man **alle personenbeziehbaren Angaben vorher entfernt**. Das nennt man Anonymisierung.
+
+**Statt:**
+> "Herr Karl Müller, geboren am 03.05.1951, wohnhaft Hauptstraße 4, hat seit drei Wochen ..."
+
+**Besser (anonymisiert):**
+> "Ein Patient hat seit drei Wochen ..."
+
+Wichtig dabei:
+
+- **Wirklich alles entfernen:** Name, Geburtsdatum, Adresse, Beruf, Wohnort, seltene Besonderheiten.
+- **Im Zweifel weglassen.** Lieber eine Angabe zu viel streichen als eine zu wenig.
+- **Anonymisieren heißt nicht "Müller" durch "M." ersetzen.** Initialen oder ein verkürztes Geburtsdatum reichen nicht – die Person muss wirklich nicht mehr erkennbar sein.
+
+Und denk daran: Selbst der anonymisierte Inhalt unterliegt weiterhin dem Halluzinations-Risiko aus Lektion 3.
+
+## Eine wichtige Ausnahme
+
+Es gibt KI-Systeme, die **speziell für den medizinischen Einsatz** entwickelt und zertifiziert sind, einen Auftragsverarbeitungsvertrag bieten und die Daten DSGVO-konform verarbeiten. Solche Systeme dürfen unter bestimmten Bedingungen auch mit Patientendaten arbeiten. Ebenso eine **lokale KI**, die ausschließlich auf einem Praxisrechner läuft (Lektion 5).
+
+Entscheidend ist: **Nicht du allein entscheidest, ob ein Tool dafür freigegeben ist.** Das legt die Praxisleitung gemeinsam mit dem Datenschutzbeauftragten fest. Im Zweifel gilt immer die strenge Regel.
+
+## Zusammenfassung
+
+In Cloud-KI gehören niemals Daten, die einen Patienten identifizierbar machen – weder direkt (Name) noch indirekt (eindeutige Beschreibung). Die Faustregel "Würde ich das einem Fremden erzählen?" hilft im Alltag. Für viele Aufgaben reicht konsequentes Anonymisieren. Ausnahmen gibt es nur bei eigens freigegebenen, datenschutzkonformen Systemen. In der nächsten Lektion klären wir, welche Werkzeuge das sein können.
