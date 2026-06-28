@@ -3,5 +3,5 @@
   "slug": "effektives-prompting",
   "description": "Lerne, wie du KI-Agenten durch präzise Anweisungen zu besseren Ergebnissen führst – von einfachen Prompts bis zu komplexen Projektbeschreibungen.",
   "level": "Anfänger",
-  "prerequisites": ["vibecoding-anfaenger"]
+  "prerequisites": ["grundwissen-ki"]
 }
