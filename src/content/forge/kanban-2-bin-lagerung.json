@@ -1,0 +1,14 @@
+{
+  "name": "Kanban 2 bin Lagerung",
+  "slug": "kanban-2-bin-lagerung",
+  "category": "webapp",
+  "tags": ["Lagerhaltung", "Praxisbedarf", "Materialwirtschaft"],
+  "anforderung": "WEBAPP",
+  "description": "Kanban 2 bin Lagerung ist ein Generator für das Kanban-2-Bin-Lagerungssystem, das die Warenhaltung in der Praxis effektiver gestalten soll. Beim Zwei-Behälter-Prinzip liegt jeder Artikel in zwei Behältern: Ist der erste leer, wandert die zugehörige Kanban-Karte in die Bestellbox und der zweite Behälter überbrückt die Lieferzeit. Die Webapp erzeugt genau diese Karten – die Vorderseite mit Lieferant, Artikelname, Lagerort und Ersatzlager, Bestellnummer, Bestellmenge, Verpackungseinheit, Mindestbestand, letztem Einkaufspreis, Gesamtpreis und Lieferzeit, die Rückseite mit Bestellstatus (bestellt / geliefert / eingeräumt) inklusive Datum und Initialen sowie einem Bemerkungsfeld. Karten lassen sich in den Formaten DIN A3 bis DIN A8 anlegen, wahlweise bezogen auf den Druckbogen oder die gefaltete Karte, mit Falzlinie, Schnittmarken und einstellbarem Blattrand – und über den Druckdialog des Browsers als PDF exportieren. Optional ergänzbar sind ein Produktbild, eine farbige SSB-Kennzeichnung, ein Hinweisbanner zum Mindestbestellwert und ein QR-Code, der direkt in der App und ohne externen Dienst erzeugt wird. Alle Karten werden automatisch lokal im Browser gespeichert und lassen sich für Backups oder den Wechsel auf einen anderen PC sichern und wieder laden. Alles läuft komplett lokal – ohne Server, ohne Tracking, ohne Installation.",
+  "github_url": "",
+  "demo_url": "https://dr-rasche.de/kanban/Kanban-Karten.html",
+  "demo_label": "Im Browser öffnen",
+  "video_url": "",
+  "academy_course_slug": null,
+  "screenshot": "/images/Kanban.jpeg"
+}
