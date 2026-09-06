@@ -1,0 +1,14 @@
+{
+  "name": "Asklaion SOP",
+  "slug": "asklaion-sop",
+  "category": "webapp",
+  "tags": ["SOP-Vorlagen", "Befunddokumentation", "PVS-Textbausteine"],
+  "anforderung": "WEBAPP",
+  "description": "Asklaion SOP ist ein Dokumentations- und Vorlagenwerkzeug für die hausärztliche Versorgung: klickbare Erfassungsmasken führen strukturiert durch einen Behandlungsanlass und erzeugen daraus einen kopierfertigen Textbaustein für die Karteikarte im Praxisverwaltungssystem. Die Navigation läuft dreispaltig über Bereich, Thema und Modulinhalt; zusätzlich lässt sich die Ansicht auf eine Rolle filtern (Arzt, PCM, VERAH, MFA, Medizinstudent). Enthalten sind derzeit ein Dermatologie-Modul zur systematischen Beschreibung eines Hautbefundes (Primär- und Sekundäreffloreszenzen, Deskriptoren, Glossar, Beispielbilder), die Sonographie von Abdomen und Schilddrüse mit Organbefunden, Messwerten und Referenzbildern aus dem Sonographie-Atlas der Immanuel Albertinen Diakonie, ein Orthopädie-Modul mit neun Gelenkregionen inklusive Neutral-Null-Dokumentation und Funktionstests, ein EKG-Modul zur strukturierten Befunddokumentation (Rhythmus, Lagetyp, P/PQ/QRS/ST/T) sowie über 100 Deximed-Verweise für die Patientenaufklärung. Die Bereiche PCM-Sprechstunde und Hitze-Medikation sind als Struktur angelegt, die Inhalte folgen. Technisch besteht das Programm aus einer Engine und beliebig vielen SOP-Dateien, die sich beim Laden selbst registrieren: Praxisname, Farben, Logo und der Aufbau der Textbausteine werden über Konfigurationsdateien angepasst, eigene SOPs kommen als einzelne JS-Datei in den Ordner sops/. Alles läuft als statische Webseite ohne Server, ohne Datenbank und ohne Installation komplett lokal im Browser, auch offline; Patientendaten werden weder gespeichert noch versendet. Bewusste Abgrenzung: Das Programm gibt ausschließlich wieder, was die anwendende Person selbst ausgewählt oder gemessen hat. Es berechnet keine Scores, prüft keine Grenzwerte und leitet keine Diagnosen, ICD-Codes oder Dringlichkeiten ab – es ist damit kein Medizinprodukt im Sinne der MDR. Die Module sind Strukturvorlagen und in der eigenen Praxis anzupassen, fachlich zu validieren und vor dem Einsatz ärztlich freizugeben.",
+  "github_url": "https://github.com/lollylan/SOP",
+  "demo_url": "https://lollylan.github.io/SOP/",
+  "demo_label": "Im Browser öffnen",
+  "video_url": "",
+  "academy_course_slug": null,
+  "screenshot": "/images/asklaion-sop.png"
+}
