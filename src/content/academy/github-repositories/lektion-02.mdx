@@ -1,0 +1,108 @@
+---
+title: "Ein Programm nach den eigenen Wünschen anpassen"
+course: "github-repositories"
+lesson_number: 2
+description: "Ordner auswählen, Änderungswunsch beschreiben – so passt du ein fertiges Programm an deine Praxis an, ohne eine Zeile Code anzufassen."
+video_url: "https://www.youtube.com/embed/QFeFTzbP834"
+---
+
+# Ein Programm nach den eigenen Wünschen anpassen
+
+In der letzten Lektion hast du H Flow auf deinen Rechner geholt und gestartet. Jetzt kommt der Teil, der Open-Source-Programme so wertvoll macht: Du darfst sie verändern. Nicht ein bisschen – komplett. Andere Farben, andere Begriffe, zusätzliche Felder, andere Abläufe. Und auch das funktioniert ohne Programmierkenntnisse. Das Video zeigt zwei typische Änderungen von der Anfrage bis zum geprüften Ergebnis.
+
+## Das Prinzip
+
+Anpassen läuft genauso wie Installieren – nur der Satz ist ein anderer:
+
+1. **Ordner auswählen:** Wähle im KI-Agenten den Ordner aus, in dem das Programm liegt – also den Ordner aus Lektion 1. Damit sieht der Agent den gesamten Code des Programms.
+2. **Wunsch beschreiben:** Sag in normaler Sprache, was anders sein soll.
+3. **Ergebnis prüfen:** Der Agent ändert die passenden Dateien, startet das Programm neu und prüft im Browser, ob alles funktioniert. Du schaust es dir an und sagst, ob es passt.
+
+Du musst nicht wissen, in welcher Datei die Farben stehen oder wo der Port eingestellt wird. Das herauszufinden ist die Aufgabe des Agenten.
+
+## Das Beispiel aus dem Video
+
+Im Video werden zwei Dinge geändert: die Adresse, unter der das Programm im Browser läuft (der sogenannte Port), und das Farbschema. Die Anfrage ist wörtlich diktiert und alles andere als perfekt formuliert:
+
+```
+Ich möchte gerne, dass du den Port änderst, auf dem das läuft.
+Momentan läuft es auf 5173, ich hätte gern Port 7777.
+Außerdem hätte ich gerne, dass das Farbschema eher orange-rot wird.
+```
+
+Das reicht. Der Agent:
+
+1. Fasst zusammen, was er verstanden hat: „Zwei Änderungen: Port auf 7777 und Farbschema orange-rot“
+2. Sucht die Stellen im Code, an denen Port und Farben festgelegt sind
+3. Ändert sie – im Video waren das zwei Dateien mit rund 30 geänderten Zeilen
+4. Startet das Programm neu und öffnet es im Browser unter der neuen Adresse
+5. Prüft, ob das Farbschema überall angekommen ist, und meldet das Ergebnis
+
+Ein paar Minuten später läuft H Flow in Orange-Rot unter `http://localhost:7777` – und du hast keine einzige Datei geöffnet.
+
+> **Was ist ein Port?** Wenn ein Programm auf deinem Rechner im Browser läuft, hat es eine Adresse wie `http://localhost:5173`. Die Zahl am Ende ist der Port – so etwas wie eine Zimmernummer. Zwei Programme können nicht dasselbe Zimmer belegen. Deshalb ist es praktisch, den Port ändern zu können, wenn du mehrere Tools gleichzeitig laufen lässt.
+
+## Weitere Ideen für deine Praxis
+
+Farben und Ports sind nur der Anfang. Alles, was du in normalen Sätzen beschreiben kannst, kannst du auch ändern lassen. Ein paar Beispiele:
+
+**Praxisname und Logo einbauen**
+```
+Ersetze den Namen "HÄPPI-Flow" überall durch "Praxis Dr. Muster"
+und verwende unser Logo aus der Datei logo.png, die ich in den Ordner gelegt habe.
+```
+
+**Begriffe anpassen**
+```
+Bei uns heißen die Bereiche nicht "Labor", sondern "Blutentnahme"
+und "Funktionsdiagnostik". Bitte umbenennen – überall, auch im Dienstplan.
+```
+
+**Ein Feld ergänzen**
+```
+Füge bei jedem Mitarbeiter ein Feld "Wochenstunden" hinzu
+und zeige im Dienstplan die Summe der verplanten Stunden an.
+```
+
+**Eine Auswertung hinzufügen**
+```
+Ich möchte auf dem Dashboard sehen, wer in den nächsten 14 Tagen
+Urlaub hat. Als kleine Liste, sortiert nach Datum.
+```
+
+**Etwas entfernen**
+```
+Den Bereich "Fähigkeiten" brauchen wir nicht.
+Blende ihn aus, ohne dass der Rest davon betroffen ist.
+```
+
+> **Hinweis:** Sobald ein Programm medizinische Entscheidungen unterstützt – etwa Dosierungen berechnet oder Befunde bewertet –, gelten die Regeln der Medizinprodukte-Verordnung. Das gilt auch für angepasste Programme. Organisations-Tools wie ein Dienstplan sind davon nicht betroffen.
+
+## Tipps für gutes Anpassen
+
+**Eine Sache nach der anderen.** Zwei Änderungen auf einmal wie im Video sind kein Problem. Zehn auf einmal machen es schwer, am Ende zu prüfen, ob alles stimmt.
+
+**Erst anschauen, dann weitermachen.** Nach jeder Änderung: Programm öffnen, ausprobieren, dann den nächsten Wunsch äußern.
+
+**Wenn es kaputt ist: einfach sagen.** „Seit der letzten Änderung lädt die Seite nicht mehr“ reicht völlig. Der Agent findet die Ursache. Und wenn du eine Änderung ganz zurücknehmen willst: „Mach die letzte Änderung rückgängig.“
+
+**Beschreib das Ergebnis, nicht den Weg.** Du musst nicht sagen, welche Datei geändert werden soll. „Die Überschriften sollen dunkelblau sein“ ist ein besserer Auftrag als jede technische Anweisung.
+
+**Nutze dein Fachwissen.** Du weißt, wie deine Praxis arbeitet. Der Agent weiß, wie man das in Code umsetzt. Diese Arbeitsteilung ist der Kern von Vibecoding.
+
+## Was mit dem Original passiert
+
+Deine Änderungen bleiben in deinem Ordner auf deinem Rechner. Das Original auf GitHub verändert sich nicht – und andere Praxen, die dasselbe Programm nutzen, bekommen davon nichts mit. Alle Asklaion-Projekte stehen unter MIT-Lizenz: Du darfst sie frei verändern und in deiner Praxis einsetzen.
+
+> **Gut zu wissen:** Wenn das Original später aktualisiert wird, landen die Neuerungen nicht automatisch bei dir. In vielen Fällen kann auch das der Agent erledigen („Hol die neueste Version von GitHub und übernimm meine Anpassungen“) – aber das ist ein Thema für später.
+
+## Was du gelernt hast
+
+- Anpassen heißt: Ordner auswählen, Wunsch beschreiben, Ergebnis prüfen
+- Du musst weder wissen, wo etwas im Code steht, noch wie man es ändert
+- Kleine Schritte, nach jedem Schritt prüfen
+- Deine Änderungen bleiben lokal, das Original bleibt unberührt
+
+## Wie es weitergeht
+
+Du kannst jetzt jedes Open-Source-Programm auf deinen Rechner holen und an deine Praxis anpassen. Der nächste logische Schritt: das Programm nicht nur auf deinem Rechner, sondern im ganzen Praxisnetz verfügbar machen. Genau darum geht es im Kurs „Deployment“.

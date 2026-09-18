@@ -1,0 +1,105 @@
+---
+title: "Ein Repository installieren und starten"
+course: "github-repositories"
+lesson_number: 1
+description: "GitHub-Link kopieren, dem KI-Agenten geben, abwarten – so holst du dir ein fertiges Programm in wenigen Minuten auf den eigenen Rechner."
+video_url: "https://www.youtube.com/embed/IPmepVyWi7M"
+---
+
+# Ein Repository installieren und starten
+
+Auf GitHub liegen tausende fertige Programme – darunter alle Tools von Asklaion Projects. Früher hieß „ein Programm von GitHub installieren“: Terminal öffnen, kryptische Befehle abtippen, fehlende Software nachinstallieren, Fehlermeldungen googeln. Heute heißt es: Link kopieren, dem KI-Agenten geben, abwarten. Das Video oben zeigt den kompletten Ablauf in gut vier Minuten – ungeschnitten.
+
+## Was ist überhaupt ein Repository?
+
+Ein **Repository** (kurz: Repo) ist nichts anderes als ein Projektordner, der auf GitHub öffentlich abgelegt ist. Darin steckt alles, was zu einem Programm gehört: der Code, eine Anleitung (die sogenannte README) und die Liste der Bausteine, die das Programm zum Laufen braucht.
+
+**GitHub** ist die Plattform, auf der diese Ordner liegen – so etwas wie eine öffentliche Bibliothek für Software. Jedes Programm hat dort eine eigene Adresse, zum Beispiel:
+
+```
+https://github.com/lollylan/HAPPI-Flow
+```
+
+Mehr musst du über GitHub nicht wissen. Du brauchst dort nicht einmal ein Konto, um ein Programm zu holen.
+
+## Was du brauchst
+
+- Einen **KI-Agenten**, der auf deinem Rechner Ordner anlegen und Befehle ausführen darf. Im Video ist das die Claude Desktop App. Welche Programme das können und worin sie sich unterscheiden, erfährst du im Kurs „Programmempfehlung für Anfänger“.
+- Den **GitHub-Link** des Programms. Bei allen Asklaion-Projekten findest du ihn direkt auf der jeweiligen Projektseite.
+- Einen **leeren Ordner** auf deinem Rechner, in dem das Programm landen soll – zum Beispiel `Dokumente\Praxis-Tools\HFlow`.
+
+> **Wichtig:** Ein reiner Chatbot reicht dafür nicht. ChatGPT im Browser kann dir zwar erklären, was zu tun wäre – aber nicht selbst Ordner anlegen, Software installieren und Programme starten. Genau das ist der Unterschied zwischen Chat und Agent.
+
+## So läuft es ab
+
+### Schritt 1: Link kopieren
+
+Öffne die Projektseite (im Video: H Flow auf Asklaion Projects), klicke auf den GitHub-Link und kopiere die Adresse aus der Adresszeile deines Browsers.
+
+### Schritt 2: Ordner auswählen
+
+Lege einen neuen, leeren Ordner an und wähle ihn im KI-Agenten als Arbeitsordner aus. In der Claude Desktop App passiert das beim Start einer neuen Sitzung. Alles, was der Agent ab jetzt tut, geschieht in diesem Ordner – nirgendwo sonst.
+
+### Schritt 3: Sagen, was du willst
+
+Jetzt kommt der ganze „Trick“: Du schreibst einen einzigen Satz. Im Video ist er sogar nur diktiert – mit Ähm und allem – und lautet sinngemäß so:
+
+```
+Ich gebe dir jetzt ein GitHub-Repository. Klone es bitte in diesen Ordner
+und bring es dann zum Laufen.
+https://github.com/lollylan/HAPPI-Flow
+```
+
+Kein Fachchinesisch, kein spezielles Format. Normale Sprache, so wie du es einer Mitarbeiterin sagen würdest. „Klonen“ heißt dabei nichts anderes als „herunterladen“ – du kannst genauso gut „kopiere es in diesen Ordner“ sagen.
+
+### Schritt 4: Zuschauen (oder Kaffee holen)
+
+Der Agent arbeitet jetzt selbstständig. Im Video sieht das so aus:
+
+1. Er prüft, ob der Ordner leer ist und ob die nötigen Werkzeuge auf dem Rechner vorhanden sind
+2. Er lädt das Repository herunter
+3. Er liest die Anleitung (README) und erkennt daraus, wie das Programm gestartet wird
+4. Er installiert alle Bausteine, die das Programm braucht – im Video waren das rund 750 Pakete, vollautomatisch
+5. Er startet das Programm und öffnet es im Browser
+6. Er testet sogar selbst, ob der Login funktioniert, und meldet dir das Ergebnis
+
+Am Ende bekommst du eine kurze Zusammenfassung: wo das Programm liegt, unter welcher Adresse es im Browser läuft und wie du es beim nächsten Mal selbst startest.
+
+## Wenn etwas hakt
+
+Nicht jede Installation läuft beim ersten Mal glatt. Das ist normal – und genau hier zeigt sich der Vorteil des Agenten:
+
+**Der Agent fragt nach Erlaubnis.** KI-Agenten fragen häufig nach, bevor sie etwas installieren oder Befehle ausführen. Lies kurz, was er vorhat, und bestätige.
+
+**Ein Werkzeug fehlt.** Manche Programme brauchen zum Beispiel Git oder Node.js. Der Agent merkt das von selbst. Sag ihm einfach:
+
+```
+Installiere bitte alles, was noch fehlt, und mach dann weiter.
+```
+
+**Eine Fehlermeldung erscheint.** Du musst sie nicht verstehen. Der Agent liest sie selbst, sucht die Ursache und behebt sie. Falls er stecken bleibt, hilft:
+
+```
+Das Programm startet nicht. Finde heraus, woran es liegt, und behebe es.
+```
+
+**Du willst wissen, was gerade passiert.** Frag einfach nach – der Agent erklärt dir jeden Schritt in normaler Sprache.
+
+## Warum das so einfach ist
+
+Das Video zeigt keinen Trick und keine Abkürzung. Es zeigt, was KI-Agenten heute standardmäßig können: eine Anleitung lesen, die nötigen Schritte ableiten, ausführen und prüfen. Genau die Arbeit, für die man früher einen Entwickler oder viel Geduld brauchte.
+
+Deine Rolle dabei: sagen, was du willst, und am Ende prüfen, ob es das ist, was du wolltest. Kein Terminal, kein Code, keine Fehlersuche.
+
+> **Sicherheitshinweis:** Installiere nur Programme aus Quellen, denen du vertraust. Der Agent führt aus, was im Repository steht – auch dann, wenn dort etwas Schädliches stünde. Bei den Asklaion-Projekten kannst du den gesamten Code jederzeit auf GitHub einsehen, und alle stehen unter MIT-Lizenz.
+
+## Was du gelernt hast
+
+- Ein Repository ist ein Projektordner auf GitHub – mehr nicht
+- Installieren heißt heute: Link kopieren, Ordner wählen, einen Satz schreiben
+- Der Agent lädt herunter, installiert, startet und testet – und erklärt dir dabei, was er tut
+- Fehlermeldungen musst du nicht verstehen, nur weitergeben
+
+## Nächste Lektion
+
+Das Programm läuft – aber die Farben gefallen dir nicht, und du hättest gern eine andere Adresse im Browser? In der nächsten Lektion änderst du beides. Wieder nur mit einem Satz.
