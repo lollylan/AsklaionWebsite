@@ -127,6 +127,16 @@ const BADGE_COLORS: Record<string, string> = {
       )}
     </div>
 
+    <!-- Anleitungsvideo -->
+    {program.tutorial_video_url && (
+      <div class="bg-dark-card border border-dark-border rounded-xl p-6 mb-8">
+        <h3 class="font-bold text-text-primary mb-4">{program.tutorial_video_label || 'Anleitung'}</h3>
+        <div class="aspect-video rounded-lg overflow-hidden bg-dark-base border border-dark-border">
+          <iframe src={program.tutorial_video_url} class="w-full h-full" allowfullscreen />
+        </div>
+      </div>
+    )}
+
     <!-- Academy CTA -->
     {program.academy_course_slug && (
       <div class="bg-academy-accent/10 border border-academy-accent/30 rounded-xl p-6 mb-8">

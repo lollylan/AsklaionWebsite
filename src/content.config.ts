@@ -15,6 +15,8 @@ const forge = defineCollection({
     demo_url: z.string().default(''),
     demo_label: z.string().default(''),
     video_url: z.string().default(''),
+    tutorial_video_url: z.string().default(''),
+    tutorial_video_label: z.string().default(''),
     academy_course_slug: z.string().nullable().default(null),
     screenshot: z.string().default(''),
     notice: z.string().default(''),

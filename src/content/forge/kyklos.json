@@ -1,0 +1,16 @@
+{
+  "name": "Asklaion Kyklos",
+  "slug": "kyklos",
+  "category": "install",
+  "tags": ["Textbausteine", "Shortcuts", "Windows"],
+  "anforderung": "GERING",
+  "description": "Asklaion Kyklos ist ein Auswahlrad für Windows: Taste halten (standardmäßig ^), Maus in eine Richtung bewegen, loslassen – und der hinterlegte Text steht in dem Feld, in dem der Cursor gerade war. So landen Normalbefunde und Textbausteine in unter einer Sekunde in der Karteikarte, egal ob im PVS, im Browser oder in Word, ohne dass der Blick das Dokument verlassen muss. Neben Text kann jedes Segment auch Tastenkombinationen senden, Programme, Ordner oder Websites öffnen, Medien- und Systemfunktionen auslösen, Makros abspielen oder ein Unterrad öffnen – ein Stream Deck in Software, bedient wie ein Auswahlrad aus Computerspielen. Pro Rad sind 2 bis 12 Segmente mit eigener Beschriftung, Symbol und Farbe möglich, Auslöser (Taste, Kombination, Maus-Seitentaste) frei wählbar. Textbausteine unterstützen Platzhalter wie Datum, Uhrzeit oder Zwischenablage, Lückentexte mit Eingabefeldern und Mehrfachauswahl, die beim Auslösen abgefragt werden, sowie mehrere zufällig wechselnde Fassungen, damit nicht in jeder Karteikarte wortgleich derselbe Befund steht. Das Programm ist eine einzelne Exe von rund 380 KB, braucht keine Installation und keine Administratorrechte und läuft portabel auf jedem Windows 10/11 – die Konfiguration liegt als JSON-Datei direkt daneben. Es wird nichts gespeichert oder versendet außer den eigenen Bausteinen. Die mitgelieferten Befundtexte sind Beispiele, keine geprüften Befunde, und werden bis zur eigenen Anpassung mit dem Vermerk [Beispieltext] eingefügt.",
+  "github_url": "https://github.com/lollylan/Kyklos",
+  "release_url": "https://github.com/lollylan/Kyklos/releases/latest",
+  "demo_url": "",
+  "video_url": "https://www.youtube.com/embed/vHZ9N6phkSY",
+  "tutorial_video_url": "https://www.youtube.com/embed/dU80OrziqEA",
+  "tutorial_video_label": "Anleitung: Kyklos individualisieren",
+  "academy_course_slug": null,
+  "screenshot": "/images/kyklos.png"
+}
