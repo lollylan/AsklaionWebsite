@@ -1,0 +1,14 @@
+{
+  "name": "Raumgefühl",
+  "slug": "raumgefuehl",
+  "category": "webapp",
+  "tags": ["Barrierefreiheit", "Braille", "3D-Druck"],
+  "anforderung": "WEBAPP",
+  "description": "Raumgefühl erstellt tastbare Gebäudepläne für blinde und sehbehinderte Menschen – gezeichnet im Browser, beschriftet in Brailleschrift und exportiert für den 3D-Druck. So lässt sich zum Beispiel ein Orientierungsplan der eigenen Praxis an den Eingang hängen, auf dem Empfang, Wartebereich, Sprechzimmer und barrierefreies WC ertastet werden können. Der Grundriss wird in Metern gezeichnet: Räume als Rechteck oder freies Polygon, Bereiche ohne Wände (etwa Anmeldung und Wartebereich im selben Raum) als gestrichelte Tastlinie, Türen als Lücken in der Wand, optional mit niedriger Schwelle. Jeder Raum bekommt einen Namen und eine Kurzbezeichnung; die Braille-Beschriftung wird automatisch erzeugt (deutsche Basis- oder Vollschrift nach DIN 32976), darüber auf Wunsch erhabene Profilschrift für Sehende. Tastbare Orientierungsmarker zeigen den Standort („Sie sind hier“), den Eingang oder einen Treffpunkt, eine eigene Legendentafel löst Kurzbezeichnungen und Symbole auf. Eine 3D-Vorschau zeigt das Ergebnis vor dem Druck. Exportiert wird als 3MF (Grundplatte und erhabene Teile getrennt für den zweifarbigen Druck) oder als STL – als Gesamtplatte oder mit Räumen als einzelnen Puzzleteilen in verschiedenen Farben. Der Maßstab passt sich auf Wunsch automatisch an das Druckbett an (Voreinstellungen für gängige Bambu-Lab-Drucker oder eigenes Maß), dazu gibt es einen gekachelten Rahmen mit Aufhängung zum Einlegen der Platte. Alles läuft ohne Installation und ohne Server direkt im Browser; Pläne werden lokal gespeichert und lassen sich als Datei sichern. Braille in Vollschrift sollte vor dem Druck von einer Braille lesenden Person gegengelesen werden.",
+  "github_url": "https://github.com/lollylan/BlindenPlan",
+  "demo_url": "https://lollylan.github.io/BlindenPlan/",
+  "demo_label": "Im Browser öffnen",
+  "video_url": "",
+  "academy_course_slug": null,
+  "screenshot": "/images/raumgefuehl.png"
+}
