@@ -26,60 +26,60 @@ Stell dir vor, ich komme morgens in meine Praxis und öffne
 auf meinem Monitor das Praxis-Dashboard.
 
 Ich sehe auf einen Blick:
-- Wie viele Patienten heute Termine haben (z.B. "32 Patienten")
-- Die nächsten 3 Termine mit Name und Uhrzeit
-- Ob Laborergebnisse zur Befundung vorliegen (z.B. "5 neue Befunde")
+- Wer heute aus dem Team anwesend ist (z.B. "4 von 5 Personen")
+- Die nächsten 3 Geräte-Wartungen mit Gerät und Datum
+- Wie viele Bestellungen offen sind (z.B. "5 offene Bestellungen")
 - Die aktuelle Wartezeit im Wartezimmer
-- Einen Hinweis, wenn heute ein Geburtstag eines Stammpatienten ist
+- Einen Hinweis, wenn diese Woche ein Artikel im Notfallkoffer abläuft
 
 Das Dashboard ist übersichtlich, hat große Kacheln und
-aktualisiert sich automatisch.
+aktualisiert sich automatisch. Es enthält keine Patientendaten.
 
 Baue dieses Dashboard als Webseite.
 ```
 
 Durch die Beschreibung aus der Zukunft weiß die KI genau, was auf dem Bildschirm erscheinen soll – ohne dass du jedes technische Detail erklären musst.
 
-## Beispiel 2: Patientenfragebogen
+## Beispiel 2: Team-Fragebogen
 
 ```
-Stell dir vor, ein Patient betritt mein Wartezimmer. Auf einem
-Tablet liegt ein Fragebogen bereit.
+Stell dir vor, im Pausenraum meiner Praxis liegt ein Tablet
+mit einem kurzen Fragebogen für das Team bereit.
 
-Der Patient tippt auf "Fragebogen starten" und sieht:
+Eine MFA tippt auf "Fragebogen starten" und sieht:
 - Erst eine freundliche Begrüßung
 - Dann eine Frage pro Bildschirm (nie mehr als eine)
 - Große Buttons zum Antippen der Antwort
 - Einen Fortschrittsbalken oben
-- Am Ende: "Vielen Dank! Ihre Ärztin hat die Antworten erhalten."
+- Am Ende: "Vielen Dank! Die Praxisleitung hat die Antworten erhalten."
 
 Die Fragen betreffen:
-1. "Was führt Sie heute zu uns?" (Freitext)
-2. "Haben Sie Schmerzen?" (Ja/Nein)
-3. Wenn ja: "Wo?" (Körperbild zum Antippen)
-4. "Wie stark?" (Skala 1-10)
-5. "Nehmen Sie regelmäßig Medikamente?" (Ja/Nein)
-6. Wenn ja: "Welche?" (Freitext)
+1. "Was lief diese Woche gut?" (Freitext)
+2. "Gab es Engpässe im Ablauf?" (Ja/Nein)
+3. Wenn ja: "Wo?" (Praxisplan zum Antippen)
+4. "Wie stark hat das gestört?" (Skala 1-10)
+5. "Fehlt Material?" (Ja/Nein)
+6. Wenn ja: "Welches?" (Freitext)
 
 Baue diesen Fragebogen als Webseite.
 ```
 
-## Beispiel 3: Quartalsabrechnung-Helfer
+## Beispiel 3: Quartalsübersicht für den Praxisbedarf
 
 ```
-Stell dir vor, es ist Quartalsende. Ich öffne mein Abrechnungs-Tool
+Stell dir vor, es ist Quartalsende. Ich öffne mein Praxisbedarf-Tool
 und sehe eine Übersicht:
 
-- Links eine Liste aller Patienten dieses Quartals
-- Neben jedem Namen die abgerechneten Ziffern (EBM)
-- Oben eine Statistik: Fallzahl, Durchschnitt pro Fall,
-  häufigste Ziffern
-- Ein Warnsymbol bei Patienten, bei denen eine häufig
-  vergessene Ziffer fehlen könnte (z.B. Chronikerpauschale)
+- Links eine Liste aller Lieferanten dieses Quartals
+- Neben jedem Namen die Bestellungen und Kosten
+- Oben eine Statistik: Gesamtkosten, Durchschnitt pro Bestellung,
+  häufigste Artikel
+- Ein Warnsymbol bei Lieferanten, bei denen eine Rechnung
+  fehlen könnte
 - Ein Export-Button für eine CSV-Datei
 
 Die Daten gebe ich über eine Import-Funktion ein
-(CSV-Datei aus meinem PVS).
+(CSV-Datei aus meiner Bestellliste).
 
 Baue dieses Tool als Webseite.
 ```
