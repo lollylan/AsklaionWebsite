@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="de" class="dark"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Vier rote Linien für Software in der Medizin – und ein Selbsttest, mit dem du dein eigenes Projekt einordnen kannst."><title>Was du nicht vibecoden solltest – Was du nicht vibecoden solltest | Asklaion</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><!-- Prevent flash: apply theme before render --><script>
+    (function() {
+      const t = localStorage.getItem('theme');
+      if (t === 'light') document.documentElement.classList.replace('dark', 'light');
+    })();
+  </script><link rel="stylesheet" href="/_astro/global.DK_YFcy3.css"></head> <body class="min-h-screen flex flex-col relative bg-light-base dark:bg-dark-base text-light-text-primary dark:text-text-primary transition-colors duration-300">   <div class="fixed inset-0 -z-10 pointer-events-none dark:block hidden" aria-hidden="true"> <div class="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#0a0a0a] to-[#0a0a0a]"></div> <div class="absolute top-0 right-0 w-[80%] h-[70%] bg-[radial-gradient(ellipse_at_top_right,rgba(245,158,11,0.25)_0%,transparent_60%)]"></div> <div class="absolute bottom-0 left-0 w-[60%] h-[50%] bg-[radial-gradient(ellipse_at_bottom_left,rgba(245,158,11,0.15)_0%,transparent_60%)]"></div> </div>   <div class="fixed inset-0 -z-10 pointer-events-none dark:hidden block" aria-hidden="true"> <div class="absolute inset-0 bg-gradient-to-br from-[#fffbeb] via-[#f8fafc] to-[#f8fafc]"></div> <div class="absolute top-0 right-0 w-[80%] h-[70%] bg-[radial-gradient(ellipse_at_top_right,rgba(245,158,11,0.12)_0%,transparent_60%)]"></div> <div class="absolute bottom-0 left-0 w-[60%] h-[50%] bg-[radial-gradient(ellipse_at_bottom_left,rgba(245,158,11,0.08)_0%,transparent_60%)]"></div> </div> <nav class="fixed top-0 left-0 right-0 z-50 bg-light-base/90 dark:bg-dark-base/90 backdrop-blur-md border-b border-light-border dark:border-dark-border transition-colors duration-300"> <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> <div class="flex items-center justify-between h-16"> <a href="/" class="flex items-center gap-2 text-light-text-primary dark:text-text-primary hover:text-academy-accent transition-colors"> <span class="font-bold text-lg">Asklaion</span> </a> <div class="hidden md:flex items-center gap-8"> <a href="/academy" class="text-light-text-secondary dark:text-text-secondary hover:text-academy-accent transition-colors text-sm font-medium">Akademie</a> <a href="/forge" class="text-light-text-secondary dark:text-text-secondary hover:text-forge-accent transition-colors text-sm font-medium">Projekte</a> <a href="https://github.com/lollylan" target="_blank" rel="noopener noreferrer" class="text-light-text-secondary dark:text-text-secondary hover:text-light-text-primary dark:hover:text-text-primary transition-colors text-sm font-medium">GitHub</a> <!-- Theme toggle --> <button id="theme-toggle" class="p-2 rounded-lg text-light-text-secondary dark:text-text-secondary hover:text-light-text-primary dark:hover:text-text-primary hover:bg-light-card dark:hover:bg-dark-card transition-colors" aria-label="Darstellung wechseln"> <!-- Sun icon (visible in dark mode) --> <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path> </svg> <!-- Moon icon (visible in light mode) --> <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path> </svg> </button> </div> <div class="flex items-center gap-2 md:hidden"> <!-- Mobile theme toggle --> <button id="theme-toggle-mobile" class="p-2 text-light-text-secondary dark:text-text-secondary hover:text-light-text-primary dark:hover:text-text-primary" aria-label="Darstellung wechseln"> <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path> </svg> <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path> </svg> </button> <button id="mobile-menu-btn" class="text-light-text-secondary dark:text-text-secondary hover:text-light-text-primary dark:hover:text-text-primary p-2" aria-label="Menü öffnen"> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg> </button> </div> </div> </div> <div id="mobile-menu" class="hidden md:hidden border-t border-light-border dark:border-dark-border bg-light-base/95 dark:bg-dark-base/95 backdrop-blur-md"> <div class="px-4 py-4 space-y-3"> <a href="/academy" class="block text-light-text-secondary dark:text-text-secondary hover:text-academy-accent transition-colors text-sm font-medium">Akademie</a> <a href="/forge" class="block text-light-text-secondary dark:text-text-secondary hover:text-forge-accent transition-colors text-sm font-medium">Projekte</a> <a href="https://github.com/lollylan" target="_blank" rel="noopener noreferrer" class="block text-light-text-secondary dark:text-text-secondary hover:text-light-text-primary dark:hover:text-text-primary transition-colors text-sm font-medium">GitHub</a> </div> </div> </nav> <main class="pt-16 flex-1">  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8"> <!-- Breadcrumb --> <nav class="mb-6 text-sm text-text-muted"> <a href="/academy" class="hover:text-academy-accent transition-colors">Akademie</a> <span class="mx-2">/</span> <a href="/academy/vibecoding-grenzen" class="hover:text-academy-accent transition-colors">Was du nicht vibecoden solltest</a> <span class="mx-2">/</span> <span class="text-text-secondary">Lektion 1</span> </nav> <!-- Header --> <header class="mb-8"> <div class="flex items-center gap-3 mb-2"> <span class="px-2 py-0.5 text-xs font-medium rounded bg-academy-accent/20 text-academy-accent">
+Lektion 1 von 1 </span> <span class="text-xs text-text-muted">7 Min. Lesezeit</span> </div> <h1 class="text-3xl font-bold text-text-primary">Was du nicht vibecoden solltest</h1> </header> <!-- Progress bar --> <div class="mb-8"> <div class="h-1 bg-dark-card rounded-full overflow-hidden"> <div class="h-full bg-academy-accent rounded-full transition-all duration-500" style="width: 100%"></div> </div> </div> <!-- Video embed --> <div class="mb-8 aspect-video rounded-lg overflow-hidden bg-dark-card"> <iframe src="https://www.youtube.com/embed/YaeGo_fwkkw" class="w-full h-full" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> </div> <!-- Content --> <article class="prose prose-amber max-w-none
+      [&_h1]:text-text-primary [&_h1]:font-bold
+      [&_h2]:text-text-primary [&_h2]:font-semibold [&_h2]:mt-8 [&_h2]:mb-4
+      [&_h3]:text-text-primary [&_h3]:font-medium [&_h3]:mt-5 [&_h3]:mb-2
+      [&_p]:text-text-secondary [&_p]:leading-relaxed
+      [&_a]:text-academy-accent [&_a]:no-underline hover:[&_a]:underline
+      [&_strong]:text-text-primary
+      [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded [&_code]:text-sm [&_code]:bg-[#1e293b] [&_code]:text-amber-300
+      [&_pre]:bg-[#1e293b] [&_pre]:border [&_pre]:border-dark-border [&_pre]:rounded-lg [&_pre]:relative [&_pre]:text-slate-200
+      [&_blockquote]:border-l-academy-accent [&_blockquote]:bg-dark-card/50 [&_blockquote]:rounded-r-lg [&_blockquote]:px-4 [&_blockquote]:py-3 [&_blockquote]:my-5
+      [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6 [&_li]:text-text-secondary [&_li]:mb-1
+      [&_details]:my-5
+      [&_table]:border-collapse [&_table]:w-full [&_table]:my-6 max-md:[&_table]:block max-md:[&_table]:overflow-x-auto [&_th]:bg-dark-card [&_th]:px-4 [&_th]:py-2 [&_th]:text-left [&_th]:text-text-primary [&_td]:px-4 [&_td]:py-2 [&_td]:border-t [&_td]:border-dark-border [&_td]:text-text-secondary
+    ">  <h1 id="was-du-nicht-vibecoden-solltest">Was du nicht vibecoden solltest</h1>
+<p>Mit Vibecoding kannst du in kurzer Zeit erstaunlich viel bauen. Genau das ist die Gefahr: Du siehst, dass dein Programm funktioniert. Du siehst aber nicht, ob es rechtlich zulässig ist, ob Daten abfließen oder wer haftet, wenn etwas schiefgeht. Das Video zeigt die vier roten Linien, der Text fasst sie zum Nachlesen zusammen.</p>
+<blockquote>
+<p><strong>Hinweis:</strong> Diese Lektion ist eine Orientierung aus der Praxis und keine Rechtsberatung. Stand: November 2026.</p>
+</blockquote>
+<h2 id="die-vier-roten-linien">Die vier roten Linien</h2>
+<ol>
+<li><strong>Medizinprodukte:</strong> Programme, die medizinisch bewerten, und ihre Weitergabe</li>
+<li><strong>Patientendaten in der Cloud:</strong> KI-Dienste, Online-Datenbanken und dein eigenes Entwicklungswerkzeug</li>
+<li><strong>Von außen erreichbare Programme:</strong> Login, Patientenportal, Online-Formular, Terminbuchung</li>
+<li><strong>Schreibzugriff auf kritische Systeme:</strong> PVS, Abrechnung, Patientendokumentation</li>
+</ol>
+<p>Punkt 1 ist vor allem eine Rechtsfrage, die sich auch mit gutem Code nicht erledigt. Bei den Punkten 2 bis 4 gilt: Bau so etwas nur, wenn du den Code wirklich verstehst oder Fachleute einbeziehst.</p>
+<h2 id="1-medizinprodukte">1. Medizinprodukte</h2>
+<h3 id="wann-ist-software-ein-medizinprodukt">Wann ist Software ein Medizinprodukt?</h3>
+<p>Auch Software kann ein Medizinprodukt sein. Das hängt nicht von ihrer Größe oder Technik ab, sondern von ihrem Zweck: Ist sie vom Hersteller für medizinische Zwecke am Menschen bestimmt, etwa für Diagnose, Verhütung, Überwachung, Vorhersage, Prognose, Behandlung oder Linderung von Krankheiten, kommt die Medizinprodukte-Verordnung (MDR) ins Spiel. Und der Hersteller bist du, auch wenn die KI den Code getippt hat.</p>
+<h3 id="warum-regel-11-so-entscheidend-ist">Warum Regel 11 so entscheidend ist</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Klasse</th><th>Vereinfacht</th><th>Prüfung</th></tr></thead><tbody><tr><td>I</td><td>Alle übrige Medizinsoftware</td><td>Selbsterklärung mit Pflichten</td></tr><tr><td>IIa</td><td>Liefert Informationen für Diagnose- oder Therapieentscheidungen</td><td>Benannte Stelle</td></tr><tr><td>IIb</td><td>Die Entscheidung kann eine schwere Verschlechterung oder eine Operation nach sich ziehen</td><td>Benannte Stelle</td></tr><tr><td>III</td><td>Die Entscheidung kann zum Tod oder zu einer irreversiblen Verschlechterung führen</td><td>Benannte Stelle</td></tr></tbody></table>
+<p>Ab Klasse IIa kommst du um eine Benannte Stelle, ein QM-System und eine klinische Bewertung nicht herum. Das lässt sich nicht nebenbei erledigen. Eine Überarbeitung der MDR wird derzeit verhandelt; bis sie beschlossen ist und gilt, bleibt die aktuelle Fassung maßgeblich.</p>
+<h3 id="der-selbsttest">Der Selbsttest</h3>
+<p>Diese drei Fragen orientieren sich vereinfacht an den Entscheidungsschritten der EU-Kommission:</p>
+<ol>
+<li>Macht das Programm <strong>mehr</strong>, als Daten zu speichern, zu archivieren, zu übertragen oder einfach zu suchen?</li>
+<li>Nutzt das Ergebnis einem <strong>einzelnen, bestimmten Patienten</strong>?</li>
+<li>Dient es einem <strong>medizinischen Zweck</strong> wie Diagnose, Therapie oder Prognose?</li>
+</ol>
+<p>Dreimal Ja bedeutet: wahrscheinlich Medizinprodukt, also nichts zum Vibecoden. Ein einziges Nein spricht eher dagegen. Steuert das Programm ein Medizingerät, solltest du es unabhängig davon nicht vibecoden. Im Zweifel lass es fachlich prüfen.</p>
+<h3 id="beispiele">Beispiele</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Grün: Organisation</th><th>Gelb: kommt auf die Umsetzung an</th><th>Rot: Finger weg</th></tr></thead><tbody><tr><td>Wartezeitanzeige</td><td>Befunddokumentation, nur ohne jede Bewertung</td><td>Dosisrechner</td></tr><tr><td>Lagerverwaltung</td><td>BMI-Rechner, heikel, sobald er einordnet oder empfiehlt</td><td>Score mit Auswertung</td></tr><tr><td>Dienstplan</td><td>Laborwert-Referenztabelle, heikel, sobald eigene Werte bewertet werden</td><td>Telefontriage</td></tr><tr><td>Schulungsmaterial</td><td></td><td>EKG-Interpretation, KI-Diagnosevorschlag</td></tr></tbody></table>
+<p>Die Einteilung ist eine Einschätzung für den Einstieg und keine behördliche Einstufung. Üben darfst du auch an medizinischen Beispielen, solange das Ergebnis nicht am Patienten eingesetzt wird.</p>
+<h3 id="ein-hinweis-im-kleingedruckten-reicht-nicht">Ein Hinweis im Kleingedruckten reicht nicht</h3>
+<p>„Nur zu Übungszwecken, nicht für die klinische Anwendung“ ist bei einem Lernprojekt sinnvoll. Der Satz ändert aber wenig daran, was ein Programm tut und wie es tatsächlich eingesetzt wird. Wenn es eine Dosis ausrechnet, rechnet es eine Dosis aus. Die Zweckbestimmung muss zum tatsächlichen Programm passen.</p>
+<h3 id="die-ausnahme-gilt-nur-für-die-eigene-praxis">Die Ausnahme gilt nur für die eigene Praxis</h3>
+<p>Artikel 5 Absatz 5 der MDR erlaubt unter Bedingungen die Eigenherstellung: Produkte werden ausschließlich innerhalb derselben Gesundheitseinrichtung hergestellt und verwendet. Formlos ist das nicht. Dazu gehören unter anderem ein geeignetes QM-System, eine öffentlich zugängliche Erklärung, eine Dokumentation und die Begründung, warum kein Produkt vom Markt den Bedarf deckt.</p>
+<p>Sobald du das Programm an eine andere, rechtlich eigenständige Einrichtung abgibst, greift diese Ausnahme nicht mehr. Ob es kostenlos oder Open Source ist, spielt dabei keine Rolle. Das gilt für Medizinprodukte; einen Dienstplan darfst du natürlich weitergeben.</p>
+<h3 id="aus-der-eigenen-erfahrung">Aus der eigenen Erfahrung</h3>
+<p>Das betraf auch mein eigenes Programm Asklaion SOP. Als es anderen Praxen zur Verfügung stehen sollte, habe ich rund 30 Score-Rechner, die Telefontriage und die Dermatoskopie mit ABCD-Score gelöscht. Aus dem EKG-Modul sind die Beurteilungsvorschläge und die automatische ICD-Zuordnung verschwunden. All das hätte das Programm potenziell zum Medizinprodukt gemacht. Heute gilt: <strong>Das Programm dokumentiert. Bewerten muss der Mensch.</strong></p>
+<h2 id="2-patientendaten-in-der-cloud">2. Patientendaten in der Cloud</h2>
+<p>Einen KI-Dienst oder eine Online-Datenbank bindest du beim Vibecoden in wenigen Minuten an. Dann verlassen Name, Geburtsdatum und Diagnose deine Praxis, und das Programm funktioniert trotzdem einwandfrei, selbst wenn das hier passiert:</p>
+<ul>
+<li><strong>API-Schlüssel im Browser-Code:</strong> Jeder kann ihn auslesen und nutzen.</li>
+<li><strong>Datenbank ohne Zugriffsregeln:</strong> Sie lässt sich abfragen, ohne eingeloggt zu sein.</li>
+<li><strong>Protokolle beim Anbieter:</strong> Eingaben bleiben dort, oft länger als gedacht.</li>
+<li><strong>Unklarer Verarbeitungsort:</strong> Du weißt nicht genau, wo verarbeitet wird und wer Zugriff hat.</li>
+</ul>
+<p>Rechtlich ist unter anderem das hier zu beachten:</p>
+<ul>
+<li><strong>§ 203 StGB:</strong> Dienstleister darfst du nur einbinden, wenn sie zur Verschwiegenheit verpflichtet sind.</li>
+<li><strong>DSGVO:</strong> Gesundheitsdaten sind besonders geschützt (Art. 9). Auftragsverarbeitung braucht einen Vertrag (Art. 28), und die Sicherheit musst du gewährleisten (Art. 32).</li>
+<li><strong>§ 393 SGB V:</strong> In der GKV-Versorgung ist Cloud-Computing mit Gesundheitsdaten nur mit aktuellem C5-Testat zulässig, seit Juli 2025 Typ 2, und nur an zulässigen Standorten.</li>
+</ul>
+<p>Verträge und Testate des Anbieters schützen dich aber nicht vor Fehlern im eigenen Programm. Einen Vertrag kann man unterschreiben. Den Code muss man verstehen.</p>
+<p>Dass das real passiert, zeigt ein Fall aus dem Februar 2026: Bei einer mit Lovable gebauten App waren laut einem Sicherheitsforscher Daten von 18.000 Nutzern offen, die Zugriffslogik war verkehrt herum. Im Veracode-Test von 2025 fielen außerdem 45 % der KI-Code-Beispiele durch die Sicherheitsprüfung; das waren Benchmark-Aufgaben, kein reines Vibecoding.</p>
+<h3 id="auch-dein-agent-ist-eine-cloud">Auch dein Agent ist eine Cloud</h3>
+<p>Das gilt selbst dann, wenn dein Programm lokal läuft. Dein Coding-Agent liest den Projektordner, und was er liest, geht in der Regel an den Anbieter. Liegt dort „nur kurz zum Testen“ ein echter Patientenexport, ist der Abfluss schon passiert. Das gilt genauso für Screenshots und Fehlermeldungen, die du in den Chat kopierst.</p>
+<p><strong>Beim Entwickeln nur erfundene Daten. Immer.</strong> Lass sie dir von der KI erzeugen.</p>
+<h2 id="3-von-außen-erreichbare-programme">3. Von außen erreichbare Programme</h2>
+<p>Je weiter draußen ein Programm läuft, desto gefährlicher wird es: Auf deinem Rechner verzeiht es vieles, im Praxisnetz musst du schon auf Zugriffe achten, und im Internet ist es eine andere Liga. Sobald etwas eine öffentliche Adresse hat, wird es automatisch abgesucht. Bei einer Datenpanne kann zudem eine Meldepflicht binnen 72 Stunden greifen (Art. 33 DSGVO).</p>
+<p>Patientenportale, Logins und Nutzerkonten, Online-Formulare mit Patientenangaben und Terminbuchungen im Netz gehören deshalb nicht ohne Fachleute ins Internet. Eine öffentliche Seite ohne Patientenbezug ist dagegen kein Problem; wie das geht, zeigt der Kurs <a href="/academy/deployment-basics">Deployment</a>.</p>
+<h2 id="4-schreibzugriff-auf-kritische-systeme">4. Schreibzugriff auf kritische Systeme</h2>
+<p>Liest dein Programm nur aus dem PVS, fällt ein Fehler meist auf und die Akte bleibt unverändert. Schreibt es hinein, landet ein Fehler still in der echten Akte:</p>
+<ul>
+<li><strong>Vertauschter Patient:</strong> Befund oder Medikation stehen in der falschen Akte.</li>
+<li><strong>Automatische Abrechnung:</strong> Falsche Ziffern können am Ende zum Regress führen.</li>
+<li><strong>Einzige Ablage der Dokumentation:</strong> Du musst zehn Jahre Aufbewahrung und nachvollziehbare Änderungen sicherstellen (§ 630f BGB).</li>
+<li><strong>Agent mit Vollzugriff:</strong> Ein falscher Befehl reicht, dann muss das Backup es richten.</li>
+</ul>
+<p>Entwickle deshalb niemals am Echtsystem. Wenn ein Programm wirklich schreiben soll, braucht es Tests, Protokolle und ein geprüftes Backup, und du musst den Code verstehen.</p>
+<h2 id="was-du-sofort-bauen-kannst">Was du sofort bauen kannst</h2>
+<p>Das klingt nach vielen Verboten, aber der größte Teil der Praxisprobleme ist organisatorisch: Wartezimmer-Anzeigen, Lager und Bestellungen, Dienst- und Urlaubspläne, Schulung und Einarbeitung, eine Praxis-Website ohne Eingaben und Lernprojekte zum Üben.</p>
+<p>Die Faustregel: <strong>lokal, ohne Patientendaten, nur Organisation.</strong> Wer das einhält, kann sofort loslegen.</p>
+<h2 id="checkliste-vor-jedem-projekt">Checkliste vor jedem Projekt</h2>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled/> Bewertet es etwas für einen einzelnen Patienten?</li>
+<li class="task-list-item"><input type="checkbox" disabled/> Soll ein mögliches Medizinprodukt an andere Praxen gehen?</li>
+<li class="task-list-item"><input type="checkbox" disabled/> Verlassen Patientendaten die Praxis?</li>
+<li class="task-list-item"><input type="checkbox" disabled/> Liegen echte Daten im Projektordner?</li>
+<li class="task-list-item"><input type="checkbox" disabled/> Ist es von außen erreichbar?</li>
+<li class="task-list-item"><input type="checkbox" disabled/> Schreibt es in PVS, Abrechnung oder Akte?</li>
+</ul>
+<p><strong>Einmal Ja: Stopp. Erst Fachleute fragen.</strong> Das heißt nicht, dass es nie geht, nur nicht einfach so. Echte Daten im Projektordner kannst du selbst beheben, indem du sie entfernst und durch erfundene ersetzt.</p>
+<h2 id="quellen">Quellen</h2>
+<ul>
+<li><a href="https://lexmea.de/de/gesetz/mdr/art-5">Art. 5 MDR</a></li>
+<li><a href="https://health.ec.europa.eu/document/download/b865d8e9-081a-4601-a91a-f120321c0491_en">Entscheidungsschritte der EU-Kommission zu MDCG 2019-11</a></li>
+<li><a href="https://www.gesetze-im-internet.de/sgb_5/__393.html">§ 393 SGB V</a></li>
+<li><a href="https://www.theregister.com/2026/02/27/lovable_app_vulnerabilities">The Register zum Lovable-Fall, 27.02.2026</a></li>
+</ul>  </article> <!-- Navigation --> <nav class="mt-10 pt-8 border-t border-dark-border flex justify-between items-center gap-4"> <div></div> <a id="next-lesson-link" href="/academy/vibecoding-grenzen" data-course="vibecoding-grenzen" data-lesson="1" data-total="1" class="group flex items-center gap-3 px-5 py-3 bg-green-600/20 border border-green-600/40 hover:bg-green-600/30 rounded-lg transition-colors text-right"> <div> <span class="text-xs text-green-400 block">Kurs abschließen</span> <span class="text-sm font-medium text-text-primary">Zurück zur Kursübersicht</span> </div> <svg class="w-5 h-5 text-green-400 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path> </svg> </a> </nav> </div> <script type="module">document.querySelectorAll("article pre").forEach(e=>{const o=document.createElement("div");o.className="relative group",e.parentNode.insertBefore(o,e),o.appendChild(e);const t=document.createElement("button");t.className="absolute top-2 right-2 px-2 py-1 text-xs rounded bg-dark-border/80 text-text-muted hover:text-text-primary hover:bg-dark-border opacity-0 group-hover:opacity-100 transition-all duration-200 font-sans",t.textContent="Kopieren",t.addEventListener("click",()=>{const n=(e.querySelector("code")||e).textContent||"";navigator.clipboard.writeText(n).then(()=>{t.textContent="Kopiert!",t.classList.add("text-academy-accent"),setTimeout(()=>{t.textContent="Kopieren",t.classList.remove("text-academy-accent")},2e3)})}),o.appendChild(t)});</script> <script type="module">const e=document.getElementById("next-lesson-link");if(e){const t=e.dataset.course,s=parseInt(e.dataset.lesson,10),l=parseInt(e.dataset.total,10);e.addEventListener("click",()=>{localStorage.setItem(`academy_${t}_lesson_${s}`,"completed");let o=!0;for(let a=1;a<=l;a++)if(localStorage.getItem(`academy_${t}_lesson_${a}`)!=="completed"){o=!1;break}o&&localStorage.setItem(`academy_course_${t}`,"completed")})}</script>  </main> <footer class="border-t border-light-border dark:border-dark-border bg-light-base/80 dark:bg-dark-base/80 backdrop-blur-md transition-colors duration-300"> <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"> <div class="flex flex-col md:flex-row justify-between items-center gap-4"> <div class="flex items-center gap-6 text-sm text-light-text-muted dark:text-text-muted"> <a href="/impressum" class="hover:text-light-text-secondary dark:hover:text-text-secondary transition-colors">Impressum</a> <a href="/anforderungen" class="hover:text-light-text-secondary dark:hover:text-text-secondary transition-colors">Anforderungen</a> <a href="/lizenz" class="hover:text-light-text-secondary dark:hover:text-text-secondary transition-colors">Lizenz</a> <a href="https://github.com/lollylan" target="_blank" rel="noopener noreferrer" class="hover:text-light-text-secondary dark:hover:text-text-secondary transition-colors">GitHub</a> </div> <p class="text-sm text-light-text-muted dark:text-text-muted">&copy; 2026 Dr. Florian Rasche &middot; Asklaion &middot; MIT Lizenz</p> </div> <p class="text-center text-xs text-light-text-muted dark:text-text-muted mt-4">Open Source &middot; MIT Lizenz &middot; 100 % lokal</p> </div> </footer> <script type="module">function n(){const t=document.documentElement,e=t.classList.contains("dark");t.classList.replace(e?"dark":"light",e?"light":"dark"),localStorage.setItem("theme",e?"light":"dark")}document.getElementById("theme-toggle")?.addEventListener("click",n);document.getElementById("theme-toggle-mobile")?.addEventListener("click",n);document.getElementById("mobile-menu-btn")?.addEventListener("click",()=>{document.getElementById("mobile-menu")?.classList.toggle("hidden")});</script> </body> </html>
