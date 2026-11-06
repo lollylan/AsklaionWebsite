@@ -3,5 +3,5 @@
   "slug": "github-repositories",
   "description": "Fertige Programme von GitHub auf den eigenen Rechner holen, starten und nach den eigenen Wünschen umbauen – mit einem KI-Agenten in wenigen Minuten, ganz ohne Programmierkenntnisse.",
   "level": "Anfänger",
-  "prerequisites": ["grundwissen-ki", "programmempfehlung"]
+  "prerequisites": ["grundwissen-ki", "programmempfehlung", "vibecoding-grenzen"]
 }

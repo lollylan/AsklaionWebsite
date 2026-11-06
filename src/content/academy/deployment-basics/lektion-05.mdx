@@ -8,7 +8,7 @@ video_url: ""
 
 # Deployment mit der KI
 
-> **Wichtiger Hinweis:** Alle in diesem Kurs vorgestellten Anleitungen dienen dem Erlernen grundlegender Deployment-Konzepte. Sobald Patientendaten verarbeitet werden, gelten strenge Datenschutz- und Sicherheitsanforderungen (DSGVO, Medizinprodukteverordnung). Veröffentliche Programme mit Patientenbezug niemals ohne professionelle Beratung.
+> **Wichtiger Hinweis:** Dieser Kurs erklärt Deployment-Grundlagen für Programme ohne Patientendaten und ohne medizinische Bewertung. Programme mit Patientendaten brauchen professionelle Sicherheits- und Datenschutzberatung. Programme, die medizinisch bewerten, können unabhängig davon Medizinprodukte sein. Mehr dazu: [Was du nicht vibecoden solltest](/academy/vibecoding-grenzen/lektion-01).
 
 Du hast in den bisherigen Lektionen gelernt, was Deployment ist, wie lokale Netzwerke funktionieren und wie du eine statische Webseite veröffentlichst. In dieser letzten Lektion geht es darum, wie du die KI gezielt für den Deployment-Prozess einsetzt – und welche Checkliste du **vor** jeder Veröffentlichung durchgehen solltest.
 
@@ -86,7 +86,10 @@ Geh diese Liste durch, **bevor** du dein Programm veröffentlichst. Egal ob im P
 
 - [ ] **Enthält das Tool Patientendaten?** Falls ja: Nicht ins Internet. Nur im gesicherten Praxisnetz.
 - [ ] **Könnte jemand Patientendaten eingeben?** Falls Eingabefelder für Namen, Geburtsdaten etc. vorhanden: Nicht ins Internet.
-- [ ] **Könnte es als Medizinprodukt gelten?** Falls das Tool Diagnosen stellt, Therapien empfiehlt oder Dosierungen berechnet: Nur als Übungsprojekt kennzeichnen, nicht für die klinische Anwendung freigeben.
+- [ ] **Könnte es ein Medizinprodukt sein?** Stellt das Tool Diagnosen, empfiehlt es Therapien oder berechnet es Dosierungen, dann nicht veröffentlichen und nicht in der Versorgung einsetzen, sondern fachlich prüfen lassen. Ein Hinweis ‚Übungsprojekt‘ reicht nicht.
+- [ ] **Soll das Programm an andere Praxen gehen?**
+- [ ] **Liegen echte Daten im Projektordner oder im Repository?**
+- [ ] **Schreibt es in PVS, Abrechnung oder Akte?**
 - [ ] **Impressum vorhanden?** Jede öffentliche Webseite in Deutschland braucht eins.
 - [ ] **Datenschutzerklärung nötig?** Wenn die Seite Cookies setzt, Analytics nutzt oder Formulare hat: Ja.
 

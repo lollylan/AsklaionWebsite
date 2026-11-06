@@ -8,7 +8,7 @@ video_url: ""
 
 # Chain-of-Thought Prompting
 
-> **Wichtiger Hinweis:** Alle in diesem Kurs vorgestellten Programme dienen ausschließlich dem Erlernen von Prompting-Techniken. Sie sind nicht für die Anwendung am Patienten gedacht. Insbesondere medizinische Tools könnten einem Medizinprodukt gleichkommen und dürfen ohne regulatorische Zulassung nicht im klinischen Alltag eingesetzt werden.
+> **Wichtiger Hinweis:** Alle in diesem Kurs vorgestellten Programme dienen ausschließlich dem Erlernen von Prompting-Techniken. Sie sind nicht für die Anwendung am Patienten gedacht. Insbesondere medizinische Tools könnten einem Medizinprodukt gleichkommen und dürfen ohne regulatorische Zulassung nicht im klinischen Alltag eingesetzt werden. Mehr dazu: [Was du nicht vibecoden solltest](/academy/vibecoding-grenzen/lektion-01).
 
 Bei komplexen Aufgaben macht die KI manchmal Fehler, weil sie versucht, sofort zum Ergebnis zu springen. **Chain-of-Thought (CoT) Prompting** löst das, indem du die KI bittest, ihre eigenen Denkschritte offenzulegen, **bevor** sie mit dem Programmieren beginnt.
 
@@ -24,45 +24,44 @@ Das verbessert die Qualität, weil du:
 
 Der Schlüssel ist ein einfacher Zusatz: **"Denke erst Schritt für Schritt nach, bevor du anfängst zu programmieren"** oder **"Erkläre zuerst deinen Plan"**.
 
-## Beispiel 1: Medikamenten-Dosisrechner
+## Beispiel 1: Bestellmengen-Rechner für Praxisbedarf
 
-Ohne Chain-of-Thought fängt die KI sofort an zu programmieren – und du merkst erst am Ende, ob sie die Dosierung korrekt berechnet. Mit CoT erklärst du ihr, dass sie erst ihren Ansatz darlegen soll:
+Ohne Chain-of-Thought fängt die KI sofort an zu programmieren – und du merkst erst am Ende, ob sie die Bestellmenge korrekt berechnet. Mit CoT erklärst du ihr, dass sie erst ihren Ansatz darlegen soll:
 
 ```
-Erstelle einen Dosisrechner für Kinder.
-Eingabe: Medikament, Körpergewicht in kg, Alter.
+Erstelle einen Bestellmengen-Rechner für unseren Praxisbedarf.
+Eingabe: Artikel, Verbrauch pro Woche, Lieferzeit, Mindestbestand.
 
 Bevor du anfängst zu programmieren, erkläre mir Schritt für Schritt:
-1. Welche Formeln und Regeln verwendest du für die Dosisberechnung?
-2. Welche Sonderfälle musst du berücksichtigen (z.B. Maximaldosen,
-   Altersgruppen, Darreichungsformen)?
+1. Welche Formeln und Regeln verwendest du für die Bestellmenge?
+2. Welche Sonderfälle musst du berücksichtigen (z.B. Packungsgrößen,
+   Praxisferien, kurze Haltbarkeit)?
 3. Wie stellst du sicher, dass die Berechnung korrekt ist?
 4. Welche Eingabevalidierung brauchst du (z.B. unrealistische Werte)?
 
 Erst wenn ich deinen Plan bestätige, setzt du ihn um.
 ```
 
-So siehst du **vor** dem Programmieren, ob die KI z.B. vergessen hat, Maximaldosen zu berücksichtigen oder Säuglinge anders zu behandeln als Kleinkinder. Du kannst korrigieren, bevor eine einzige Zeile Code geschrieben wird.
+So siehst du **vor** dem Programmieren, ob die KI z.B. vergessen hat, Packungsgrößen zu berücksichtigen oder die Lieferzeit einzurechnen. Du kannst korrigieren, bevor eine einzige Zeile Code geschrieben wird.
 
-## Beispiel 2: Notfall-Checkliste
+## Beispiel 2: Kontroll-Checkliste für den Notfallkoffer
 
 ```
-Erstelle eine interaktive Notfall-Checkliste für Anaphylaxie
-in meiner Hausarztpraxis.
+Erstelle eine interaktive Kontroll-Checkliste für den Notfallkoffer
+in meiner Hausarztpraxis. Sie enthält keine Dosierungen und
+keine Behandlungsanweisungen.
 
 Denke Schritt für Schritt nach, bevor du programmierst:
-1. Welche Schritte gehören in eine Anaphylaxie-Checkliste
-   und in welcher Reihenfolge?
-2. Welche Medikamente mit welchen Dosierungen müssen enthalten sein?
-3. Wie strukturierst du die Oberfläche, damit sie im Notfall
-   schnell bedienbar ist?
+1. Wie prüfen wir die Vollständigkeit und in welcher Reihenfolge?
+2. Wie erfassen wir Ablaufdaten und markieren, was ersetzt werden muss?
+3. Wie dokumentieren wir die Kontrolle mit Datum und Unterschrift?
 4. Welche Fallstricke siehst du bei der Umsetzung?
 
 Lege mir deinen Plan vor. Ich prüfe ihn und gebe dir
 dann grünes Licht zum Programmieren.
 ```
 
-Hier ist der Vorteil besonders deutlich: Du willst **nicht**, dass die KI eine Anaphylaxie-Checkliste erstellt, die fachlich falsch ist. Durch den vorgeschalteten Denkschritt kannst du die medizinischen Inhalte prüfen, bevor sie in Code gegossen werden.
+Hier ist der Vorteil besonders deutlich: Du willst **nicht**, dass die KI eine Kontroll-Checkliste erstellt, die nicht zu eurem Notfallkoffer passt. Durch den vorgeschalteten Denkschritt kannst du die Inhalte prüfen, bevor sie in Code gegossen werden.
 
 ## Beispiel 3: Praxis-Formular mit Logik
 
@@ -96,4 +95,4 @@ Erkläre deinen Ansatz, dann können wir ihn zusammen anpassen.
 
 ## Zusammenfassung
 
-Chain-of-Thought Prompting bedeutet: **Erst denken lassen, dann bauen lassen.** Du bittest die KI, ihren Plan offenzulegen, bevor sie anfängt zu programmieren. So kannst du Fehler und Missverständnisse abfangen, bevor sie im fertigen Programm landen. In der Medizin ist das besonders wertvoll, weil du das Fachwissen hast, um den Denkweg der KI zu überprüfen – die KI liefert dir den technischen Plan, und du prüfst die inhaltliche Richtigkeit.
+Chain-of-Thought Prompting bedeutet: **Erst denken lassen, dann bauen lassen.** Du bittest die KI, ihren Plan offenzulegen, bevor sie anfängt zu programmieren. So kannst du Fehler und Missverständnisse abfangen, bevor sie im fertigen Programm landen. In der Praxis ist das besonders wertvoll, weil du die Abläufe kennst und den Denkweg der KI überprüfen kannst – die KI liefert dir den technischen Plan, und du prüfst die inhaltliche Richtigkeit.

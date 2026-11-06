@@ -8,7 +8,7 @@ video_url: ""
 
 # Die CLAUDE-Methode
 
-> **Wichtiger Hinweis:** Alle in diesem Kurs vorgestellten Programme dienen ausschließlich dem Erlernen von Prompting-Techniken. Sie sind nicht für die Anwendung am Patienten gedacht. Insbesondere medizinische Tools könnten einem Medizinprodukt gleichkommen und dürfen ohne regulatorische Zulassung nicht im klinischen Alltag eingesetzt werden.
+> **Wichtiger Hinweis:** Alle in diesem Kurs vorgestellten Programme dienen ausschließlich dem Erlernen von Prompting-Techniken. Sie sind nicht für die Anwendung am Patienten gedacht. Insbesondere medizinische Tools könnten einem Medizinprodukt gleichkommen und dürfen ohne regulatorische Zulassung nicht im klinischen Alltag eingesetzt werden. Mehr dazu: [Was du nicht vibecoden solltest](/academy/vibecoding-grenzen/lektion-01).
 
 Für einfache Tools reichen die bisherigen Techniken völlig aus. Aber wenn dein Projekt komplexer wird – mehrere Bildschirme, verschiedene Nutzerrollen, viele Funktionen – brauchst du eine **strukturierte Methode**, um der KI alles mitzuteilen. Die CLAUDE-Methode gibt dir dafür ein einfaches Gerüst.
 
@@ -25,39 +25,39 @@ Für einfache Tools reichen die bisherigen Techniken völlig aus. Aber wenn dein
 
 Du musst nicht immer alle Punkte ausfüllen. Aber je komplexer das Projekt, desto mehr Punkte helfen.
 
-## Beispiel 1: Notfall-Checklisten-App
+## Beispiel 1: Notfallkoffer-Kontroll-App
 
 ```
 KONTEXT:
 Ich bin Allgemeinmediziner in einer Einzelpraxis. Meine MFA
-und ich müssen im Notfall schnell auf Checklisten zugreifen
-können (Reanimation, Anaphylaxie, Herzinfarkt, Schlaganfall).
+und ich müssen den Notfallkoffer und die Notfallausstattung
+regelmäßig kontrollieren und die Kontrolle nachweisen.
 
 LOGIK:
-- Startbildschirm zeigt alle verfügbaren Notfall-Checklisten
-- Antippen einer Checkliste öffnet die Schritt-für-Schritt-Anleitung
+- Startbildschirm zeigt alle Bereiche, die zu kontrollieren sind
+- Antippen eines Bereichs öffnet die Schritt-für-Schritt-Kontrolle
 - Jeder Schritt hat ein Abhak-Feld
-- Timer läuft automatisch mit
-- Am Ende kann die Checkliste als PDF gespeichert werden
+- Datum der Kontrolle wird automatisch eingetragen
+- Am Ende kann das Protokoll als PDF gespeichert werden
 
 ANFORDERUNGEN:
-- Checklisten: Reanimation (BLS + ALS), Anaphylaxie Grad I-IV,
-  Akutes Koronarsyndrom, Akuter Schlaganfall (FAST)
-- Medikamentendosen mit Gewichtsanpassung
+- Bereiche: Notfallkoffer, Sauerstoff, Defibrillator, Absaugung
+- Ablaufdaten mit Warnung bei baldigem Ablauf
+- Keine Dosierungen und keine Behandlungsanweisungen
 - Große Buttons, die auch mit Handschuhen bedienbar sind
 
 UMSETZUNG:
-- Muss offline funktionieren (kein Internet im Notfall nötig)
+- Muss offline funktionieren (kein Internet im Behandlungsraum nötig)
 - Tablet-optimiert (10 Zoll)
 
 DETAILS:
-- Rote Farbgebung für Notfall-Atmosphäre
+- Ruhige Farbgebung, Rot nur für abgelaufene Artikel
 - Jeder Schritt maximal 2 Zeilen Text
-- Wichtige Dosierungen fett hervorgehoben
+- Wichtige Ablaufdaten fett hervorgehoben
 
 ERWARTUNGEN:
-- Ich öffne die Seite, tippe auf "Anaphylaxie" und sehe sofort
-  den ersten Schritt. Ich kann mich durchtippen und am Ende
+- Ich öffne die Seite, tippe auf "Notfallkoffer" und sehe sofort
+  den ersten Prüfschritt. Ich kann mich durchtippen und am Ende
   das Protokoll als PDF exportieren.
 ```
 
@@ -119,7 +119,7 @@ ERWARTUNGEN:
 
 ## Wann lohnt sich die CLAUDE-Methode?
 
-**Für kleine Tools (BMI-Rechner, Formular):** Nicht nötig. Zero-Shot oder Future Prompting reichen.
+**Für kleine Tools (Wartezeit-Anzeige, Formular):** Nicht nötig. Zero-Shot oder Future Prompting reichen.
 
 **Für mittlere Projekte (Dashboard, Inventar):** Sehr hilfreich. Die Struktur verhindert, dass du wichtige Aspekte vergisst.
 

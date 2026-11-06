@@ -8,9 +8,9 @@ video_url: ""
 
 # Was bedeutet Deployment?
 
-> **Wichtiger Hinweis:** Alle in diesem Kurs vorgestellten Anleitungen dienen dem Erlernen grundlegender Deployment-Konzepte. Sobald Patientendaten verarbeitet werden, gelten strenge Datenschutz- und Sicherheitsanforderungen (DSGVO, Medizinprodukteverordnung). Veröffentliche Programme mit Patientenbezug niemals ohne professionelle Beratung.
+> **Wichtiger Hinweis:** Dieser Kurs erklärt Deployment-Grundlagen für Programme ohne Patientendaten und ohne medizinische Bewertung. Programme mit Patientendaten brauchen professionelle Sicherheits- und Datenschutzberatung. Programme, die medizinisch bewerten, können unabhängig davon Medizinprodukte sein. Mehr dazu: [Was du nicht vibecoden solltest](/academy/vibecoding-grenzen/lektion-01).
 
-Du hast mit VibeCoding ein Praxis-Tool gebaut – einen BMI-Rechner, eine Wartezeit-Anzeige oder ein Formular. Es läuft auf deinem Computer. Aber wie kommt es auf den Bildschirm im Wartezimmer? Wie können deine MFA es nutzen? Und wann macht es Sinn, es ins Internet zu stellen?
+Du hast mit VibeCoding ein Praxis-Tool gebaut – einen Haltbarkeits-Check, eine Wartezeit-Anzeige oder ein Formular. Es läuft auf deinem Computer. Aber wie kommt es auf den Bildschirm im Wartezimmer? Wie können deine MFA es nutzen? Und wann macht es Sinn, es ins Internet zu stellen?
 
 ## Die drei Stufen der Erreichbarkeit
 
@@ -30,13 +30,13 @@ Dein Praxis-PC ist mit einem Netzwerk verbunden – genauso wie die PCs deiner M
 
 Du stellst dein Programm auf einen Server im Internet. Jeder mit der Adresse kann darauf zugreifen – deine Patienten, Kollegen oder die ganze Welt.
 
-**Geeignet für:** Informationsseiten, Rechner ohne Patientendaten, Praxis-Webseite.
+**Geeignet für:** Informationsseiten, Inhalte ohne Patientendaten und ohne medizinische Bewertung, Praxis-Webseite.
 
 ## Wann brauche ich welche Stufe?
 
 | Anwendungsfall | Stufe | Beispiel |
 |---|---|---|
-| Eigenes Arbeitstool | Localhost | GFR-Rechner für dich allein |
+| Eigenes Arbeitstool | Localhost | Geräte-Wartungsliste für dich allein |
 | Mehrere Arbeitsplätze | Praxisnetz | Wartezimmer-Aufrufsystem |
 | Informationen für Patienten | Internet | Anfahrtsbeschreibung, Infoblätter |
 | Tool mit Patientendaten | **Nur lokal oder Praxisnetz** | Anamnesebogen, Befundübersicht |
@@ -53,13 +53,13 @@ Was "Patientendaten" bedeutet:
 
 **Faustregel:** Wenn dein Tool irgendein Eingabefeld hat, in das jemand einen Patientennamen tippen könnte, gehört es **nicht** ins öffentliche Internet. Punkt.
 
-Programme ohne Patientenbezug (BMI-Rechner, allgemeine Infoseiten, Laborwert-Referenztabellen) kannst du relativ bedenkenlos veröffentlichen. Beachte aber: Für die inhaltliche Richtigkeit haftest du trotzdem – wenn dein Rechner falsche Ergebnisse liefert oder deine Infoseite medizinisch fehlerhafte Angaben enthält, bist du als Urheber dafür verantwortlich.
+Infoseiten ohne Patientenbezug kannst du in der Regel veröffentlichen. Aber „kein Patientenbezug“ bedeutet nicht automatisch „kein Medizinprodukt“: Rechner und Tabellen mit medizinischer Einordnung prüfst du vorher mit dem [Selbsttest](/academy/vibecoding-grenzen/lektion-01#der-selbsttest). Beachte außerdem: Für die inhaltliche Richtigkeit haftest du trotzdem – wenn dein Rechner falsche Ergebnisse liefert oder deine Infoseite medizinisch fehlerhafte Angaben enthält, bist du als Urheber dafür verantwortlich.
 
 ## Lokal heißt nicht automatisch sicher
 
 Auch wenn dein Programm nur auf deinem Rechner läuft, ist das kein Freibrief:
 
-- **Dein Browser kommuniziert mit der KI in der Cloud.** Die Prompts, die du schreibst, verlassen deinen Rechner. Keine echten Patientendaten in Prompts eingeben.
+- **Dein Browser kommuniziert mit der KI in der Cloud.** Die Prompts, die du schreibst, verlassen deinen Rechner. Auch Dateien im Projektordner, die der Agent liest, können an den Anbieter gehen. Keine echten Patientendaten in Prompts eingeben oder im Projektordner ablegen.
 - **Localhost bedeutet nur: nicht über das Netzwerk erreichbar.** Die Dateien auf deinem Rechner sind trotzdem so sicher (oder unsicher) wie dein Rechner selbst.
 - **Backups und Verschlüsselung** gelten auch für selbstgebaute Tools – genau wie für dein Praxisverwaltungssystem.
 
@@ -68,6 +68,6 @@ Auch wenn dein Programm nur auf deinem Rechner läuft, ist das kein Freibrief:
 - **Localhost:** Nur für dich. Zum Testen und für persönliche Werkzeuge.
 - **Praxisnetz:** Für dein Team. Braucht Netzwerk-Sicherheit (mehr dazu in der nächsten Lektion).
 - **Internet:** Für die Welt. Nur für Inhalte ohne Patientendaten.
-- **Patientendaten + Internet = Nein.** Außer du hast professionelle IT-Sicherheit, DSGVO-Konformität und ggf. eine Medizinprodukte-Zulassung.
+- **Patientendaten + Internet = Nein.** Außer du hast professionelle IT-Sicherheit und DSGVO-Konformität.
 
 In der nächsten Lektion zeigen wir dir, wie du dein Programm sicher im Praxisnetz bereitstellst.

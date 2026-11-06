@@ -38,32 +38,30 @@ Das ist alles. Kein Tippen von Code, kein Lernen von Programmiersprachen.
 Lass uns mit etwas Einfachem anfangen. Sag der KI:
 
 ```
-Erstelle mir einen BMI-Rechner als Webseite.
-Der Patient gibt Gewicht in kg und Größe in cm ein.
-Das Programm zeigt den BMI-Wert und die Kategorie an
-(Untergewicht, Normalgewicht, Übergewicht, Adipositas).
+Erstelle mir einen Haltbarkeits-Check für Notfallkoffer und Impfstoffe
+als Webseite. Ich trage in einer Tabelle den Artikel und sein
+Ablaufdatum ein. Die Daten bleiben lokal auf meinem Rechner.
 Das Design soll schlicht und professionell sein.
 ```
 
 **Was passiert jetzt?** Die KI erstellt eine HTML-Datei mit dem kompletten Programm. Je nach Tool öffnet sich automatisch eine Vorschau, oder die KI erklärt dir, wie du die Datei im Browser öffnest.
 
-**Probier es aus:** Gib ein paar Testwerte ein. 80 kg bei 175 cm sollte einen BMI von etwa 26,1 ergeben.
+**Probier es aus:** Gib ein paar erfundene Testwerte ein. „Testartikel A“ mit dem Ablaufdatum 31.12.2030 sollte als neue Zeile in der Tabelle erscheinen.
 
 ---
 
-## Schritt 2: Erste Verbesserung – Medizinisch sinnvoller machen
+## Schritt 2: Erste Verbesserung – Auf einen Blick erkennbar machen
 
-Dein BMI-Rechner funktioniert, aber er ist noch sehr einfach. Jetzt kommt der Vorteil von Vibecoding: Du verbesserst das Programm einfach durch ein weiteres Gespräch.
+Dein Haltbarkeits-Check funktioniert, aber er ist noch sehr einfach. Jetzt kommt der Vorteil von Vibecoding: Du verbesserst das Programm einfach durch ein weiteres Gespräch.
 
 Sag der KI:
 
 ```
-Verbessere den BMI-Rechner:
-- Füge eine farbliche Markierung der Kategorie hinzu
-  (grün für Normalgewicht, gelb für Übergewicht, rot für Adipositas)
-- Zeige den gesunden BMI-Bereich für die eingegebene Größe an
-- Füge ein Feld für das Alter hinzu und weise darauf hin,
-  dass BMI-Grenzen bei älteren Patienten anders bewertet werden
+Verbessere den Haltbarkeits-Check:
+- Füge Ampelfarben hinzu (grün: mehr als 90 Tage haltbar,
+  gelb: 31 bis 90 Tage, rot: 30 Tage oder weniger oder abgelaufen)
+- Zeige zu jedem Artikel die verbleibenden Tage an
+- Sortiere die Tabelle so, dass die kürzeste Haltbarkeit oben steht
 ```
 
 Innerhalb von Sekunden hast du ein deutlich besseres Tool. Und du hast dafür keinen einzigen Buchstaben Code geschrieben.
@@ -75,12 +73,11 @@ Innerhalb von Sekunden hast du ein deutlich besseres Tool. Und du hast dafür ke
 Noch eine Runde. Diesmal machst du es wirklich nützlich für deinen Praxisalltag:
 
 ```
-Erweitere den BMI-Rechner um:
-- Einen Drucken-Button, der eine übersichtliche Zusammenfassung
-  für die Patientenakte erstellt
-- Ein Eingabefeld für den Patientennamen
-- Eine kurze Empfehlung passend zur BMI-Kategorie
-  (z.B. "Ernährungsberatung empfohlen")
+Erweitere den Haltbarkeits-Check um:
+- Einen Drucken-Button, der eine übersichtliche Kontrollliste
+  für den Notfallkoffer erstellt
+- Eine Bestellliste mit allen gelben und roten Artikeln
+- Ein Feld für das Datum der letzten Kontrolle
 ```
 
 **In drei Schritten** hast du aus einer einfachen Idee ein praxistaugliches Tool gemacht. Genau so funktioniert Vibecoding: klein anfangen, schrittweise verbessern.
@@ -91,15 +88,7 @@ Erweitere den BMI-Rechner um:
 
 Du hast jetzt das Prinzip verstanden. Hier sind weitere Ideen, die du genauso einfach bauen kannst:
 
-> **Wichtiger Hinweis:** Diese Beispiele dienen ausschließlich dem Ausprobieren des prinzipiellen Ablaufs. Gerade bei medizinischen Anwendungen wie Wechselwirkungsprüfungen oder Laborwert-Rechnern braucht es in der Praxis eine verlässliche, geprüfte Datenquelle – und solche Programme fallen unter die Medizinprodukte-Verordnung. Sie dürfen auf keinen Fall ohne Weiteres in der echten klinischen Anwendung eingesetzt werden. Hier geht es erst einmal nur darum, zu lernen, wie VibeCoding grundsätzlich funktioniert.
-
-### Medikamenten-Wechselwirkungs-Checker
-```
-Erstelle eine Webseite, auf der ich zwei Medikamentennamen eingeben kann.
-Das Programm soll bekannte Wechselwirkungen zwischen den beiden
-Medikamenten anzeigen. Verwende als Datenquelle eine fest eingebaute
-Liste der häufigsten Wechselwirkungen.
-```
+> **Wichtiger Hinweis:** Diese Ideen bleiben bewusst bei der Organisation: lokal, ohne Patientendaten, ohne medizinische Bewertung. Mehr dazu: [Was du nicht vibecoden solltest](/academy/vibecoding-grenzen/lektion-01).
 
 ### Wartezeit-Anzeige für das Wartezimmer
 ```
@@ -120,32 +109,35 @@ Zum Beispiel: Kürzel "diab2" zeigt den Standardtext für
 Diabetes mellitus Typ 2 Verlaufsbeschreibung.
 ```
 
-### Praxis-Rechner für Laborwerte
+### Urlaubsplan für das Team
 ```
-Erstelle einen Rechner für die glomeruläre Filtrationsrate (GFR)
-nach der CKD-EPI-Formel.
-Eingabefelder: Kreatinin (mg/dl), Alter, Geschlecht.
-Zeige die GFR an und die CKD-Stufe (G1 bis G5).
+Erstelle einen Urlaubsplan für mein Praxisteam.
+Ich kann pro Person Urlaubstage in einem Jahreskalender eintragen.
+Tage, an denen zu wenige Personen anwesend sind, werden markiert.
+Der Plan lässt sich als Übersicht ausdrucken.
 ```
 
-### Impfkalender-Check
+### Geräte-Wartungsliste
 ```
-Erstelle ein Tool, in dem ich das Geburtsdatum eines Kindes eingebe.
-Das Tool zeigt alle empfohlenen Impfungen nach STIKO-Kalender an
-und markiert, welche Impfungen aktuell fällig sind.
+Erstelle eine Wartungsliste für meine Praxisgeräte.
+Pro Gerät trage ich Name, letzte Wartung und Wartungsintervall ein.
+Das Programm zeigt, welche Wartungen in den nächsten
+30 Tagen fällig sind.
 ```
 
 ---
 
 ## Tipps für gute Ergebnisse
 
-**Sei konkret.** "Erstelle ein Praxis-Tool" ist zu vage. "Erstelle einen BMI-Rechner mit Eingabefeldern für Gewicht und Größe" ist besser.
+**Sei konkret.** "Erstelle ein Praxis-Tool" ist zu vage. "Erstelle einen Haltbarkeits-Check mit Eingabefeldern für Artikel und Ablaufdatum" ist besser.
 
 **Beschreibe das Ergebnis, nicht den Weg.** Du musst nicht wissen, welche Programmiersprache verwendet werden soll. Beschreibe einfach, was du auf dem Bildschirm sehen willst.
 
 **Verbessere in kleinen Schritten.** Bau erst die Grundversion, dann füge Funktionen hinzu. Versuch nicht, alles auf einmal zu beschreiben.
 
 **Wenn etwas nicht stimmt – sag es einfach.** "Die Farben sind zu dunkel", "Der Button ist zu klein", "Die Berechnung ist falsch" – die KI versteht das und korrigiert es.
+
+**Verwende nur erfundene Daten, auch beim Testen.** Echte Patientendaten haben im Projektordner und im Chat mit der KI nichts verloren.
 
 **Nutze dein Fachwissen.** Du weißt besser als jede KI, was in deinem Praxisalltag funktioniert. Die KI kann programmieren, aber du kennst die Medizin.
 

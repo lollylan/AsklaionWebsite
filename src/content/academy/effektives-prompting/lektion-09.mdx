@@ -8,7 +8,7 @@ video_url: ""
 
 # Iteratives Verfeinern
 
-> **Wichtiger Hinweis:** Alle in diesem Kurs vorgestellten Programme dienen ausschließlich dem Erlernen von Prompting-Techniken. Sie sind nicht für die Anwendung am Patienten gedacht. Insbesondere medizinische Tools könnten einem Medizinprodukt gleichkommen und dürfen ohne regulatorische Zulassung nicht im klinischen Alltag eingesetzt werden.
+> **Wichtiger Hinweis:** Alle in diesem Kurs vorgestellten Programme dienen ausschließlich dem Erlernen von Prompting-Techniken. Sie sind nicht für die Anwendung am Patienten gedacht. Insbesondere medizinische Tools könnten einem Medizinprodukt gleichkommen und dürfen ohne regulatorische Zulassung nicht im klinischen Alltag eingesetzt werden. Mehr dazu: [Was du nicht vibecoden solltest](/academy/vibecoding-grenzen/lektion-01).
 
 Du kennst das aus der Medizin: Ein Assistenzarzt gibt dir seinen ersten Arztbrief-Entwurf, und du gehst ihn mit ihm durch. "Hier fehlt der Befund. Das ist zu lang. Die Empfehlung muss konkreter sein." So funktioniert auch die Arbeit mit KI: **Dein erster Prompt ist ein Entwurf, nicht das Endergebnis.**
 
@@ -78,32 +78,32 @@ Iteratives Verfeinern funktioniert beim VibeCoding genauso:
 
 **Runde 1:**
 ```
-Erstelle einen Blutdruck-Tracker als Webseite.
-Eingabe: Datum, systolisch, diastolisch, Puls.
+Erstelle ein Temperaturprotokoll für unseren Impfkühlschrank als Webseite.
+Eingabe: Datum, Minimum, Maximum, Kürzel.
 Zeige alle Werte als Tabelle.
 ```
 
 **Runde 2:**
 ```
 Zeige die Werte zusätzlich als Diagramm über die Zeit.
-Die x-Achse soll das Datum sein, die y-Achse den Blutdruck.
+Die x-Achse soll das Datum sein, die y-Achse die Temperatur.
 ```
 
 **Runde 3:**
 ```
-Markiere Werte über 140/90 rot in der Tabelle.
-Zeige im Diagramm eine gestrichelte Linie bei 140 (systolisch)
-und 90 (diastolisch) als Grenzwert.
+Markiere Werte außerhalb von 2 bis 8 °C rot in der Tabelle.
+Zeige im Diagramm gestrichelte Linien bei 2 °C und 8 °C
+als Grenzwert.
 ```
 
 **Runde 4:**
 ```
 Füge einen Export-Button hinzu, der die Tabelle als
-druckbare Seite öffnet – mit Patientenname und Zeitraum
+druckbare Seite öffnet – mit Kühlschrank-Bezeichnung und Zeitraum
 als Überschrift.
 ```
 
-In vier Runden ist aus einem einfachen Eingabeformular ein vollständiger Blutdruck-Tracker mit Visualisierung und Druckfunktion geworden.
+In vier Runden ist aus einem einfachen Eingabeformular ein vollständiges Temperaturprotokoll mit Visualisierung und Druckfunktion geworden.
 
 ## Beispiel 3: Arztbrief verfeinern
 

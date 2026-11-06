@@ -1,0 +1,140 @@
+---
+title: "Was du nicht vibecoden solltest"
+course: "vibecoding-grenzen"
+lesson_number: 1
+description: "Vier rote Linien für Software in der Medizin – und ein Selbsttest, mit dem du dein eigenes Projekt einordnen kannst."
+video_url: "https://www.youtube.com/embed/YaeGo_fwkkw"
+---
+
+# Was du nicht vibecoden solltest
+
+Mit Vibecoding kannst du in kurzer Zeit erstaunlich viel bauen. Genau das ist die Gefahr: Du siehst, dass dein Programm funktioniert. Du siehst aber nicht, ob es rechtlich zulässig ist, ob Daten abfließen oder wer haftet, wenn etwas schiefgeht. Das Video zeigt die vier roten Linien, der Text fasst sie zum Nachlesen zusammen.
+
+> **Hinweis:** Diese Lektion ist eine Orientierung aus der Praxis und keine Rechtsberatung. Stand: November 2026.
+
+## Die vier roten Linien
+
+1. **Medizinprodukte:** Programme, die medizinisch bewerten, und ihre Weitergabe
+2. **Patientendaten in der Cloud:** KI-Dienste, Online-Datenbanken und dein eigenes Entwicklungswerkzeug
+3. **Von außen erreichbare Programme:** Login, Patientenportal, Online-Formular, Terminbuchung
+4. **Schreibzugriff auf kritische Systeme:** PVS, Abrechnung, Patientendokumentation
+
+Punkt 1 ist vor allem eine Rechtsfrage, die sich auch mit gutem Code nicht erledigt. Bei den Punkten 2 bis 4 gilt: Bau so etwas nur, wenn du den Code wirklich verstehst oder Fachleute einbeziehst.
+
+## 1. Medizinprodukte
+
+### Wann ist Software ein Medizinprodukt?
+
+Auch Software kann ein Medizinprodukt sein. Das hängt nicht von ihrer Größe oder Technik ab, sondern von ihrem Zweck: Ist sie vom Hersteller für medizinische Zwecke am Menschen bestimmt, etwa für Diagnose, Verhütung, Überwachung, Vorhersage, Prognose, Behandlung oder Linderung von Krankheiten, kommt die Medizinprodukte-Verordnung (MDR) ins Spiel. Und der Hersteller bist du, auch wenn die KI den Code getippt hat.
+
+### Warum Regel 11 so entscheidend ist
+
+| Klasse | Vereinfacht | Prüfung |
+|---|---|---|
+| I | Alle übrige Medizinsoftware | Selbsterklärung mit Pflichten |
+| IIa | Liefert Informationen für Diagnose- oder Therapieentscheidungen | Benannte Stelle |
+| IIb | Die Entscheidung kann eine schwere Verschlechterung oder eine Operation nach sich ziehen | Benannte Stelle |
+| III | Die Entscheidung kann zum Tod oder zu einer irreversiblen Verschlechterung führen | Benannte Stelle |
+
+Ab Klasse IIa kommst du um eine Benannte Stelle, ein QM-System und eine klinische Bewertung nicht herum. Das lässt sich nicht nebenbei erledigen. Eine Überarbeitung der MDR wird derzeit verhandelt; bis sie beschlossen ist und gilt, bleibt die aktuelle Fassung maßgeblich.
+
+### Der Selbsttest
+
+Diese drei Fragen orientieren sich vereinfacht an den Entscheidungsschritten der EU-Kommission:
+
+1. Macht das Programm **mehr**, als Daten zu speichern, zu archivieren, zu übertragen oder einfach zu suchen?
+2. Nutzt das Ergebnis einem **einzelnen, bestimmten Patienten**?
+3. Dient es einem **medizinischen Zweck** wie Diagnose, Therapie oder Prognose?
+
+Dreimal Ja bedeutet: wahrscheinlich Medizinprodukt, also nichts zum Vibecoden. Ein einziges Nein spricht eher dagegen. Steuert das Programm ein Medizingerät, solltest du es unabhängig davon nicht vibecoden. Im Zweifel lass es fachlich prüfen.
+
+### Beispiele
+
+| Grün: Organisation | Gelb: kommt auf die Umsetzung an | Rot: Finger weg |
+|---|---|---|
+| Wartezeitanzeige | Befunddokumentation, nur ohne jede Bewertung | Dosisrechner |
+| Lagerverwaltung | BMI-Rechner, heikel, sobald er einordnet oder empfiehlt | Score mit Auswertung |
+| Dienstplan | Laborwert-Referenztabelle, heikel, sobald eigene Werte bewertet werden | Telefontriage |
+| Schulungsmaterial | | EKG-Interpretation, KI-Diagnosevorschlag |
+
+Die Einteilung ist eine Einschätzung für den Einstieg und keine behördliche Einstufung. Üben darfst du auch an medizinischen Beispielen, solange das Ergebnis nicht am Patienten eingesetzt wird.
+
+### Ein Hinweis im Kleingedruckten reicht nicht
+
+„Nur zu Übungszwecken, nicht für die klinische Anwendung“ ist bei einem Lernprojekt sinnvoll. Der Satz ändert aber wenig daran, was ein Programm tut und wie es tatsächlich eingesetzt wird. Wenn es eine Dosis ausrechnet, rechnet es eine Dosis aus. Die Zweckbestimmung muss zum tatsächlichen Programm passen.
+
+### Die Ausnahme gilt nur für die eigene Praxis
+
+Artikel 5 Absatz 5 der MDR erlaubt unter Bedingungen die Eigenherstellung: Produkte werden ausschließlich innerhalb derselben Gesundheitseinrichtung hergestellt und verwendet. Formlos ist das nicht. Dazu gehören unter anderem ein geeignetes QM-System, eine öffentlich zugängliche Erklärung, eine Dokumentation und die Begründung, warum kein Produkt vom Markt den Bedarf deckt.
+
+Sobald du das Programm an eine andere, rechtlich eigenständige Einrichtung abgibst, greift diese Ausnahme nicht mehr. Ob es kostenlos oder Open Source ist, spielt dabei keine Rolle. Das gilt für Medizinprodukte; einen Dienstplan darfst du natürlich weitergeben.
+
+### Aus der eigenen Erfahrung
+
+Das betraf auch mein eigenes Programm Asklaion SOP. Als es anderen Praxen zur Verfügung stehen sollte, habe ich rund 30 Score-Rechner, die Telefontriage und die Dermatoskopie mit ABCD-Score gelöscht. Aus dem EKG-Modul sind die Beurteilungsvorschläge und die automatische ICD-Zuordnung verschwunden. All das hätte das Programm potenziell zum Medizinprodukt gemacht. Heute gilt: **Das Programm dokumentiert. Bewerten muss der Mensch.**
+
+## 2. Patientendaten in der Cloud
+
+Einen KI-Dienst oder eine Online-Datenbank bindest du beim Vibecoden in wenigen Minuten an. Dann verlassen Name, Geburtsdatum und Diagnose deine Praxis, und das Programm funktioniert trotzdem einwandfrei, selbst wenn das hier passiert:
+
+- **API-Schlüssel im Browser-Code:** Jeder kann ihn auslesen und nutzen.
+- **Datenbank ohne Zugriffsregeln:** Sie lässt sich abfragen, ohne eingeloggt zu sein.
+- **Protokolle beim Anbieter:** Eingaben bleiben dort, oft länger als gedacht.
+- **Unklarer Verarbeitungsort:** Du weißt nicht genau, wo verarbeitet wird und wer Zugriff hat.
+
+Rechtlich ist unter anderem das hier zu beachten:
+
+- **§ 203 StGB:** Dienstleister darfst du nur einbinden, wenn sie zur Verschwiegenheit verpflichtet sind.
+- **DSGVO:** Gesundheitsdaten sind besonders geschützt (Art. 9). Auftragsverarbeitung braucht einen Vertrag (Art. 28), und die Sicherheit musst du gewährleisten (Art. 32).
+- **§ 393 SGB V:** In der GKV-Versorgung ist Cloud-Computing mit Gesundheitsdaten nur mit aktuellem C5-Testat zulässig, seit Juli 2025 Typ 2, und nur an zulässigen Standorten.
+
+Verträge und Testate des Anbieters schützen dich aber nicht vor Fehlern im eigenen Programm. Einen Vertrag kann man unterschreiben. Den Code muss man verstehen.
+
+Dass das real passiert, zeigt ein Fall aus dem Februar 2026: Bei einer mit Lovable gebauten App waren laut einem Sicherheitsforscher Daten von 18.000 Nutzern offen, die Zugriffslogik war verkehrt herum. Im Veracode-Test von 2025 fielen außerdem 45 % der KI-Code-Beispiele durch die Sicherheitsprüfung; das waren Benchmark-Aufgaben, kein reines Vibecoding.
+
+### Auch dein Agent ist eine Cloud
+
+Das gilt selbst dann, wenn dein Programm lokal läuft. Dein Coding-Agent liest den Projektordner, und was er liest, geht in der Regel an den Anbieter. Liegt dort „nur kurz zum Testen“ ein echter Patientenexport, ist der Abfluss schon passiert. Das gilt genauso für Screenshots und Fehlermeldungen, die du in den Chat kopierst.
+
+**Beim Entwickeln nur erfundene Daten. Immer.** Lass sie dir von der KI erzeugen.
+
+## 3. Von außen erreichbare Programme
+
+Je weiter draußen ein Programm läuft, desto gefährlicher wird es: Auf deinem Rechner verzeiht es vieles, im Praxisnetz musst du schon auf Zugriffe achten, und im Internet ist es eine andere Liga. Sobald etwas eine öffentliche Adresse hat, wird es automatisch abgesucht. Bei einer Datenpanne kann zudem eine Meldepflicht binnen 72 Stunden greifen (Art. 33 DSGVO).
+
+Patientenportale, Logins und Nutzerkonten, Online-Formulare mit Patientenangaben und Terminbuchungen im Netz gehören deshalb nicht ohne Fachleute ins Internet. Eine öffentliche Seite ohne Patientenbezug ist dagegen kein Problem; wie das geht, zeigt der Kurs [Deployment](/academy/deployment-basics).
+
+## 4. Schreibzugriff auf kritische Systeme
+
+Liest dein Programm nur aus dem PVS, fällt ein Fehler meist auf und die Akte bleibt unverändert. Schreibt es hinein, landet ein Fehler still in der echten Akte:
+
+- **Vertauschter Patient:** Befund oder Medikation stehen in der falschen Akte.
+- **Automatische Abrechnung:** Falsche Ziffern können am Ende zum Regress führen.
+- **Einzige Ablage der Dokumentation:** Du musst zehn Jahre Aufbewahrung und nachvollziehbare Änderungen sicherstellen (§ 630f BGB).
+- **Agent mit Vollzugriff:** Ein falscher Befehl reicht, dann muss das Backup es richten.
+
+Entwickle deshalb niemals am Echtsystem. Wenn ein Programm wirklich schreiben soll, braucht es Tests, Protokolle und ein geprüftes Backup, und du musst den Code verstehen.
+
+## Was du sofort bauen kannst
+
+Das klingt nach vielen Verboten, aber der größte Teil der Praxisprobleme ist organisatorisch: Wartezimmer-Anzeigen, Lager und Bestellungen, Dienst- und Urlaubspläne, Schulung und Einarbeitung, eine Praxis-Website ohne Eingaben und Lernprojekte zum Üben.
+
+Die Faustregel: **lokal, ohne Patientendaten, nur Organisation.** Wer das einhält, kann sofort loslegen.
+
+## Checkliste vor jedem Projekt
+
+- [ ] Bewertet es etwas für einen einzelnen Patienten?
+- [ ] Soll ein mögliches Medizinprodukt an andere Praxen gehen?
+- [ ] Verlassen Patientendaten die Praxis?
+- [ ] Liegen echte Daten im Projektordner?
+- [ ] Ist es von außen erreichbar?
+- [ ] Schreibt es in PVS, Abrechnung oder Akte?
+
+**Einmal Ja: Stopp. Erst Fachleute fragen.** Das heißt nicht, dass es nie geht, nur nicht einfach so. Echte Daten im Projektordner kannst du selbst beheben, indem du sie entfernst und durch erfundene ersetzt.
+
+## Quellen
+
+- [Art. 5 MDR](https://lexmea.de/de/gesetz/mdr/art-5)
+- [Entscheidungsschritte der EU-Kommission zu MDCG 2019-11](https://health.ec.europa.eu/document/download/b865d8e9-081a-4601-a91a-f120321c0491_en)
+- [§ 393 SGB V](https://www.gesetze-im-internet.de/sgb_5/__393.html)
+- [The Register zum Lovable-Fall, 27.02.2026](https://www.theregister.com/2026/02/27/lovable_app_vulnerabilities)

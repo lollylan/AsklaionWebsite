@@ -100,7 +100,7 @@ export default function AcademyRoadmap({ courses }: Props) {
   }
 
   return (
-    <div className="max-w-4xl mx-auto py-8">
+    <div className="max-w-5xl mx-auto py-8">
       {/* Reset progress button */}
       {hasAnyProgress && (
         <div className="flex justify-end mb-6">

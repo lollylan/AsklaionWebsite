@@ -89,7 +89,7 @@ const readingTime = Math.max(1, Math.ceil(wordCount / 200));
       [&_blockquote]:border-l-academy-accent [&_blockquote]:bg-dark-card/50 [&_blockquote]:rounded-r-lg [&_blockquote]:px-4 [&_blockquote]:py-3 [&_blockquote]:my-5
       [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6 [&_li]:text-text-secondary [&_li]:mb-1
       [&_details]:my-5
-      [&_table]:border-collapse [&_table]:w-full [&_table]:my-6 [&_th]:bg-dark-card [&_th]:px-4 [&_th]:py-2 [&_th]:text-left [&_th]:text-text-primary [&_td]:px-4 [&_td]:py-2 [&_td]:border-t [&_td]:border-dark-border [&_td]:text-text-secondary
+      [&_table]:border-collapse [&_table]:w-full [&_table]:my-6 max-md:[&_table]:block max-md:[&_table]:overflow-x-auto [&_th]:bg-dark-card [&_th]:px-4 [&_th]:py-2 [&_th]:text-left [&_th]:text-text-primary [&_td]:px-4 [&_td]:py-2 [&_td]:border-t [&_td]:border-dark-border [&_td]:text-text-secondary
     ">
       <slot />
     </article>

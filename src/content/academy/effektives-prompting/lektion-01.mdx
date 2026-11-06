@@ -8,7 +8,7 @@ video_url: ""
 
 # Zero-Shot Prompting
 
-> **Wichtiger Hinweis:** Alle in diesem Kurs vorgestellten Programme dienen ausschließlich dem Erlernen von Prompting-Techniken. Sie sind nicht für die Anwendung am Patienten gedacht. Insbesondere medizinische Tools (z.B. Dosisrechner, Diagnostik-Hilfen) könnten einem Medizinprodukt gleichkommen und unterliegen dann der Medizinprodukte-Verordnung. Ohne geprüfte Datenquellen und regulatorische Zulassung dürfen solche Programme nicht im klinischen Alltag eingesetzt werden.
+> **Wichtiger Hinweis:** Alle in diesem Kurs vorgestellten Programme dienen ausschließlich dem Erlernen von Prompting-Techniken. Sie sind nicht für die Anwendung am Patienten gedacht. Insbesondere medizinische Tools könnten einem Medizinprodukt gleichkommen und unterliegen dann der Medizinprodukte-Verordnung. Ohne geprüfte Datenquellen und regulatorische Zulassung dürfen solche Programme nicht im klinischen Alltag eingesetzt werden. Mehr dazu: [Was du nicht vibecoden solltest](/academy/vibecoding-grenzen/lektion-01).
 
 Zero-Shot Prompting ist die einfachste und intuitivste Art, mit einer KI zu kommunizieren: Du gibst eine direkte Anweisung, ohne Beispiele oder zusätzlichen Kontext. Die KI soll allein aus deiner Beschreibung verstehen, was du willst.
 
@@ -37,34 +37,34 @@ Am Ende ein Button zum Ausdrucken.
 
 Das ist ein typischer Zero-Shot-Prompt: eine klare Aufgabe, keine Beispiele nötig. Die KI weiß, was ein Anamnesebogen ist und kann ihn direkt umsetzen.
 
-## Beispiel 2: Laborwert-Tabelle
+## Beispiel 2: Interne Telefonliste
 
 ```
-Erstelle eine Webseite mit einer Tabelle der wichtigsten Laborwerte
-in der Allgemeinmedizin. Spalten: Parameter, Einheit, Referenzbereich,
-mögliche Ursachen bei Abweichung. Mindestens 15 Parameter.
+Erstelle eine Webseite mit einer internen Telefonliste für meine Praxis.
+Spalten: Einrichtung oder Dienstleister, Ansprechperson, Telefonnummer,
+Erreichbarkeit. Mit Suchfeld und Platz für mindestens 15 Einträge.
 ```
 
-Auch hier reicht eine direkte Anweisung. Die KI kennt Laborwerte und kann eine sinnvolle Tabelle erstellen.
+Auch hier reicht eine direkte Anweisung. Die KI kennt solche Listen und kann eine sinnvolle Tabelle erstellen.
 
-## Beispiel 3: Rezept-Vorlage
+## Beispiel 3: Aushang für Praxisferien
 
 ```
-Erstelle eine druckbare Rezept-Vorlage als Webseite.
-Felder: Arztname und Anschrift, Patientenname und Geburtsdatum,
-Datum, Medikament, Dosierung, Einnahmehinweis.
-Format: DIN A5 quer, schlichtes Design.
+Erstelle einen druckbaren Aushang für unsere Praxisferien als Webseite.
+Felder: Praxisname, Zeitraum der Schließung, Vertretungspraxis
+mit Anschrift und Telefonnummer, Hinweis für Notfälle.
+Format: DIN A4 hoch, große Schrift, schlichtes Design.
 ```
 
 ## Tipps für bessere Zero-Shot-Prompts
 
 **Sei spezifisch statt vage:**
 - Schlecht: "Erstelle eine medizinische App"
-- Besser: "Erstelle einen Rechner für die Kreatinin-Clearance nach Cockcroft-Gault"
+- Besser: "Erstelle einen Rechner für die Bestellmenge von Praxisbedarf"
 
 **Beschreibe das Ergebnis, nicht den Weg:**
 - Schlecht: "Verwende JavaScript und eine for-Schleife"
-- Besser: "Zeige eine Liste aller eingegebenen Patienten"
+- Besser: "Zeige eine Liste aller eingegebenen Artikel"
 
 **Nenne konkrete Anforderungen:**
 - Schlecht: "Mach es schön"

@@ -8,9 +8,9 @@ video_url: ""
 
 # Statische Webseiten mit GitHub Pages
 
-> **Wichtiger Hinweis:** Alle in diesem Kurs vorgestellten Anleitungen dienen dem Erlernen grundlegender Deployment-Konzepte. Sobald Patientendaten verarbeitet werden, gelten strenge Datenschutz- und Sicherheitsanforderungen (DSGVO, Medizinprodukteverordnung). Veröffentliche Programme mit Patientenbezug niemals ohne professionelle Beratung.
+> **Wichtiger Hinweis:** Dieser Kurs erklärt Deployment-Grundlagen für Programme ohne Patientendaten und ohne medizinische Bewertung. Programme mit Patientendaten brauchen professionelle Sicherheits- und Datenschutzberatung. Programme, die medizinisch bewerten, können unabhängig davon Medizinprodukte sein. Mehr dazu: [Was du nicht vibecoden solltest](/academy/vibecoding-grenzen/lektion-01).
 
-Du hast einen BMI-Rechner gebaut, eine Laborwert-Referenztabelle oder eine Informationsseite für deine Patienten. Solche Tools ohne Patientendaten kannst du kostenlos ins Internet stellen – mit GitHub Pages.
+Du hast eine Seite mit deinen Öffnungszeiten gebaut, eine Team-Vorstellung oder eine Informationsseite für deine Patienten. Solche Seiten ohne Patientendaten kannst du kostenlos ins Internet stellen – mit GitHub Pages.
 
 ## Bevor wir anfangen: Was darf ins Internet?
 
@@ -20,11 +20,13 @@ Dieser Punkt ist so wichtig, dass er vor jeder Anleitung stehen muss:
 
 | Darf ins Internet | Darf NICHT ins Internet |
 |---|---|
-| BMI-Rechner | Anamnesebogen mit Patientenname |
-| GFR-Rechner | Terminbuchung mit Patientendaten |
-| Laborwert-Referenztabelle | Befundübersicht |
+| Öffnungszeiten | Anamnesebogen mit Patientenname |
+| Team-Vorstellung | Terminbuchung mit Patientendaten |
+| Wartezimmer-Infos | Befundübersicht |
 | Allgemeine Patienteninformationen | Wartezeit-Anzeige mit Patientennamen |
 | Praxis-Vorstellung / Anfahrt | Alles mit Eingabefeldern für Patienteninfos |
+
+Die Tabelle betrifft nur Patientendaten. Medizinische Rechner sind ein eigenes Thema: [Was du nicht vibecoden solltest](/academy/vibecoding-grenzen/lektion-01).
 
 **Wenn du unsicher bist:** Stell dir vor, ein zufälliger Internetnutzer öffnet die Seite. Könnte er irgendwelche Patientendaten sehen oder eingeben? Dann gehört es nicht ins Internet.
 
@@ -35,7 +37,7 @@ Es gibt zwei Arten von Webseiten:
 - **Statische Webseiten:** Fertige HTML-Dateien, die der Browser direkt anzeigt. Kein Server nötig, der im Hintergrund rechnet. Wie ein ausgedrucktes Informationsblatt – es verändert sich nicht.
 - **Dynamische Webseiten:** Brauchen einen Server, der auf Anfragen reagiert, Daten speichert und verarbeitet. Wie ein Praxisverwaltungssystem.
 
-Die meisten Tools, die du bisher gebaut hast (Rechner, Formulare, Infoseiten), sind **statische Webseiten**. Sie funktionieren komplett im Browser des Nutzers – perfekt für GitHub Pages.
+Die meisten Tools, die du bisher gebaut hast (Anzeigen, Listen, Infoseiten), sind **statische Webseiten**. Sie funktionieren komplett im Browser des Nutzers – perfekt für GitHub Pages.
 
 ## Was ist GitHub?
 
@@ -69,7 +71,7 @@ Die KI wird dir die konkreten Schritte für dein spezifisches Projekt erklären 
 ### Schritt 3: Repository erstellen
 
 1. Auf GitHub: Klicke auf das **"+"** oben rechts → **"New repository"**
-2. Name: z.B. `bmi-rechner` (keine Leerzeichen, keine Umlaute)
+2. Name: z.B. `praxis-infoseite` (keine Leerzeichen, keine Umlaute)
 3. Wähle **"Public"** (für GitHub Pages nötig im kostenlosen Plan)
 4. Klicke auf **"Create repository"**
 
@@ -89,7 +91,7 @@ Die KI wird dir die konkreten Schritte für dein spezifisches Projekt erklären 
 
 Deine Webseite ist jetzt erreichbar unter:
 ```
-https://dein-username.github.io/bmi-rechner
+https://dein-username.github.io/praxis-infoseite
 ```
 
 ## Was GitHub Pages nicht kann
@@ -101,21 +103,21 @@ GitHub Pages ist für **statische Webseiten**. Das bedeutet:
 - Keine serverseitige Verarbeitung
 - Keine E-Mail-Funktionen
 
-Für die meisten Praxis-Rechner und Informationsseiten ist das kein Problem – sie brauchen nichts davon.
+Für die meisten Informationsseiten ist das kein Problem – sie brauchen nichts davon.
 
 ## Sicherheitshinweise für öffentliche Webseiten
 
 Auch wenn dein Tool keine Patientendaten verarbeitet, beachte:
 
-- **Impressumspflicht:** Jede öffentliche Webseite in Deutschland braucht ein Impressum mit deinem Namen und deiner Adresse (Telemediengesetz).
+- **Impressumspflicht:** Jede öffentliche Webseite in Deutschland braucht ein Impressum mit deinem Namen und deiner Adresse (§ 5 Digitale-Dienste-Gesetz, DDG).
 - **Keine versteckten Eingabefelder:** Stelle sicher, dass niemand versehentlich Patientendaten in dein Tool eingeben kann.
-- **Medizinische Haftung:** Wenn dein Tool medizinische Berechnungen durchführt (z.B. Dosisrechner), weise klar darauf hin, dass es sich um ein Übungsprojekt handelt und nicht für die klinische Anwendung gedacht ist.
+- **Medizinische Rechner:** Sie gehören nicht einfach ins Netz. Ein Hinweis auf „Übungsprojekt“ reicht nicht. Mehr dazu: [Was du nicht vibecoden solltest](/academy/vibecoding-grenzen/lektion-01).
 - **Regelmäßig prüfen:** Schau ab und zu nach, ob deine Seite noch funktioniert und aktuell ist.
 
 ## Zusammenfassung
 
 - GitHub Pages ist kostenlos und ideal für einfache Webseiten ohne Patientendaten
-- Statische Seiten (Rechner, Infoseiten, Referenztabellen) funktionieren perfekt
+- Statische Seiten (Infoseiten, Öffnungszeiten, Team-Vorstellung) funktionieren perfekt
 - **Keine Patientendaten auf öffentlichen Webseiten** – ohne Ausnahme
 - Impressumspflicht und Haftungshinweise beachten
 - Die KI kann dir bei der Vorbereitung und Veröffentlichung helfen

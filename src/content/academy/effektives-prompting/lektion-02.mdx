@@ -8,7 +8,7 @@ video_url: ""
 
 # Few-Shot Prompting
 
-> **Wichtiger Hinweis:** Alle in diesem Kurs vorgestellten Programme dienen ausschließlich dem Erlernen von Prompting-Techniken. Sie sind nicht für die Anwendung am Patienten gedacht. Insbesondere medizinische Tools könnten einem Medizinprodukt gleichkommen und dürfen ohne regulatorische Zulassung nicht im klinischen Alltag eingesetzt werden.
+> **Wichtiger Hinweis:** Alle in diesem Kurs vorgestellten Programme dienen ausschließlich dem Erlernen von Prompting-Techniken. Sie sind nicht für die Anwendung am Patienten gedacht. Insbesondere medizinische Tools könnten einem Medizinprodukt gleichkommen und dürfen ohne regulatorische Zulassung nicht im klinischen Alltag eingesetzt werden. Mehr dazu: [Was du nicht vibecoden solltest](/academy/vibecoding-grenzen/lektion-01).
 
 Manchmal versteht die KI nicht genau, was du willst – vor allem wenn es um ein bestimmtes Format, einen bestimmten Stil oder fachspezifische Konventionen geht. **Few-Shot Prompting** löst dieses Problem: Du gibst der KI ein oder mehrere Beispiele, an denen sie sich orientieren kann.
 
@@ -20,71 +20,70 @@ Statt nur zu beschreiben, was du willst, **zeigst** du es der KI anhand konkrete
 - **Few-Shot:** Zwei bis fünf Beispiele
 - **Faustregel:** 2–3 Beispiele reichen fast immer
 
-## Beispiel 1: Arztbrief-Textbausteine generieren
+## Beispiel 1: Organisatorische Textbausteine generieren
 
-Ohne Beispiel bekommst du möglicherweise Arztbriefe in einem Stil, der nicht zu deiner Praxis passt. Mit Few-Shot zeigst du der KI genau dein Format:
+Ohne Beispiel bekommst du möglicherweise Texte in einem Stil, der nicht zu deiner Praxis passt. Mit Few-Shot zeigst du der KI genau dein Format:
 
 ```
-Erstelle ein Tool, das Arztbrief-Textbausteine generiert.
-Das Tool soll aus Diagnose und Befund einen Fließtext erzeugen.
+Erstelle ein Tool, das organisatorische Textbausteine generiert,
+etwa für Recall-Erinnerungen und Praxisinfos.
+Das Tool soll aus Anlass und Hinweis einen Fließtext erzeugen.
 
 Hier sind Beispiele für den gewünschten Stil:
 
-Eingabe: Diagnose: Diabetes mellitus Typ 2, Befund: HbA1c 7,8%
-Ausgabe: "Bei dem Patienten besteht ein bekannter Diabetes mellitus
-Typ 2. Im aktuellen Laborbefund zeigt sich ein HbA1c von 7,8%,
-was einer unbefriedigenden Stoffwechseleinstellung entspricht.
-Eine Therapieintensivierung wird empfohlen."
+Eingabe: Anlass: Recall Gesundheits-Check, Hinweis: Termin telefonisch
+Ausgabe: "Liebe Patientin, lieber Patient, Sie können wieder einen
+Termin für den Gesundheits-Check vereinbaren. Am einfachsten
+rufen Sie uns dazu während der Sprechzeiten an."
 
-Eingabe: Diagnose: Arterielle Hypertonie, Befund: RR 160/95 mmHg
-Ausgabe: "Es liegt eine arterielle Hypertonie vor. Bei der heutigen
-Messung fand sich ein Blutdruck von 160/95 mmHg. Die aktuelle
-antihypertensive Therapie erscheint nicht ausreichend.
-Eine Medikamentenanpassung wird angeraten."
+Eingabe: Anlass: Praxisferien, Hinweis: 12.–23. August, Vertretung Praxis Muster
+Ausgabe: "Unsere Praxis bleibt vom 12. bis 23. August geschlossen.
+In dieser Zeit übernimmt die Praxis Muster die Vertretung.
+Danach sind wir wie gewohnt für Sie da."
 
-Erstelle das Tool mit Eingabefeldern für Diagnose und Befund
+Erstelle das Tool mit Eingabefeldern für Anlass und Hinweis
 und einem Button, der den Textbaustein generiert.
 ```
 
-Die KI versteht durch die Beispiele: formeller Stil, Fachsprache, bestimmte Satzstrukturen, therapeutische Empfehlung am Ende.
+Die KI versteht durch die Beispiele: freundlicher Stil, kurze Sätze, bestimmte Satzstrukturen, ein konkreter Hinweis am Ende.
 
-## Beispiel 2: ICD-10-Codes zuordnen
+## Beispiel 2: Bestellungen Kategorien zuordnen
 
 ```
-Erstelle ein Tool, das aus einer Freitext-Diagnose den passenden
-ICD-10-Code vorschlägt.
+Erstelle ein Tool, das Freitext-Bestellungen einer passenden
+Artikelkategorie zuordnet.
 
 Beispiele:
-"Bluthochdruck" → I10 – Essentielle (primäre) Hypertonie
-"Zucker" → E11.9 – Diabetes mellitus Typ 2 ohne Komplikationen
-"Rückenschmerzen unten" → M54.5 – Kreuzschmerz
-"Erkältung" → J06.9 – Akute Infektion der oberen Atemwege
+"Pflaster" → Verband
+"Druckerpapier" → Büro
+"Butterfly" → Spritzen/Nadeln
+"Flächendesinfektion" → Desinfektion
 
 Das Tool soll ein Textfeld haben und nach der Eingabe die
-3 wahrscheinlichsten ICD-10-Codes mit Bezeichnung anzeigen.
+3 wahrscheinlichsten Kategorien anzeigen.
 ```
 
 Hier lernt die KI durch die Beispiele, dass auch umgangssprachliche Begriffe korrekt zugeordnet werden sollen.
 
-## Beispiel 3: Befundtexte strukturieren
+## Beispiel 3: Wartungsnotizen strukturieren
 
 ```
-Erstelle ein Tool, das unstrukturierte Befundtexte in ein
+Erstelle ein Tool, das unstrukturierte Wartungsnotizen in ein
 einheitliches Format bringt.
 
-Eingabe: "Sono Abdomen: Leber homogen, keine Raumforderung,
-Galle ok, Nieren bds unauffällig, kein Stau"
+Eingabe: "Sterilisator: Filter neu, Dichtung ok,
+nächste Wartung März"
 Ausgabe:
-- Leber: Homogenes Parenchym, keine Raumforderung
-- Gallenblase: Unauffällig
-- Nieren beidseits: Unauffällig, kein Harnstau
+- Gerät: Sterilisator
+- Erledigt: Filter getauscht, Dichtung geprüft
+- Nächste Wartung: März
 
-Eingabe: "Rö Thorax: Herz nicht verbreitert, Lunge frei,
-kein Erguss, kein Pneu"
+Eingabe: "Impfkühlschrank: Thermometer getauscht,
+Türgummi locker, Service anrufen"
 Ausgabe:
-- Herz: Nicht verbreitert
-- Lunge: Frei, kein Infiltrat
-- Pleura: Kein Erguss, kein Pneumothorax
+- Gerät: Impfkühlschrank
+- Erledigt: Thermometer getauscht
+- Offen: Türgummi locker, Service anrufen
 ```
 
 ## Wann Few-Shot statt Zero-Shot?
