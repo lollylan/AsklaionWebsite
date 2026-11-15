@@ -1,0 +1,14 @@
+{
+  "name": "Asklaion Show and Tell",
+  "slug": "show-and-tell",
+  "category": "webapp",
+  "tags": ["Patientenaufklärung", "Zwei Bildschirme", "3D-Anatomie"],
+  "anforderung": "WEBAPP",
+  "description": "Show and Tell bringt die Patientenaufklärung auf einen zweiten Bildschirm: An der Steuerung wählt die Ärztin oder der Arzt aus, was der Patient auf seinem Monitor sieht – Zeichnungen, drehbare 3D-Modelle, Erklärtexte und Karten. Module gibt es für Reiseimpfberatung, Standardimpfungen nach STIKO, Vorsorge nach Alter und Geschlecht, Aufklärungen zu Krankheiten und Untersuchungen, Orthopädie mit Übungen zum Mitgeben, Anatomie am 3D-Modell, Medikamente und das Einordnen von Werten. Eine Suche findet Krankheit, Medikament, Organ oder Wert direkt, die Bühne lässt sich per Tastendruck verdecken. Was in der Sitzung gezeigt wurde, sammelt sich automatisch und wird auf Wunsch als Handzettel gedruckt oder als PDF mitgegeben. Übertragen werden nur Anzeigebefehle, keine Patientendaten. Die Demo läuft ohne Server direkt im Browser (Steuerung und Patientenfenster im selben Browser); die installierte Fassung mit kleinem Server erlaubt auch ein Tablet oder einen zweiten Rechner als Patientenbildschirm und mehrere Behandlungszimmer. Neue Module lassen sich aus einer Vorlage ergänzen. Die App dient der Information und Aufklärung und gibt keine Diagnose- oder Therapieempfehlung.",
+  "github_url": "https://github.com/lollylan/AsklaionShowAndTell",
+  "demo_url": "https://lollylan.github.io/AsklaionShowAndTell/",
+  "demo_label": "Im Browser öffnen",
+  "video_url": "",
+  "academy_course_slug": null,
+  "screenshot": "/images/show-and-tell.png"
+}
